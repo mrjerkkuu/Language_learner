@@ -75,7 +75,7 @@ export default function Home() {
                 aria-pressed={l.id === lang}
                 className={
                   'touch-target rounded-full px-4 text-sm font-semibold transition-colors ' +
-                  (l.id === lang ? 'bg-ink text-card' : 'bg-card text-ink ring-1 ring-line active:bg-bg')
+                  (l.id === lang ? 'bg-accent text-white' : 'bg-card text-ink ring-1 ring-line active:bg-bg')
                 }
               >
                 {l.label}

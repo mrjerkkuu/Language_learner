@@ -31,6 +31,7 @@ jobs:
           node-version: 20 # LTS, required by Vite
           cache: npm
       - run: npm ci
+      - run: npm run test # unit + data-integrity tests; a failure blocks the deploy
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

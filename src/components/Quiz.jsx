@@ -5,6 +5,7 @@ import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 import { generateDistractors } from '../services/aiService'
 import { shuffle } from '../utils/shuffle'
+import { distractorsFrom, weightedSample } from '../lib/quizLogic'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
 import EmptyState from './EmptyState'
@@ -249,7 +250,7 @@ async function buildQuestion(candidate, ctx) {
   const { type, item, id } = candidate
 
   if (type === 'fill') {
-    const wrong = distractorsFrom(ctx.fillBlanks, item, (b) => b.answer)
+    const wrong = distractorsFrom(ctx.fillBlanks, item, (b) => b.answer, OPTION_COUNT)
     return {
       id,
       source: candidate,
@@ -265,7 +266,7 @@ async function buildQuestion(candidate, ctx) {
   const wrong =
     Array.isArray(ai) && ai.length >= OPTION_COUNT - 1
       ? shuffle(ai).slice(0, OPTION_COUNT - 1)
-      : distractorsFrom(ctx.vocabulary, item, (w) => w.term)
+      : distractorsFrom(ctx.vocabulary, item, (w) => w.term, OPTION_COUNT)
 
   return {
     id,
@@ -275,48 +276,4 @@ async function buildQuestion(candidate, ctx) {
     correct: item.term,
     options: shuffle([item.term, ...wrong]),
   }
-}
-
-// Pick OPTION_COUNT-1 distractors: same category+part first, then widen.
-function distractorsFrom(sourcePool, target, getText) {
-  const need = OPTION_COUNT - 1
-  const correctText = getText(target)
-  const sameCatPart = sourcePool.filter(
-    (x) => x.id !== target.id && x.category === target.category && x.part === target.part,
-  )
-  const sameCat = sourcePool.filter((x) => x.id !== target.id && x.category === target.category)
-  const everything = sourcePool.filter((x) => x.id !== target.id)
-  const ordered = [...shuffle(sameCatPart), ...shuffle(sameCat), ...shuffle(everything)]
-  const seen = new Set()
-  const out = []
-  for (const x of ordered) {
-    const text = getText(x)
-    if (text === correctText || seen.has(text)) continue
-    seen.add(text)
-    out.push(text)
-    if (out.length === need) break
-  }
-  return out
-}
-
-// Weighted sampling without replacement (higher weight = likelier to be picked).
-function weightedSample(items, n, getWeight) {
-  const pool = [...items]
-  const picked = []
-  const count = Math.min(n, pool.length)
-  for (let k = 0; k < count; k++) {
-    const total = pool.reduce((s, it) => s + Math.max(0.001, getWeight(it)), 0)
-    let r = Math.random() * total
-    let idx = 0
-    for (let i = 0; i < pool.length; i++) {
-      r -= Math.max(0.001, getWeight(pool[i]))
-      if (r <= 0) {
-        idx = i
-        break
-      }
-    }
-    picked.push(pool[idx])
-    pool.splice(idx, 1)
-  }
-  return picked
 }
