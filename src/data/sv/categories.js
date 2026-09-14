@@ -1,15 +1,19 @@
 // Swedish content: topic areas (part) and finer topics (category).
-// Two independent, cross-usable dimensions. Labels are the Finnish/Swedish
-// display names shown in the UI. Reuse these ids in the sv/*.json data.
-
+// Two independent, cross-usable dimensions.
+//
+// IMPORTANT: These `label`s are UI navigation text, and the app UI is in
+// Finnish — so every label here is in Finnish, regardless of the target
+// language. (The learning content itself — words, phrases, example
+// sentences — stays in Swedish; that lives in the sv/*.json data files.)
+// The `id`s are the stable keys referenced by the data, so never change them.
 export const PARTS = [
-  { id: 1, label: 'Studier & småprat' },
-  { id: 2, label: 'Arbetslivet & kommunikation' },
-  { id: 3, label: 'Min bransch' },
+  { id: 1, label: 'Opiskelu ja tutustuminen' },
+  { id: 2, label: 'Työelämä ja viestintä' },
+  { id: 3, label: 'Oma ala' },
 ]
 
 export const CATEGORIES = [
-  { id: 'smaprat', label: 'Small talk' },
+  { id: 'smaprat', label: 'Rupattelu' },
   { id: 'opiskelu', label: 'Opiskelu' },
   { id: 'tyoelama', label: 'Työelämä' },
   { id: 'viestinta', label: 'Viestintä' },

@@ -44,15 +44,15 @@ describe('Home (integration)', () => {
 
   it('narrows the counts when a topic-area pill is selected', () => {
     const sv = getContent('sv')
-    // "Min bransch" is area (part) 3 in the Swedish data.
-    const area = sv.PARTS.find((p) => p.label === 'Min bransch')
+    // "Oma ala" is area (part) 3 in the Swedish data (Finnish UI label).
+    const area = sv.PARTS.find((p) => p.label === 'Oma ala')
     const inArea = sv.vocabulary.filter((v) => v.part === area.id).length
 
     renderWithProviders(<Home />)
     expect(sanakortitCount()).toBe(sv.vocabulary.length)
 
     // Selecting the area pill writes to FilterContext, which every module reads.
-    fireEvent.click(screen.getByRole('button', { name: 'Min bransch' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Oma ala' }))
     expect(sanakortitCount()).toBe(inArea)
   })
 })
