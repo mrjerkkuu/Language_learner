@@ -1,81 +1,101 @@
 import { useMemo, useState } from 'react'
 import phrases from '../data/phrases.json'
+import { CATEGORIES } from '../data/categories'
 import { useFilter } from '../context/FilterContext'
 import { useActivityLog } from '../hooks/useActivityLog'
-import { categoryLabel, partLabel } from '../data/categories'
+import Layout from './Layout'
 import EmptyState from './EmptyState'
 
 // -----------------------------------------------------------------------------
-// PhraseBank module
+// Fraasipankki (Phrase bank) module
 // -----------------------------------------------------------------------------
-// A filterable list of useful phrases. Each row shows the Swedish phrase; tap
-// it to reveal the Finnish translation (tap again to hide). This "tap-to-reveal"
-// pattern lets you self-test: read the Swedish, guess the meaning, then check.
+// A filterable list of phrases. Each row shows the Swedish phrase; tap it to
+// reveal the Finnish translation (tap again to hide). Unrevealed rows show a
+// "Näytä ›" hint. Category chips at the top adjust the (shared) topic filter.
 // -----------------------------------------------------------------------------
 
 export default function PhraseBank() {
-  const { filterItems } = useFilter()
+  const { filterItems, categories, toggleCategory, clearFilters } = useFilter()
   const { logActivity } = useActivityLog()
 
-  // Phrases matching the current global filter.
   const list = useMemo(() => filterItems(phrases), [filterItems])
-
-  // Which phrase ids are currently revealed. A Set is a natural fit for
-  // "is this id revealed?" membership checks.
   const [revealed, setRevealed] = useState(() => new Set())
 
   function toggle(id) {
     setRevealed((prev) => {
       const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
-      } else {
+      if (next.has(id)) next.delete(id)
+      else {
         next.add(id)
-        logActivity(1) // count a reveal as one practised item
+        logActivity(1)
       }
       return next
     })
   }
 
-  if (list.length === 0) {
-    return (
-      <EmptyState
-        title="Ei fraaseja tällä suodattimella"
-        hint="Valitse toinen osa tai aihepiiri ylhäältä."
-      />
-    )
-  }
-
   return (
-    <ul className="space-y-2">
-      {list.map((phrase) => {
-        const isRevealed = revealed.has(phrase.id)
-        return (
-          <li key={phrase.id}>
-            {/* The whole row is a button so any tap toggles the translation. */}
-            <button
-              type="button"
-              onClick={() => toggle(phrase.id)}
-              aria-expanded={isRevealed}
-              className="w-full rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-200 active:bg-slate-50"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <span className="font-medium text-slate-900">{phrase.sv}</span>
-                <span className="shrink-0 text-xs text-slate-400">
-                  {partLabel(phrase.part)} · {categoryLabel(phrase.category)}
-                </span>
-              </div>
+    <Layout back title="Fraasipankki" right={list.length}>
+      <div className="space-y-4">
+        {/* Category chips (topic filter). "Kaikki" clears the topic selection. */}
+        <div className="-mx-4 overflow-x-auto px-4">
+          <div className="flex w-max gap-2">
+            <Chip active={categories.length === 0} onClick={clearFilters}>
+              Kaikki
+            </Chip>
+            {CATEGORIES.map((c) => (
+              <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
+                {c.label}
+              </Chip>
+            ))}
+          </div>
+        </div>
 
-              {/* Revealed translation, or a subtle hint when hidden. */}
-              {isRevealed ? (
-                <div className="mt-2 text-brand-700">{phrase.fi}</div>
-              ) : (
-                <div className="mt-2 text-sm text-slate-400">Napauta nähdäksesi käännöksen</div>
-              )}
-            </button>
-          </li>
-        )
-      })}
-    </ul>
+        {list.length === 0 ? (
+          <EmptyState title="Ei fraaseja" />
+        ) : (
+          <ul className="space-y-2">
+            {list.map((phrase) => {
+              const isRevealed = revealed.has(phrase.id)
+              return (
+                <li key={phrase.id}>
+                  <button
+                    type="button"
+                    onClick={() => toggle(phrase.id)}
+                    aria-expanded={isRevealed}
+                    className="w-full rounded-2xl border border-line bg-card p-4 text-left active:bg-bg"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-semibold text-ink">{phrase.sv}</span>
+                      {!isRevealed && (
+                        <span className="shrink-0 text-sm font-medium text-accent">Näytä ›</span>
+                      )}
+                    </div>
+                    {isRevealed && <div className="mt-2 text-muted">{phrase.fi}</div>}
+                  </button>
+                </li>
+              )
+            })}
+          </ul>
+        )}
+
+        <p className="text-center text-sm text-muted">Napauta fraasia nähdäksesi käännöksen</p>
+      </div>
+    </Layout>
+  )
+}
+
+function Chip({ active, onClick, children }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={
+        'touch-target whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors ' +
+        (active ? 'bg-accent text-white' : 'bg-card text-muted ring-1 ring-line active:bg-bg')
+      }
+    >
+      {children}
+    </button>
   )
 }

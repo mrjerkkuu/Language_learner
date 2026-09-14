@@ -3,7 +3,8 @@
     "id": "w001",
     "part": 1,
     "category": "smaprat",
-    "prompt": "Esittele itsesi lyhyesti ruotsiksi: nimi, kotipaikka ja yksi harrastus (2-3 lausetta).",
+    "prompt_sv": "Presentera dig själv kort: namn, hemort och en hobby (2–3 meningar).",
+    "prompt": "Esittele itsesi lyhyesti: nimi, kotipaikka ja yksi harrastus (2–3 lausetta).",
     "hints": ["jag heter", "jag bor i", "på min fritid"],
     "model_answer": "Hej! Jag heter Jeremia och jag bor i Jyväskylä. På min fritid tycker jag om att spela fotboll och fotografera."
   },
@@ -11,7 +12,8 @@
     "id": "w002",
     "part": 1,
     "category": "opiskelu",
-    "prompt": "Kerro ruotsiksi mitä opiskelet ja missä. Mainitse yksi asia josta pidät opinnoissasi.",
+    "prompt_sv": "Berätta vad och var du studerar. Nämn en sak du gillar med dina studier.",
+    "prompt": "Kerro mitä ja missä opiskelet. Mainitse yksi asia josta pidät opinnoissasi.",
     "hints": ["jag studerar", "på yrkeshögskolan", "jag tycker om"],
     "model_answer": "Jag studerar informationsteknik på yrkeshögskolan i Jyväskylä. Jag tycker särskilt om programmering eftersom det är kreativt och praktiskt."
   },
@@ -19,7 +21,8 @@
     "id": "w003",
     "part": 2,
     "category": "tyoelama",
-    "prompt": "Kirjoita lyhyt viesti kollegalle, jossa ehdotat kokousta ensi viikolle (2-3 lausetta).",
+    "prompt_sv": "Skriv ett kort meddelande till en kollega där du föreslår ett möte nästa vecka (2–3 meningar).",
+    "prompt": "Kirjoita lyhyt viesti kollegalle, jossa ehdotat kokousta ensi viikolle (2–3 lausetta).",
     "hints": ["hej", "kan vi boka ett möte", "vad passar dig?"],
     "model_answer": "Hej Anna! Kan vi boka ett möte nästa vecka för att diskutera projektet? Vad passar dig bäst, tisdag eller onsdag?"
   },
@@ -27,7 +30,8 @@
     "id": "w004",
     "part": 2,
     "category": "viestinta",
-    "prompt": "Vastaa ruotsiksi asiakkaan sähköpostiin: kiitä viestistä ja lupaa palata asiaan.",
+    "prompt_sv": "Svara på kundens mejl: tacka för meddelandet och lova att återkomma.",
+    "prompt": "Vastaa asiakkaan sähköpostiin: kiitä viestistä ja lupaa palata asiaan.",
     "hints": ["tack för ditt mejl", "jag återkommer", "så snart som möjligt"],
     "model_answer": "Tack för ditt mejl! Jag har tagit emot din fråga och återkommer med ett svar så snart som möjligt, senast på fredag."
   },
@@ -35,7 +39,8 @@
     "id": "w005",
     "part": 3,
     "category": "ict",
-    "prompt": "Kuvaile ruotsiksi omaa alaasi (ICT) ja tulevaa ammattiasi (3-4 lausetta).",
+    "prompt_sv": "Beskriv din bransch (ICT) och ditt framtida yrke (3–4 meningar).",
+    "prompt": "Kuvaile omaa alaasi (ICT) ja tulevaa ammattiasi (3–4 lausetta).",
     "hints": ["jag studerar", "jag vill jobba som", "programmering", "utveckla"],
     "model_answer": "Jag studerar informationsteknik och är särskilt intresserad av programmering. I framtiden vill jag jobba som mjukvaruutvecklare. Då får jag utveckla program och lösa problem varje dag."
   },
@@ -43,7 +48,8 @@
     "id": "w006",
     "part": 3,
     "category": "ict",
-    "prompt": "Selitä ruotsiksi lyhyesti mikä on tietokanta ja mihin sitä käytetään.",
+    "prompt_sv": "Förklara kort vad en databas är och vad den används till.",
+    "prompt": "Selitä lyhyesti mikä on tietokanta ja mihin sitä käytetään.",
     "hints": ["en databas", "spara", "information", "används för"],
     "model_answer": "En databas är ett system där man sparar information på ett strukturerat sätt. Den används för att lagra och hämta data snabbt, till exempel användarnas uppgifter i en applikation."
   }

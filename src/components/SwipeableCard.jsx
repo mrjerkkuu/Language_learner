@@ -34,8 +34,13 @@ export default function SwipeableCard({ onSwipeLeft, onSwipeRight, onTap, childr
     setDragging(true)
     startX.current = e.clientX
     // Capture the pointer so we keep getting move/up events even if the finger
-    // leaves the element.
-    e.currentTarget.setPointerCapture?.(e.pointerId)
+    // leaves the element. Wrapped in try/catch because setPointerCapture can
+    // throw for an inactive/synthetic pointer id (harmless — just skip capture).
+    try {
+      e.currentTarget.setPointerCapture?.(e.pointerId)
+    } catch {
+      /* no-op */
+    }
   }
 
   // --- Pointer move: follow the finger ---
