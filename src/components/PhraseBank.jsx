@@ -37,7 +37,7 @@ export default function PhraseBank() {
     <Layout back title="Fraasipankki" right={list.length}>
       <div className="space-y-4">
         {/* Category chips (topic filter). "Kaikki" clears the topic selection. */}
-        <div className="no-scrollbar -mx-4 overflow-x-auto px-4">
+        <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
           <div className="flex w-max gap-2">
             <Chip active={categories.length === 0} onClick={clearFilters}>
               Kaikki

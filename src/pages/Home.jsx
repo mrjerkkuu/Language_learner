@@ -42,7 +42,7 @@ export default function Home() {
           <h1 className="font-display text-3xl font-bold text-ink">Harjoittele</h1>
         </div>
 
-        <div className="no-scrollbar -mx-4 overflow-x-auto px-4">
+        <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
           <div className="flex w-max gap-2">
             {languages.map((l) => (
               <button
@@ -68,7 +68,7 @@ export default function Home() {
         <FilterBar />
 
         {/* Module list. */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           {modules.map((m) => (
             <ModuleRow key={m.to} module={m} count={filterItems(m.data).length} />
           ))}

@@ -19,7 +19,7 @@ export default function FilterBar() {
     <div className="space-y-3">
       {/* Area pills — horizontal, scrollable. The -mx-4/px-4 lets the row bleed
           to the screen edges; no-scrollbar hides the scrollbar but keeps scroll. */}
-      <div className="no-scrollbar -mx-4 overflow-x-auto px-4">
+      <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
         <div className="flex w-max gap-2">
           <Pill active={part === 'all'} onClick={() => setPart('all')}>
             Kaikki
