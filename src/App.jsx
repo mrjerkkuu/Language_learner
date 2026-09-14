@@ -1,12 +1,13 @@
 import { FilterProvider } from './context/FilterContext'
 import FilterBar from './components/FilterBar'
 import Flashcard from './components/Flashcard'
+import PhraseBank from './components/PhraseBank'
 
 // Root component of the application.
 //
 // Still an interim shell: routing (HashRouter) and the Home menu are added in a
-// later commit. For now we render the FilterBar + the Flashcards module so the
-// swipe/flip + spaced-repetition flow can be verified end to end.
+// later commit. For now modules are stacked below the FilterBar so each one can
+// be verified as it is built.
 export default function App() {
   return (
     <FilterProvider>
@@ -14,9 +15,18 @@ export default function App() {
         <header className="bg-brand-700 px-4 py-4 text-white">
           <h1 className="text-lg font-semibold">Työelämän ruotsi</h1>
         </header>
-        <main className="mx-auto max-w-xl space-y-4 p-4">
+        <main className="mx-auto max-w-xl space-y-6 p-4">
           <FilterBar />
-          <Flashcard />
+
+          <section>
+            <h2 className="mb-2 text-sm font-semibold text-slate-500">Flashcards</h2>
+            <Flashcard />
+          </section>
+
+          <section>
+            <h2 className="mb-2 text-sm font-semibold text-slate-500">Fraasipankki</h2>
+            <PhraseBank />
+          </section>
         </main>
       </div>
     </FilterProvider>
