@@ -45,4 +45,19 @@ describe('Flashcard (integration)', () => {
     expect(entries[0].timesWrong).toBe(1)
     expect(entries[0].weight).toBeGreaterThan(2.5)
   })
+
+  it('shows the next card front-first after answering (no flipped answer leaks)', () => {
+    const { container } = renderWithProviders(<Flashcard />)
+
+    // Flip the current card to its answer side...
+    const card = container.querySelector('.cursor-grab')
+    fireEvent.pointerDown(card, { clientX: 100 })
+    fireEvent.pointerUp(card, { clientX: 100 })
+    expect(container.querySelector('.flip-inner').classList.contains('is-flipped')).toBe(true)
+
+    // ...then answer. The next card must be showing its FRONT (not flipped),
+    // otherwise the next answer would be visible during the rotation.
+    fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+    expect(container.querySelector('.flip-inner').classList.contains('is-flipped')).toBe(false)
+  })
 })

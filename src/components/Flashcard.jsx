@@ -43,13 +43,18 @@ export default function Flashcard() {
   }, [pool])
 
   // Mark the current card correct/wrong, then advance.
+  // We reset `flipped` to false AND swap to the next card. The card below is
+  // keyed by current.id, so advancing mounts a FRESH card showing its front
+  // instantly (no flip-back animation). That's important: if we animated the
+  // old card back to front while the content had already changed, the next
+  // card's answer would be briefly readable during the 450ms rotation.
   function mark(correct) {
     if (!current) return
     recordResult(current.id, correct)
     logActivity(1)
     setReviewed((n) => n + 1)
-    setCurrent(pickNext(pool, current.id))
     setFlipped(false)
+    setCurrent(pickNext(pool, current.id))
   }
 
   const done = Math.min(reviewed, pool.length)
@@ -72,7 +77,10 @@ export default function Flashcard() {
             leftLabel="← Väärin"
             rightLabel="Oikein →"
           >
-            <div className="flip relative">
+            {/* key={current.id}: advancing to the next card remounts this
+                block, so the new card appears front-first with no flip
+                animation — the previous answer can't flash during a rotation. */}
+            <div key={current.id} className="flip relative">
               {/* Learned badge stays put (doesn't rotate with the faces). */}
               {getStatus(current.id) === 'learned' && (
                 <span className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-learned-soft px-2 py-0.5 text-xs font-semibold text-learned">
