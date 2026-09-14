@@ -2,6 +2,7 @@ import { FilterProvider } from './context/FilterContext'
 import FilterBar from './components/FilterBar'
 import Flashcard from './components/Flashcard'
 import PhraseBank from './components/PhraseBank'
+import WritingPractice from './components/WritingPractice'
 
 // Root component of the application.
 //
@@ -26,6 +27,11 @@ export default function App() {
           <section>
             <h2 className="mb-2 text-sm font-semibold text-slate-500">Fraasipankki</h2>
             <PhraseBank />
+          </section>
+
+          <section>
+            <h2 className="mb-2 text-sm font-semibold text-slate-500">Kirjoitusharjoitus</h2>
+            <WritingPractice />
           </section>
         </main>
       </div>
