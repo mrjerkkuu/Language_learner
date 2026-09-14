@@ -2,6 +2,7 @@ import { createContext, useContext, useMemo, useCallback } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { LANGUAGES, DEFAULT_LANGUAGE } from '../data/languages'
 import { getContent } from '../data/contentService'
+import { STORAGE_KEYS } from '../lib/storageKeys'
 
 // -----------------------------------------------------------------------------
 // LanguageContext
@@ -18,7 +19,7 @@ import { getContent } from '../data/contentService'
 const LanguageContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useLocalStorage('language-v1', DEFAULT_LANGUAGE)
+  const [lang, setLang] = useLocalStorage(STORAGE_KEYS.language, DEFAULT_LANGUAGE)
 
   const value = useMemo(() => {
     const content = getContent(lang)

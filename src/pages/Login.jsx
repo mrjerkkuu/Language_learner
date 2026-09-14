@@ -5,6 +5,7 @@ import FormField from '../components/FormField'
 import PasswordInput from '../components/PasswordInput'
 import { validateForm } from '../lib/validation'
 import { login, mapAuthError } from '../services/authService'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Login (/login)
@@ -38,7 +39,7 @@ export default function Login() {
     try {
       const res = await login({ email: values.email, password: values.password })
       if (res.ok) {
-        navigate('/') // TODO (Vaihe 3): go to intended route / "/app"
+        navigate(ROUTES.home) // TODO (Vaihe 3): go to intended route / "/app"
       } else {
         setFormError(res.message)
       }
@@ -50,7 +51,7 @@ export default function Login() {
   }
 
   return (
-    <AuthShell kicker="Tervetuloa takaisin" title="Kirjaudu" backTo="/welcome">
+    <AuthShell kicker="Tervetuloa takaisin" title="Kirjaudu" backTo={ROUTES.welcome}>
       <form onSubmit={handleSubmit} noValidate className="mt-2">
         {formError && (
           <div
@@ -95,7 +96,7 @@ export default function Login() {
 
       <p className="mt-5 text-center text-sm text-muted">
         Ei tiliä?{' '}
-        <Link to="/register" className="font-semibold text-accent active:opacity-70">
+        <Link to={ROUTES.register} className="font-semibold text-accent active:opacity-70">
           Rekisteröidy →
         </Link>
       </p>

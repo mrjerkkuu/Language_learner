@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 import { useLocalStorage } from './useLocalStorage'
+import { STORAGE_KEYS } from '../lib/storageKeys'
 
 // -----------------------------------------------------------------------------
 // useAiSettings
@@ -16,7 +17,7 @@ import { useLocalStorage } from './useLocalStorage'
 // never be baked into the build. See the project plan for details.
 // -----------------------------------------------------------------------------
 
-const STORAGE_KEY = 'ai-settings-v1'
+const STORAGE_KEY = STORAGE_KEYS.aiSettings
 
 const DEFAULT_SETTINGS = { apiKey: '', provider: 'none' } // provider: none | gemini | claude
 

@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
+import { ROUTES } from '../lib/routes'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 import { generateDistractors } from '../services/aiService'
@@ -232,12 +234,14 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
             Kertaa väärät
           </button>
         )}
-        <a
-          href="#/"
+        {/* react-router Link (not a raw href): stays correct when routing
+            switches from HashRouter to BrowserRouter in Vaihe 3. */}
+        <Link
+          to={ROUTES.home}
           className="touch-target block w-full rounded-xl bg-card py-3 text-center font-semibold text-ink ring-1 ring-line active:bg-bg"
         >
           Takaisin
-        </a>
+        </Link>
       </div>
     </Layout>
   )

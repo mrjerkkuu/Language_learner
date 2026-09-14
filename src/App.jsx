@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import { FilterProvider } from './context/FilterContext'
+import { ROUTES } from './lib/routes'
 import Home from './pages/Home'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
@@ -28,23 +29,23 @@ function LanguageScopedRoutes() {
   return (
     <FilterProvider key={lang}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path={ROUTES.home} element={<Home />} />
 
         {/* Auth screens (Vaihe 3 frontti). Built now with an isolated
             authService STUB — no real backend yet, so auth is NOT enforced and
             these are simply reachable by URL. When the backend lands, the
             landing becomes "/", the practice area moves behind a guard + demo
             flag, and routing switches to BrowserRouter. */}
-        <Route path="/welcome" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path={ROUTES.welcome} element={<Landing />} />
+        <Route path={ROUTES.login} element={<Login />} />
+        <Route path={ROUTES.register} element={<Register />} />
 
-        <Route path="/flashcards" element={<Flashcard />} />
-        <Route path="/phrases" element={<PhraseBank />} />
-        <Route path="/writing" element={<WritingPractice />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/forms" element={<WordForms />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path={ROUTES.flashcards} element={<Flashcard />} />
+        <Route path={ROUTES.phrases} element={<PhraseBank />} />
+        <Route path={ROUTES.writing} element={<WritingPractice />} />
+        <Route path={ROUTES.quiz} element={<Quiz />} />
+        <Route path={ROUTES.forms} element={<WordForms />} />
+        <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
       </Routes>
     </FilterProvider>
   )

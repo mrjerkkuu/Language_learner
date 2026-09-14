@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Layout
@@ -8,12 +9,14 @@ import { Link } from 'react-router-dom'
 //
 // Props:
 //   - title:    header title (omit for a header-less page, e.g. Home)
-//   - back:     show a back-to-home chevron
+//   - back:     show a back chevron
+//   - backTo:   where the back chevron points (default: the practice home). A
+//               single prop so the Vaihe 3 move to /app only changes ROUTES.
 //   - right:    small text on the right of the bar (e.g. a "12 / 42" counter)
 //   - progress: 0..1; when set, renders the thin accent progress bar under the bar
 // -----------------------------------------------------------------------------
 
-export default function Layout({ title, back = false, right = null, progress = null, children }) {
+export default function Layout({ title, back = false, backTo = ROUTES.home, right = null, progress = null, children }) {
   const showHeader = Boolean(title) || back
 
   return (
@@ -23,7 +26,7 @@ export default function Layout({ title, back = false, right = null, progress = n
           <div className="mx-auto flex max-w-xl items-center gap-2 px-4 py-3">
             {back && (
               <Link
-                to="/"
+                to={backTo}
                 aria-label="Takaisin etusivulle"
                 className="touch-target -ml-2 flex items-center justify-center rounded-lg text-ink active:bg-line/60"
               >

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { STORAGE_KEYS } from '../lib/storageKeys'
 
 // -----------------------------------------------------------------------------
 // useTheme
@@ -9,7 +10,7 @@ import { useState, useEffect, useCallback } from 'react'
 // value before render to avoid a flash.
 // -----------------------------------------------------------------------------
 
-const KEY = 'theme-v1'
+const KEY = STORAGE_KEYS.theme // keep in sync with the early script in index.html
 
 function readStored() {
   try {

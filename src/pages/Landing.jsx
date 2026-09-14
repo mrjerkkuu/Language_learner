@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTheme } from '../hooks/useTheme'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Landing (/welcome)
@@ -57,13 +58,13 @@ export default function Landing() {
 
         <div className="space-y-3">
           <Link
-            to="/register"
+            to={ROUTES.register}
             className="touch-target flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-base font-semibold text-white active:brightness-95"
           >
             Rekisteröidy
           </Link>
           <Link
-            to="/login"
+            to={ROUTES.login}
             className="touch-target flex w-full items-center justify-center rounded-xl bg-card py-3.5 text-base font-semibold text-ink ring-1 ring-line active:bg-bg"
           >
             Kirjaudu
@@ -72,7 +73,7 @@ export default function Landing() {
 
         <div className="mt-5 text-center">
           {/* Demo entry. Pre-backend this just opens the current app. */}
-          <Link to="/" className="text-sm font-semibold text-muted active:opacity-70">
+          <Link to={ROUTES.home} className="text-sm font-semibold text-muted active:opacity-70">
             Kokeile ilman tiliä →
           </Link>
         </div>

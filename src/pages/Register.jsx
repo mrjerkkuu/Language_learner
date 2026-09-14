@@ -5,6 +5,7 @@ import FormField from '../components/FormField'
 import PasswordInput from '../components/PasswordInput'
 import { validateForm, PASSWORD_MIN_LENGTH } from '../lib/validation'
 import { register, mapAuthError } from '../services/authService'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Register (/register)
@@ -35,7 +36,7 @@ export default function Register() {
     try {
       const res = await register(values)
       if (res.ok) {
-        navigate('/') // TODO (Vaihe 3): go to "/app" (and offer demo-progress import)
+        navigate(ROUTES.home) // TODO (Vaihe 3): go to "/app" (and offer demo-progress import)
       } else {
         setFormError(res.message)
       }
@@ -47,7 +48,7 @@ export default function Register() {
   }
 
   return (
-    <AuthShell kicker="Aloita ilmaiseksi" title="Luo tili" backTo="/welcome">
+    <AuthShell kicker="Aloita ilmaiseksi" title="Luo tili" backTo={ROUTES.welcome}>
       <form onSubmit={handleSubmit} noValidate className="mt-2">
         {formError && (
           <div
@@ -105,7 +106,7 @@ export default function Register() {
 
       <p className="mt-5 text-center text-sm text-muted">
         Onko jo tili?{' '}
-        <Link to="/login" className="font-semibold text-accent active:opacity-70">
+        <Link to={ROUTES.login} className="font-semibold text-accent active:opacity-70">
           Kirjaudu →
         </Link>
       </p>

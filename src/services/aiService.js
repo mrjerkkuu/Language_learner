@@ -16,7 +16,9 @@
 // is never committed and, in production, never baked into the build.
 // -----------------------------------------------------------------------------
 
-const AI_SETTINGS_KEY = 'ai-settings-v1' // must match useAiSettings STORAGE_KEY
+import { STORAGE_KEYS } from '../lib/storageKeys'
+
+const AI_SETTINGS_KEY = STORAGE_KEYS.aiSettings // shared with useAiSettings
 
 // Read the stored AI settings ({ apiKey, provider }) directly from localStorage.
 // Kept as a plain function (not a hook) so non-React code can call it too.

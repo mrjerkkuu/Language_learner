@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import FilterBar from '../components/FilterBar'
 import MotivationBar from '../components/MotivationBar'
 import StreakSheet from '../components/StreakSheet'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Home page (menu)
@@ -28,11 +29,11 @@ export default function Home() {
 
   // Module rows use the current language's content for the live counters.
   const modules = [
-    { to: '/flashcards', title: 'Sanakortit', data: content.vocabulary },
-    { to: '/phrases', title: 'Fraasipankki', data: content.phrases },
-    { to: '/writing', title: 'Kirjoitus', data: content.writingTasks },
-    { to: '/quiz', title: 'Quiz', data: content.vocabulary },
-    { to: '/forms', title: 'Muodot', data: content.wordForms },
+    { to: ROUTES.flashcards, title: 'Sanakortit', data: content.vocabulary },
+    { to: ROUTES.phrases, title: 'Fraasipankki', data: content.phrases },
+    { to: ROUTES.writing, title: 'Kirjoitus', data: content.writingTasks },
+    { to: ROUTES.quiz, title: 'Quiz', data: content.vocabulary },
+    { to: ROUTES.forms, title: 'Muodot', data: content.wordForms },
   ]
 
   return (

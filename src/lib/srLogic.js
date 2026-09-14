@@ -4,6 +4,14 @@
 // Extracted from useSpacedRepetition so it can be unit-tested directly. The hook
 // owns state/storage and time/randomness; these functions are pure given their
 // inputs (time and randomness are injected so tests are deterministic).
+//
+// ⚠️ SHARED SINGLE SOURCE — do NOT duplicate this logic.
+// This module is plain, dependency-free ESM (only Math/Date, and Date.now is
+// injectable), so in Vaihe 3 the Fastify server imports THIS SAME FILE to
+// compute weights server-side (the "one source of truth"). When server/ is
+// scaffolded, this stays the shared engine imported by both front and server
+// (see vaihe-3-suunnitelma.md / arkkitehtuuri-arvio-ja-jatkosuunnitelma.md).
+// Keep it free of React/browser/Node-only APIs so it runs in both.
 // -----------------------------------------------------------------------------
 
 export const SR = {
