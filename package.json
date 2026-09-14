@@ -1,0 +1,26 @@
+{
+  "name": "language-learner",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Työelämän ruotsi -kurssin (JAMK) oma harjoittelusovellus. Mobile-first, staattinen, ei backendiä.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}
