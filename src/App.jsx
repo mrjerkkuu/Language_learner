@@ -1,19 +1,23 @@
+import { FilterProvider } from './context/FilterContext'
+import FilterBar from './components/FilterBar'
+
 // Root component of the application.
 //
-// THIS IS A TEMPORARY SHELL (scaffold stage): it only shows a title so the
-// project compiles and runs. Routing (HashRouter) and the modules are added in
-// the following commits, in the implementation order from the project plan.
+// The whole app is wrapped in <FilterProvider> so the part+category filter is
+// shared everywhere. Routing (HashRouter) and the four modules are still added
+// in later commits; for now we render the FilterBar to verify the shared
+// filter state works end to end.
 export default function App() {
   return (
-    <div className="app-safe min-h-screen">
-      <header className="bg-brand-700 text-white px-4 py-4">
-        <h1 className="text-lg font-semibold">Työelämän ruotsi</h1>
-      </header>
-      <main className="p-4">
-        <p className="text-slate-600">
-          Projektin runko pystyssä. Moduulit lisätään seuraavaksi.
-        </p>
-      </main>
-    </div>
+    <FilterProvider>
+      <div className="app-safe min-h-screen">
+        <header className="bg-brand-700 px-4 py-4 text-white">
+          <h1 className="text-lg font-semibold">Työelämän ruotsi</h1>
+        </header>
+        <main className="mx-auto max-w-xl p-4">
+          <FilterBar />
+        </main>
+      </div>
+    </FilterProvider>
   )
 }
