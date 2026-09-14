@@ -1,0 +1,24 @@
+# --- Dependencies ---
+node_modules/
+
+# --- Build output ---
+dist/
+dist-ssr/
+
+# --- Environment variables ---
+# IMPORTANT: these hold the AI API key during local development and must NEVER
+# reach git history. This file is committed in the very first commit precisely
+# so that no .env file can ever slip into the repo by accident.
+.env
+.env.local
+.env.*.local
+
+# --- Editor / OS noise ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
