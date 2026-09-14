@@ -1,12 +1,12 @@
 import { FilterProvider } from './context/FilterContext'
 import FilterBar from './components/FilterBar'
+import Flashcard from './components/Flashcard'
 
 // Root component of the application.
 //
-// The whole app is wrapped in <FilterProvider> so the part+category filter is
-// shared everywhere. Routing (HashRouter) and the four modules are still added
-// in later commits; for now we render the FilterBar to verify the shared
-// filter state works end to end.
+// Still an interim shell: routing (HashRouter) and the Home menu are added in a
+// later commit. For now we render the FilterBar + the Flashcards module so the
+// swipe/flip + spaced-repetition flow can be verified end to end.
 export default function App() {
   return (
     <FilterProvider>
@@ -14,8 +14,9 @@ export default function App() {
         <header className="bg-brand-700 px-4 py-4 text-white">
           <h1 className="text-lg font-semibold">Työelämän ruotsi</h1>
         </header>
-        <main className="mx-auto max-w-xl p-4">
+        <main className="mx-auto max-w-xl space-y-4 p-4">
           <FilterBar />
+          <Flashcard />
         </main>
       </div>
     </FilterProvider>
