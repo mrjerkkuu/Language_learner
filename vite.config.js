@@ -5,16 +5,16 @@ import tailwindcss from '@tailwindcss/vite'
 // Vite configuration.
 // https://vite.dev/config/
 export default defineConfig({
-  // KRIITTINEN GitHub Pages -deploylle:
-  // Sivusto julkaistaan osoitteessa https://mrjerkkuu.github.io/Language_learner/
-  // eli alikansiossa "/Language_learner/". `base` kertoo Vitelle että kaikki
-  // assetit (JS, CSS, kuvat) linkitetään suhteessa tähän polkuun. Ilman tätä
-  // linkit ja assetit rikkoutuvat tuotannossa (näkyy tyhjänä valkoisena sivuna).
-  // Jos repon nimi muuttuu, päivitä tämä polku vastaamaan sitä.
+  // CRITICAL for GitHub Pages deployment:
+  // The site is published at https://mrjerkkuu.github.io/Language_learner/,
+  // i.e. under the subfolder "/Language_learner/". `base` tells Vite to link
+  // every asset (JS, CSS, images) relative to this path. Without it the links
+  // and assets break in production (you get a blank white page).
+  // If the repository is renamed, update this path to match the new name.
   base: '/Language_learner/',
 
   plugins: [
     react(),        // React + JSX + Fast Refresh
-    tailwindcss(),  // Tailwind CSS v4 (CSS-first, ei erillistä tailwind.config.js:ää)
+    tailwindcss(),  // Tailwind CSS v4 (CSS-first, no separate tailwind.config.js)
   ],
 })

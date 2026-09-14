@@ -1,13 +1,13 @@
-// Suodatuksen metatiedot: kurssin OSAT (part) ja AIHEPIIRIT (category).
+// Filtering metadata: the course PARTS (part) and TOPICS (category).
 //
-// Nämä ovat kaksi erillistä, ristiin käytettävää ulottuvuutta:
-//   - part     = kurssin osa / ajallinen eteneminen (Del 1 / 2 / 3)
-//   - category = aihepiiri (mahdollistaa kertauksen yli osarajojen)
+// These are two independent dimensions, used together (cross-filtering):
+//   - part     = course part / temporal progress (Del 1 / 2 / 3)
+//   - category = topic (enables reviewing across part boundaries)
 //
-// Kaikki datatiedostot (vocabulary/phrases/writingTasks/fillBlanks) käyttävät
-// näitä samoja id-arvoja. Jos lisäät oikean kurssimateriaalin, voit käyttää
-// näitä samoja arvoja tai lisätä uusia rivejä tähän — käyttöliittymä päivittyy
-// automaattisesti. `label` on suomenkielinen näyttönimi käyttöliittymässä.
+// All data files (vocabulary/phrases/writingTasks/fillBlanks) use these same
+// id values. When you add real course material, reuse these ids or add new
+// rows here — the UI updates automatically. `label` is the Finnish display
+// name shown in the UI.
 
 export const PARTS = [
   { id: 1, label: 'Del 1', subtitle: 'Studier & småprat' },
@@ -23,8 +23,8 @@ export const CATEGORIES = [
   { id: 'ict', label: 'ICT' },
 ]
 
-// Apufunktiot: id -> näyttönimi. Palauttavat id:n itsensä jos nimeä ei löydy,
-// jotta uusi (vielä nimeämätön) kategoria ei kaada käyttöliittymää.
+// Helpers: id -> display name. Fall back to the id itself if no label is found,
+// so a new (not-yet-named) category can't crash the UI.
 export const categoryLabel = (id) =>
   CATEGORIES.find((c) => c.id === id)?.label ?? id
 

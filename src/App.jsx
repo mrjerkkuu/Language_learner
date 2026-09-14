@@ -1,8 +1,8 @@
-// Sovelluksen juurikomponentti.
+// Root component of the application.
 //
-// TÄMÄ ON VÄLIAIKAINEN RUNKO (scaffold-vaihe): näyttää vain otsikon, jotta
-// projekti kääntyy ja käynnistyy. Reititys (HashRouter) ja moduulit lisätään
-// seuraavissa committeissa suunnitelman toteutusjärjestyksen mukaan.
+// THIS IS A TEMPORARY SHELL (scaffold stage): it only shows a title so the
+// project compiles and runs. Routing (HashRouter) and the modules are added in
+// the following commits, in the implementation order from the project plan.
 export default function App() {
   return (
     <div className="app-safe min-h-screen">
