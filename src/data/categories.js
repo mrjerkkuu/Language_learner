@@ -1,18 +1,18 @@
-// Filtering metadata: the course PARTS (part) and TOPICS (category).
+// Filtering metadata: the broad TOPIC AREAS (part) and finer TOPICS (category).
 //
-// These are two independent dimensions, used together (cross-filtering):
-//   - part     = course part / temporal progress (Del 1 / 2 / 3)
-//   - category = topic (enables reviewing across part boundaries)
+// Two independent dimensions, used together (cross-filtering):
+//   - part     = broad topic area (a themed section of the material)
+//   - category = finer topic (enables reviewing across area boundaries)
 //
-// All data files (vocabulary/phrases/writingTasks/fillBlanks) use these same
-// id values. When you add real course material, reuse these ids or add new
-// rows here — the UI updates automatically. `label` is the Finnish display
-// name shown in the UI.
+// NOTE: these labels are deliberately generic topic names (not "Del 1/2/3"),
+// so the app works for anyone — not just this specific course. To adapt the app
+// to different material, just rename these labels (and reuse the same ids in the
+// data files) — no code changes needed. `label` is the display name in the UI.
 
 export const PARTS = [
-  { id: 1, label: 'Del 1', subtitle: 'Studier & småprat' },
-  { id: 2, label: 'Del 2', subtitle: 'Arbetslivet & kommunikation' },
-  { id: 3, label: 'Del 3', subtitle: 'Min bransch' },
+  { id: 1, label: 'Studier & småprat' },
+  { id: 2, label: 'Arbetslivet & kommunikation' },
+  { id: 3, label: 'Min bransch' },
 ]
 
 export const CATEGORIES = [
@@ -24,17 +24,7 @@ export const CATEGORIES = [
 ]
 
 // Helpers: id -> display name. Fall back to the id itself if no label is found,
-// so a new (not-yet-named) category can't crash the UI.
-export const categoryLabel = (id) =>
-  CATEGORIES.find((c) => c.id === id)?.label ?? id
+// so a new (not-yet-named) area/category can't crash the UI.
+export const partLabel = (id) => PARTS.find((p) => p.id === id)?.label ?? `Osa ${id}`
 
-// Short label ("Del 1") — used in tight spaces like the small tag chips.
-export const partLabel = (id) =>
-  PARTS.find((p) => p.id === id)?.label ?? `Del ${id}`
-
-// Full label with the real topic title ("Del 1 – Studier & småprat") — used in
-// the filter menu on the home page.
-export const partFullLabel = (id) => {
-  const p = PARTS.find((x) => x.id === id)
-  return p ? `${p.label} – ${p.subtitle}` : `Del ${id}`
-}
+export const categoryLabel = (id) => CATEGORIES.find((c) => c.id === id)?.label ?? id

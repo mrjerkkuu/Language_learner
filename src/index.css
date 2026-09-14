@@ -3,44 +3,82 @@
    defined directly in CSS inside the @theme block. */
 @import "tailwindcss";
 
-/* --- Custom theme tokens ---
-   These auto-generate Tailwind utilities, e.g. --color-brand-500 becomes the
-   classes `bg-brand-500`, `text-brand-500`, etc. Teal-based palette = calm,
-   good contrast. */
+/* -----------------------------------------------------------------------------
+   Design system "2a — Selkeä + värikäs motivaatio"
+   Colours are given in oklch (the design's canonical format). Each token here
+   auto-generates Tailwind utilities, e.g. --color-accent -> bg-accent /
+   text-accent / border-accent, and --font-display -> font-display.
+----------------------------------------------------------------------------- */
 @theme {
-  --color-brand-50: #f0fdfa;
-  --color-brand-100: #ccfbf1;
-  --color-brand-400: #2dd4bf;
-  --color-brand-500: #14b8a6;
-  --color-brand-600: #0d9488;
-  --color-brand-700: #0f766e;
+  /* Surfaces & text */
+  --color-bg: oklch(0.986 0.004 250);        /* cool near-white page background */
+  --color-card: #ffffff;                      /* cards / surfaces */
+  --color-ink: oklch(0.27 0.02 260);          /* primary text */
+  --color-muted: oklch(0.54 0.015 260);       /* muted / secondary text */
+  --color-line: oklch(0.91 0.006 260);        /* borders / hairlines */
+
+  /* Accent (blue): buttons, active states, progress bars */
+  --color-accent: oklch(0.55 0.1 250);
+  --color-accent-soft: oklch(0.95 0.02 250);  /* selected quiz answer bg, tags */
+
+  /* Warm streak colour (the "putki" badge) */
+  --color-streak: oklch(0.72 0.14 55);
+
+  /* "Learned" green (per-Del progress bars) */
+  --color-learned: oklch(0.62 0.13 152);
+  --color-learned-soft: oklch(0.95 0.03 152); /* soft green for model-answer card */
+
+  /* Wrong-answer red (quiz results) */
+  --color-wrong: oklch(0.62 0.17 25);
+
+  /* Fonts */
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
 }
 
-/* --- Base styles --- */
+/* -----------------------------------------------------------------------------
+   Base styles
+----------------------------------------------------------------------------- */
 :root {
   color-scheme: light;
-  /* Safe system font stack on every device, no external font download. */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 
 body {
   margin: 0;
-  background: #f8fafc;         /* slate-50 */
-  color: #0f172a;              /* slate-900 */
-  /* Prevent text selection during swipe gestures (better mobile feel). */
+  background: var(--color-bg);
+  color: var(--color-ink);
+  /* Nicer feel on mobile: no blue tap flash, no accidental text selection on
+     the swipeable card. */
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Respect the phone's safe-area edges (notch, home indicator bar).
-   Applied to the app's outer wrapper in App.jsx via the class `app-safe`. */
+/* The motivation bar's colourful gradient (the one bright element in 2a). */
+.bg-motivation {
+  background-image: linear-gradient(120deg, oklch(0.55 0.14 265), oklch(0.58 0.12 235));
+}
+
+/* Respect the phone's safe-area edges (notch, home indicator bar). */
 .app-safe {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Helper: guarantees the minimum 44x44px touch target (mobile-first requirement). */
+/* Helper: guarantees the minimum 44x44px touch target (mobile-first). */
 .touch-target {
   min-width: 44px;
   min-height: 44px;
 }
+
+/* --- Bottom-sheet animations (used by StreakSheet) --- */
+@keyframes sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-sheet { animation: sheet-up 220ms ease-out; }
+.animate-fade { animation: fade-in 200ms ease-out; }
