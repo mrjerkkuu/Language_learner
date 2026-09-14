@@ -1,95 +1,72 @@
 import { useFilter } from '../context/FilterContext'
-import { PARTS, CATEGORIES, partFullLabel } from '../data/categories'
+import { PARTS, CATEGORIES, partLabel } from '../data/categories'
 
 // -----------------------------------------------------------------------------
 // FilterBar
 // -----------------------------------------------------------------------------
-// Reusable filter control used on the home page (and available to any module).
-// It reads and writes the global FilterContext, so wherever it is rendered it
-// controls the same shared filter.
-//
-// Layout is mobile-first: part options are a wrapping row of pill buttons and
-// categories are toggle chips. Every interactive element is a real <button>
-// with a min height of 44px (touch-target), and nothing relies on hover.
+// The global filter on the home page. Two dimensions:
+//   - area  (single choice): "Kaikki" + one pill per topic area, in a
+//            horizontally scrolling row (fits long titles on a phone).
+//   - topic (multi-select): chips; empty selection means "all topics".
+// Both read/write the shared FilterContext, so every module sees the selection.
 // -----------------------------------------------------------------------------
 
 export default function FilterBar() {
-  const { part, setPart, categories, toggleCategory, clearFilters, isFiltered } = useFilter()
+  const { part, setPart, categories, toggleCategory } = useFilter()
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-      {/* --- Part selector (single choice) ---
-          Shown as a vertical list so the full topic titles fit on a phone. */}
-      <div className="mb-3">
-        <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-          Osa
-        </div>
-        <div className="flex flex-col gap-2">
-          {/* "Kaikki osat" (all) + one row per Del with its real topic title. */}
-          <PartButton active={part === 'all'} onClick={() => setPart('all')}>
-            Kaikki osat
-          </PartButton>
+    <div className="space-y-3">
+      {/* Area pills — horizontal, scrollable. The -mx-4/px-4 lets the row bleed
+          to the screen edges so pills can scroll past them cleanly. */}
+      <div className="-mx-4 overflow-x-auto px-4">
+        <div className="flex w-max gap-2">
+          <Pill active={part === 'all'} onClick={() => setPart('all')}>
+            Kaikki
+          </Pill>
           {PARTS.map((p) => (
-            <PartButton key={p.id} active={part === p.id} onClick={() => setPart(p.id)}>
-              {partFullLabel(p.id)}
-            </PartButton>
+            <Pill key={p.id} active={part === p.id} onClick={() => setPart(p.id)}>
+              {partLabel(p.id)}
+            </Pill>
           ))}
         </div>
       </div>
 
-      {/* --- Category selector (multi-select) --- */}
-      <div>
-        <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-          Aihepiiri
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map((c) => {
-            const selected = categories.includes(c.id)
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => toggleCategory(c.id)}
-                aria-pressed={selected}
-                className={
-                  'touch-target rounded-full px-4 text-sm font-medium transition-colors ' +
-                  (selected
-                    ? 'bg-brand-600 text-white'
-                    : 'bg-slate-100 text-slate-700 active:bg-slate-200')
-                }
-              >
-                {c.label}
-              </button>
-            )
-          })}
-        </div>
+      {/* Topic chips — multi-select. */}
+      <div className="flex flex-wrap gap-2">
+        {CATEGORIES.map((c) => {
+          const selected = categories.includes(c.id)
+          return (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => toggleCategory(c.id)}
+              aria-pressed={selected}
+              className={
+                'touch-target rounded-full px-3 text-sm font-medium transition-colors ' +
+                (selected
+                  ? 'bg-accent-soft text-accent ring-1 ring-accent/30'
+                  : 'bg-card text-muted ring-1 ring-line active:bg-bg')
+              }
+            >
+              {c.label}
+            </button>
+          )
+        })}
       </div>
-
-      {/* --- Reset link: only shown when something is actually filtered --- */}
-      {isFiltered && (
-        <button
-          type="button"
-          onClick={clearFilters}
-          className="mt-3 text-sm font-medium text-brand-700 underline underline-offset-2"
-        >
-          Tyhjennä suodattimet
-        </button>
-      )}
     </div>
   )
 }
 
-// Full-width, left-aligned row button for the part selector. Kept here (not
-// exported) because it is only used by FilterBar.
-function PartButton({ active, onClick, children }) {
+// A single area pill (single-choice). Active = filled accent.
+function Pill({ active, onClick, children }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={active}
       className={
-        'touch-target w-full rounded-xl px-4 py-2 text-left text-sm font-medium transition-colors ' +
-        (active ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-700 active:bg-slate-200')
+        'touch-target whitespace-nowrap rounded-full px-4 text-sm font-semibold transition-colors ' +
+        (active ? 'bg-accent text-white' : 'bg-card text-ink ring-1 ring-line active:bg-bg')
       }
     >
       {children}

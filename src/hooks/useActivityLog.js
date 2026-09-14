@@ -65,7 +65,32 @@ export function useActivityLog() {
     const weekCount = week.reduce((sum, s) => sum + s.count, 0)
     const activeDaysThisWeek = week.length // how many distinct days had activity
 
-    return { todayCount, weekCount, activeDaysThisWeek }
+    // --- Streaks ("putki") ---
+    // A day counts toward the streak if it has any activity. The current streak
+    // counts consecutive days ending today (or yesterday, so the streak still
+    // shows during today before you've practised yet).
+    const activeSet = new Set(sessions.map((s) => s.date))
+    let currentStreak = 0
+    const cursor = new Date(now)
+    if (!activeSet.has(todayKey(cursor))) cursor.setDate(cursor.getDate() - 1)
+    while (activeSet.has(todayKey(cursor))) {
+      currentStreak += 1
+      cursor.setDate(cursor.getDate() - 1)
+    }
+
+    // Best streak: the longest run of consecutive active days in all history.
+    const dates = [...activeSet].sort()
+    let bestStreak = 0
+    let run = 0
+    let prev = null
+    for (const ds of dates) {
+      const d = new Date(ds)
+      run = prev && d - prev === 86400000 ? run + 1 : 1
+      bestStreak = Math.max(bestStreak, run)
+      prev = d
+    }
+
+    return { todayCount, weekCount, activeDaysThisWeek, currentStreak, bestStreak }
   }, [log])
 
   return { logActivity, getSummary }

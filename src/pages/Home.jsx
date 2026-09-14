@@ -1,84 +1,98 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import vocabulary from '../data/vocabulary.json'
 import phrases from '../data/phrases.json'
 import writingTasks from '../data/writingTasks.json'
 import { useFilter } from '../context/FilterContext'
+import { useActivityLog } from '../hooks/useActivityLog'
+import Layout from '../components/Layout'
 import FilterBar from '../components/FilterBar'
-import ProgressStats from '../components/ProgressStats'
+import MotivationBar from '../components/MotivationBar'
+import StreakSheet from '../components/StreakSheet'
 
 // -----------------------------------------------------------------------------
-// Home page
+// Home page (menu)
 // -----------------------------------------------------------------------------
-// The home page is a MENU, not content: a global filter at the top, a progress
-// summary, and one card per module. Each card shows a live content counter for
-// the current filter, and is disabled (with an empty-state hint) when the filter
-// leaves that module with nothing to practise.
+// A menu, not content: title, the colourful motivation bar (opens the streak
+// sheet), the global filter, and one row per module with a live per-filter
+// counter. A module row is disabled when the filter leaves it empty.
 // -----------------------------------------------------------------------------
 
-// Module definitions. `data` is the source array used only to count how many
-// items match the current filter (the module itself does the real work).
 const MODULES = [
-  { to: '/flashcards', title: 'Flashcards', desc: 'Sanaston kertaus korteilla', data: vocabulary, unit: 'korttia' },
-  { to: '/phrases', title: 'Fraasipankki', desc: 'Small talk & viestintäfraasit', data: phrases, unit: 'fraasia' },
-  { to: '/writing', title: 'Kirjoitusharjoitus', desc: 'Kirjoita ja vertaa mallivastaukseen', data: writingTasks, unit: 'tehtävää' },
-  { to: '/quiz', title: 'Quiz', desc: 'Testaa muistamista', data: vocabulary, unit: 'sanaa' },
+  { to: '/flashcards', title: 'Sanakortit', data: vocabulary },
+  { to: '/phrases', title: 'Fraasipankki', data: phrases },
+  { to: '/writing', title: 'Kirjoitus', data: writingTasks },
+  { to: '/quiz', title: 'Quiz', data: vocabulary },
 ]
 
 export default function Home() {
   const { filterItems } = useFilter()
+  const { getSummary } = useActivityLog()
+  const [sheetOpen, setSheetOpen] = useState(false)
+
+  const activity = getSummary()
 
   return (
-    <div className="space-y-6">
-      {/* Global filter — the single source of truth shared by every module. */}
-      <FilterBar />
+    <Layout>
+      <div className="space-y-5">
+        {/* Title block */}
+        <div>
+          <div className="text-sm text-muted">Työelämän ruotsi</div>
+          <h1 className="font-display text-3xl font-bold text-ink">Harjoittele</h1>
+        </div>
 
-      {/* Progress + activity summary. */}
-      <ProgressStats />
+        {/* Colourful motivation bar -> opens the streak sheet. */}
+        <MotivationBar onOpen={() => setSheetOpen(true)} />
 
-      {/* Module cards with live counters. */}
-      <div className="grid gap-3">
-        {MODULES.map((m) => {
-          const count = filterItems(m.data).length
-          return <ModuleCard key={m.to} module={m} count={count} />
-        })}
+        {/* Global filter. */}
+        <FilterBar />
+
+        {/* Module list. */}
+        <div className="space-y-2">
+          {MODULES.map((m) => (
+            <ModuleRow key={m.to} module={m} count={filterItems(m.data).length} />
+          ))}
+        </div>
+
+        {/* Footer activity line. */}
+        <p className="pt-2 text-center text-sm text-muted">
+          Harjoiteltu {activity.activeDaysThisWeek} kertaa tällä viikolla
+        </p>
       </div>
-    </div>
+
+      {/* The bottom sheet lives here but only renders when open. */}
+      <StreakSheet open={sheetOpen} onClose={() => setSheetOpen(false)} />
+    </Layout>
   )
 }
 
-// A single module card. When `count` is 0, the card is not a link and shows an
-// empty-state hint instead of navigating to a module with nothing in it.
-function ModuleCard({ module, count }) {
+// One module row: colored marker + name on the left, counter + chevron on the
+// right. Disabled (non-clickable, muted) when the filter leaves it empty.
+function ModuleRow({ module, count }) {
   const disabled = count === 0
 
   const inner = (
     <div
       className={
-        'flex items-center justify-between rounded-2xl p-4 shadow-sm ring-1 transition-colors ' +
-        (disabled
-          ? 'bg-slate-50 ring-slate-200'
-          : 'bg-white ring-slate-200 active:bg-brand-50')
+        'flex items-center justify-between rounded-[14px] p-4 ring-1 transition-colors ' +
+        (disabled ? 'bg-card/60 ring-line' : 'bg-card ring-line active:bg-bg')
       }
     >
-      <div>
-        <div className={'font-semibold ' + (disabled ? 'text-slate-400' : 'text-slate-900')}>
+      <div className="flex items-center gap-3">
+        <span className={'h-2.5 w-2.5 rounded-sm ' + (disabled ? 'bg-line' : 'bg-accent')} />
+        <span className={'font-medium ' + (disabled ? 'text-muted' : 'text-ink')}>
           {module.title}
-        </div>
-        <div className="text-sm text-slate-500">{module.desc}</div>
+        </span>
       </div>
-      <div className="ml-3 shrink-0 text-right">
-        {disabled ? (
-          <span className="text-sm text-slate-400">Ei sisältöä</span>
-        ) : (
-          <span className="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700">
-            {count} {module.unit}
-          </span>
-        )}
+      <div className="flex items-center gap-2 text-muted">
+        <span className="text-sm">{count}</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
     </div>
   )
 
-  // Disabled cards are plain (non-clickable) divs.
   if (disabled) return inner
   return <Link to={module.to}>{inner}</Link>
 }
