@@ -1,0 +1,26 @@
+[
+  { "id": "p001", "sv": "Hur mår du?", "fi": "Mitä kuuluu?", "part": 1, "category": "smaprat" },
+  { "id": "p002", "sv": "Tack, bara bra. Och du?", "fi": "Kiitos, ihan hyvää. Entä sinä?", "part": 1, "category": "smaprat" },
+  { "id": "p003", "sv": "Vad heter du?", "fi": "Mikä sinun nimesi on?", "part": 1, "category": "smaprat" },
+  { "id": "p004", "sv": "Var kommer du ifrån?", "fi": "Mistä olet kotoisin?", "part": 1, "category": "smaprat" },
+  { "id": "p005", "sv": "Vad gjorde du i helgen?", "fi": "Mitä teit viikonloppuna?", "part": 1, "category": "smaprat" },
+  { "id": "p006", "sv": "Vi ses senare!", "fi": "Nähdään myöhemmin!", "part": 1, "category": "smaprat" },
+  { "id": "p007", "sv": "Vad studerar du?", "fi": "Mitä opiskelet?", "part": 1, "category": "opiskelu" },
+  { "id": "p008", "sv": "Jag studerar informationsteknik.", "fi": "Opiskelen tieto- ja viestintätekniikkaa.", "part": 1, "category": "opiskelu" },
+  { "id": "p009", "sv": "När börjar kursen?", "fi": "Milloin kurssi alkaa?", "part": 1, "category": "opiskelu" },
+
+  { "id": "p010", "sv": "Kan du hjälpa mig med en sak?", "fi": "Voitko auttaa minua yhdessä asiassa?", "part": 2, "category": "viestinta" },
+  { "id": "p011", "sv": "Jag återkommer så snart som möjligt.", "fi": "Palaan asiaan mahdollisimman pian.", "part": 2, "category": "viestinta" },
+  { "id": "p012", "sv": "Kan du förklara det en gång till?", "fi": "Voitko selittää sen vielä kerran?", "part": 2, "category": "viestinta" },
+  { "id": "p013", "sv": "Jag håller med dig.", "fi": "Olen samaa mieltä kanssasi.", "part": 2, "category": "viestinta" },
+  { "id": "p014", "sv": "Vi bokar ett möte nästa vecka.", "fi": "Varataan kokous ensi viikolle.", "part": 2, "category": "tyoelama" },
+  { "id": "p015", "sv": "Jag skickar dig ett mejl om detaljerna.", "fi": "Lähetän sinulle sähköpostin yksityiskohdista.", "part": 2, "category": "viestinta" },
+  { "id": "p016", "sv": "Vad är din roll i projektet?", "fi": "Mikä on roolisi projektissa?", "part": 2, "category": "tyoelama" },
+  { "id": "p017", "sv": "Kan vi ta det på mötet?", "fi": "Voidaanko käsitellä se kokouksessa?", "part": 2, "category": "tyoelama" },
+
+  { "id": "p018", "sv": "Kan du beskriva ditt yrke?", "fi": "Voitko kuvailla ammattiasi?", "part": 3, "category": "ict" },
+  { "id": "p019", "sv": "Jag jobbar som mjukvaruutvecklare.", "fi": "Työskentelen ohjelmistokehittäjänä.", "part": 3, "category": "ict" },
+  { "id": "p020", "sv": "Vilka programmeringsspråk kan du?", "fi": "Mitä ohjelmointikieliä osaat?", "part": 3, "category": "ict" },
+  { "id": "p021", "sv": "Systemet kraschade igår.", "fi": "Järjestelmä kaatui eilen.", "part": 3, "category": "ict" },
+  { "id": "p022", "sv": "Vi måste testa koden innan vi publicerar.", "fi": "Meidän täytyy testata koodi ennen julkaisua.", "part": 3, "category": "ict" }
+]
