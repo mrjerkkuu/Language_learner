@@ -1,13 +1,25 @@
-# Työelämän ruotsi — harjoittelusovellus
+# Language Learner
 
-A mobile-first, fully static web app for practising work-life Swedish (ICT
-focus). Single user, no backend, no login — all progress is saved in the
-browser's `localStorage`.
+A mobile-first web app for practising a foreign language through flashcards,
+phrases, writing tasks and quizzes. The in-app UI is in Finnish.
+
+It currently ships as a **static MVP** focused on work-life Swedish (ICT), with
+all progress saved locally in the browser. It is actively evolving toward a
+**multi-language app with user accounts and a backend** — see the Roadmap below.
 
 **Stack:** Vite + React 19 + Tailwind CSS v4 + React Router (HashRouter).
-**Deploy:** GitHub Pages (static).
+**Deploy:** GitHub Pages (static) via GitHub Actions.
 
-## Modules
+## Status
+
+| Area | Now | Planned |
+|---|---|---|
+| Content | Work-life Swedish (example ICT data) | Multiple languages — Swedish + English first |
+| Users | Single user, no login | Secure registration/login + protected content |
+| Storage | Browser `localStorage` | Backend + database |
+| AI | None (interface stubbed) | Optional writing feedback |
+
+## Modules (current)
 
 | Module | Practises | How |
 |---|---|---|
@@ -16,8 +28,8 @@ browser's `localStorage`.
 | **Kirjoitus** (Writing) | Written production | Prompt → own answer → model answer |
 | **Quiz** | Active recall | Multiple choice + fill-in-the-blank, feedback at the end |
 
-Spaced repetition (a light, weighted system) decides which items come up more
-often; wrong/hard answers return sooner, learned words are shown rarely.
+A light, weighted spaced-repetition system decides which items come up more
+often: wrong/hard answers return sooner, learned words are shown rarely.
 
 ## Local development
 
@@ -30,43 +42,59 @@ npm run build    # production build into dist/
 npm run preview  # preview the production build locally
 ```
 
-## Deploy to GitHub Pages
+## Deploy (GitHub Pages)
 
-**Recommended (automatic):** the workflow in `.github/workflows/deploy.yml`
-builds and deploys on every push to `main`. One-time setup:
+The workflow in `.github/workflows/deploy.yml` builds and deploys on every push
+to `main`. One-time setup: repo **Settings → Pages → Build and deployment →
+Source = "GitHub Actions"**. The site then publishes to
+`https://mrjerkkuu.github.io/Language_learner/`.
 
-1. Push this repo to GitHub.
-2. Repo **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
-3. Every push to `main` then publishes to
-   `https://mrjerkkuu.github.io/Language_learner/`.
+> **Important:** `vite.config.js` sets `base: '/Language_learner/'`, which must
+> match the repository name exactly (case-sensitive), or assets break in
+> production (blank page). Update both together if the repo is renamed.
 
-**Alternative (manual):** `npm run deploy` (uses the `gh-pages` package to push
-the built `dist/` to a `gh-pages` branch).
-
-> **Important:** `vite.config.js` sets `base: '/Language_learner/'`. This must
-> match the repository name, or assets break in production. Rename both together
-> if you rename the repo.
+A manual alternative exists: `npm run deploy` (publishes `dist/` to a `gh-pages`
+branch via the `gh-pages` package).
 
 ## Editing the content
 
-All content lives in `src/data/` as plain JSON — no code changes needed to
-update it. Each item carries two independent tags:
+All content lives in `src/data/` as plain JSON — no code changes needed. Each
+item carries two independent tags:
 
-- `part` — broad topic area (see `categories.js`)
+- `part` — broad topic area (labels in `categories.js`)
 - `category` — finer topic (enables cross-area review)
 
 Files: `vocabulary.json`, `phrases.json`, `writingTasks.json`, `fillBlanks.json`.
-Labels for the areas/categories are in `src/data/categories.js`. Replace the
-example data with real course material any time — keep the same field shape.
+Replace the example data with real material any time — keep the same field shape.
+(Multi-language support will extend this structure per language.)
+
+## Roadmap
+
+Tracked in detail in the project notes (`tulevat-muutokset.md`). Summary:
+
+1. **UI/logic fixes** — flashcard rating becomes right/wrong (easy/hard derived
+   automatically), hide the filter row's scrollbar, add a real 3D card-flip
+   animation.
+2. **Multi-language + word forms** — support several target languages (Swedish
+   + English first) and a new exercise type for word forms (e.g. Swedish
+   *en/ett*, base and inflected forms). Requires a per-language data model.
+3. **Backend + auth + database** — secure registration/login, route guards, a
+   public landing page, and moving progress into a database served by a backend.
+   Hosting is decided at this stage: the static frontend can stay on GitHub
+   Pages calling the API (needs HTTPS backend + CORS), or frontend and backend
+   can be served from one origin for simpler, safer auth.
+
+Preparation folded into phases 1–2: isolate data/progress behind a service layer
+(like `aiService`) so `localStorage` can later be swapped for a backend API
+without touching module code.
 
 ## Adding AI later (optional)
 
-The app ships with no AI. The interface is already isolated in
-`src/services/aiService.js` (`checkWriting`, `generateDistractors`), which return
-`null` until a key is set. The Writing and Quiz modules already call these and
-fall back gracefully, so AI can be added later without touching module code. The
-user's own API key would be stored in `localStorage` (never committed, never
-baked into the build — GitHub Pages is static).
+The AI interface is isolated in `src/services/aiService.js` (`checkWriting`,
+`generateDistractors`), returning `null` until a key is set. The Writing and
+Quiz modules already call these and fall back gracefully, so AI can be added
+without touching module code. A user's own API key would be stored in
+`localStorage` — never committed, never baked into the build.
 
 ## Project structure
 
