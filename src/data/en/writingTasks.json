@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ew001",
+    "part": 1,
+    "category": "smalltalk",
+    "task": "Introduce yourself briefly: your name, where you live, and one hobby (2–3 sentences).",
+    "task_fi": "Esittele itsesi lyhyesti: nimi, asuinpaikka ja yksi harrastus (2–3 lausetta).",
+    "hints": ["my name is", "I live in", "in my free time"],
+    "model_answer": "Hi! My name is Jeremia and I live in Jyväskylä. In my free time I like playing football and photography."
+  },
+  {
+    "id": "ew002",
+    "part": 2,
+    "category": "work",
+    "task": "Write a short message to a colleague suggesting a meeting next week (2–3 sentences).",
+    "task_fi": "Kirjoita lyhyt viesti kollegalle, jossa ehdotat kokousta ensi viikolle (2–3 lausetta).",
+    "hints": ["hi", "could we book a meeting", "what suits you"],
+    "model_answer": "Hi Anna! Could we book a meeting next week to discuss the project? What suits you best, Tuesday or Wednesday?"
+  },
+  {
+    "id": "ew003",
+    "part": 2,
+    "category": "communication",
+    "task": "Reply to a customer's email: thank them and promise to get back to them.",
+    "task_fi": "Vastaa asiakkaan sähköpostiin: kiitä viestistä ja lupaa palata asiaan.",
+    "hints": ["thank you for your email", "I will get back to you", "as soon as possible"],
+    "model_answer": "Thank you for your email! I have received your question and will get back to you as soon as possible, by Friday at the latest."
+  },
+  {
+    "id": "ew004",
+    "part": 3,
+    "category": "it",
+    "task": "Describe your field (IT) and your future profession (3–4 sentences).",
+    "task_fi": "Kuvaile omaa alaasi (IT) ja tulevaa ammattiasi (3–4 lausetta).",
+    "hints": ["I study", "I want to work as", "programming", "build / develop"],
+    "model_answer": "I study information technology and I am especially interested in programming. In the future I want to work as a software developer. Then I get to build software and solve problems every day."
+  }
+]

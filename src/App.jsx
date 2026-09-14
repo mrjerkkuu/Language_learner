@@ -1,37 +1,48 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import { FilterProvider } from './context/FilterContext'
 import Home from './pages/Home'
 import Flashcard from './components/Flashcard'
 import PhraseBank from './components/PhraseBank'
 import WritingPractice from './components/WritingPractice'
 import Quiz from './components/Quiz'
+import WordForms from './components/WordForms'
 
 // -----------------------------------------------------------------------------
 // App root
 // -----------------------------------------------------------------------------
-// - FilterProvider wraps everything so the area+topic filter is shared across
-//   all pages and survives navigation.
-// - HashRouter is used deliberately for GitHub Pages: routes live in the URL
-//   hash (e.g. /Language_learner/#/quiz), so refreshing or deep-linking a module
-//   never asks the server for a path it doesn't have — no 404.html workaround.
-// - Each page renders its own <Layout> (with the right header/counter/progress),
-//   so routes here are just the page components.
+// - LanguageProvider holds the selected target language + its content.
+// - FilterProvider is keyed by language, so switching language remounts the
+//   routed subtree and cleanly re-initialises per-language state (spaced
+//   repetition, the area+topic filter).
+// - HashRouter keeps routing in the URL hash — GitHub Pages friendly (no
+//   server-side rewrites / 404.html needed).
 // -----------------------------------------------------------------------------
+
+// The routed part of the app, remounted per language via key.
+function LanguageScopedRoutes() {
+  const { lang } = useLanguage()
+  return (
+    <FilterProvider key={lang}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/flashcards" element={<Flashcard />} />
+        <Route path="/phrases" element={<PhraseBank />} />
+        <Route path="/writing" element={<WritingPractice />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/forms" element={<WordForms />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </FilterProvider>
+  )
+}
 
 export default function App() {
   return (
-    <FilterProvider>
+    <LanguageProvider>
       <HashRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/flashcards" element={<Flashcard />} />
-          <Route path="/phrases" element={<PhraseBank />} />
-          <Route path="/writing" element={<WritingPractice />} />
-          <Route path="/quiz" element={<Quiz />} />
-          {/* Unknown paths fall back to the home page. */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <LanguageScopedRoutes />
       </HashRouter>
-    </FilterProvider>
+    </LanguageProvider>
   )
 }

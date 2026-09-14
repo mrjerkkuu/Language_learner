@@ -22,7 +22,14 @@ const SWIPE_THRESHOLD = 80 // px the card must travel before a swipe fires
 const TAP_MAX = 10 // px below which a press counts as a tap (not a drag)
 const EXIT_DISTANCE = 500 // px the card flies off screen on a committed swipe
 
-export default function SwipeableCard({ onSwipeLeft, onSwipeRight, onTap, children }) {
+export default function SwipeableCard({
+  onSwipeLeft,
+  onSwipeRight,
+  onTap,
+  leftLabel = '← Vasen',
+  rightLabel = 'Oikea →',
+  children,
+}) {
   const [dx, setDx] = useState(0) // current horizontal offset
   const [dragging, setDragging] = useState(false) // finger/mouse currently down
   const [exiting, setExiting] = useState(false) // playing the fly-off animation
@@ -89,8 +96,8 @@ export default function SwipeableCard({ onSwipeLeft, onSwipeRight, onTap, childr
   return (
     <div className="relative select-none">
       {/* Directional hints that fade in as you drag. */}
-      <SwipeHint side="left" visible={dx < -20} />
-      <SwipeHint side="right" visible={dx > 20} />
+      <SwipeHint side="left" visible={dx < -20} label={leftLabel} />
+      <SwipeHint side="right" visible={dx > 20} label={rightLabel} />
 
       <div
         onPointerDown={handlePointerDown}
@@ -112,7 +119,7 @@ export default function SwipeableCard({ onSwipeLeft, onSwipeRight, onTap, childr
 }
 
 // Small overlay label shown while dragging toward one side.
-function SwipeHint({ side, visible }) {
+function SwipeHint({ side, visible, label }) {
   const isRight = side === 'right'
   return (
     <div
@@ -125,7 +132,7 @@ function SwipeHint({ side, visible }) {
         (visible ? ' opacity-100' : ' opacity-0')
       }
     >
-      {isRight ? 'Helppo →' : '← Vaikea'}
+      {label}
     </div>
   )
 }

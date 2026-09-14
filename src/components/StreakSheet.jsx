@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
-import vocabulary from '../data/vocabulary.json'
-import { PARTS } from '../data/categories'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 
@@ -17,22 +16,26 @@ import { useActivityLog } from '../hooks/useActivityLog'
 
 export default function StreakSheet({ open, onClose }) {
   const { filterItems, categories } = useFilter()
+  const { content } = useLanguage()
   const { computeStats } = useSpacedRepetition()
   const { getSummary } = useActivityLog()
 
   // Top boxes respect the active filter (consistent with the motivation bar).
-  const stats = useMemo(() => computeStats(filterItems(vocabulary)), [filterItems, computeStats])
+  const stats = useMemo(
+    () => computeStats(filterItems(content.vocabulary)),
+    [filterItems, computeStats, content],
+  )
 
   // Per-area progress: apply only the category selection, then split by area.
   const perArea = useMemo(() => {
-    const byCategory = vocabulary.filter(
+    const byCategory = content.vocabulary.filter(
       (w) => categories.length === 0 || categories.includes(w.category),
     )
-    return PARTS.map((p) => ({
+    return content.PARTS.map((p) => ({
       area: p,
       stats: computeStats(byCategory.filter((w) => w.part === p.id)),
     }))
-  }, [categories, computeStats])
+  }, [categories, computeStats, content])
 
   const activity = getSummary()
 

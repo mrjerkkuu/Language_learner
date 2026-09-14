@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
-import phrases from '../data/phrases.json'
-import { CATEGORIES } from '../data/categories'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useActivityLog } from '../hooks/useActivityLog'
 import Layout from './Layout'
 import EmptyState from './EmptyState'
@@ -16,9 +15,10 @@ import EmptyState from './EmptyState'
 
 export default function PhraseBank() {
   const { filterItems, categories, toggleCategory, clearFilters } = useFilter()
+  const { content } = useLanguage()
   const { logActivity } = useActivityLog()
 
-  const list = useMemo(() => filterItems(phrases), [filterItems])
+  const list = useMemo(() => filterItems(content.phrases), [filterItems, content])
   const [revealed, setRevealed] = useState(() => new Set())
 
   function toggle(id) {
@@ -37,12 +37,12 @@ export default function PhraseBank() {
     <Layout back title="Fraasipankki" right={list.length}>
       <div className="space-y-4">
         {/* Category chips (topic filter). "Kaikki" clears the topic selection. */}
-        <div className="-mx-4 overflow-x-auto px-4">
+        <div className="no-scrollbar -mx-4 overflow-x-auto px-4">
           <div className="flex w-max gap-2">
             <Chip active={categories.length === 0} onClick={clearFilters}>
               Kaikki
             </Chip>
-            {CATEGORIES.map((c) => (
+            {content.CATEGORIES.map((c) => (
               <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
                 {c.label}
               </Chip>
@@ -65,7 +65,7 @@ export default function PhraseBank() {
                     className="w-full rounded-2xl border border-line bg-card p-4 text-left active:bg-bg"
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <span className="font-semibold text-ink">{phrase.sv}</span>
+                      <span className="font-semibold text-ink">{phrase.term}</span>
                       {!isRevealed && (
                         <span className="shrink-0 text-sm font-medium text-accent">Näytä ›</span>
                       )}

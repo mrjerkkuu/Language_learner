@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import vocabulary from '../data/vocabulary.json'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 
@@ -16,10 +16,14 @@ import { useActivityLog } from '../hooks/useActivityLog'
 
 export default function MotivationBar({ onOpen }) {
   const { filterItems } = useFilter()
+  const { content } = useLanguage()
   const { computeStats } = useSpacedRepetition()
   const { getSummary } = useActivityLog()
 
-  const stats = useMemo(() => computeStats(filterItems(vocabulary)), [filterItems, computeStats])
+  const stats = useMemo(
+    () => computeStats(filterItems(content.vocabulary)),
+    [filterItems, computeStats, content],
+  )
   const { currentStreak } = getSummary()
 
   return (

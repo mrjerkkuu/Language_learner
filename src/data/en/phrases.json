@@ -1,0 +1,16 @@
+[
+  { "id": "ep01", "term": "How are you?", "fi": "Mitä kuuluu?", "part": 1, "category": "smalltalk" },
+  { "id": "ep02", "term": "I'm fine, thanks. And you?", "fi": "Kiitos hyvää. Entä sinä?", "part": 1, "category": "smalltalk" },
+  { "id": "ep03", "term": "What's your name?", "fi": "Mikä sinun nimesi on?", "part": 1, "category": "smalltalk" },
+  { "id": "ep04", "term": "Where are you from?", "fi": "Mistä olet kotoisin?", "part": 1, "category": "smalltalk" },
+  { "id": "ep05", "term": "See you later!", "fi": "Nähdään myöhemmin!", "part": 1, "category": "smalltalk" },
+  { "id": "ep06", "term": "What do you study?", "fi": "Mitä opiskelet?", "part": 1, "category": "everyday" },
+  { "id": "ep07", "term": "Can you help me with something?", "fi": "Voitko auttaa minua yhdessä asiassa?", "part": 2, "category": "communication" },
+  { "id": "ep08", "term": "I'll get back to you as soon as possible.", "fi": "Palaan asiaan mahdollisimman pian.", "part": 2, "category": "communication" },
+  { "id": "ep09", "term": "Could we book a meeting next week?", "fi": "Voitaisiinko varata kokous ensi viikolle?", "part": 2, "category": "work" },
+  { "id": "ep10", "term": "Can you explain that again?", "fi": "Voitko selittää sen uudelleen?", "part": 2, "category": "communication" },
+  { "id": "ep11", "term": "What is your role in the project?", "fi": "Mikä on roolisi projektissa?", "part": 2, "category": "work" },
+  { "id": "ep12", "term": "I work as a software developer.", "fi": "Työskentelen ohjelmistokehittäjänä.", "part": 3, "category": "it" },
+  { "id": "ep13", "term": "Which programming languages do you know?", "fi": "Mitä ohjelmointikieliä osaat?", "part": 3, "category": "it" },
+  { "id": "ep14", "term": "The system crashed yesterday.", "fi": "Järjestelmä kaatui eilen.", "part": 3, "category": "it" }
+]

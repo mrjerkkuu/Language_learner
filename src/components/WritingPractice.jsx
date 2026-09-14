@@ -1,9 +1,8 @@
 import { useMemo, useState, useEffect } from 'react'
-import writingTasks from '../data/writingTasks.json'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useActivityLog } from '../hooks/useActivityLog'
 import { checkWriting } from '../services/aiService'
-import { partLabel } from '../data/categories'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
 import EmptyState from './EmptyState'
@@ -19,9 +18,10 @@ import EmptyState from './EmptyState'
 
 export default function WritingPractice() {
   const { filterItems } = useFilter()
+  const { content, partLabel, language } = useLanguage()
   const { logActivity } = useActivityLog()
 
-  const list = useMemo(() => filterItems(writingTasks), [filterItems])
+  const list = useMemo(() => filterItems(content.writingTasks), [filterItems, content])
 
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState('')
@@ -48,7 +48,7 @@ export default function WritingPractice() {
     if (!current) return
     setChecking(true)
     try {
-      setAiResult(await checkWriting(answer, current.prompt_sv))
+      setAiResult(await checkWriting(answer, current.task))
     } catch {
       setAiResult(null)
     }
@@ -82,8 +82,8 @@ export default function WritingPractice() {
           <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">
             Tehtävä · {partLabel(current.part)}
           </div>
-          <p className="font-semibold text-ink">{current.prompt_sv}</p>
-          <p className="mt-1 text-sm text-muted">{current.prompt}</p>
+          <p className="font-semibold text-ink">{current.task}</p>
+          <p className="mt-1 text-sm text-muted">{current.task_fi}</p>
 
           {current.hints?.length > 0 && (
             <div className="mt-3">
@@ -114,7 +114,7 @@ export default function WritingPractice() {
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             rows={4}
-            placeholder="Kirjoita vastauksesi ruotsiksi…"
+            placeholder={`Kirjoita vastauksesi ${language.inLang}…`}
             className="w-full resize-y rounded-xl border border-line bg-card p-3 text-base text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
           />
         </div>

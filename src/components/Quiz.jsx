@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
-import vocabulary from '../data/vocabulary.json'
-import fillBlanks from '../data/fillBlanks.json'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 import { generateDistractors } from '../services/aiService'
@@ -13,59 +12,64 @@ import EmptyState from './EmptyState'
 // -----------------------------------------------------------------------------
 // Quiz module
 // -----------------------------------------------------------------------------
-// A whole SESSION of questions is asked, and — importantly — right/wrong is
-// shown ONLY at the end on a dedicated result screen (never per answer).
+// A whole SESSION of questions is asked; right/wrong is shown ONLY at the end on
+// a dedicated result screen (never per answer).
 //
-// Question types (mixed into one session):
-//   - 'mc'   : "Mikä on ruotsiksi <fi>?" -> pick the Swedish word (from vocabulary)
-//   - 'fill' : fill the blank in a sentence (from fillBlanks)
+// Question types (mixed):
+//   - 'mc'   : "Mikä on <kielellä>? <fi word>" -> pick the target-language word
+//   - 'fill' : fill the blank in a sentence
 //
-// Which items are asked is weighted by spaced repetition (harder words appear
-// more), and answers feed back into it (wrong answers raise the review weight).
-//
-// Distractors: same category+part first, then widen — sourced from the FULL
-// data so narrow filters still yield 4 options. The generateDistractors() AI
-// hook is tried first (returns null in the MVP -> fallback).
+// Items are weighted by spaced repetition (harder words appear more), and
+// answers feed back into it. Distractors: same category+part first, then widen,
+// sourced from the full pool. The generateDistractors() AI hook is tried first.
 // -----------------------------------------------------------------------------
 
-const SESSION_SIZE = 10 // questions per session (fewer if the pool is smaller)
+const SESSION_SIZE = 10
 const OPTION_COUNT = 4
 
 export default function Quiz() {
   const { filterItems } = useFilter()
+  const { content, language } = useLanguage()
   const { getState, recordQuiz } = useSpacedRepetition()
   const { logActivity } = useActivityLog()
 
-  // Candidate items for the current filter, tagged by question type.
-  const candidates = useMemo(() => {
-    const mc = filterItems(vocabulary).map((item) => ({ type: 'mc', item, id: item.id }))
-    const fill = filterItems(fillBlanks).map((item) => ({ type: 'fill', item, id: item.id }))
-    return [...mc, ...fill]
-  }, [filterItems])
+  // Context passed to the (pure) question builder.
+  const ctx = useMemo(
+    () => ({
+      vocabulary: content.vocabulary,
+      fillBlanks: content.fillBlanks,
+      mcLabel: `Mikä on ${language.inLang}`,
+    }),
+    [content, language],
+  )
 
-  const [session, setSession] = useState([]) // array of question objects
+  const candidates = useMemo(() => {
+    const mc = filterItems(content.vocabulary).map((item) => ({ type: 'mc', item, id: item.id }))
+    const fill = filterItems(content.fillBlanks).map((item) => ({ type: 'fill', item, id: item.id }))
+    return [...mc, ...fill]
+  }, [filterItems, content])
+
+  const [session, setSession] = useState([])
   const [index, setIndex] = useState(0)
-  const [answers, setAnswers] = useState([]) // selected option per question
-  const [phase, setPhase] = useState('quiz') // 'quiz' | 'result'
+  const [answers, setAnswers] = useState([])
+  const [phase, setPhase] = useState('quiz')
   const [building, setBuilding] = useState(true)
 
-  // Build a session from a set of candidates (weighted by SR weight).
   const startSession = useCallback(
     async (fromCandidates) => {
       setBuilding(true)
       const chosen = weightedSample(fromCandidates, SESSION_SIZE, (c) => getState(c.id).weight)
       const built = []
-      for (const c of chosen) built.push(await buildQuestion(c))
+      for (const c of chosen) built.push(await buildQuestion(c, ctx))
       setSession(built)
       setAnswers(new Array(built.length).fill(null))
       setIndex(0)
       setPhase('quiz')
       setBuilding(false)
     },
-    [getState],
+    [getState, ctx],
   )
 
-  // (Re)build whenever the candidate set (filter) changes.
   useEffect(() => {
     if (candidates.length === 0) {
       setSession([])
@@ -76,7 +80,6 @@ export default function Quiz() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candidates])
 
-  // Record the tapped option (no correctness shown yet).
   function selectOption(option) {
     setAnswers((prev) => {
       const next = [...prev]
@@ -85,17 +88,12 @@ export default function Quiz() {
     })
   }
 
-  // Advance, or finish the session (record results + show the result screen).
   function next() {
     if (index < session.length - 1) {
       setIndex((i) => i + 1)
       return
     }
-    // Finish: feed every answer back into spaced repetition.
-    session.forEach((q, i) => {
-      const correct = answers[i] === q.correct
-      recordQuiz(q.id, correct)
-    })
+    session.forEach((q, i) => recordQuiz(q.id, answers[i] === q.correct))
     logActivity(session.length)
     setPhase('result')
   }
@@ -119,32 +117,24 @@ export default function Quiz() {
     )
   }
 
-  // --- Result screen ---
   if (phase === 'result') {
     const wrong = session.filter((q, i) => answers[i] !== q.correct)
-    const correctCount = session.length - wrong.length
     return (
       <ResultScreen
         total={session.length}
-        correctCount={correctCount}
+        correctCount={session.length - wrong.length}
         wrong={wrong}
         onRetryWrong={() => startSession(wrong.map((q) => q.source))}
       />
     )
   }
 
-  // --- Quiz screen ---
   const q = session[index]
   const selected = answers[index]
   const isLast = index === session.length - 1
 
   return (
-    <Layout
-      back
-      title="Quiz"
-      right={`${index + 1}/${session.length}`}
-      progress={index / session.length}
-    >
+    <Layout back title="Quiz" right={`${index + 1}/${session.length}`} progress={index / session.length}>
       <div className="space-y-4">
         <FilterTag />
 
@@ -153,7 +143,6 @@ export default function Quiz() {
           <p className="mt-1 font-display text-2xl font-bold text-ink">{q.prompt}</p>
         </div>
 
-        {/* Options: selecting highlights with the accent, but no right/wrong. */}
         <div className="grid gap-2">
           {q.options.map((opt) => {
             const chosen = opt === selected
@@ -189,15 +178,11 @@ export default function Quiz() {
   )
 }
 
-// -----------------------------------------------------------------------------
-// Result screen
-// -----------------------------------------------------------------------------
 function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
   const wrongCount = total - correctCount
   return (
     <Layout back title="Quiz — tulos">
       <div className="space-y-4">
-        {/* Big gradient score card */}
         <div className="bg-motivation rounded-2xl p-6 text-center text-white">
           <div className="text-xs font-semibold uppercase tracking-wider text-white/80">Oikein</div>
           <div className="font-display text-5xl font-bold">
@@ -209,7 +194,6 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
           </div>
         </div>
 
-        {/* Correct / wrong counters */}
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-xl bg-card p-3 text-center ring-1 ring-line">
             <div className="font-display text-2xl font-bold text-learned">{correctCount}</div>
@@ -221,7 +205,6 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
           </div>
         </div>
 
-        {/* Wrong words: explanation + list */}
         {wrongCount > 0 && (
           <div className="rounded-xl bg-card p-4 ring-1 ring-line">
             <p className="text-sm text-muted">
@@ -239,7 +222,6 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
           </div>
         )}
 
-        {/* Actions */}
         {wrongCount > 0 && (
           <button
             type="button"
@@ -260,16 +242,14 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
   )
 }
 
-// -----------------------------------------------------------------------------
-// Helpers
-// -----------------------------------------------------------------------------
+// --- Pure helpers -----------------------------------------------------------
 
 // Build one question object from a tagged candidate ({ type, item, id }).
-async function buildQuestion(candidate) {
+async function buildQuestion(candidate, ctx) {
   const { type, item, id } = candidate
 
   if (type === 'fill') {
-    const wrong = distractorsFrom(fillBlanks, item, (b) => b.answer)
+    const wrong = distractorsFrom(ctx.fillBlanks, item, (b) => b.answer)
     return {
       id,
       source: candidate,
@@ -280,35 +260,32 @@ async function buildQuestion(candidate) {
     }
   }
 
-  // 'mc': ask the Finnish word, answer with the Swedish word.
-  const ai = await generateDistractors(item.sv, item.category)
+  // 'mc': ask the Finnish word, answer with the target-language word.
+  const ai = await generateDistractors(item.term, item.category)
   const wrong =
     Array.isArray(ai) && ai.length >= OPTION_COUNT - 1
       ? shuffle(ai).slice(0, OPTION_COUNT - 1)
-      : distractorsFrom(vocabulary, item, (w) => w.sv)
+      : distractorsFrom(ctx.vocabulary, item, (w) => w.term)
 
   return {
     id,
     source: candidate,
-    promptLabel: 'Mikä on ruotsiksi',
+    promptLabel: ctx.mcLabel,
     prompt: item.fi,
-    correct: item.sv,
-    options: shuffle([item.sv, ...wrong]),
+    correct: item.term,
+    options: shuffle([item.term, ...wrong]),
   }
 }
 
-// Pick OPTION_COUNT-1 distractor strings: same category+part first, then widen
-// to the same category, then everything. `sourcePool` is the FULL data set.
+// Pick OPTION_COUNT-1 distractors: same category+part first, then widen.
 function distractorsFrom(sourcePool, target, getText) {
   const need = OPTION_COUNT - 1
   const correctText = getText(target)
-
   const sameCatPart = sourcePool.filter(
     (x) => x.id !== target.id && x.category === target.category && x.part === target.part,
   )
   const sameCat = sourcePool.filter((x) => x.id !== target.id && x.category === target.category)
   const everything = sourcePool.filter((x) => x.id !== target.id)
-
   const ordered = [...shuffle(sameCatPart), ...shuffle(sameCat), ...shuffle(everything)]
   const seen = new Set()
   const out = []
@@ -322,9 +299,7 @@ function distractorsFrom(sourcePool, target, getText) {
   return out
 }
 
-// Weighted sampling WITHOUT replacement: pick up to n items, where a higher
-// weight makes an item more likely to be picked. Used to build a session that
-// leans toward the words that need review most.
+// Weighted sampling without replacement (higher weight = likelier to be picked).
 function weightedSample(items, n, getWeight) {
   const pool = [...items]
   const picked = []
@@ -341,7 +316,7 @@ function weightedSample(items, n, getWeight) {
       }
     }
     picked.push(pool[idx])
-    pool.splice(idx, 1) // remove so it can't be picked twice
+    pool.splice(idx, 1)
   }
   return picked
 }

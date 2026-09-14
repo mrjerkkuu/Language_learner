@@ -1,5 +1,5 @@
 import { useFilter } from '../context/FilterContext'
-import { partLabel, categoryLabel } from '../data/categories'
+import { useLanguage } from '../context/LanguageContext'
 
 // -----------------------------------------------------------------------------
 // EmptyState
@@ -11,6 +11,7 @@ import { partLabel, categoryLabel } from '../data/categories'
 
 export default function EmptyState({ title = 'Ei sisältöä' }) {
   const { part, categories, clearFilters, isFiltered } = useFilter()
+  const { partLabel, categoryLabel } = useLanguage()
 
   // Human-readable description of the active filter.
   const partText = part === 'all' ? 'Kaikki alueet' : partLabel(part)

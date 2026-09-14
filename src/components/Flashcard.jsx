@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
-import vocabulary from '../data/vocabulary.json'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 import Layout from './Layout'
@@ -11,25 +11,26 @@ import EmptyState from './EmptyState'
 // -----------------------------------------------------------------------------
 // Sanakortit (Flashcards) module
 // -----------------------------------------------------------------------------
-// Shows the Swedish word; tap to flip to the Finnish meaning + example; then
-// rate. Rating feeds spaced repetition, which picks the next card.
-//   swipe LEFT  / "Vaikea"    -> hard
-//   button      / "Keskitaso" -> medium
-//   swipe RIGHT / "Helppo"    -> easy
+// Shows a word in the target language; tap to flip (a real 3D flip) to the
+// Finnish meaning + example. Then mark whether you knew it: Oikein / Väärin —
+// via the buttons OR by swiping (right = Oikein, left = Väärin).
+//
+// The result feeds spaced repetition (correct lowers the review weight, wrong
+// raises it), so "easy/hard" is derived automatically from how you do.
 // -----------------------------------------------------------------------------
 
 export default function Flashcard() {
   const { filterItems } = useFilter()
-  const { pickNext, recordAssessment, getStatus } = useSpacedRepetition()
+  const { content, language, partLabel, categoryLabel } = useLanguage()
+  const { pickNext, recordResult, getStatus } = useSpacedRepetition()
   const { logActivity } = useActivityLog()
 
-  const pool = useMemo(() => filterItems(vocabulary), [filterItems])
+  const pool = useMemo(() => filterItems(content.vocabulary), [filterItems, content])
 
   const [current, setCurrent] = useState(null)
   const [flipped, setFlipped] = useState(false)
-  const [reviewed, setReviewed] = useState(0) // cards rated this session (for the header progress)
+  const [reviewed, setReviewed] = useState(0)
 
-  // Pick the first card / re-pick if the filter change removed the current one.
   useEffect(() => {
     if (pool.length === 0) {
       setCurrent(null)
@@ -41,16 +42,16 @@ export default function Flashcard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool])
 
-  function handleRate(level) {
+  // Mark the current card correct/wrong, then advance.
+  function mark(correct) {
     if (!current) return
-    recordAssessment(current.id, level)
+    recordResult(current.id, correct)
     logActivity(1)
     setReviewed((n) => n + 1)
     setCurrent(pickNext(pool, current.id))
     setFlipped(false)
   }
 
-  // Header counter/progress: how many rated so far, out of the pool size.
   const done = Math.min(reviewed, pool.length)
   const rightText = pool.length ? `${done}/${pool.length}` : null
   const progress = pool.length ? done / pool.length : null
@@ -63,68 +64,72 @@ export default function Flashcard() {
         <div className="space-y-4">
           <FilterTag />
 
-          {/* The card. Swipe left/right = hard/easy; tap = flip. */}
+          {/* Swipe right = Oikein, left = Väärin; tap = flip. */}
           <SwipeableCard
-            onSwipeLeft={() => handleRate('hard')}
-            onSwipeRight={() => handleRate('easy')}
+            onSwipeRight={() => mark(true)}
+            onSwipeLeft={() => mark(false)}
             onTap={() => setFlipped((f) => !f)}
+            leftLabel="← Väärin"
+            rightLabel="Oikein →"
           >
-            <div className="relative flex min-h-64 flex-col items-center justify-center rounded-2xl border border-line bg-card p-6 text-center">
-              {/* Learned badge (top-right) */}
+            <div className="flip relative">
+              {/* Learned badge stays put (doesn't rotate with the faces). */}
               {getStatus(current.id) === 'learned' && (
-                <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-learned-soft px-2 py-0.5 text-xs font-semibold text-learned">
+                <span className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-learned-soft px-2 py-0.5 text-xs font-semibold text-learned">
                   <span className="h-1.5 w-1.5 rounded-full bg-learned" /> Opittu
                 </span>
               )}
 
-              {!flipped ? (
-                <>
+              <div className={'flip-inner ' + (flipped ? 'is-flipped' : '')}>
+                {/* FRONT: target-language word */}
+                <div className="flip-face flex min-h-64 flex-col items-center justify-center rounded-2xl border border-line bg-card p-6 text-center">
                   <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-                    Svenska
+                    {language.nativeLabel}
                   </div>
-                  <div className="font-display text-3xl font-bold text-ink">{current.sv}</div>
+                  <div className="font-display text-3xl font-bold text-ink">{current.term}</div>
                   <div className="mt-4 text-sm text-muted">Napauta kääntääksesi</div>
-                </>
-              ) : (
-                <>
+                </div>
+
+                {/* BACK: Finnish meaning + example */}
+                <div className="flip-face flip-back flex min-h-64 flex-col items-center justify-center rounded-2xl border border-line bg-card p-6 text-center">
                   <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
                     Suomeksi
                   </div>
                   <div className="font-display text-3xl font-bold text-ink">{current.fi}</div>
-                  <div className="mt-3 text-base italic text-muted">{current.example_sv}</div>
-                </>
-              )}
+                  {current.example && (
+                    <div className="mt-3 text-base italic text-muted">{current.example}</div>
+                  )}
+                </div>
+              </div>
             </div>
           </SwipeableCard>
 
-          {/* Three ratings */}
-          <div className="grid grid-cols-3 gap-2">
-            <RateButton onClick={() => handleRate('hard')} chevron="‹" label="Vaikea" />
-            <RateButton onClick={() => handleRate('medium')} label="Keskitaso" emphasize />
-            <RateButton onClick={() => handleRate('easy')} chevron="›" label="Helppo" chevronRight />
+          {/* Right / wrong buttons */}
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => mark(false)}
+              className="touch-target rounded-xl border border-line bg-card py-3 font-semibold text-wrong active:bg-bg"
+            >
+              Väärin
+            </button>
+            <button
+              type="button"
+              onClick={() => mark(true)}
+              className="touch-target rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+            >
+              Oikein
+            </button>
           </div>
 
-          <p className="text-center text-sm text-muted">Pyyhkäise ‹ vaikea · helppo ›</p>
+          <p className="text-center text-sm text-muted">Napauta korttia · pyyhkäise ← väärin · oikein →</p>
+
+          {/* Small meta line: which area/topic this word belongs to. */}
+          <p className="text-center text-xs text-muted">
+            {partLabel(current.part)} · {categoryLabel(current.category)}
+          </p>
         </div>
       )}
     </Layout>
-  )
-}
-
-// One rating button. `emphasize` gives the middle button an accent outline.
-function RateButton({ onClick, label, chevron, chevronRight, emphasize }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={
-        'touch-target flex flex-col items-center justify-center rounded-xl border bg-card py-3 text-sm font-semibold text-ink active:bg-bg ' +
-        (emphasize ? 'border-accent text-accent' : 'border-line')
-      }
-    >
-      {chevron && !chevronRight && <span className="text-base leading-none text-muted">{chevron}</span>}
-      <span>{label}</span>
-      {chevron && chevronRight && <span className="text-base leading-none text-muted">{chevron}</span>}
-    </button>
   )
 }

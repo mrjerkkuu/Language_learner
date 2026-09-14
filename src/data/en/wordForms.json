@@ -1,0 +1,14 @@
+[
+  { "id": "ewf01", "type": "plural", "prompt": "child", "fi": "lapsi", "answer": "children", "options": ["children", "childs", "childes", "childrens"], "part": 1, "category": "everyday" },
+  { "id": "ewf02", "type": "plural", "prompt": "mouse", "fi": "hiiri", "answer": "mice", "options": ["mice", "mouses", "mices", "mouse"], "part": 1, "category": "everyday" },
+  { "id": "ewf03", "type": "plural", "prompt": "person", "fi": "henkilö", "answer": "people", "options": ["people", "persons", "peoples", "personen"], "part": 1, "category": "everyday" },
+  { "id": "ewf04", "type": "plural", "prompt": "foot", "fi": "jalka", "answer": "feet", "options": ["feet", "foots", "feets", "foot"], "part": 1, "category": "everyday" },
+  { "id": "ewf05", "type": "plural", "prompt": "man", "fi": "mies", "answer": "men", "options": ["men", "mans", "mens", "man"], "part": 1, "category": "everyday" },
+  { "id": "ewf06", "type": "plural", "prompt": "tooth", "fi": "hammas", "answer": "teeth", "options": ["teeth", "tooths", "toothes", "tooth"], "part": 1, "category": "everyday" },
+  { "id": "ewf07", "type": "plural", "prompt": "city", "fi": "kaupunki", "answer": "cities", "options": ["cities", "citys", "cityes", "citie"], "part": 1, "category": "everyday" },
+  { "id": "ewf08", "type": "plural", "prompt": "file", "fi": "tiedosto", "answer": "files", "options": ["files", "filees", "file", "filess"], "part": 3, "category": "it" },
+  { "id": "ewf09", "type": "past", "prompt": "go", "fi": "mennä", "answer": "went", "options": ["went", "goed", "gone", "goes"], "part": 1, "category": "everyday" },
+  { "id": "ewf10", "type": "past", "prompt": "write", "fi": "kirjoittaa", "answer": "wrote", "options": ["wrote", "writed", "written", "writ"], "part": 1, "category": "everyday" },
+  { "id": "ewf11", "type": "past", "prompt": "run", "fi": "juosta", "answer": "ran", "options": ["ran", "runned", "run", "runs"], "part": 1, "category": "everyday" },
+  { "id": "ewf12", "type": "past", "prompt": "take", "fi": "ottaa", "answer": "took", "options": ["took", "taked", "taken", "takes"], "part": 1, "category": "everyday" }
+]

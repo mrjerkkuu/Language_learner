@@ -1,0 +1,621 @@
+[
+  {
+    "id": "wf-art-v006",
+    "type": "article",
+    "prompt": "helg",
+    "fi": "viikonloppu",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "wf-art-v007",
+    "type": "article",
+    "prompt": "väder",
+    "fi": "sää",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "wf-art-v008",
+    "type": "article",
+    "prompt": "fritid",
+    "fi": "vapaa-aika",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "wf-art-v009",
+    "type": "article",
+    "prompt": "hobby",
+    "fi": "harrastus",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "wf-art-v011",
+    "type": "article",
+    "prompt": "familj",
+    "fi": "perhe",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "wf-art-v014",
+    "type": "article",
+    "prompt": "kurs",
+    "fi": "kurssi",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "wf-art-v015",
+    "type": "article",
+    "prompt": "yrkeshögskola",
+    "fi": "ammattikorkeakoulu",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "wf-art-v016",
+    "type": "article",
+    "prompt": "tentamen",
+    "fi": "tentti",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "wf-art-v017",
+    "type": "article",
+    "prompt": "lärare",
+    "fi": "opettaja",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "wf-art-v018",
+    "type": "article",
+    "prompt": "schema",
+    "fi": "lukujärjestys",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "wf-art-v019",
+    "type": "article",
+    "prompt": "arbete",
+    "fi": "työ",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v020",
+    "type": "article",
+    "prompt": "jobb",
+    "fi": "työ / duuni",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v021",
+    "type": "article",
+    "prompt": "möte",
+    "fi": "kokous",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v022",
+    "type": "article",
+    "prompt": "kollega",
+    "fi": "työkaveri",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v023",
+    "type": "article",
+    "prompt": "chef",
+    "fi": "esimies / pomo",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v024",
+    "type": "article",
+    "prompt": "företag",
+    "fi": "yritys",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v025",
+    "type": "article",
+    "prompt": "kund",
+    "fi": "asiakas",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v026",
+    "type": "article",
+    "prompt": "deadline",
+    "fi": "määräaika",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v028",
+    "type": "article",
+    "prompt": "lön",
+    "fi": "palkka",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v029",
+    "type": "article",
+    "prompt": "semester",
+    "fi": "loma",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "wf-art-v030",
+    "type": "article",
+    "prompt": "mejl",
+    "fi": "sähköposti(viesti)",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "viestinta"
+  },
+  {
+    "id": "wf-art-v033",
+    "type": "article",
+    "prompt": "rapport",
+    "fi": "raportti",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "viestinta"
+  },
+  {
+    "id": "wf-art-v035",
+    "type": "article",
+    "prompt": "fråga",
+    "fi": "kysymys",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 2,
+    "category": "viestinta"
+  },
+  {
+    "id": "wf-art-v037",
+    "type": "article",
+    "prompt": "programmering",
+    "fi": "ohjelmointi",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v038",
+    "type": "article",
+    "prompt": "dator",
+    "fi": "tietokone",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v039",
+    "type": "article",
+    "prompt": "programvara",
+    "fi": "ohjelmisto",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v040",
+    "type": "article",
+    "prompt": "hårdvara",
+    "fi": "laitteisto",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v041",
+    "type": "article",
+    "prompt": "kod",
+    "fi": "koodi",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v043",
+    "type": "article",
+    "prompt": "databas",
+    "fi": "tietokanta",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v044",
+    "type": "article",
+    "prompt": "nätverk",
+    "fi": "verkko",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v045",
+    "type": "article",
+    "prompt": "server",
+    "fi": "palvelin",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v046",
+    "type": "article",
+    "prompt": "fil",
+    "fi": "tiedosto",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v047",
+    "type": "article",
+    "prompt": "lösenord",
+    "fi": "salasana",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v048",
+    "type": "article",
+    "prompt": "användare",
+    "fi": "käyttäjä",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v049",
+    "type": "article",
+    "prompt": "utveckling",
+    "fi": "kehitys",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v050",
+    "type": "article",
+    "prompt": "fel",
+    "fi": "virhe / bugi",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v052",
+    "type": "article",
+    "prompt": "system",
+    "fi": "järjestelmä",
+    "answer": "ett",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v053",
+    "type": "article",
+    "prompt": "webbsida",
+    "fi": "verkkosivu",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-art-v054",
+    "type": "article",
+    "prompt": "säkerhet",
+    "fi": "turvallisuus",
+    "answer": "en",
+    "options": [
+      "en",
+      "ett"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-1",
+    "type": "definite",
+    "prompt": "en dator",
+    "answer": "datorn",
+    "options": [
+      "datorn",
+      "dator",
+      "datoren",
+      "datoret"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-2",
+    "type": "definite",
+    "prompt": "ett arbete",
+    "answer": "arbetet",
+    "options": [
+      "arbetet",
+      "arbeten",
+      "arbetdet",
+      "arbetten"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-3",
+    "type": "definite",
+    "prompt": "ett jobb",
+    "answer": "jobbet",
+    "options": [
+      "jobbet",
+      "jobben",
+      "jobbe",
+      "jobbn"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-4",
+    "type": "definite",
+    "prompt": "ett möte",
+    "answer": "mötet",
+    "options": [
+      "mötet",
+      "möten",
+      "möteet",
+      "möter"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-5",
+    "type": "definite",
+    "prompt": "en kollega",
+    "answer": "kollegan",
+    "options": [
+      "kollegan",
+      "kollegen",
+      "kollegat",
+      "kollegorna"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-6",
+    "type": "definite",
+    "prompt": "en fråga",
+    "answer": "frågan",
+    "options": [
+      "frågan",
+      "frågen",
+      "frågat",
+      "frågorna"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-7",
+    "type": "definite",
+    "prompt": "ett fel",
+    "answer": "felet",
+    "options": [
+      "felet",
+      "felen",
+      "fellet",
+      "fels"
+    ],
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "wf-def-8",
+    "type": "definite",
+    "prompt": "en kod",
+    "answer": "koden",
+    "options": [
+      "koden",
+      "kodet",
+      "koda",
+      "kodarna"
+    ],
+    "part": 3,
+    "category": "ict"
+  }
+]

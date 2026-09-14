@@ -1,5 +1,5 @@
 import { useFilter } from '../context/FilterContext'
-import { PARTS, CATEGORIES, partLabel } from '../data/categories'
+import { useLanguage } from '../context/LanguageContext'
 
 // -----------------------------------------------------------------------------
 // FilterBar
@@ -13,17 +13,18 @@ import { PARTS, CATEGORIES, partLabel } from '../data/categories'
 
 export default function FilterBar() {
   const { part, setPart, categories, toggleCategory } = useFilter()
+  const { content, partLabel } = useLanguage()
 
   return (
     <div className="space-y-3">
       {/* Area pills — horizontal, scrollable. The -mx-4/px-4 lets the row bleed
-          to the screen edges so pills can scroll past them cleanly. */}
-      <div className="-mx-4 overflow-x-auto px-4">
+          to the screen edges; no-scrollbar hides the scrollbar but keeps scroll. */}
+      <div className="no-scrollbar -mx-4 overflow-x-auto px-4">
         <div className="flex w-max gap-2">
           <Pill active={part === 'all'} onClick={() => setPart('all')}>
             Kaikki
           </Pill>
-          {PARTS.map((p) => (
+          {content.PARTS.map((p) => (
             <Pill key={p.id} active={part === p.id} onClick={() => setPart(p.id)}>
               {partLabel(p.id)}
             </Pill>
@@ -33,7 +34,7 @@ export default function FilterBar() {
 
       {/* Topic chips — multi-select. */}
       <div className="flex flex-wrap gap-2">
-        {CATEGORIES.map((c) => {
+        {content.CATEGORIES.map((c) => {
           const selected = categories.includes(c.id)
           return (
             <button

@@ -1,5 +1,5 @@
-import { partLabel, categoryLabel } from '../data/categories'
 import { useFilter } from '../context/FilterContext'
+import { useLanguage } from '../context/LanguageContext'
 
 // -----------------------------------------------------------------------------
 // FilterTag
@@ -11,6 +11,7 @@ import { useFilter } from '../context/FilterContext'
 
 export default function FilterTag() {
   const { part, categories } = useFilter()
+  const { partLabel, categoryLabel } = useLanguage()
 
   const parts = []
   if (part !== 'all') parts.push(partLabel(part))

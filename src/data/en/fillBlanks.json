@@ -1,0 +1,10 @@
+[
+  { "id": "ef01", "template": "I ___ information technology at university.", "answer": "study", "part": 1, "category": "everyday" },
+  { "id": "ef02", "template": "What did you do at the ___?", "answer": "weekend", "part": 1, "category": "smalltalk" },
+  { "id": "ef03", "template": "We have a ___ at ten tomorrow.", "answer": "meeting", "part": 2, "category": "work" },
+  { "id": "ef04", "template": "I will send an ___ to the customer.", "answer": "email", "part": 2, "category": "communication" },
+  { "id": "ef05", "template": "All data is stored in a ___.", "answer": "database", "part": 3, "category": "it" },
+  { "id": "ef06", "template": "There is a ___ in the code.", "answer": "bug", "part": 3, "category": "it" },
+  { "id": "ef07", "template": "Please ___ your password regularly.", "answer": "change", "part": 3, "category": "it" },
+  { "id": "ef08", "template": "Save the ___ on the server.", "answer": "file", "part": 3, "category": "it" }
+]

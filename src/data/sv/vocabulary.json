@@ -1,0 +1,434 @@
+[
+  {
+    "id": "v001",
+    "term": "hej",
+    "fi": "hei / moi",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Hej, hur mår du idag?"
+  },
+  {
+    "id": "v002",
+    "term": "god morgon",
+    "fi": "hyvää huomenta",
+    "part": 1,
+    "category": "smaprat",
+    "example": "God morgon, har du sovit gott?"
+  },
+  {
+    "id": "v003",
+    "term": "tack",
+    "fi": "kiitos",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Tack så mycket för hjälpen."
+  },
+  {
+    "id": "v004",
+    "term": "ursäkta",
+    "fi": "anteeksi",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Ursäkta, kan du hjälpa mig?"
+  },
+  {
+    "id": "v005",
+    "term": "trevligt att träffas",
+    "fi": "hauska tavata",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Trevligt att träffas, jag heter Jeremia."
+  },
+  {
+    "id": "v006",
+    "term": "en helg",
+    "fi": "viikonloppu",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Vad gjorde du i helgen?"
+  },
+  {
+    "id": "v007",
+    "term": "ett väder",
+    "fi": "sää",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Vädret är fint idag."
+  },
+  {
+    "id": "v008",
+    "term": "en fritid",
+    "fi": "vapaa-aika",
+    "part": 1,
+    "category": "smaprat",
+    "example": "På min fritid spelar jag fotboll."
+  },
+  {
+    "id": "v009",
+    "term": "en hobby",
+    "fi": "harrastus",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Min hobby är fotografering."
+  },
+  {
+    "id": "v010",
+    "term": "att bo",
+    "fi": "asua",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Jag bor i Jyväskylä."
+  },
+  {
+    "id": "v011",
+    "term": "en familj",
+    "fi": "perhe",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Jag har en stor familj."
+  },
+  {
+    "id": "v012",
+    "term": "att tycka om",
+    "fi": "pitää jostakin",
+    "part": 1,
+    "category": "smaprat",
+    "example": "Jag tycker om att laga mat."
+  },
+  {
+    "id": "v013",
+    "term": "att studera",
+    "fi": "opiskella",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Jag studerar informationsteknik."
+  },
+  {
+    "id": "v014",
+    "term": "en kurs",
+    "fi": "kurssi",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Den här kursen är intressant."
+  },
+  {
+    "id": "v015",
+    "term": "en yrkeshögskola",
+    "fi": "ammattikorkeakoulu",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Jag går på yrkeshögskola."
+  },
+  {
+    "id": "v016",
+    "term": "en tentamen",
+    "fi": "tentti",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Jag har en tentamen på fredag."
+  },
+  {
+    "id": "v017",
+    "term": "en lärare",
+    "fi": "opettaja",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Vår lärare är hjälpsam."
+  },
+  {
+    "id": "v018",
+    "term": "ett schema",
+    "fi": "lukujärjestys",
+    "part": 1,
+    "category": "opiskelu",
+    "example": "Schemat ändras varje vecka."
+  },
+  {
+    "id": "v019",
+    "term": "ett arbete",
+    "fi": "työ",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Jag söker ett nytt arbete."
+  },
+  {
+    "id": "v020",
+    "term": "ett jobb",
+    "fi": "työ / duuni",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Hur är ditt nya jobb?"
+  },
+  {
+    "id": "v021",
+    "term": "ett möte",
+    "fi": "kokous",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Vi har ett möte klockan tio."
+  },
+  {
+    "id": "v022",
+    "term": "en kollega",
+    "fi": "työkaveri",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Min kollega hjälper mig ofta."
+  },
+  {
+    "id": "v023",
+    "term": "en chef",
+    "fi": "esimies / pomo",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Chefen är på semester."
+  },
+  {
+    "id": "v024",
+    "term": "ett företag",
+    "fi": "yritys",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Företaget grundades 2010."
+  },
+  {
+    "id": "v025",
+    "term": "en kund",
+    "fi": "asiakas",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Kunden är alltid nöjd."
+  },
+  {
+    "id": "v026",
+    "term": "en deadline",
+    "fi": "määräaika",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Vi måste hålla deadlinen."
+  },
+  {
+    "id": "v027",
+    "term": "att ansvara för",
+    "fi": "vastata jostakin",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Jag ansvarar för projektet."
+  },
+  {
+    "id": "v028",
+    "term": "en lön",
+    "fi": "palkka",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Lönen betalas den femtonde."
+  },
+  {
+    "id": "v029",
+    "term": "en semester",
+    "fi": "loma",
+    "part": 2,
+    "category": "tyoelama",
+    "example": "Jag ska ha semester i juli."
+  },
+  {
+    "id": "v030",
+    "term": "ett mejl",
+    "fi": "sähköposti(viesti)",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Jag skickar ett mejl till kunden."
+  },
+  {
+    "id": "v031",
+    "term": "att samarbeta",
+    "fi": "tehdä yhteistyötä",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Vi samarbetar med ett annat företag."
+  },
+  {
+    "id": "v032",
+    "term": "att presentera",
+    "fi": "esitellä",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Ska du presentera projektet på mötet?"
+  },
+  {
+    "id": "v033",
+    "term": "en rapport",
+    "fi": "raportti",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Jag skriver en rapport om resultaten."
+  },
+  {
+    "id": "v034",
+    "term": "att diskutera",
+    "fi": "keskustella",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Vi diskuterar problemet på mötet."
+  },
+  {
+    "id": "v035",
+    "term": "en fråga",
+    "fi": "kysymys",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Har du en fråga om uppgiften?"
+  },
+  {
+    "id": "v036",
+    "term": "att svara",
+    "fi": "vastata",
+    "part": 2,
+    "category": "viestinta",
+    "example": "Kan du svara på mejlet idag?"
+  },
+  {
+    "id": "v037",
+    "term": "en programmering",
+    "fi": "ohjelmointi",
+    "part": 3,
+    "category": "ict",
+    "example": "Jag studerar programmering på yrkeshögskolan."
+  },
+  {
+    "id": "v038",
+    "term": "en dator",
+    "fi": "tietokone",
+    "part": 3,
+    "category": "ict",
+    "example": "Min dator är ganska gammal."
+  },
+  {
+    "id": "v039",
+    "term": "en programvara",
+    "fi": "ohjelmisto",
+    "part": 3,
+    "category": "ict",
+    "example": "Vi utvecklar ny programvara."
+  },
+  {
+    "id": "v040",
+    "term": "en hårdvara",
+    "fi": "laitteisto",
+    "part": 3,
+    "category": "ict",
+    "example": "Hårdvaran måste uppdateras snart."
+  },
+  {
+    "id": "v041",
+    "term": "en kod",
+    "fi": "koodi",
+    "part": 3,
+    "category": "ict",
+    "example": "Koden fungerar inte som den ska."
+  },
+  {
+    "id": "v042",
+    "term": "att koda",
+    "fi": "koodata",
+    "part": 3,
+    "category": "ict",
+    "example": "Jag kodar nästan varje dag."
+  },
+  {
+    "id": "v043",
+    "term": "en databas",
+    "fi": "tietokanta",
+    "part": 3,
+    "category": "ict",
+    "example": "All data sparas i en databas."
+  },
+  {
+    "id": "v044",
+    "term": "ett nätverk",
+    "fi": "verkko",
+    "part": 3,
+    "category": "ict",
+    "example": "Nätverket är nere just nu."
+  },
+  {
+    "id": "v045",
+    "term": "en server",
+    "fi": "palvelin",
+    "part": 3,
+    "category": "ict",
+    "example": "Servern startar om automatiskt."
+  },
+  {
+    "id": "v046",
+    "term": "en fil",
+    "fi": "tiedosto",
+    "part": 3,
+    "category": "ict",
+    "example": "Spara filen på servern."
+  },
+  {
+    "id": "v047",
+    "term": "ett lösenord",
+    "fi": "salasana",
+    "part": 3,
+    "category": "ict",
+    "example": "Byt ditt lösenord regelbundet."
+  },
+  {
+    "id": "v048",
+    "term": "en användare",
+    "fi": "käyttäjä",
+    "part": 3,
+    "category": "ict",
+    "example": "Användaren loggar in i systemet."
+  },
+  {
+    "id": "v049",
+    "term": "en utveckling",
+    "fi": "kehitys",
+    "part": 3,
+    "category": "ict",
+    "example": "Programvaruutveckling är roligt."
+  },
+  {
+    "id": "v050",
+    "term": "ett fel",
+    "fi": "virhe / bugi",
+    "part": 3,
+    "category": "ict",
+    "example": "Det finns ett fel i koden."
+  },
+  {
+    "id": "v051",
+    "term": "att uppdatera",
+    "fi": "päivittää",
+    "part": 3,
+    "category": "ict",
+    "example": "Jag måste uppdatera systemet."
+  },
+  {
+    "id": "v052",
+    "term": "ett system",
+    "fi": "järjestelmä",
+    "part": 3,
+    "category": "ict",
+    "example": "Systemet är säkert och snabbt."
+  },
+  {
+    "id": "v053",
+    "term": "en webbsida",
+    "fi": "verkkosivu",
+    "part": 3,
+    "category": "ict",
+    "example": "Jag bygger en ny webbsida."
+  },
+  {
+    "id": "v054",
+    "term": "en säkerhet",
+    "fi": "turvallisuus",
+    "part": 3,
+    "category": "ict",
+    "example": "Datasäkerhet är mycket viktigt."
+  }
+]

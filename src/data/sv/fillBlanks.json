@@ -1,0 +1,72 @@
+[
+  {
+    "id": "f001",
+    "template": "Jag ___ informationsteknik på yrkeshögskolan.",
+    "answer": "studerar",
+    "part": 1,
+    "category": "opiskelu"
+  },
+  {
+    "id": "f002",
+    "template": "Vad gjorde du i ___?",
+    "answer": "helgen",
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "f003",
+    "template": "Trevligt att ___!",
+    "answer": "träffas",
+    "part": 1,
+    "category": "smaprat"
+  },
+  {
+    "id": "f004",
+    "template": "Vi har ett ___ klockan tio imorgon.",
+    "answer": "möte",
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "f005",
+    "template": "Jag skickar ett ___ till kunden.",
+    "answer": "mejl",
+    "part": 2,
+    "category": "viestinta"
+  },
+  {
+    "id": "f006",
+    "template": "Min ___ hjälper mig ofta på jobbet.",
+    "answer": "kollega",
+    "part": 2,
+    "category": "tyoelama"
+  },
+  {
+    "id": "f007",
+    "template": "All data sparas i en ___.",
+    "answer": "databas",
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "f008",
+    "template": "Det finns ett ___ i koden.",
+    "answer": "fel",
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "f009",
+    "template": "Byt ditt ___ regelbundet.",
+    "answer": "lösenord",
+    "part": 3,
+    "category": "ict"
+  },
+  {
+    "id": "f010",
+    "template": "Jag måste ___ systemet ikväll.",
+    "answer": "uppdatera",
+    "part": 3,
+    "category": "ict"
+  }
+]
