@@ -49,7 +49,7 @@ export default function Layout({ title, back = false, right = null, progress = n
         </header>
       )}
 
-      <main className="mx-auto max-w-xl p-4">{children}</main>
+      <main className="animate-page mx-auto max-w-xl p-4">{children}</main>
     </div>
   )
 }

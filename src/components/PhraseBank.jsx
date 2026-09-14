@@ -92,7 +92,9 @@ function Chip({ active, onClick, children }) {
       aria-pressed={active}
       className={
         'touch-target whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors ' +
-        (active ? 'bg-accent text-white' : 'bg-card text-muted ring-1 ring-line active:bg-bg')
+        (active
+          ? 'bg-accent-soft text-accent ring-1 ring-accent/30'
+          : 'bg-card text-muted ring-1 ring-line active:bg-bg')
       }
     >
       {children}

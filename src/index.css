@@ -53,6 +53,44 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* -----------------------------------------------------------------------------
+   Dark mode
+   The whole palette is CSS variables, so dark mode just re-defines the same
+   tokens. Every `bg-bg` / `text-ink` / etc. utility follows automatically.
+   - System default: dark applies via prefers-color-scheme UNLESS the user has
+     explicitly chosen light (data-theme="light").
+   - Manual choice: data-theme="dark" forces dark, "light" forces light.
+   (index.html sets data-theme early from localStorage to avoid a flash.)
+----------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: oklch(0.20 0.02 260);
+    --color-card: oklch(0.25 0.02 260);
+    --color-ink: oklch(0.96 0.005 250);
+    --color-muted: oklch(0.72 0.02 260);
+    --color-line: oklch(0.33 0.02 260);
+    --color-accent: oklch(0.64 0.13 255);
+    --color-accent-soft: oklch(0.34 0.07 255);
+    --color-learned: oklch(0.72 0.14 152);
+    --color-learned-soft: oklch(0.33 0.07 152);
+    --color-wrong: oklch(0.72 0.16 25);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: oklch(0.20 0.02 260);
+  --color-card: oklch(0.25 0.02 260);
+  --color-ink: oklch(0.96 0.005 250);
+  --color-muted: oklch(0.72 0.02 260);
+  --color-line: oklch(0.33 0.02 260);
+  --color-accent: oklch(0.64 0.13 255);
+  --color-accent-soft: oklch(0.34 0.07 255);
+  --color-learned: oklch(0.72 0.14 152);
+  --color-learned-soft: oklch(0.33 0.07 152);
+  --color-wrong: oklch(0.72 0.16 25);
+}
+
 /* The motivation bar's colourful gradient (the one bright element in 2a). */
 .bg-motivation {
   background-image: linear-gradient(120deg, oklch(0.55 0.14 265), oklch(0.58 0.12 235));
@@ -82,6 +120,21 @@ body {
 }
 .animate-sheet { animation: sheet-up 220ms ease-out; }
 .animate-fade { animation: fade-in 200ms ease-out; }
+
+/* --- Page transition: each page fades + slides in slightly on navigation --- */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-page { animation: page-in 220ms ease-out; }
+
+/* Respect users who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-page,
+  .animate-sheet,
+  .animate-fade,
+  .flip-inner { animation: none; transition: none; }
+}
 
 /* Hide the horizontal scrollbar on the filter row but keep it scrollable. */
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }

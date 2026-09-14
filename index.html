@@ -9,6 +9,14 @@
     <meta name="description" content="Työelämän ruotsi — oma harjoittelusovellus" />
     <title>Työelämän ruotsi</title>
 
+    <!-- Apply the saved theme before render to avoid a light/dark flash. -->
+    <script>
+      try {
+        var t = localStorage.getItem('theme-v1')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+
     <!-- Design system fonts: Space Grotesk (headings/numbers) + IBM Plex Sans
          (body/UI). preconnect speeds up the font fetch. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
