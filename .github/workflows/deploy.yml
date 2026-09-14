@@ -28,7 +28,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20 # LTS, required by Vite
+          # Node 22 (current LTS). Required by our toolchain: jsdom 30 / undici 8
+          # (used by the component tests) needs Node 22+ — on Node 20 the jsdom
+          # worker crashes at import with "webidl.util.markAsUncloneable is not a
+          # function". Vite 8 is happy on 22 as well.
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run test # unit + data-integrity tests; a failure blocks the deploy
