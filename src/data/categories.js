@@ -12,7 +12,7 @@
 export const PARTS = [
   { id: 1, label: 'Del 1', subtitle: 'Studier & småprat' },
   { id: 2, label: 'Del 2', subtitle: 'Arbetslivet & kommunikation' },
-  { id: 3, label: 'Del 3', subtitle: 'Min bransch (ICT)' },
+  { id: 3, label: 'Del 3', subtitle: 'Min bransch' },
 ]
 
 export const CATEGORIES = [
@@ -28,5 +28,13 @@ export const CATEGORIES = [
 export const categoryLabel = (id) =>
   CATEGORIES.find((c) => c.id === id)?.label ?? id
 
+// Short label ("Del 1") — used in tight spaces like the small tag chips.
 export const partLabel = (id) =>
   PARTS.find((p) => p.id === id)?.label ?? `Del ${id}`
+
+// Full label with the real topic title ("Del 1 – Studier & småprat") — used in
+// the filter menu on the home page.
+export const partFullLabel = (id) => {
+  const p = PARTS.find((x) => x.id === id)
+  return p ? `${p.label} – ${p.subtitle}` : `Del ${id}`
+}

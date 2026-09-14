@@ -1,5 +1,5 @@
 import { useFilter } from '../context/FilterContext'
-import { PARTS, CATEGORIES } from '../data/categories'
+import { PARTS, CATEGORIES, partFullLabel } from '../data/categories'
 
 // -----------------------------------------------------------------------------
 // FilterBar
@@ -18,19 +18,20 @@ export default function FilterBar() {
 
   return (
     <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-      {/* --- Part selector (single choice) --- */}
+      {/* --- Part selector (single choice) ---
+          Shown as a vertical list so the full topic titles fit on a phone. */}
       <div className="mb-3">
         <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
           Osa
         </div>
-        <div className="flex flex-wrap gap-2">
-          {/* "Kaikki" (all) + one button per Del. The active option is filled teal. */}
+        <div className="flex flex-col gap-2">
+          {/* "Kaikki osat" (all) + one row per Del with its real topic title. */}
           <PartButton active={part === 'all'} onClick={() => setPart('all')}>
-            Kaikki
+            Kaikki osat
           </PartButton>
           {PARTS.map((p) => (
             <PartButton key={p.id} active={part === p.id} onClick={() => setPart(p.id)}>
-              {p.label}
+              {partFullLabel(p.id)}
             </PartButton>
           ))}
         </div>
@@ -78,8 +79,8 @@ export default function FilterBar() {
   )
 }
 
-// Small internal button for the part selector. Kept here (not exported) because
-// it is only used by FilterBar.
+// Full-width, left-aligned row button for the part selector. Kept here (not
+// exported) because it is only used by FilterBar.
 function PartButton({ active, onClick, children }) {
   return (
     <button
@@ -87,7 +88,7 @@ function PartButton({ active, onClick, children }) {
       onClick={onClick}
       aria-pressed={active}
       className={
-        'touch-target rounded-full px-4 text-sm font-medium transition-colors ' +
+        'touch-target w-full rounded-xl px-4 py-2 text-left text-sm font-medium transition-colors ' +
         (active ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-700 active:bg-slate-200')
       }
     >
