@@ -17,4 +17,12 @@ export default defineConfig({
     react(),        // React + JSX + Fast Refresh
     tailwindcss(),  // Tailwind CSS v4 (CSS-first, no separate tailwind.config.js)
   ],
+
+  // Vitest config. Pure-logic tests run in the default node environment;
+  // component tests opt into jsdom with a `// @vitest-environment jsdom`
+  // docblock at the top of the file. setup.js registers jest-dom matchers.
+  test: {
+    globals: true,
+    setupFiles: './src/test/setup.js',
+  },
 })
