@@ -67,8 +67,11 @@ export default function Home() {
         {/* Global filter. */}
         <FilterBar />
 
-        {/* Module list. */}
-        <div className="space-y-4">
+        {/* Module list. Flex column + gap so spacing works reliably: the rows
+            are <Link>/<a> (inline by default), and vertical margins (space-y-*)
+            are ignored on inline elements — flex items get blockified, so gap
+            always applies. */}
+        <div className="flex flex-col gap-[7px]">
           {modules.map((m) => (
             <ModuleRow key={m.to} module={m} count={filterItems(m.data).length} />
           ))}
@@ -89,7 +92,7 @@ function ModuleRow({ module, count }) {
   const inner = (
     <div
       className={
-        'flex items-center justify-between rounded-[14px] p-4 shadow-sm ring-1 transition-colors ' +
+        'flex items-center justify-between rounded-[14px] p-4 ring-1 transition-colors ' +
         (disabled ? 'bg-card/60 ring-line' : 'bg-card ring-line active:bg-bg')
       }
     >
