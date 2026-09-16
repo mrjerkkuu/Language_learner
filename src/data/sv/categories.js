@@ -22,4 +22,8 @@ export const CATEGORIES = [
   { id: 'asuminen', label: 'Asuminen' },
   { id: 'kysymyssanat', label: 'Kysymyssanat' },
   { id: 'harrastukset', label: 'Harrastukset' },
+  { id: 'esittaytyminen', label: 'Esittäytyminen' },
+  { id: 'tervehdykset', label: 'Tervehdys ja hyvästely' },
+  { id: 'kuulumiset', label: 'Kuulumiset' },
+  { id: 'kiitokset', label: 'Kiitos ja anteeksi' },
 ]

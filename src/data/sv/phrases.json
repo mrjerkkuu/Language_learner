@@ -222,5 +222,523 @@
     "fi": "Millä kerroksessa sinä asut?",
     "part": 1,
     "category": "kysymyssanat"
+  },
+  {
+    "id": "p033",
+    "term": "Jag heter X. / Mitt namn är X.",
+    "fi": "Nimeni on X.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p034",
+    "term": "Hej! Jag är X från Oy Forcit Ab.",
+    "fi": "Hei! Olen X Oy Forcit Ab:stä.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p035",
+    "term": "Har vi redan träffats?",
+    "fi": "Olemmeko jo tavanneet?",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p036",
+    "term": "Får jag presentera, det här är X.",
+    "fi": "Saanko esitellä, tässä on X.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p037",
+    "term": "Jag skulle vilja presentera X för dig.",
+    "fi": "Haluaisin esitellä sinulle X.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p038",
+    "term": "Det här är X.",
+    "fi": "Tässä on X.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p039",
+    "term": "Trevligt/Angenämt att träffas!",
+    "fi": "Mukava tavata!",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p040",
+    "term": "Välkommen till vårt företag!",
+    "fi": "Tervetuloa yritykseemme!",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p041",
+    "term": "Jag har sett fram emot att träffa er.",
+    "fi": "Olen odottanut teidän tapaamista.",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p042",
+    "term": "Kul att ses!",
+    "fi": "Kiva nähdä/tavata!",
+    "part": 1,
+    "category": "esittaytyminen"
+  },
+  {
+    "id": "p043",
+    "term": "Hej!",
+    "fi": "Hei! / Hyvää päivää!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p044",
+    "term": "God morgon!",
+    "fi": "Hyvää huomenta!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p045",
+    "term": "God dag!",
+    "fi": "Hyvää päivää!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p046",
+    "term": "God afton! / God kväll!",
+    "fi": "Hyvää iltaa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p047",
+    "term": "Hejsan! / Tjänare! / Tjena! / Hej på dig!",
+    "fi": "Moi! / Terve!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p048",
+    "term": "Hej, roligt att ses!",
+    "fi": "Hei, hauska nähdä!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p049",
+    "term": "Hej, längesen sist! / Hej, det var länge sen.",
+    "fi": "Hei, pitkästä aikaa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p050",
+    "term": "Vad trevligt att du kunde komma!",
+    "fi": "Mukavaa että pystyit tulemaan!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p051",
+    "term": "Tack för att ni kunde komma!",
+    "fi": "Kiitos kun pystyitte tulemaan!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p052",
+    "term": "Hej då!",
+    "fi": "Hei sitten!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p053",
+    "term": "Adjö! / På återseende!",
+    "fi": "Näkemiin!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p054",
+    "term": "Vi ses!",
+    "fi": "Nähdään!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p055",
+    "term": "Hej så länge!",
+    "fi": "Hei siihen asti!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p056",
+    "term": "Ha det så bra!",
+    "fi": "Voi hyvin! / Hyvää jatkoa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p057",
+    "term": "Ta hand om dig! / Sköt om dig!",
+    "fi": "Pidä huolta itsestäsi!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p058",
+    "term": "Det var kul att ses!",
+    "fi": "Oli kiva nähdä!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p059",
+    "term": "Trevlig fortsättning på dagen!",
+    "fi": "Hyvää päivänjatkoa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p060",
+    "term": "Trevlig kväll!",
+    "fi": "Mukavaa iltaa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p061",
+    "term": "Trevlig resa!",
+    "fi": "Mukavaa matkaa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p062",
+    "term": "Trevlig helg!",
+    "fi": "Mukavaa viikonloppua!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p063",
+    "term": "Trevlig semester!",
+    "fi": "Mukavaa lomaa!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p064",
+    "term": "Hör av dig!",
+    "fi": "Pidä/Ota yhteyttä!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p065",
+    "term": "Hälsningar till alla!",
+    "fi": "Terveiset kaikille!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p066",
+    "term": "Hälsa Gunvald.",
+    "fi": "Gunvaldille terkkuja.",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p067",
+    "term": "Krya på dig!",
+    "fi": "Parane pian!",
+    "part": 1,
+    "category": "tervehdykset"
+  },
+  {
+    "id": "p068",
+    "term": "Hur går det?",
+    "fi": "Mitä kuuluu?",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p069",
+    "term": "Hur har du det?",
+    "fi": "Mitä (sinulle) kuuluu?",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p070",
+    "term": "Hur står det till (med dig)?",
+    "fi": "Mitä (sinulle) kuuluu?",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p071",
+    "term": "Hur är det i Gävle?",
+    "fi": "Mitä Gävleen kuuluu?",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p072",
+    "term": "(Hur är) läget?",
+    "fi": "Miten menee?",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p073",
+    "term": "Bra, tack!",
+    "fi": "Hyvää/hyvin, kiitos!",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p074",
+    "term": "Tack, alldeles utmärkt!",
+    "fi": "Kiitos, aivan erinomaista!",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p075",
+    "term": "Ganska bra, tack.",
+    "fi": "Melko hyvää, kiitos.",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p076",
+    "term": "Tack, någorlunda.",
+    "fi": "Kiitos, eipä ihmeempiä.",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p077",
+    "term": "Inget speciellt.",
+    "fi": "Ei mitään erikoista.",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p078",
+    "term": "Sådär.",
+    "fi": "Siinähän se.",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p079",
+    "term": "Inget vidare.",
+    "fi": "Ei kovinkaan hyvää / Ei mitään uutta.",
+    "part": 1,
+    "category": "kuulumiset"
+  },
+  {
+    "id": "p080",
+    "term": "Tack så mycket!",
+    "fi": "Paljon kiitoksia!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p081",
+    "term": "Tack ska du ha!",
+    "fi": "Kiitos sinulle!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p082",
+    "term": "Tusen tack!",
+    "fi": "Tuhannet kiitokset!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p083",
+    "term": "Tack för hjälpen!",
+    "fi": "Kiitos avusta!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p084",
+    "term": "Tack för e-posten!",
+    "fi": "Kiitos s-postista!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p085",
+    "term": "Tack för lunchen!",
+    "fi": "Kiitos lounaasta!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p086",
+    "term": "Jag tackar för servicen!",
+    "fi": "Kiitos palvelusta!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p087",
+    "term": "Var så god(a)!",
+    "fi": "Ole/Olkaa hyvä!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p088",
+    "term": "Tack detsamma!",
+    "fi": "Kiitos samoin!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p089",
+    "term": "Det var inget!",
+    "fi": "Eipä tuo mitään!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p090",
+    "term": "Det var så lite (så)!",
+    "fi": "Siitä ei ollut vaivaa!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p091",
+    "term": "För all del!",
+    "fi": "Eipä kiittämistä! / Kaikin mokomin!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p092",
+    "term": "Ingenting att tacka för!",
+    "fi": "Eipä kiittämistä!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p093",
+    "term": "Ingen orsak!",
+    "fi": "Ei kestä (kiittää)! (virallisempi)",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p094",
+    "term": "Ursäkta (mig)!",
+    "fi": "Anteeksi! (huomion herätys)",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p095",
+    "term": "Förlåt (mig)!",
+    "fi": "Anteeksi! (anteeksipyyntö)",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p096",
+    "term": "Ursäkta (mig), men jag förstod inte.",
+    "fi": "Anteeksi, mutta en ymmärtänyt.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p097",
+    "term": "Jag ber om ursäkt, men jag måste gå.",
+    "fi": "Anteeksi, mutta minun pitää mennä.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p098",
+    "term": "Förlåt att jag avbryter!",
+    "fi": "Anteeksi, että keskeytän!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p099",
+    "term": "Förlåt att jag stör!",
+    "fi": "Anteeksi, että häiritsen!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p100",
+    "term": "Förlåt att jag kommer för sent.",
+    "fi": "Anteeksi, että tulen myöhässä.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p101",
+    "term": "Förlåt mig, det var inte meningen.",
+    "fi": "Anteeksi, ei ollut tarkoitus.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p102",
+    "term": "Jag är hemskt ledsen.",
+    "fi": "Olen tosi pahoillani.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p103",
+    "term": "Jag beklagar det inträffade.",
+    "fi": "Pahoittelen tapahtunutta.",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p104",
+    "term": "Det gör ingenting!",
+    "fi": "Ei se mitään!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p105",
+    "term": "Ingen fara!",
+    "fi": "Ei se mitään!",
+    "part": 1,
+    "category": "kiitokset"
+  },
+  {
+    "id": "p106",
+    "term": "Inga problem!",
+    "fi": "Ei mitään ongelmaa!",
+    "part": 1,
+    "category": "kiitokset"
   }
 ]
