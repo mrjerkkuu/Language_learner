@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -24,5 +25,8 @@ export default defineConfig({
   test: {
     globals: true,
     setupFiles: './src/test/setup.js',
+    // server/ has its own package.json + vitest.config.js (separate env,
+    // separate test DB) and must only be run via `npm test` inside server/.
+    exclude: [...configDefaults.exclude, 'server/**'],
   },
 })
