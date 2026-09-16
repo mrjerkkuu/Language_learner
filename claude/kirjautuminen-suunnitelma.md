@@ -131,6 +131,9 @@ Toteutus `demoStore`-palveluna (varaston vaihto A↔B = yksi tiedosto).
 - **Ei tokenia JS:ssä/localStoragessa** — istunto httpOnly-evästeessä (XSS ei pääse käsiksi).
 - `fetch(..., { credentials:'include' })`; **CSRF-token** otsakkeeseen tilaa muuttaviin POSTeihin.
 - Salasana ei lokiin; salasanatila tyhjennetään lähetyksen jälkeen. Autocomplete-attribuutit oikein.
+- **Huom (auth-toteutus, Vaihe 2):** varmista ettei `apiClient.js` koskaan
+  logita pyynnön bodya kokonaisuudessaan virhetilanteissa (esim.
+  `console.error(requestBody)`) — salasana saattaisi päätyä lokiin sitä kautta.
 
 ## 8. Saavutettavuus & mobiili (2a)
 `<label>` + `aria-describedby`; fokus ensimmäiseen virhekenttään; kosketuskohteet ≥44px; toimii tummassa/vaaleassa;

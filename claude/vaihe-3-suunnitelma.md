@@ -122,3 +122,17 @@ Language_learner/
 - Sähköpostivarmennus + salasanan palautus (out of scope nyt).
 - Sisällön siirto kantaan (jos halutaan muokata sisältöä ilman deployta) — nyt JSON riittää.
 - Siirto Renderiin + Neon-Postgresiin jos sovelluksen pitää olla aina päällä ilman läppäriä (Prisma tekee kannan vaihdon helpoksi).
+- **CSP korjattava ennen tuotantojulkaisua:** auth-toteutuksessa
+  `@fastify/helmet` otettiin käyttöön asetuksella `contentSecurityPolicy: false`,
+  koska `index.html`:n inline-teemaskripti olisi vaatinut nonce/hash-viritystä.
+  Tämä on tietoinen, väliaikainen kompromissi kehitysvaiheessa. Korjaa (ota CSP
+  käyttöön asianmukaisella nonce/hash-määrityksellä) viimeistään ennen Tailscale
+  Funnel -julkaisua, koska CSP on tärkeä XSS-suoja julkisessa palvelussa.
+- **Prisma 7 -adapterimuutos (havaittu auth-toteutuksessa, askel 1):**
+  alkuperäinen suunnitelma oletti `new PrismaClient({ datasourceUrl: ... })`
+  toimivan, mutta Prisma 7:n uusi client-generaattori (`provider = "prisma-client"`)
+  on täysin adapteripohjainen — `datasourceUrl`-optio ei enää toimi. Ratkaisu:
+  `@prisma/adapter-better-sqlite3`-paketti, `new PrismaBetterSqlite3({ url: DATABASE_URL })`
+  annetaan `PrismaClient`:lle. Muista: jos/kun siirrytään PostgreSQL:ään, adapteri
+  pitää vaihtaa vastaavaan Postgres-adapteriin — se ei vaihdu automaattisesti
+  pelkällä `DATABASE_URL`:n muutoksella.
