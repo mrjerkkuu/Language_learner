@@ -45,21 +45,21 @@
     "id": "p007",
     "term": "Vad studerar du?",
     "fi": "Mitä opiskelet?",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu"
   },
   {
     "id": "p008",
     "term": "Jag studerar informationsteknik.",
     "fi": "Opiskelen tieto- ja viestintätekniikkaa.",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu"
   },
   {
     "id": "p009",
     "term": "När börjar kursen?",
     "fi": "Milloin kurssi alkaa?",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu"
   },
   {
@@ -157,70 +157,70 @@
     "id": "p023",
     "term": "Var bor du?",
     "fi": "Missä sinä asut?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p024",
     "term": "Vart är du på väg?",
     "fi": "Minne olet menossa?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p025",
     "term": "Varför studerar du svenska?",
     "fi": "Miksi opiskelet ruotsia?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p026",
     "term": "Vem är det?",
     "fi": "Kuka se on?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p027",
     "term": "Vems är den här boken?",
     "fi": "Kenen tämä kirja on?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p028",
     "term": "Hur länge har du bott här?",
     "fi": "Kuinka kauan olet asunut täällä?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p029",
     "term": "Hur ofta tränar du?",
     "fi": "Kuinka usein sinä treenaat?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p030",
     "term": "Hur mycket kostar biljetten?",
     "fi": "Kuinka paljon lippu maksaa?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p031",
     "term": "Hurdan är din lägenhet?",
     "fi": "Millainen asuntosi on?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
     "id": "p032",
     "term": "Vilken våning bor du på?",
     "fi": "Millä kerroksessa sinä asut?",
-    "part": 1,
+    "part": 7,
     "category": "kysymyssanat"
   },
   {
@@ -556,1190 +556,1190 @@
     "id": "p080",
     "term": "Tack så mycket!",
     "fi": "Paljon kiitoksia!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p081",
     "term": "Tack ska du ha!",
     "fi": "Kiitos sinulle!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p082",
     "term": "Tusen tack!",
     "fi": "Tuhannet kiitokset!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p083",
     "term": "Tack för hjälpen!",
     "fi": "Kiitos avusta!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p084",
     "term": "Tack för e-posten!",
     "fi": "Kiitos s-postista!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p085",
     "term": "Tack för lunchen!",
     "fi": "Kiitos lounaasta!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p086",
     "term": "Jag tackar för servicen!",
     "fi": "Kiitos palvelusta!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p087",
     "term": "Var så god(a)!",
     "fi": "Ole/Olkaa hyvä!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p088",
     "term": "Tack detsamma!",
     "fi": "Kiitos samoin!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p089",
     "term": "Det var inget!",
     "fi": "Eipä tuo mitään!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p090",
     "term": "Det var så lite (så)!",
     "fi": "Siitä ei ollut vaivaa!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p091",
     "term": "För all del!",
     "fi": "Eipä kiittämistä! / Kaikin mokomin!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p092",
     "term": "Ingenting att tacka för!",
     "fi": "Eipä kiittämistä!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p093",
     "term": "Ingen orsak!",
     "fi": "Ei kestä (kiittää)! (virallisempi)",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p094",
     "term": "Ursäkta (mig)!",
     "fi": "Anteeksi! (huomion herätys)",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p095",
     "term": "Förlåt (mig)!",
     "fi": "Anteeksi! (anteeksipyyntö)",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p096",
     "term": "Ursäkta (mig), men jag förstod inte.",
     "fi": "Anteeksi, mutta en ymmärtänyt.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p097",
     "term": "Jag ber om ursäkt, men jag måste gå.",
     "fi": "Anteeksi, mutta minun pitää mennä.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p098",
     "term": "Förlåt att jag avbryter!",
     "fi": "Anteeksi, että keskeytän!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p099",
     "term": "Förlåt att jag stör!",
     "fi": "Anteeksi, että häiritsen!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p100",
     "term": "Förlåt att jag kommer för sent.",
     "fi": "Anteeksi, että tulen myöhässä.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p101",
     "term": "Förlåt mig, det var inte meningen.",
     "fi": "Anteeksi, ei ollut tarkoitus.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p102",
     "term": "Jag är hemskt ledsen.",
     "fi": "Olen tosi pahoillani.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p103",
     "term": "Jag beklagar det inträffade.",
     "fi": "Pahoittelen tapahtunutta.",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p104",
     "term": "Det gör ingenting!",
     "fi": "Ei se mitään!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p105",
     "term": "Ingen fara!",
     "fi": "Ei se mitään!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p106",
     "term": "Inga problem!",
     "fi": "Ei mitään ongelmaa!",
-    "part": 1,
+    "part": 6,
     "category": "kiitokset"
   },
   {
     "id": "p107",
     "term": "Jo / Ja / Jaha / Jaså",
     "fi": "Joo / Jaaha.",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p108",
     "term": "Vad intressant!",
     "fi": "Kiinnostavaa!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p109",
     "term": "Ja, så är det (ju)!",
     "fi": "Kyllä vaan / Niin todellakin!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p110",
     "term": "Just det.",
     "fi": "Juuri niin.",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p111",
     "term": "Precis.",
     "fi": "Aivan!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p112",
     "term": "Det där är viktigt.",
     "fi": "Tuo on tärkeää.",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p113",
     "term": "Nämen, vad roligt!",
     "fi": "Onpas hauskaa!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p114",
     "term": "Verkligen?",
     "fi": "Todellako?",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p115",
     "term": "Säger du det?",
     "fi": "Niinkö?",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p116",
     "term": "Är det sant?",
     "fi": "Onko se totta?",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p117",
     "term": "Menar du allvar?",
     "fi": "Oletko tosissasi?",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p118",
     "term": "Nähä!",
     "fi": "Älä!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p119",
     "term": "Vad säger du?!",
     "fi": "Mitä (höpiset)!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p120",
     "term": "Ojdå.",
     "fi": "Ojdå.",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p121",
     "term": "Oi joi.",
     "fi": "Oi joi.",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p122",
     "term": "Vad tråkigt!",
     "fi": "Onpa tylsää!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p123",
     "term": "Vad synd!",
     "fi": "Sääli/harmi!",
-    "part": 1,
+    "part": 6,
     "category": "kuuntelu"
   },
   {
     "id": "p124",
     "term": "Ursäkta, vad sa(de) du?",
     "fi": "Anteeksi, mitä sanoit?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p125",
     "term": "Ursäkta, jag hörde inte.",
     "fi": "Anteeksi, en kuullut.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p126",
     "term": "Kan du säga det på nytt?",
     "fi": "Voitko sanoa sen uudestaan?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p127",
     "term": "Var vänlig och upprepa.",
     "fi": "Ole hyvä ja toista.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p128",
     "term": "Skulle du kunna tala lite högre?",
     "fi": "Voisitko puhua vähän kovempaa?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p129",
     "term": "Jag förstår/förstod inte.",
     "fi": "En ymmärrä/ymmärtänyt.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p130",
     "term": "Vad menar du egentligen?",
     "fi": "Mitä oikeastaan tarkoitat?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p131",
     "term": "Kan jag få fråga om en sak?",
     "fi": "Saanko kysyä yhtä asiaa uudestaan?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p132",
     "term": "Skulle du kunna precisera litet?",
     "fi": "Voisitko tarkentaa vähän?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p133",
     "term": "Kan du förklara litet närmare?",
     "fi": "Voitko selittää hieman tarkemmin?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p134",
     "term": "Kan du tala lite långsammare?",
     "fi": "Voitko puhua hieman hitaammin?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p135",
     "term": "...eller hur?",
     "fi": "...vai kuinka?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p136",
     "term": "...inte sant?",
     "fi": "eikö totta?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p137",
     "term": "Hänger du med?",
     "fi": "Pysytkö mukana?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p138",
     "term": "Vad tror du?",
     "fi": "Mitä arvelet?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p139",
     "term": "Ett ögonblick...",
     "fi": "Hetkinen...",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p140",
     "term": "Jag kommer inte ihåg det på svenska.",
     "fi": "En muista sitä ruotsiksi.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p141",
     "term": "Tyvärr minns jag inte ordet/namnet...",
     "fi": "En valitettavasti muista sanaa/nimeä...",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p142",
     "term": "Var var jag nu...",
     "fi": "Missä olinkaan nyt...",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p143",
     "term": "Vad höll jag på att säga?",
     "fi": "Mitä olinkaan sanomassa?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p144",
     "term": "Vad heter det...",
     "fi": "Mikäs se nyt on...",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p145",
     "term": "Hur kan jag uttrycka/säga det...",
     "fi": "Kuinka voin ilmaista/sanoa sen...",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p146",
     "term": "Jag vet tyvärr inte.",
     "fi": "En valitettavasti tiedä.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p147",
     "term": "(Jag har) ingen aning.",
     "fi": "Ei aavistustakaan.",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p148",
     "term": "Vad betyder det här?",
     "fi": "Mitä tämä tarkoittaa?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p149",
     "term": "Vad är synonym till...?",
     "fi": "Mikä on synonyymi jllek?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p150",
     "term": "Vad är motsatsen till...?",
     "fi": "Mikä on vastakohta jllek?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p151",
     "term": "Hur säger man...på svenska?",
     "fi": "Miten sanotaan...ruotsiksi?",
-    "part": 1,
+    "part": 6,
     "category": "selvennys"
   },
   {
     "id": "p152",
     "term": "Tja...",
     "fi": "No...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p153",
     "term": "Apropå... / På tal om...",
     "fi": "Liittyen jhk... / jstk puheen ollen...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p154",
     "term": "Apropå det du sade...",
     "fi": "Liittyen siihen, mitä sanoit...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p155",
     "term": "För att komma tillbaka till...",
     "fi": "Palatakseni takaisin jhk...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p156",
     "term": "Jag skulle vilja lägga till en sak.",
     "fi": "Haluaisin lisätä yhden asian.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p157",
     "term": "Vänta lite...",
     "fi": "Odotas vähän...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p158",
     "term": "Förlåt att jag avbryter men...",
     "fi": "Anteeksi että keskeytän, mutta...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p159",
     "term": "Ursäkta. Får jag fråga en sak?",
     "fi": "Anteeksi. Saanko kysyä yhtä asiaa?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p160",
     "term": "Får jag kommentera det du sade?",
     "fi": "Saanko kommentoida sanomaasi?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p161",
     "term": "Jag föreslår att vi...",
     "fi": "Ehdotan että me...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p162",
     "term": "Vårt förslag är att...",
     "fi": "Ehdotuksemme on, että...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p163",
     "term": "Vi kan göra så att...",
     "fi": "Tehdään niin, että...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p164",
     "term": "...skulle vara en god idé.",
     "fi": "Olisi hyvä idea.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p165",
     "term": "Hur skulle det vara om...",
     "fi": "Miten olisi, jos...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p166",
     "term": "Skulle det passa att...",
     "fi": "Sopisiko että...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p167",
     "term": "Passar måndag för er?",
     "fi": "Sopiiko maanantai teille?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p168",
     "term": "Skulle vi kunna träffas den 20?",
     "fi": "Voisimmeko tavata 20. päivä?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p169",
     "term": "Vad sägs om en lunch?",
     "fi": "Miten olisi lounas?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p170",
     "term": "Skulle vi inte kunna...",
     "fi": "Emmekö voisi...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p171",
     "term": "Kan vi inte...?",
     "fi": "Emmekö voi...?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p172",
     "term": "Vad tror du om...",
     "fi": "Mitä tuumaat, jos...?",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p173",
     "term": "Det låter bra.",
     "fi": "Kuulostaa hyvältä.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p174",
     "term": "Det är en bra idé.",
     "fi": "Se on hyvä idea.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p175",
     "term": "Ja, varför inte.",
     "fi": "Joo, miksipäs ei.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p176",
     "term": "Ja, det passar bra/utmärkt!",
     "fi": "Kyllä, se sopii hyvin/loistavasti!",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p177",
     "term": "Nästa vecka passar mig fint.",
     "fi": "Ensi viikko sopii minulle hienosti.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p178",
     "term": "Tyvärr...",
     "fi": "Valitettavasti...",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p179",
     "term": "Tyvärr passar/går det inte.",
     "fi": "Valitettavasti se ei sovi.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p180",
     "term": "Jag beklagar, men tisdag passar inte.",
     "fi": "Valitan, mutta tiistai ei sovi.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p181",
     "term": "Jag skulle gärna komma, men jag hinner inte.",
     "fi": "Tulisin mielelläni, mutta en ehdi.",
-    "part": 1,
+    "part": 6,
     "category": "puheenvuoro"
   },
   {
     "id": "p182",
     "term": "Hur är vädret i Stockholm?",
     "fi": "Millainen sää Tukholmassa on?",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p183",
     "term": "Det är ganska varmt.",
     "fi": "On aika lämmintä.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p184",
     "term": "Det är ganska kyligt.",
     "fi": "On aika viileää.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p185",
     "term": "Det är ganska kallt.",
     "fi": "On aika kylmää.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p186",
     "term": "Det var soligt.",
     "fi": "Oli aurinkoista.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p187",
     "term": "Det var blåsigt.",
     "fi": "Oli tuulista.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p188",
     "term": "Det var halt.",
     "fi": "Oli liukasta.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p189",
     "term": "Det var molnigt.",
     "fi": "Oli pilvistä.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p190",
     "term": "Det åskar.",
     "fi": "Ukkostaa.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p191",
     "term": "Det blåser.",
     "fi": "Tuulee.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p192",
     "term": "Det snöar.",
     "fi": "Sataa lunta.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p193",
     "term": "Det blixtrar.",
     "fi": "Salamoi.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p194",
     "term": "Det ösregnar.",
     "fi": "Sataa kaatamalla.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p195",
     "term": "Det stormar.",
     "fi": "Myrskyää.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p196",
     "term": "Det är minusgrader.",
     "fi": "On pakkasta.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p197",
     "term": "Det är 25 grader varmt.",
     "fi": "On 25 astetta lämmintä.",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p198",
     "term": "Vilket fantastiskt/fint väder!",
     "fi": "Kuinka fantastinen/hieno sää!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p199",
     "term": "Vad det är kallt!",
     "fi": "Onpas kylmää!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p200",
     "term": "Vad det är varmt!",
     "fi": "Onpas lämmintä!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p201",
     "term": "Vilken dimma!",
     "fi": "Mikä sumu!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p202",
     "term": "Vilken hetta!",
     "fi": "Mikä helle!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p203",
     "term": "Vilket oväder!",
     "fi": "Kurja keli!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p204",
     "term": "Usch, vad det blåser!",
     "fi": "Hyi, kun tuulee!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p205",
     "term": "Hur gick resan?",
     "fi": "Kuinka matka meni?",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p206",
     "term": "Hur länge har du jobbat här?",
     "fi": "Kuinka kauan olet ollut töissä täällä?",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p207",
     "term": "Vad har du för hobbyer?",
     "fi": "Mitä harrastuksia sinulla on?",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p208",
     "term": "Vilken fin byrå!",
     "fi": "Onpas hieno toimisto!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p209",
     "term": "Ni har mysiga lokaler här!",
     "fi": "Teillä on viihtyisät tilat täällä!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p210",
     "term": "Vilken modern firma du har!",
     "fi": "Onpas sinulla moderni firma!",
-    "part": 1,
+    "part": 7,
     "category": "smalltalk"
   },
   {
     "id": "p211",
     "term": "Vad tycker/anser/säger du (om den här saken)?",
     "fi": "Mitä mieltä olet (tästä asiasta)?",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p212",
     "term": "Vad har du för åsikt/uppfattning om...?",
     "fi": "Mikä on mielipiteesi/käsityksesi jstk?",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p213",
     "term": "Jag tycker/anser att...",
     "fi": "Olen sitä mieltä, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p214",
     "term": "Min åsikt är att...",
     "fi": "Mielipiteeni on, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p215",
     "term": "Enligt min uppfattning...",
     "fi": "Mielestäni...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p216",
     "term": "Jag är av den åsikten att...",
     "fi": "Olen sitä mieltä, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p217",
     "term": "Personligen tycker jag att...",
     "fi": "Henkilökohtaisesti olen sitä mieltä, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p218",
     "term": "Som jag ser det...",
     "fi": "Näkemykseni mukaan...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p219",
     "term": "För oss verkar det som att...",
     "fi": "Meistä vaikuttaa siltä, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p220",
     "term": "Jag vågar påstå/hävda att...",
     "fi": "Uskallan väittää, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p221",
     "term": "Såvitt jag vet...",
     "fi": "Sikäli kun tiedän...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p222",
     "term": "Om jag får motivera mig lite...",
     "fi": "Jos saan perustella hieman...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p223",
     "term": "Det handlar/är fråga om...",
     "fi": "Kyse on...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p224",
     "term": "Det viktiga här är ju att...",
     "fi": "Tärkeätähän tässä on, että...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p225",
     "term": "Det här är bakgrunden till...",
     "fi": "Tämä on tausta jllek...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p226",
     "term": "All forskning visar...",
     "fi": "Kaikki tutkimus näyttää...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p227",
     "term": "Sett ur den synvinkeln...",
     "fi": "Tästä näkökulmasta katsottuna...",
-    "part": 1,
+    "part": 7,
     "category": "mielipiteet"
   },
   {
     "id": "p228",
     "term": "Utan vidare! / Exakt!",
     "fi": "Ilman muuta! / Aivan!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p229",
     "term": "Självklart!",
     "fi": "Tietysti/totta kai!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p230",
     "term": "Ja, det stämmer.",
     "fi": "Joo, pitää paikkansa.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p231",
     "term": "Ja, det är sant.",
     "fi": "Joo, totta.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p232",
     "term": "Det har du rätt i.",
     "fi": "Siinä olet oikeassa.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p233",
     "term": "Det tycker jag också.",
     "fi": "Minäkin olen sitä mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p234",
     "term": "Jag tycker detsamma.",
     "fi": "Olen samaa mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p235",
     "term": "Jag håller med dig.",
     "fi": "Olen samaa mieltä kanssasi.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p236",
     "term": "Jag instämmer med er.",
     "fi": "Olen samaa mieltä kanssanne.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p237",
     "term": "Det håller jag med om.",
     "fi": "Olen samaa mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p238",
     "term": "Jag vet inte riktigt...",
     "fi": "En oikein tiedä...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p239",
     "term": "Jag är inte riktigt övertygad om...",
     "fi": "En ole ihan vakuuttunut jstk...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p240",
     "term": "Kanske det.",
     "fi": "Voi olla.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p241",
     "term": "Varför inte.",
     "fi": "Miksipä ei.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p242",
     "term": "Det beror på...",
     "fi": "Riippuu jstk...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p243",
     "term": "Svårt att säga.",
     "fi": "Vaikea sanoa.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p244",
     "term": "Hur som helst...",
     "fi": "Ihan miten vaan...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p245",
     "term": "Det spelar ingen roll.",
     "fi": "Aivan sama/ei merkitystä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p246",
     "term": "Det gör detsamma.",
     "fi": "Ihan sama.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p247",
     "term": "Vad menar du?",
     "fi": "Mitä tarkoitat?",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p248",
     "term": "Kan du motivera din åsikt?",
     "fi": "Voitko perustella mielipiteesi?",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot"
   },
   {
     "id": "p249",
     "term": "Jag håller kanske/tyvärr inte med om.",
     "fi": "En ole ehkä/valitettavasti samaa mieltä...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1747,7 +1747,7 @@
     "id": "p250",
     "term": "Tycker du det?",
     "fi": "Sitäkö mieltä olet?/ Niinkö?",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1755,7 +1755,7 @@
     "id": "p251",
     "term": "Jag håller med dig, men...",
     "fi": "Olen samaa mieltä, mutta...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1763,7 +1763,7 @@
     "id": "p252",
     "term": "Kanske du har rätt, men...",
     "fi": "Ehkä olet oikeassa, mutta...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1771,7 +1771,7 @@
     "id": "p253",
     "term": "Det är förstås möjligt, men...",
     "fi": "On se toki mahdollista, mutta...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1779,7 +1779,7 @@
     "id": "p254",
     "term": "Det kan nog vara sant, men...",
     "fi": "Kai se voi olla totta, mutta...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1787,7 +1787,7 @@
     "id": "p255",
     "term": "Ja, fast...",
     "fi": "Joo, vaikkakin...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1795,7 +1795,7 @@
     "id": "p256",
     "term": "I och för sig är det en bra idé men...",
     "fi": "Sinällänsä hyvä idea, mutta...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "lievä/varovainen ilmaisu"
   },
@@ -1803,7 +1803,7 @@
     "id": "p257",
     "term": "Det tycker/anser/tror inte jag.",
     "fi": "En ole samaa mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1811,7 +1811,7 @@
     "id": "p258",
     "term": "Jag har en annan åsikt än du.",
     "fi": "Olen eri mieltä kuin sinä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1819,7 +1819,7 @@
     "id": "p259",
     "term": "Där har du nog lite fel.",
     "fi": "Siinä taidat olla hieman väärässä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1827,7 +1827,7 @@
     "id": "p260",
     "term": "Nu har du tyvärr fel.",
     "fi": "Nyt olet valitettavasti väärässä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1835,7 +1835,7 @@
     "id": "p261",
     "term": "Jag delar nog inte åsikten om att...",
     "fi": "En ole samaa mieltä siitä, että...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1843,7 +1843,7 @@
     "id": "p262",
     "term": "Jag tycker inte detsamma.",
     "fi": "En ole samaa mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suorempi ilmaisu"
   },
@@ -1851,7 +1851,7 @@
     "id": "p263",
     "term": "Nej, det stämmer inte.",
     "fi": "Ei, se ei pidä paikkaansa.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1859,7 +1859,7 @@
     "id": "p264",
     "term": "Nej, det kan jag inte alls hålla med om.",
     "fi": "Ei, en voi ollenkaan olla samaa mieltä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1867,7 +1867,7 @@
     "id": "p265",
     "term": "Du har missförstått hela saken.",
     "fi": "Olet käsittänyt väärin koko asian.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1875,7 +1875,7 @@
     "id": "p266",
     "term": "Jag protesterar!",
     "fi": "Vastustan!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1883,7 +1883,7 @@
     "id": "p267",
     "term": "Du har fel.",
     "fi": "Olet väärässä.",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1891,7 +1891,7 @@
     "id": "p268",
     "term": "Omöjligt!",
     "fi": "Mahdotonta!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1899,7 +1899,7 @@
     "id": "p269",
     "term": "Struntprat!",
     "fi": "Pötyä!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1907,7 +1907,7 @@
     "id": "p270",
     "term": "Kom igen!",
     "fi": "Älä viitsi!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1915,7 +1915,7 @@
     "id": "p271",
     "term": "Skämtar du?!",
     "fi": "Pilailetko?!",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "voimakas/kärjekäs ilmaisu, käytä harkiten"
   },
@@ -1923,7 +1923,7 @@
     "id": "p272",
     "term": "Faktiskt...",
     "fi": "Itseasiassa...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },
@@ -1931,7 +1931,7 @@
     "id": "p273",
     "term": "Faktum är att...",
     "fi": "Tosiasia on, että...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },
@@ -1939,7 +1939,7 @@
     "id": "p274",
     "term": "För att tala ärligt...",
     "fi": "Ollakseni rehellinen...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },
@@ -1947,7 +1947,7 @@
     "id": "p275",
     "term": "Uppriktigt sagt...",
     "fi": "Suoraan sanoen...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },
@@ -1955,7 +1955,7 @@
     "id": "p276",
     "term": "Jag måste säga att...",
     "fi": "Minun pitää sanoa, että...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },
@@ -1963,7 +1963,7 @@
     "id": "p277",
     "term": "Enligt min smak...",
     "fi": "Minun makuuni...",
-    "part": 1,
+    "part": 7,
     "category": "kannanotot",
     "note": "suora ilmaisu, sopii asialliseen kritiikkiin"
   },

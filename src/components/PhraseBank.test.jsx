@@ -19,6 +19,9 @@ import { getContent } from '../data/contentService'
 
 const sv = getContent('sv')
 const kysymyssanatLabel = sv.CATEGORIES.find((c) => c.id === 'kysymyssanat').label
+// Derived from real data (not hardcoded) so this stays correct if a
+// category's part assignment changes, e.g. during a PARTS restructuring.
+const kysymyssanatPart = sv.phrases.find((p) => p.category === 'kysymyssanat').part
 
 function PartSetter({ part }) {
   const { setPart } = useFilter()
@@ -52,7 +55,7 @@ describe('PhraseBank', () => {
   })
 
   it('shows the phrase-bank topics that occur under the selected part', () => {
-    renderPhraseBankAtPart(1)
+    renderPhraseBankAtPart(kysymyssanatPart)
     expect(screen.getByText(kysymyssanatLabel)).toBeInTheDocument()
   })
 })

@@ -42,34 +42,33 @@ export default function FilterBar() {
 
   return (
     <div className="space-y-3">
-      {/* Area pills — horizontal, scrollable. The -mx-4/px-4 lets the row bleed
-          to the screen edges; no-scrollbar hides the scrollbar but keeps scroll. */}
-      <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
-        <div className="flex w-max gap-2">
+      {/* Area pills — wrap onto multiple lines rather than forcing a single
+          row, since the number of parts has grown past what fits on a
+          phone-width screen on one line. */}
+      <div className="flex flex-wrap gap-2">
+        <Pill
+          active={part === 'all'}
+          onClick={() => {
+            // The topic-chip row is hidden entirely when part is 'all' (see
+            // below), so any selected topic would become invisible and
+            // un-clearable — drop the selection along with the row.
+            setPart('all', [])
+          }}
+        >
+          Kaikki
+        </Pill>
+        {content.PARTS.map((p) => (
           <Pill
-            active={part === 'all'}
+            key={p.id}
+            active={part === p.id}
             onClick={() => {
-              // The topic-chip row is hidden entirely when part is 'all' (see
-              // below), so any selected topic would become invisible and
-              // un-clearable — drop the selection along with the row.
-              setPart('all', [])
+              const validIds = categoriesForPart(allItems, p.id, content.CATEGORIES).map((c) => c.id)
+              setPart(p.id, validIds)
             }}
           >
-            Kaikki
+            {partLabel(p.id)}
           </Pill>
-          {content.PARTS.map((p) => (
-            <Pill
-              key={p.id}
-              active={part === p.id}
-              onClick={() => {
-                const validIds = categoriesForPart(allItems, p.id, content.CATEGORIES).map((c) => c.id)
-                setPart(p.id, validIds)
-              }}
-            >
-              {partLabel(p.id)}
-            </Pill>
-          ))}
-        </div>
+        ))}
       </div>
 
       {/* Topic chips — multi-select, narrowed to the selected area. Hidden

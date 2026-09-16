@@ -28,7 +28,7 @@ describe('FilterBar', () => {
     renderWithProviders(<FilterBar />)
     fireEvent.click(screen.getByRole('button', { name: omaAlaLabel }))
     expect(screen.getByText(ictLabel)).toBeInTheDocument()
-    // "Perhe" only occurs under part 1, not part 3.
+    // "Perhe" occurs under a different part, not part 3.
     expect(screen.queryByText(perheLabel)).toBeNull()
   })
 

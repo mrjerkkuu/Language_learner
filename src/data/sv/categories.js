@@ -11,6 +11,9 @@ export const PARTS = [
   { id: 2, label: 'Työelämä ja viestintä' },
   { id: 3, label: 'Oma ala' },
   { id: 4, label: 'Opiskelu' },
+  { id: 5, label: 'Elämä ja vapaa-aika' },
+  { id: 6, label: 'Keskustelutaidot' },
+  { id: 7, label: 'Mielipiteet' },
 ]
 
 export const CATEGORIES = [

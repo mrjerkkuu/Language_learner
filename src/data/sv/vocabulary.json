@@ -435,7 +435,7 @@
     "id": "v055",
     "term": "en man/make",
     "fi": "aviomies",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min man heter Anders."
   },
@@ -443,7 +443,7 @@
     "id": "v056",
     "term": "en fru/hustru/maka",
     "fi": "aviovaimo",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min fru är läkare."
   },
@@ -451,7 +451,7 @@
     "id": "v057",
     "term": "en pappa",
     "fi": "isä",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min pappa bor i Åbo."
   },
@@ -459,7 +459,7 @@
     "id": "v058",
     "term": "en tvilling",
     "fi": "kaksonen",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Jag har en tvilling."
   },
@@ -467,7 +467,7 @@
     "id": "v059",
     "term": "ett barn",
     "fi": "lapsi",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Vi har ett barn."
   },
@@ -475,7 +475,7 @@
     "id": "v060",
     "term": "en son",
     "fi": "poika",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min son går i skolan."
   },
@@ -483,7 +483,7 @@
     "id": "v061",
     "term": "en syster",
     "fi": "sisko",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min syster bor i Helsingfors."
   },
@@ -491,7 +491,7 @@
     "id": "v062",
     "term": "en dotter",
     "fi": "tytär",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min dotter älskar att läsa."
   },
@@ -499,7 +499,7 @@
     "id": "v063",
     "term": "föräldrar",
     "fi": "vanhemmat",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Mina föräldrar ringer varje söndag."
   },
@@ -507,7 +507,7 @@
     "id": "v064",
     "term": "en bror",
     "fi": "veli",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min bror jobbar inom IT."
   },
@@ -515,7 +515,7 @@
     "id": "v065",
     "term": "en mamma",
     "fi": "äiti",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min mamma lagar god mat."
   },
@@ -523,7 +523,7 @@
     "id": "v066",
     "term": "att bo ihop",
     "fi": "asua yhdessä",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Vi bor ihop sedan i våras."
   },
@@ -531,7 +531,7 @@
     "id": "v067",
     "term": "frånskild",
     "fi": "eronnut",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Han är frånskild sedan två år."
   },
@@ -539,7 +539,7 @@
     "id": "v068",
     "term": "ogift",
     "fi": "naimaton",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Jag är fortfarande ogift."
   },
@@ -547,7 +547,7 @@
     "id": "v069",
     "term": "gift",
     "fi": "naimisissa",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Vi har varit gifta i tio år."
   },
@@ -555,7 +555,7 @@
     "id": "v070",
     "term": "att vara sambo",
     "fi": "olla avoliitossa",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Vi är sambo och trivs bra."
   },
@@ -563,7 +563,7 @@
     "id": "v071",
     "term": "en pojkvän",
     "fi": "poikaystävä",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Min pojkvän jobbar som kock."
   },
@@ -571,7 +571,7 @@
     "id": "v072",
     "term": "att dejta",
     "fi": "seurustella",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Vi har dejtat i ett år."
   },
@@ -579,7 +579,7 @@
     "id": "v073",
     "term": "en singel",
     "fi": "sinkku",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Jag är singel just nu."
   },
@@ -587,7 +587,7 @@
     "id": "v074",
     "term": "en flickvän",
     "fi": "tyttöystävä",
-    "part": 1,
+    "part": 5,
     "category": "perhe",
     "example": "Hans flickvän studerar medicin."
   },
@@ -595,7 +595,7 @@
     "id": "v075",
     "term": "en tvåa",
     "fi": "kaksio",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Vi bor i en tvåa."
   },
@@ -603,7 +603,7 @@
     "id": "v076",
     "term": "stan",
     "fi": "kaupunki",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Jag jobbar i stan."
   },
@@ -611,7 +611,7 @@
     "id": "v077",
     "term": "ett höghus",
     "fi": "kerrostalo",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Vi bor i ett höghus."
   },
@@ -619,7 +619,7 @@
     "id": "v078",
     "term": "centrum",
     "fi": "keskusta",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Butiken ligger i centrum."
   },
@@ -627,7 +627,7 @@
     "id": "v079",
     "term": "en trea",
     "fi": "kolmio",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "De har precis köpt en trea."
   },
@@ -635,7 +635,7 @@
     "id": "v080",
     "term": "en by",
     "fi": "kylä",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Han växte upp i en liten by."
   },
@@ -643,7 +643,7 @@
     "id": "v081",
     "term": "en förort",
     "fi": "lähiö",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Vi bor i en förort till Stockholm."
   },
@@ -651,7 +651,7 @@
     "id": "v082",
     "term": "landet",
     "fi": "maaseutu",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Jag trivs bäst på landet."
   },
@@ -659,7 +659,7 @@
     "id": "v083",
     "term": "en stuga",
     "fi": "mökki",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Vi har en stuga vid sjön."
   },
@@ -667,7 +667,7 @@
     "id": "v084",
     "term": "ett egnahemshus/en villa",
     "fi": "omakotitalo",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "De bor i en villa."
   },
@@ -675,7 +675,7 @@
     "id": "v085",
     "term": "ett radhus",
     "fi": "rivitalo",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Vi flyttade till ett radhus i somras."
   },
@@ -683,7 +683,7 @@
     "id": "v086",
     "term": "ett parhus",
     "fi": "paritalo",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Grannarna bor i ett parhus."
   },
@@ -691,7 +691,7 @@
     "id": "v087",
     "term": "ensam",
     "fi": "yksin",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Hon bor ensam sedan i fjol."
   },
@@ -699,7 +699,7 @@
     "id": "v088",
     "term": "en etta",
     "fi": "yksiö",
-    "part": 1,
+    "part": 5,
     "category": "asuminen",
     "example": "Jag hyr en etta i centrum."
   },
@@ -707,7 +707,7 @@
     "id": "v089",
     "term": "en biltrimning",
     "fi": "auton tuunaus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han trimmar bilar på fritiden."
   },
@@ -715,7 +715,7 @@
     "id": "v090",
     "term": "filmer",
     "fi": "elokuvat",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi går på bio varje fredag."
   },
@@ -723,7 +723,7 @@
     "id": "v091",
     "term": "en skidåkning",
     "fi": "hiihto",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag åker skidor varje vinter."
   },
@@ -731,7 +731,7 @@
     "id": "v092",
     "term": "en joggning",
     "fi": "hölkkäily",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag joggar tre gånger i veckan."
   },
@@ -739,7 +739,7 @@
     "id": "v093",
     "term": "en fotboll",
     "fi": "jalkapallo",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi spelar fotboll på lördagar."
   },
@@ -747,7 +747,7 @@
     "id": "v094",
     "term": "en gympa",
     "fi": "jumppa",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Hon går på gympa på tisdagar."
   },
@@ -755,7 +755,7 @@
     "id": "v095",
     "term": "en löpning",
     "fi": "juokseminen",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag löper fem kilometer varje morgon."
   },
@@ -763,7 +763,7 @@
     "id": "v096",
     "term": "en ishockey",
     "fi": "jääkiekko",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Killarna spelar ishockey varje vecka."
   },
@@ -771,7 +771,7 @@
     "id": "v097",
     "term": "ett fiske",
     "fi": "kalastus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi fiskar ofta på sommaren."
   },
@@ -779,7 +779,7 @@
     "id": "v098",
     "term": "en korgboll",
     "fi": "koripallo",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "De spelar korgboll efter skolan."
   },
@@ -787,7 +787,7 @@
     "id": "v099",
     "term": "en motionering",
     "fi": "kuntoilu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag motionerar regelbundet."
   },
@@ -795,7 +795,7 @@
     "id": "v100",
     "term": "ett gym",
     "fi": "kuntosali",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag går på gym tre gånger i veckan."
   },
@@ -803,7 +803,7 @@
     "id": "v101",
     "term": "handarbeten",
     "fi": "käsityöt",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Min mormor gör handarbeten på kvällarna."
   },
@@ -811,7 +811,7 @@
     "id": "v102",
     "term": "en promenering",
     "fi": "kävely",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi promenerar i parken varje kväll."
   },
@@ -819,7 +819,7 @@
     "id": "v103",
     "term": "en utförsåkning",
     "fi": "laskettelu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi åker slalom i fjällen varje år."
   },
@@ -827,7 +827,7 @@
     "id": "v104",
     "term": "en volleyboll",
     "fi": "lentopallo",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Tjejerna spelar volleyboll på stranden."
   },
@@ -835,7 +835,7 @@
     "id": "v105",
     "term": "en skrinning",
     "fi": "luistelu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Barnen åker skridsko på sjön."
   },
@@ -843,7 +843,7 @@
     "id": "v106",
     "term": "en läsning",
     "fi": "lukeminen",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag läser böcker varje kväll innan jag somnar."
   },
@@ -851,7 +851,7 @@
     "id": "v107",
     "term": "en snowboardåkning",
     "fi": "lumilautailu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han åker snowboard i backen varje helg."
   },
@@ -859,7 +859,7 @@
     "id": "v108",
     "term": "en målning",
     "fi": "maalaaminen",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag målar tavlor på min fritid."
   },
@@ -867,7 +867,7 @@
     "id": "v109",
     "term": "en paddling",
     "fi": "melonta",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi paddlar kajak på sommaren."
   },
@@ -875,7 +875,7 @@
     "id": "v110",
     "term": "en jakt",
     "fi": "metsästys",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Min pappa jagar älg varje höst."
   },
@@ -883,7 +883,7 @@
     "id": "v111",
     "term": "en mc-touring",
     "fi": "moottoripyöräily",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han kör motorcykel varje sommar."
   },
@@ -891,7 +891,7 @@
     "id": "v112",
     "term": "en musik",
     "fi": "musiikki",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag spelar gitarr och lyssnar på musik varje dag."
   },
@@ -899,7 +899,7 @@
     "id": "v113",
     "term": "en boxing",
     "fi": "nyrkkeily",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han boxas på gymmet två gånger i veckan."
   },
@@ -907,7 +907,7 @@
     "id": "v114",
     "term": "en tyngdlyftning",
     "fi": "painonnosto",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag lyfter tyngder på gymmet."
   },
@@ -915,7 +915,7 @@
     "id": "v115",
     "term": "en boboll",
     "fi": "pesäpallo",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi spelar boboll på sommaren."
   },
@@ -923,7 +923,7 @@
     "id": "v116",
     "term": "en cykling",
     "fi": "pyöräily",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag cyklar till jobbet varje dag."
   },
@@ -931,7 +931,7 @@
     "id": "v117",
     "term": "en ridning",
     "fi": "ratsastus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Hon rider varje lördag."
   },
@@ -939,7 +939,7 @@
     "id": "v118",
     "term": "en rullskridskoåkning",
     "fi": "rullaluistelu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Barnen åker rullskridskor i parken."
   },
@@ -947,7 +947,7 @@
     "id": "v119",
     "term": "en matlagning",
     "fi": "ruoanlaitto",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag lagar mat nästan varje kväll."
   },
@@ -955,7 +955,7 @@
     "id": "v120",
     "term": "en stavgång",
     "fi": "sauvakävely",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Mormor stavgår varje morgon."
   },
@@ -963,7 +963,7 @@
     "id": "v121",
     "term": "en skateboarding",
     "fi": "skeittailu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Killen åker skateboard vid skolan."
   },
@@ -971,7 +971,7 @@
     "id": "v122",
     "term": "en dykning",
     "fi": "sukellus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi dyker i havet på semestern."
   },
@@ -979,7 +979,7 @@
     "id": "v123",
     "term": "en badminton",
     "fi": "sulkapallo",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi spelar badminton på onsdagar."
   },
@@ -987,7 +987,7 @@
     "id": "v124",
     "term": "en orientering",
     "fi": "suunnistus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han orienterar i skogen varje helg."
   },
@@ -995,7 +995,7 @@
     "id": "v125",
     "term": "en innebandy",
     "fi": "sähly",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Killarna spelar innebandy i hallen."
   },
@@ -1003,7 +1003,7 @@
     "id": "v126",
     "term": "en dans",
     "fi": "tanssi",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi dansar salsa på fredagar."
   },
@@ -1011,7 +1011,7 @@
     "id": "v127",
     "term": "en camping",
     "fi": "telttailu",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi campar i skärgården varje sommar."
   },
@@ -1019,7 +1019,7 @@
     "id": "v128",
     "term": "en dator",
     "fi": "tietokone (pelit)",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Han spelar dator flera timmar varje dag."
   },
@@ -1027,7 +1027,7 @@
     "id": "v129",
     "term": "en simning",
     "fi": "uinti",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Jag simmar varje morgon innan jobbet."
   },
@@ -1035,7 +1035,7 @@
     "id": "v130",
     "term": "en vandring",
     "fi": "vaellus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Vi vandrar i fjällen varje sommar."
   },
@@ -1043,7 +1043,7 @@
     "id": "v131",
     "term": "en fotografering",
     "fi": "valokuvaus",
-    "part": 1,
+    "part": 5,
     "category": "harrastukset",
     "example": "Hon fotograferar natur på sin fritid."
   },
