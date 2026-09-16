@@ -2,10 +2,33 @@ import { describe, it, expect } from 'vitest'
 import { getContent } from './contentService'
 import { LANGUAGES } from './languages'
 import { distractorsFrom } from '../lib/quizLogic'
+import { categoriesForPart } from '../lib/categoryFilter'
 
 describe('contentService', () => {
   it('falls back to the default language for an unknown id', () => {
     expect(getContent('xx')).toBe(getContent('sv'))
+  })
+})
+
+// Concrete regression check for the FilterBar/PhraseBank category-chip
+// narrowing: a category that only occurs under one part must not show up
+// under another (this is what feeds the "available categories" chip list).
+describe('categoriesForPart (sv content)', () => {
+  const c = getContent('sv')
+  const allItems = [...c.vocabulary, ...c.phrases, ...c.writingTasks, ...c.fillBlanks, ...c.wordForms]
+
+  it('excludes ICT from part 1 (ICT items only exist under part 3)', () => {
+    const visible = categoriesForPart(allItems, 1, c.CATEGORIES)
+    expect(visible.find((cat) => cat.id === 'ict')).toBeUndefined()
+  })
+
+  it('includes ICT under part 3, where it actually occurs', () => {
+    const visible = categoriesForPart(allItems, 3, c.CATEGORIES)
+    expect(visible.find((cat) => cat.id === 'ict')).toBeDefined()
+  })
+
+  it('returns every category unfiltered when part is "all"', () => {
+    expect(categoriesForPart(allItems, 'all', c.CATEGORIES)).toEqual(c.CATEGORIES)
   })
 })
 

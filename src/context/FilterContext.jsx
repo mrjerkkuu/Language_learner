@@ -19,8 +19,20 @@ import { createContext, useContext, useState, useCallback, useMemo } from 'react
 const FilterContext = createContext(null)
 
 export function FilterProvider({ children }) {
-  const [part, setPart] = useState('all')
+  const [part, setPartState] = useState('all')
   const [categories, setCategories] = useState([])
+
+  // Change the selected part. Callers that know which category ids remain
+  // valid for the new part (see lib/categoryFilter) can pass them as
+  // `validCategoryIds` so any now-invisible category is dropped from the
+  // selection — otherwise it would keep silently filtering results without
+  // a visible chip to explain why ("ghost" selection).
+  const setPart = useCallback((newPart, validCategoryIds) => {
+    setPartState(newPart)
+    if (validCategoryIds) {
+      setCategories((prev) => prev.filter((id) => validCategoryIds.includes(id)))
+    }
+  }, [])
 
   // Toggle a single category id on/off in the multi-select list.
   const toggleCategory = useCallback((id) => {

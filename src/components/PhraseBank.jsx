@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useActivityLog } from '../hooks/useActivityLog'
+import { categoriesForPart } from '../lib/categoryFilter'
 import Layout from './Layout'
 import EmptyState from './EmptyState'
 
@@ -14,11 +15,17 @@ import EmptyState from './EmptyState'
 // -----------------------------------------------------------------------------
 
 export default function PhraseBank() {
-  const { filterItems, categories, toggleCategory, clearFilters } = useFilter()
+  const { filterItems, part, categories, toggleCategory, clearFilters } = useFilter()
   const { content } = useLanguage()
   const { logActivity } = useActivityLog()
 
   const list = useMemo(() => filterItems(content.phrases), [filterItems, content])
+  // Only chips for categories that actually occur among phrases for the
+  // selected area — e.g. "ICT" phrases won't show a chip under part 1.
+  const visibleCategories = useMemo(
+    () => categoriesForPart(content.phrases, part, content.CATEGORIES),
+    [content, part],
+  )
   const [revealed, setRevealed] = useState(() => new Set())
 
   function toggle(id) {
@@ -36,19 +43,24 @@ export default function PhraseBank() {
   return (
     <Layout back title="Fraasipankki" right={list.length}>
       <div className="space-y-4">
-        {/* Category chips (topic filter). "Kaikki" clears the topic selection. */}
-        <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
-          <div className="flex w-max gap-2">
-            <Chip active={categories.length === 0} onClick={clearFilters}>
-              Kaikki
-            </Chip>
-            {content.CATEGORIES.map((c) => (
-              <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
-                {c.label}
+        {/* Category chips (topic filter). Hidden entirely under "Kaikki"
+            (part === 'all'), same rule as FilterBar's topic row — there's
+            nothing to narrow down to yet. "Kaikki" here clears the topic
+            selection (not the area). */}
+        {part !== 'all' && (
+          <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
+            <div className="flex w-max gap-2">
+              <Chip active={categories.length === 0} onClick={clearFilters}>
+                Kaikki
               </Chip>
-            ))}
+              {visibleCategories.map((c) => (
+                <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
+                  {c.label}
+                </Chip>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {list.length === 0 ? (
           <EmptyState title="Ei fraaseja" />
