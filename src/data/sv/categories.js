@@ -35,4 +35,6 @@ export const CATEGORIES = [
   { id: 'opinnoistakertominen', label: 'Opinnoista kertominen' },
   { id: 'alat', label: 'Alat' },
   { id: 'ammatit', label: 'Ammatit' },
+  { id: 'tyohakemus', label: 'Työhakemus' },
+  { id: 'cvverbit', label: 'CV-verbit' },
 ]

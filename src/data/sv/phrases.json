@@ -2113,5 +2113,75 @@
     "fi": "Valmistun kahden vuoden kuluttua.",
     "part": 1,
     "category": "opinnoistakertominen"
+  },
+  {
+    "id": "p299",
+    "term": "Jag såg er annons i Dagens Nyheter.",
+    "fi": "Näin ilmoituksenne Dagens Nyheterissä.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p300",
+    "term": "Jag blev genast intresserad av den ledigförklarade platsen som arbetsledare.",
+    "fi": "Kiinnostuin heti avoimeksi ilmoitetusta paikasta työnjohtajana.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p301",
+    "term": "Jag söker den lediganslagna tjänsten som projektingenjör.",
+    "fi": "Haen avoimeksi julistettua virkaa projekti-insinöörinä.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p302",
+    "term": "Jag är väldigt intresserad av jobbet som brandinspektör.",
+    "fi": "Olen erittäin kiinnostunut työstä palotarkastajana.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p303",
+    "term": "Med anledning av Er platsannons i dagens Vasabladet anmäler jag mig som sökande till platsen som CAD-konstruktör.",
+    "fi": "Ilmoittaudun CAD-suunnittelijan paikan hakijaksi tämän päivän Vasabladetin työpaikkailmoituksenne perusteella.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p304",
+    "term": "Jag hoppas att jag väckt ert intresse.",
+    "fi": "Toivottavasti olen herättänyt mielenkiintonne.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p305",
+    "term": "Jag ser fram mot ett personligt möte.",
+    "fi": "Odotan innolla henkilökohtaista tapaamista.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p306",
+    "term": "Jag ser fram emot att få träffa Er personligen och presentera mig ytterligare.",
+    "fi": "Odotan innolla, että saan tavata Teidät henkilökohtaisesti ja kertoa itsestäni enemmän.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p307",
+    "term": "Jag är intresserad av att komma på ett personligt besök och diskutera arbetet närmare.",
+    "fi": "Olen kiinnostunut tulemaan henkilökohtaiselle vierailulle ja keskustelemaan työstä lähemmin.",
+    "part": 2,
+    "category": "tyohakemus"
+  },
+  {
+    "id": "p308",
+    "term": "Jag kontaktar er/ringer er i slutet av nästa vecka.",
+    "fi": "Otan teihin yhteyttä/ soitan ensi viikon lopussa.",
+    "part": 2,
+    "category": "tyohakemus"
   }
 ]

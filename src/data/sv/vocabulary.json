@@ -2550,5 +2550,1765 @@
     "part": 3,
     "category": "ammatit",
     "example": "Hon är företagare och driver ett eget kafé."
+  },
+  {
+    "id": "v320",
+    "term": "Administrerade",
+    "fi": "Hallinnoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Administrerade personalens scheman och löner."
+  },
+  {
+    "id": "v321",
+    "term": "Aktiverade",
+    "fi": "Aktivoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Aktiverade nya medlemmar i föreningen."
+  },
+  {
+    "id": "v322",
+    "term": "Analyserade",
+    "fi": "Analysoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Analyserade marknadstrender och kundbeteende."
+  },
+  {
+    "id": "v323",
+    "term": "Anförtrodde",
+    "fi": "Uskoi (jollekulle tehtävän)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Anförtrodde viktiga kunduppdrag till teamet."
+  },
+  {
+    "id": "v324",
+    "term": "Anslöt",
+    "fi": "Liittyi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Anslöt nya kunder till tjänsten."
+  },
+  {
+    "id": "v325",
+    "term": "Anställde",
+    "fi": "Palkkasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Anställde fem nya medarbetare."
+  },
+  {
+    "id": "v326",
+    "term": "Använde",
+    "fi": "Käytti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Använde moderna verktyg i det dagliga arbetet."
+  },
+  {
+    "id": "v327",
+    "term": "Arbetade noggrant",
+    "fi": "Työskenteli huolellisesti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Arbetade noggrant med kundregistret."
+  },
+  {
+    "id": "v328",
+    "term": "Arrangerade",
+    "fi": "Järjesti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Arrangerade företagets julfest."
+  },
+  {
+    "id": "v329",
+    "term": "Assisterade",
+    "fi": "Avusti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Assisterade chefen med dagliga uppgifter."
+  },
+  {
+    "id": "v330",
+    "term": "Avgjorde",
+    "fi": "Ratkaisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Avgjorde tvister mellan avdelningarna."
+  },
+  {
+    "id": "v331",
+    "term": "Avskedade",
+    "fi": "Irtisanoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Avskedade en anställd efter varning."
+  },
+  {
+    "id": "v332",
+    "term": "Balanserade",
+    "fi": "Tasapainotti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Balanserade budgeten mellan avdelningarna."
+  },
+  {
+    "id": "v333",
+    "term": "Bedömde",
+    "fi": "Arvioi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Bedömde ansökningar till tjänsten."
+  },
+  {
+    "id": "v334",
+    "term": "Befordrade",
+    "fi": "Ylensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Befordrade två medarbetare till teamledare."
+  },
+  {
+    "id": "v335",
+    "term": "Behöll",
+    "fi": "Piti/säilytti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Behöll alla nyckelkunder under omorganisationen."
+  },
+  {
+    "id": "v336",
+    "term": "Bekräftade",
+    "fi": "Vahvisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Bekräftade bokningarna med kunderna."
+  },
+  {
+    "id": "v337",
+    "term": "Berikade",
+    "fi": "Rikastutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Berikade teamets kompetens med ny kunskap."
+  },
+  {
+    "id": "v338",
+    "term": "Beräknade",
+    "fi": "Laski",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Beräknade kostnaderna för projektet."
+  },
+  {
+    "id": "v339",
+    "term": "Beskrev detaljer",
+    "fi": "Kuvasi yksityiskohtia",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Beskrev detaljer i den tekniska rapporten."
+  },
+  {
+    "id": "v340",
+    "term": "Bestämde",
+    "fi": "Päätti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Bestämde riktlinjerna för projektet."
+  },
+  {
+    "id": "v341",
+    "term": "Bevisade",
+    "fi": "Todisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Bevisade lösningens effektivitet med tester."
+  },
+  {
+    "id": "v342",
+    "term": "Budgeterade",
+    "fi": "Budjetoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Budgeterade avdelningens utgifter för året."
+  },
+  {
+    "id": "v343",
+    "term": "Byggde",
+    "fi": "Rakensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Byggde upp en ny kundrelation."
+  },
+  {
+    "id": "v344",
+    "term": "Bytte",
+    "fi": "Vaihtoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Bytte leverantör för att sänka kostnaderna."
+  },
+  {
+    "id": "v345",
+    "term": "Centraliserade",
+    "fi": "Keskitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Centraliserade företagets inköp."
+  },
+  {
+    "id": "v346",
+    "term": "Datoriserade",
+    "fi": "Tietokoneisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Datoriserade arkivet för enklare sökning."
+  },
+  {
+    "id": "v347",
+    "term": "Decentraliserade",
+    "fi": "Hajautti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Decentraliserade beslutsfattandet till teamen."
+  },
+  {
+    "id": "v348",
+    "term": "Definierade",
+    "fi": "Määritteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Definierade projektets mål och omfattning."
+  },
+  {
+    "id": "v349",
+    "term": "Dekorerade",
+    "fi": "Somisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Dekorerade kontoret inför invigningen."
+  },
+  {
+    "id": "v350",
+    "term": "Delade ut",
+    "fi": "Jakoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Delade ut information till alla anställda."
+  },
+  {
+    "id": "v351",
+    "term": "Delegerade",
+    "fi": "Delegoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Delegerade uppgifter till teammedlemmarna."
+  },
+  {
+    "id": "v352",
+    "term": "Deltog",
+    "fi": "Osallistui",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Deltog i internationella mässor."
+  },
+  {
+    "id": "v353",
+    "term": "Demonstrerade",
+    "fi": "Esitteli (demonstroi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Demonstrerade produkten för nya kunder."
+  },
+  {
+    "id": "v354",
+    "term": "Designade",
+    "fi": "Suunnitteli (muotoili)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Designade företagets nya logotyp."
+  },
+  {
+    "id": "v355",
+    "term": "Diagnosticerade",
+    "fi": "Diagnosoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Diagnosticerade problem i systemet."
+  },
+  {
+    "id": "v356",
+    "term": "Distribuerade",
+    "fi": "Jakeli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Distribuerade material till alla filialer."
+  },
+  {
+    "id": "v357",
+    "term": "Dokumenterade",
+    "fi": "Dokumentoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Dokumenterade projektets alla faser."
+  },
+  {
+    "id": "v358",
+    "term": "Drog slutsatser",
+    "fi": "Teki johtopäätöksiä",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Drog slutsatser utifrån testresultaten."
+  },
+  {
+    "id": "v359",
+    "term": "Effektiviserade",
+    "fi": "Tehosti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Effektiviserade arbetsflödet i teamet."
+  },
+  {
+    "id": "v360",
+    "term": "Enade",
+    "fi": "Yhdisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Enade de två avdelningarna till en."
+  },
+  {
+    "id": "v361",
+    "term": "Erkände",
+    "fi": "Tunnusti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Erkände misstaget och åtgärdade det snabbt."
+  },
+  {
+    "id": "v362",
+    "term": "Etablerade",
+    "fi": "Perusti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Etablerade nya kontakter i branschen."
+  },
+  {
+    "id": "v363",
+    "term": "Experimenterade",
+    "fi": "Kokeili",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Experimenterade med nya arbetsmetoder."
+  },
+  {
+    "id": "v364",
+    "term": "Exporterade",
+    "fi": "Vei (vientiä)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Exporterade produkter till tio länder."
+  },
+  {
+    "id": "v365",
+    "term": "Finansierade",
+    "fi": "Rahoitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Finansierade projektet med externa medel."
+  },
+  {
+    "id": "v366",
+    "term": "Flyttade fram",
+    "fi": "Siirsi (eteenpäin)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Flyttade fram tidsplanen efter kundens önskemål."
+  },
+  {
+    "id": "v367",
+    "term": "Formade",
+    "fi": "Muotoili",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Formade teamets strategi för året."
+  },
+  {
+    "id": "v368",
+    "term": "Forskade",
+    "fi": "Tutki",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Forskade om nya material inom branschen."
+  },
+  {
+    "id": "v369",
+    "term": "Fostrade",
+    "fi": "Kasvatti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Fostrade praktikanter till självständiga medarbetare."
+  },
+  {
+    "id": "v370",
+    "term": "Fotograferade",
+    "fi": "Kuvasi (valokuvasi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Fotograferade produkterna för katalogen."
+  },
+  {
+    "id": "v371",
+    "term": "Framkallade",
+    "fi": "Aiheutti (kehitti filmiä)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Framkallade filmerna i mörkrummet."
+  },
+  {
+    "id": "v372",
+    "term": "Framställde",
+    "fi": "Tuotti (valmisti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Framställde prototyper för testning."
+  },
+  {
+    "id": "v373",
+    "term": "Frågade ut",
+    "fi": "Kuulusteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Frågade ut kandidaterna om deras erfarenhet."
+  },
+  {
+    "id": "v374",
+    "term": "Förberedde",
+    "fi": "Valmisteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förberedde presentationer inför kundmöten."
+  },
+  {
+    "id": "v375",
+    "term": "Förbättrade",
+    "fi": "Paransi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förbättrade kundnöjdheten avsevärt."
+  },
+  {
+    "id": "v376",
+    "term": "Förebyggde",
+    "fi": "Ennaltaehkäisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förebyggde driftstopp genom regelbunden service."
+  },
+  {
+    "id": "v377",
+    "term": "Förenade",
+    "fi": "Yhdisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förenade två avdelningar till ett effektivt team."
+  },
+  {
+    "id": "v378",
+    "term": "Föreslog",
+    "fi": "Ehdotti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Föreslog nya lösningar för teamet."
+  },
+  {
+    "id": "v379",
+    "term": "Föreställde mig",
+    "fi": "Kuvittelin",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Föreställde mig nya sätt att lösa problemet."
+  },
+  {
+    "id": "v380",
+    "term": "Förfinade",
+    "fi": "Hioi (tarkensi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förfinade processen steg för steg."
+  },
+  {
+    "id": "v381",
+    "term": "Förhandlade",
+    "fi": "Neuvotteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förhandlade avtal med leverantörer."
+  },
+  {
+    "id": "v382",
+    "term": "Förklarade",
+    "fi": "Selitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förklarade rutinerna för nyanställda."
+  },
+  {
+    "id": "v383",
+    "term": "Förstod",
+    "fi": "Ymmärsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förstod kundens behov snabbt."
+  },
+  {
+    "id": "v384",
+    "term": "Förstärkte",
+    "fi": "Vahvisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förstärkte teamet med ny kompetens."
+  },
+  {
+    "id": "v385",
+    "term": "Försvarade",
+    "fi": "Puolusti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Försvarade projektets budget inför ledningen."
+  },
+  {
+    "id": "v386",
+    "term": "Förtydligade",
+    "fi": "Selvensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förtydligade instruktionerna för teamet."
+  },
+  {
+    "id": "v387",
+    "term": "Förutsåg",
+    "fi": "Ennakoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förutsåg problem innan de uppstod."
+  },
+  {
+    "id": "v388",
+    "term": "Förvärvade",
+    "fi": "Hankki",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förvärvade nya kunder genom aktiv försäljning."
+  },
+  {
+    "id": "v389",
+    "term": "Förändrade",
+    "fi": "Muutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Förändrade arbetsprocessen till det bättre."
+  },
+  {
+    "id": "v390",
+    "term": "Garanterade",
+    "fi": "Takasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Garanterade leverans inom utsatt tid."
+  },
+  {
+    "id": "v391",
+    "term": "Gav husrum",
+    "fi": "Antoi majoituksen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Gav husrum åt utbytesstudenter."
+  },
+  {
+    "id": "v392",
+    "term": "Inkvarterade",
+    "fi": "Majoitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Inkvarterade gästerna på konferensen."
+  },
+  {
+    "id": "v393",
+    "term": "Gav upphov till",
+    "fi": "Sai aikaan",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Gav upphov till flera nya idéer."
+  },
+  {
+    "id": "v394",
+    "term": "Genomförde",
+    "fi": "Toteutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Genomförde projektet inom tidsramen."
+  },
+  {
+    "id": "v395",
+    "term": "Verkställde",
+    "fi": "Pani täytäntöön",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Verkställde ledningens beslut."
+  },
+  {
+    "id": "v396",
+    "term": "Godkände",
+    "fi": "Hyväksyi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Godkände fakturorna varje månad."
+  },
+  {
+    "id": "v397",
+    "term": "Guidade",
+    "fi": "Opasti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Guidade nya kunder genom processen."
+  },
+  {
+    "id": "v398",
+    "term": "Gick vidare",
+    "fi": "Eteni",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Gick vidare med nästa fas i projektet."
+  },
+  {
+    "id": "v399",
+    "term": "Gjorde färdigt",
+    "fi": "Sai valmiiksi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Gjorde färdigt rapporten före deadline."
+  },
+  {
+    "id": "v400",
+    "term": "Hanterade",
+    "fi": "Käsitteli (hallinnoi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Hanterade kundklagomål professionellt."
+  },
+  {
+    "id": "v401",
+    "term": "Hjälpte",
+    "fi": "Auttoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Hjälpte kollegor med tekniska frågor."
+  },
+  {
+    "id": "v402",
+    "term": "Höll tal",
+    "fi": "Piti puheen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Höll tal vid företagets årsfest."
+  },
+  {
+    "id": "v403",
+    "term": "Höll ut",
+    "fi": "Kesti (sinnitteli)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Höll ut genom hela det krävande projektet."
+  },
+  {
+    "id": "v404",
+    "term": "Identifierade",
+    "fi": "Tunnisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Identifierade nya affärsmöjligheter."
+  },
+  {
+    "id": "v405",
+    "term": "Illustrerade",
+    "fi": "Havainnollisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Illustrerade rapporten med grafer."
+  },
+  {
+    "id": "v406",
+    "term": "Importerade",
+    "fi": "Toi maahan (tuonti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Importerade råvaror från utlandet."
+  },
+  {
+    "id": "v407",
+    "term": "Improviserade",
+    "fi": "Improvisoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Improviserade lösningar när planen ändrades."
+  },
+  {
+    "id": "v408",
+    "term": "Indexerade",
+    "fi": "Indeksoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Indexerade dokumenten för snabb sökning."
+  },
+  {
+    "id": "v409",
+    "term": "Informerade",
+    "fi": "Tiedotti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Informerade personalen om nya rutiner."
+  },
+  {
+    "id": "v410",
+    "term": "Införde",
+    "fi": "Otti käyttöön",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Införde ett nytt bokningssystem."
+  },
+  {
+    "id": "v411",
+    "term": "Ingrep",
+    "fi": "Puuttui asiaan",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ingrep snabbt när problem uppstod."
+  },
+  {
+    "id": "v412",
+    "term": "Insåg",
+    "fi": "Tajusi (oivalsi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Insåg vikten av god kommunikation."
+  },
+  {
+    "id": "v413",
+    "term": "Inspekterade",
+    "fi": "Tarkasti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Inspekterade produktionslinjen varje vecka."
+  },
+  {
+    "id": "v414",
+    "term": "Inspirerade",
+    "fi": "Innosti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Inspirerade teamet till bättre resultat."
+  },
+  {
+    "id": "v415",
+    "term": "Intygade",
+    "fi": "Todisti (vahvisti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Intygade att arbetet var slutfört enligt kraven."
+  },
+  {
+    "id": "v416",
+    "term": "Investerade",
+    "fi": "Investoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Investerade i ny utrustning."
+  },
+  {
+    "id": "v417",
+    "term": "Kalkylerade",
+    "fi": "Laski (kalkyloi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kalkylerade kostnader för nya projekt."
+  },
+  {
+    "id": "v418",
+    "term": "Katalogiserade",
+    "fi": "Luetteloi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Katalogiserade företagets arkiv."
+  },
+  {
+    "id": "v419",
+    "term": "Klassificerade",
+    "fi": "Luokitteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Klassificerade produkterna efter kategori."
+  },
+  {
+    "id": "v420",
+    "term": "Kombinerade",
+    "fi": "Yhdisteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kombinerade olika metoder för bättre resultat."
+  },
+  {
+    "id": "v421",
+    "term": "Kommunicerade",
+    "fi": "Viestitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kommunicerade tydligt med alla intressenter."
+  },
+  {
+    "id": "v422",
+    "term": "Komponerade",
+    "fi": "Sävelsi (koosti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Komponerade musik till reklamfilmer."
+  },
+  {
+    "id": "v423",
+    "term": "Koncentrerade",
+    "fi": "Keskitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Koncentrerade resurserna på viktigaste projekten."
+  },
+  {
+    "id": "v424",
+    "term": "Konsoliderade",
+    "fi": "Vakiinnutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Konsoliderade företagets ekonomi."
+  },
+  {
+    "id": "v425",
+    "term": "Konstruerade",
+    "fi": "Suunnitteli (rakensi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Konstruerade nya maskindelar."
+  },
+  {
+    "id": "v426",
+    "term": "Konsulterade",
+    "fi": "Konsultoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Konsulterade experter inom området."
+  },
+  {
+    "id": "v427",
+    "term": "Kontrakterade",
+    "fi": "Teki sopimuksen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kontrakterade nya leverantörer."
+  },
+  {
+    "id": "v428",
+    "term": "Kontrollerade",
+    "fi": "Tarkisti (valvoi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kontrollerade kvaliteten på varje produkt."
+  },
+  {
+    "id": "v429",
+    "term": "Konverserade",
+    "fi": "Keskusteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Konverserade med kunder på flera språk."
+  },
+  {
+    "id": "v430",
+    "term": "Konverterade",
+    "fi": "Muunsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Konverterade data till nytt format."
+  },
+  {
+    "id": "v431",
+    "term": "Koordinerade",
+    "fi": "Koordinoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Koordinerade arbetet mellan avdelningarna."
+  },
+  {
+    "id": "v432",
+    "term": "Kopierade",
+    "fi": "Kopioi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kopierade viktiga dokument för arkivering."
+  },
+  {
+    "id": "v433",
+    "term": "Korrigerade",
+    "fi": "Korjasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Korrigerade fel i rapporten."
+  },
+  {
+    "id": "v434",
+    "term": "Kvalificerade",
+    "fi": "Pätevöitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kvalificerade personalen för nya uppgifter."
+  },
+  {
+    "id": "v435",
+    "term": "Kvantifierade",
+    "fi": "Määritti määrällisesti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Kvantifierade resultaten i en tydlig rapport."
+  },
+  {
+    "id": "v436",
+    "term": "Köpte",
+    "fi": "Osti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Köpte in material för produktionen."
+  },
+  {
+    "id": "v437",
+    "term": "Körde",
+    "fi": "Ajoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Körde projektet från start till mål."
+  },
+  {
+    "id": "v438",
+    "term": "Lagrade",
+    "fi": "Varastoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Lagrade data säkert i molnet."
+  },
+  {
+    "id": "v439",
+    "term": "Ledde",
+    "fi": "Johti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ledde ett team på tio personer."
+  },
+  {
+    "id": "v440",
+    "term": "Letade efter",
+    "fi": "Etsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Letade efter nya samarbetspartners."
+  },
+  {
+    "id": "v441",
+    "term": "Levererade",
+    "fi": "Toimitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Levererade projektet i tid och inom budget."
+  },
+  {
+    "id": "v442",
+    "term": "Löste",
+    "fi": "Ratkaisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Löste tekniska problem snabbt."
+  },
+  {
+    "id": "v443",
+    "term": "Manövrerade",
+    "fi": "Ohjasi (manöveroi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Manövrerade genom komplicerade förhandlingar."
+  },
+  {
+    "id": "v444",
+    "term": "Matchade",
+    "fi": "Sovitti yhteen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Matchade kandidater med rätt tjänster."
+  },
+  {
+    "id": "v445",
+    "term": "Medlade",
+    "fi": "Sovitteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Medlade i konflikter mellan kollegor."
+  },
+  {
+    "id": "v446",
+    "term": "Motiverade",
+    "fi": "Motivoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Motiverade teamet att nå sina mål."
+  },
+  {
+    "id": "v447",
+    "term": "Mätte",
+    "fi": "Mittasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Mätte kundnöjdheten regelbundet."
+  },
+  {
+    "id": "v448",
+    "term": "Navigerade",
+    "fi": "Navigoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Navigerade genom komplexa projekt."
+  },
+  {
+    "id": "v449",
+    "term": "Observerade",
+    "fi": "Havainnoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Observerade arbetsprocesserna för förbättringar."
+  },
+  {
+    "id": "v450",
+    "term": "Omarbetade",
+    "fi": "Muokkasi uudelleen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Omarbetade strategin efter marknadsförändringar."
+  },
+  {
+    "id": "v451",
+    "term": "Omorganiserade",
+    "fi": "Uudelleenjärjesteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Omorganiserade avdelningens struktur."
+  },
+  {
+    "id": "v452",
+    "term": "Omstrukturerade",
+    "fi": "Uudelleenrakensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Omstrukturerade företagets ekonomi."
+  },
+  {
+    "id": "v453",
+    "term": "Ordinerade",
+    "fi": "Määräsi (esim. lääke)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ordinerade behandling för patienterna."
+  },
+  {
+    "id": "v454",
+    "term": "Organiserade",
+    "fi": "Järjesti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Organiserade företagets evenemang."
+  },
+  {
+    "id": "v455",
+    "term": "Planerade",
+    "fi": "Suunnitteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Planerade projektets tidslinje."
+  },
+  {
+    "id": "v456",
+    "term": "Presenterade",
+    "fi": "Esitteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Presenterade resultaten för ledningen."
+  },
+  {
+    "id": "v457",
+    "term": "Producerade",
+    "fi": "Tuotti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Producerade marknadsföringsmaterial."
+  },
+  {
+    "id": "v458",
+    "term": "Programmerade",
+    "fi": "Ohjelmoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Programmerade nya funktioner till appen."
+  },
+  {
+    "id": "v459",
+    "term": "Projekterade",
+    "fi": "Projektoi (suunnitteli)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Projekterade den nya fabriksanläggningen."
+  },
+  {
+    "id": "v460",
+    "term": "Publicerade",
+    "fi": "Julkaisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Publicerade artiklar i branschtidningar."
+  },
+  {
+    "id": "v461",
+    "term": "Påverkade",
+    "fi": "Vaikutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Påverkade beslutet positivt."
+  },
+  {
+    "id": "v462",
+    "term": "Rapporterade",
+    "fi": "Raportoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rapporterade resultaten till styrelsen."
+  },
+  {
+    "id": "v463",
+    "term": "Redigerade",
+    "fi": "Toimitti (tekstiä)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Redigerade texter inför publicering."
+  },
+  {
+    "id": "v464",
+    "term": "Reducerade",
+    "fi": "Vähensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Reducerade kostnaderna med tio procent."
+  },
+  {
+    "id": "v465",
+    "term": "Reformerade",
+    "fi": "Uudisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Reformerade avdelningens arbetssätt."
+  },
+  {
+    "id": "v466",
+    "term": "Reglerade",
+    "fi": "Säänteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Reglerade flödet i produktionen."
+  },
+  {
+    "id": "v467",
+    "term": "Rehabiliterade",
+    "fi": "Kuntoutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rehabiliterade patienter efter operation."
+  },
+  {
+    "id": "v468",
+    "term": "Rekommenderade",
+    "fi": "Suositteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rekommenderade nya rutiner till ledningen."
+  },
+  {
+    "id": "v469",
+    "term": "Rekryterade",
+    "fi": "Rekrytoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rekryterade ny personal till teamet."
+  },
+  {
+    "id": "v470",
+    "term": "Reparerade",
+    "fi": "Korjasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Reparerade maskiner vid behov."
+  },
+  {
+    "id": "v471",
+    "term": "Representerade",
+    "fi": "Edusti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Representerade företaget på mässor."
+  },
+  {
+    "id": "v472",
+    "term": "Resonerade",
+    "fi": "Perusteli (pohti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Resonerade kring olika lösningsförslag."
+  },
+  {
+    "id": "v473",
+    "term": "Reviderade",
+    "fi": "Tarkisti (päivitti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Reviderade budgeten inför nästa kvartal."
+  },
+  {
+    "id": "v474",
+    "term": "Revitaliserade",
+    "fi": "Elvytti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Revitaliserade ett gammalt varumärke."
+  },
+  {
+    "id": "v475",
+    "term": "Ritade",
+    "fi": "Piirsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ritade skisser till nya produkter."
+  },
+  {
+    "id": "v476",
+    "term": "Rådgav",
+    "fi": "Neuvoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rådgav kunder om bästa lösningen."
+  },
+  {
+    "id": "v477",
+    "term": "Räknade ut",
+    "fi": "Laski",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Räknade ut projektets totala kostnad."
+  },
+  {
+    "id": "v478",
+    "term": "Rättfärdigade",
+    "fi": "Oikeutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Rättfärdigade beslutet med fakta."
+  },
+  {
+    "id": "v479",
+    "term": "Samarbetade",
+    "fi": "Teki yhteistyötä",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Samarbetade med andra avdelningar dagligen."
+  },
+  {
+    "id": "v480",
+    "term": "Samlade",
+    "fi": "Keräsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Samlade in feedback från kunderna."
+  },
+  {
+    "id": "v481",
+    "term": "Sammanställde",
+    "fi": "Kokosi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Sammanställde rapporten inför mötet."
+  },
+  {
+    "id": "v482",
+    "term": "Sanktionerade",
+    "fi": "Hyväksyi (sanktioi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Sanktionerade den nya rutinen."
+  },
+  {
+    "id": "v483",
+    "term": "Satte ihop",
+    "fi": "Kokosi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Satte ihop teamet för projektet."
+  },
+  {
+    "id": "v484",
+    "term": "Sålde",
+    "fi": "Myi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Sålde produkter till nya marknader."
+  },
+  {
+    "id": "v485",
+    "term": "Serverade",
+    "fi": "Tarjoili",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Serverade gäster på konferensen."
+  },
+  {
+    "id": "v486",
+    "term": "Skaffade fram",
+    "fi": "Hankki",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Skaffade fram nödvändiga resurser."
+  },
+  {
+    "id": "v487",
+    "term": "Skapade",
+    "fi": "Loi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Skapade en ny process för orderhantering."
+  },
+  {
+    "id": "v488",
+    "term": "Skrev",
+    "fi": "Kirjoitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Skrev rapporter och sammanfattningar."
+  },
+  {
+    "id": "v489",
+    "term": "Skötte om",
+    "fi": "Hoiti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Skötte om företagets sociala medier."
+  },
+  {
+    "id": "v490",
+    "term": "Skyddade",
+    "fi": "Suojeli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Skyddade känslig kundinformation."
+  },
+  {
+    "id": "v491",
+    "term": "Slog ihop",
+    "fi": "Yhdisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Slog ihop två team till ett."
+  },
+  {
+    "id": "v492",
+    "term": "Sorterade",
+    "fi": "Lajitteli",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Sorterade inkommande post och ärenden."
+  },
+  {
+    "id": "v493",
+    "term": "Standardiserade",
+    "fi": "Standardoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Standardiserade arbetsprocesserna."
+  },
+  {
+    "id": "v494",
+    "term": "Stimulerade",
+    "fi": "Kannusti (stimuloi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Stimulerade till kreativt tänkande i teamet."
+  },
+  {
+    "id": "v495",
+    "term": "Strukturerade",
+    "fi": "Jäsensi (strukturoi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Strukturerade projektet i tydliga faser."
+  },
+  {
+    "id": "v496",
+    "term": "Såg möjligheter",
+    "fi": "Näki mahdollisuuksia",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Såg möjligheter till förbättring överallt."
+  },
+  {
+    "id": "v497",
+    "term": "Talade",
+    "fi": "Puhui",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Talade inför stora grupper regelbundet."
+  },
+  {
+    "id": "v498",
+    "term": "Testade",
+    "fi": "Testasi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Testade nya produkter innan lansering."
+  },
+  {
+    "id": "v499",
+    "term": "Tillförde",
+    "fi": "Toi lisää",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tillförde ny kompetens till teamet."
+  },
+  {
+    "id": "v500",
+    "term": "Tillhandahöll",
+    "fi": "Tarjosi (toimitti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tillhandahöll support till kunderna."
+  },
+  {
+    "id": "v501",
+    "term": "Tillverkade",
+    "fi": "Valmisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tillverkade komponenter till maskiner."
+  },
+  {
+    "id": "v502",
+    "term": "Tillämpade",
+    "fi": "Sovelsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tillämpade nya metoder i det dagliga arbetet."
+  },
+  {
+    "id": "v503",
+    "term": "Tog initiativ till",
+    "fi": "Otti aloitteen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tog initiativ till ett nytt projekt."
+  },
+  {
+    "id": "v504",
+    "term": "Tolkade",
+    "fi": "Tulkitsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tolkade resultaten från undersökningen."
+  },
+  {
+    "id": "v505",
+    "term": "Transformerade",
+    "fi": "Muunsi (transformoi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Transformerade avdelningen till en digital enhet."
+  },
+  {
+    "id": "v506",
+    "term": "Tränade",
+    "fi": "Valmensi (harjoitti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tränade nya medarbetare i systemet."
+  },
+  {
+    "id": "v507",
+    "term": "Tävlade",
+    "fi": "Kilpaili",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Tävlade om de bästa kontrakten."
+  },
+  {
+    "id": "v508",
+    "term": "Underhöll",
+    "fi": "Ylläpiti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Underhöll maskinerna regelbundet."
+  },
+  {
+    "id": "v509",
+    "term": "Underlättade",
+    "fi": "Helpotti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Underlättade samarbetet mellan teamen."
+  },
+  {
+    "id": "v510",
+    "term": "Undersökte",
+    "fi": "Tutki",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Undersökte orsaken till problemet."
+  },
+  {
+    "id": "v511",
+    "term": "Uppdaterade",
+    "fi": "Päivitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uppdaterade systemet varje månad."
+  },
+  {
+    "id": "v512",
+    "term": "Upplevde",
+    "fi": "Koki",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Upplevde stor tillväxt under sin tid i företaget."
+  },
+  {
+    "id": "v513",
+    "term": "Uppmuntrade",
+    "fi": "Rohkaisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uppmuntrade teamet till nya idéer."
+  },
+  {
+    "id": "v514",
+    "term": "Uppnådde",
+    "fi": "Saavutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uppnådde försäljningsmålen varje kvartal."
+  },
+  {
+    "id": "v515",
+    "term": "Uppskattade",
+    "fi": "Arvosti (arvioi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uppskattade teamets insats regelbundet."
+  },
+  {
+    "id": "v516",
+    "term": "Upptäckte",
+    "fi": "Löysi (havaitsi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Upptäckte ett fel i systemet."
+  },
+  {
+    "id": "v517",
+    "term": "Urskilde",
+    "fi": "Erotti (erotteli)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Urskilde mönster i kunddatan."
+  },
+  {
+    "id": "v518",
+    "term": "Utbildade",
+    "fi": "Kouluti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Utbildade ny personal i systemet."
+  },
+  {
+    "id": "v519",
+    "term": "Utförde",
+    "fi": "Suoritti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Utförde dagliga uppgifter effektivt."
+  },
+  {
+    "id": "v520",
+    "term": "Uträttade",
+    "fi": "Toteutti (sai aikaan)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uträttade mycket under kort tid."
+  },
+  {
+    "id": "v521",
+    "term": "Uttryckte",
+    "fi": "Ilmaisi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Uttryckte tydliga förväntningar till teamet."
+  },
+  {
+    "id": "v522",
+    "term": "Utvecklade",
+    "fi": "Kehitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Utvecklade nya funktioner till produkten."
+  },
+  {
+    "id": "v523",
+    "term": "Utvidgade",
+    "fi": "Laajensi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Utvidgade verksamheten till nya marknader."
+  },
+  {
+    "id": "v524",
+    "term": "Utvärderade",
+    "fi": "Arvioi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Utvärderade projektets resultat."
+  },
+  {
+    "id": "v525",
+    "term": "Var ordförande",
+    "fi": "Toimi puheenjohtajana",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Var ordförande för styrelsen i tre år."
+  },
+  {
+    "id": "v526",
+    "term": "Verbaliserade",
+    "fi": "Sanoitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Verbaliserade teamets mål tydligt."
+  },
+  {
+    "id": "v527",
+    "term": "Verifierade",
+    "fi": "Varmisti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Verifierade data innan publicering."
+  },
+  {
+    "id": "v528",
+    "term": "Vitaliserade",
+    "fi": "Elävöitti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Vitaliserade teamets arbetsmiljö."
+  },
+  {
+    "id": "v529",
+    "term": "Valde",
+    "fi": "Valitsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Valde de bästa leverantörerna."
+  },
+  {
+    "id": "v530",
+    "term": "Värderade",
+    "fi": "Arvotti (arvioi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Värderade fastigheten inför försäljning."
+  },
+  {
+    "id": "v531",
+    "term": "Värvade",
+    "fi": "Värväsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Värvade nya medlemmar till klubben."
+  },
+  {
+    "id": "v532",
+    "term": "Återskapade",
+    "fi": "Loi uudelleen",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Återskapade den förlorade filen."
+  },
+  {
+    "id": "v533",
+    "term": "Ändrade",
+    "fi": "Muutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ändrade rutinerna för bättre effektivitet."
+  },
+  {
+    "id": "v534",
+    "term": "Ökade",
+    "fi": "Lisäsi (kasvatti)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Ökade försäljningen med tjugo procent."
+  },
+  {
+    "id": "v535",
+    "term": "Överlade",
+    "fi": "Neuvotteli (harkitsi)",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Överlade med kollegor innan beslut."
+  },
+  {
+    "id": "v536",
+    "term": "Översatte",
+    "fi": "Käänsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Översatte dokument till engelska."
+  },
+  {
+    "id": "v537",
+    "term": "Övertygade",
+    "fi": "Vakuutti",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Övertygade kunden om produktens fördelar."
+  },
+  {
+    "id": "v538",
+    "term": "Övervakade",
+    "fi": "Valvoi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Övervakade projektets framsteg."
+  },
+  {
+    "id": "v539",
+    "term": "Övervägde",
+    "fi": "Harkitsi",
+    "part": 2,
+    "category": "cvverbit",
+    "example": "Övervägde olika alternativ innan beslutet."
   }
 ]
