@@ -1766,5 +1766,789 @@
     "part": 1,
     "category": "opiskelu",
     "example": "Studentexamen avlades i juni."
+  },
+  {
+    "id": "v222",
+    "term": "en informationsteknik",
+    "fi": "IT",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar informationsteknik vid yrkeshögskolan."
+  },
+  {
+    "id": "v223",
+    "term": "en cybersäkerhet",
+    "fi": "kyberturvallisuus",
+    "part": 3,
+    "category": "alat",
+    "example": "Cybersäkerhet är ett växande område."
+  },
+  {
+    "id": "v224",
+    "term": "en medieteknik",
+    "fi": "mediatekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar inom medieteknik."
+  },
+  {
+    "id": "v225",
+    "term": "en informationsbehandling/databehandling",
+    "fi": "tietojenkäsittely",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar informationsbehandling."
+  },
+  {
+    "id": "v226",
+    "term": "en informations- och kommunikationsteknik",
+    "fi": "tieto- ja viestintätekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Programmet heter informations- och kommunikationsteknik."
+  },
+  {
+    "id": "v227",
+    "term": "en kulturbransch",
+    "fi": "kulttuuriala",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon vill jobba inom kulturbranschen."
+  },
+  {
+    "id": "v228",
+    "term": "en musikpedagogik",
+    "fi": "musiikkikasvatus/-pedagogiikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar musikpedagogik."
+  },
+  {
+    "id": "v229",
+    "term": "en företagsekonomi",
+    "fi": "liiketalous",
+    "part": 3,
+    "category": "alat",
+    "example": "Jag pluggar företagsekonomi."
+  },
+  {
+    "id": "v230",
+    "term": "varumärken",
+    "fi": "brändit",
+    "part": 3,
+    "category": "alat",
+    "example": "Företaget har flera kända varumärken."
+  },
+  {
+    "id": "v231",
+    "term": "en personaladministration",
+    "fi": "henkilöstöhallinto",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar med personaladministration."
+  },
+  {
+    "id": "v232",
+    "term": "ett ledarskap",
+    "fi": "johtajuus",
+    "part": 3,
+    "category": "alat",
+    "example": "Gott ledarskap är viktigt på jobbet."
+  },
+  {
+    "id": "v233",
+    "term": "en marknadsföring",
+    "fi": "markkinointi",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar marknadsföring."
+  },
+  {
+    "id": "v234",
+    "term": "en modebransch",
+    "fi": "muotiala",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon drömmer om att jobba i modebranschen."
+  },
+  {
+    "id": "v235",
+    "term": "en försäljning",
+    "fi": "myynti",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar med försäljning."
+  },
+  {
+    "id": "v236",
+    "term": "en finansieringsbransch",
+    "fi": "rahoitusala",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon vill jobba inom finansieringsbranschen."
+  },
+  {
+    "id": "v237",
+    "term": "en ekonomiförvaltning",
+    "fi": "taloushallinto",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar ekonomiförvaltning."
+  },
+  {
+    "id": "v238",
+    "term": "en ekonomi",
+    "fi": "taloustiede",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon läser ekonomi vid universitetet."
+  },
+  {
+    "id": "v239",
+    "term": "sport management",
+    "fi": "urheiluliiketoiminta",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar sport management."
+  },
+  {
+    "id": "v240",
+    "term": "en detaljhandel",
+    "fi": "vähittäiskauppa",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar inom detaljhandel."
+  },
+  {
+    "id": "v241",
+    "term": "en företagsamhet",
+    "fi": "yrittäjyys",
+    "part": 3,
+    "category": "alat",
+    "example": "Kursen handlar om företagsamhet."
+  },
+  {
+    "id": "v242",
+    "term": "en naturresursbransch",
+    "fi": "luonnonvara-ala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar inom naturresursbranschen."
+  },
+  {
+    "id": "v243",
+    "term": "en bioekonomi",
+    "fi": "biotalous",
+    "part": 3,
+    "category": "alat",
+    "example": "Bioekonomi är ett viktigt framtidsområde."
+  },
+  {
+    "id": "v244",
+    "term": "en utvecklings- och affärsverksamhet inom bioekonomi",
+    "fi": "biotalouden kehittämis- ja liiketoiminta",
+    "part": 3,
+    "category": "alat",
+    "example": "Programmet fokuserar på utvecklings- och affärsverksamhet inom bioekonomi."
+  },
+  {
+    "id": "v245",
+    "term": "landsbygdsnäringar",
+    "fi": "maaseutuelinkeinot",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar landsbygdsnäringar."
+  },
+  {
+    "id": "v246",
+    "term": "en lantbruksföretagsamhet",
+    "fi": "maatilayrittäjyys",
+    "part": 3,
+    "category": "alat",
+    "example": "Kursen handlar om lantbruksföretagsamhet."
+  },
+  {
+    "id": "v247",
+    "term": "turism och service",
+    "fi": "matkailu- ja palveluliiketoiminta",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar turism och service."
+  },
+  {
+    "id": "v248",
+    "term": "en catering(-bransch)",
+    "fi": "cateringala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom cateringbranschen."
+  },
+  {
+    "id": "v249",
+    "term": "hotell- och restaurangtjänster",
+    "fi": "hotelli- ja ravintolapalvelut",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar hotell- och restaurangtjänster."
+  },
+  {
+    "id": "v250",
+    "term": "en hållbar gastronomi",
+    "fi": "kestävä gastronomia",
+    "part": 3,
+    "category": "alat",
+    "example": "Restaurangen satsar på hållbar gastronomi."
+  },
+  {
+    "id": "v251",
+    "term": "en turism",
+    "fi": "matkailuala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom turism."
+  },
+  {
+    "id": "v252",
+    "term": "en tjänsteproduktion",
+    "fi": "palvelutuotanto",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon ansvarar för tjänsteproduktionen."
+  },
+  {
+    "id": "v253",
+    "term": "en kosthållsbransch",
+    "fi": "ravitsemusala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar inom kosthållsbranschen."
+  },
+  {
+    "id": "v254",
+    "term": "en evenemangsproduktion",
+    "fi": "tapahtumatuotanto",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar med evenemangsproduktion."
+  },
+  {
+    "id": "v255",
+    "term": "en beklädnadsbransch",
+    "fi": "vaatetusala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar inom beklädnadsbranschen."
+  },
+  {
+    "id": "v256",
+    "term": "teknik och kommunikation",
+    "fi": "tekniikka ja liikenne",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar teknik och kommunikation."
+  },
+  {
+    "id": "v257",
+    "term": "en välfärdsteknologi",
+    "fi": "hyvinvointiteknologia",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar välfärdsteknologi."
+  },
+  {
+    "id": "v258",
+    "term": "en energi- och miljöteknik",
+    "fi": "energia- ja ympäristötekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar energi- och miljöteknik."
+  },
+  {
+    "id": "v259",
+    "term": "en energiproduktion",
+    "fi": "energiatuotanto",
+    "part": 3,
+    "category": "alat",
+    "example": "Kraftverket ansvarar för energiproduktionen."
+  },
+  {
+    "id": "v260",
+    "term": "en energieffektivitet av fastigheter",
+    "fi": "kiinteistöjen energiatehokkuus",
+    "part": 3,
+    "category": "alat",
+    "example": "Kursen handlar om energieffektivitet av fastigheter."
+  },
+  {
+    "id": "v261",
+    "term": "ett underhåll",
+    "fi": "kunnossapito",
+    "part": 3,
+    "category": "alat",
+    "example": "Underhåll av maskinerna sker varje vecka."
+  },
+  {
+    "id": "v262",
+    "term": "en skogsbioindustri",
+    "fi": "metsäbioteollisuus",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom skogsbioindustrin."
+  },
+  {
+    "id": "v263",
+    "term": "ett miljöledarskap",
+    "fi": "ympäristöjohtaminen",
+    "part": 3,
+    "category": "alat",
+    "example": "Kursen fokuserar på miljöledarskap."
+  },
+  {
+    "id": "v264",
+    "term": "en maskinteknik",
+    "fi": "konetekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar maskinteknik."
+  },
+  {
+    "id": "v265",
+    "term": "en produktionsteknik",
+    "fi": "tuotantotekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar produktionsteknik."
+  },
+  {
+    "id": "v266",
+    "term": "en produktutveckling",
+    "fi": "tuotekehitys",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar med produktutveckling."
+  },
+  {
+    "id": "v267",
+    "term": "en logistik",
+    "fi": "logistiikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar logistik."
+  },
+  {
+    "id": "v268",
+    "term": "ett inköp",
+    "fi": "sisäänosto",
+    "part": 3,
+    "category": "alat",
+    "example": "Han ansvarar för företagets inköp."
+  },
+  {
+    "id": "v269",
+    "term": "en inre/intern logistik",
+    "fi": "sisälogistiikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar med intern logistik."
+  },
+  {
+    "id": "v270",
+    "term": "en transport(-bransch)",
+    "fi": "kuljetusala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom transportbranschen."
+  },
+  {
+    "id": "v271",
+    "term": "en lagerhantering",
+    "fi": "varastonhallinta",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon ansvarar för lagerhanteringen."
+  },
+  {
+    "id": "v272",
+    "term": "en bygg- och samhällsteknik",
+    "fi": "rakennus- ja yhdyskuntatekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar bygg- och samhällsteknik."
+  },
+  {
+    "id": "v273",
+    "term": "en byggmästare",
+    "fi": "rakennusmestari",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han jobbar som byggmästare."
+  },
+  {
+    "id": "v274",
+    "term": "husbygg",
+    "fi": "talonrakennus",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar med husbygg."
+  },
+  {
+    "id": "v275",
+    "term": "en konstruktionsplanering",
+    "fi": "rakennesuunnittelu",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar med konstruktionsplanering."
+  },
+  {
+    "id": "v276",
+    "term": "en produktionsstyrning",
+    "fi": "tuotannonohjaus",
+    "part": 3,
+    "category": "alat",
+    "example": "Han ansvarar för produktionsstyrningen."
+  },
+  {
+    "id": "v277",
+    "term": "en el- och automationsteknik",
+    "fi": "sähkö- ja automaatiotekniikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar el- och automationsteknik."
+  },
+  {
+    "id": "v278",
+    "term": "en produktionsteknologi",
+    "fi": "tuotantoteknologia",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar med produktionsteknologi."
+  },
+  {
+    "id": "v279",
+    "term": "en hållbar utveckling",
+    "fi": "kestävä kehitys",
+    "part": 3,
+    "category": "alat",
+    "example": "Hållbar utveckling är viktigt för framtiden."
+  },
+  {
+    "id": "v280",
+    "term": "en robotik",
+    "fi": "robotiikka",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon studerar robotik."
+  },
+  {
+    "id": "v281",
+    "term": "en social- och hälsovårdsbransch",
+    "fi": "sosiaali- ja terveydenhoitoala",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom social- och hälsovårdsbranschen."
+  },
+  {
+    "id": "v282",
+    "term": "en vård(-bransch)",
+    "fi": "hoitoala",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon vill jobba inom vårdbranschen."
+  },
+  {
+    "id": "v283",
+    "term": "en fysioterapi",
+    "fi": "fysioterapia",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar fysioterapi."
+  },
+  {
+    "id": "v284",
+    "term": "en rehabilitering",
+    "fi": "kuntoutus",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar med rehabilitering."
+  },
+  {
+    "id": "v285",
+    "term": "barnmorskestudier",
+    "fi": "kätilöopinnot",
+    "part": 3,
+    "category": "alat",
+    "example": "Barnmorskestudierna tar tre och ett halvt år."
+  },
+  {
+    "id": "v286",
+    "term": "en sjukvård",
+    "fi": "sairaanhoito",
+    "part": 3,
+    "category": "alat",
+    "example": "Han jobbar inom sjukvården."
+  },
+  {
+    "id": "v287",
+    "term": "det sociala området/en socialbransch",
+    "fi": "sosiaaliala",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar inom det sociala området."
+  },
+  {
+    "id": "v288",
+    "term": "en munhygieni",
+    "fi": "suuhygienia",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar munhygieni."
+  },
+  {
+    "id": "v289",
+    "term": "en hälsovård",
+    "fi": "terveydenhoito",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar inom hälsovården."
+  },
+  {
+    "id": "v290",
+    "term": "en ergoterapi",
+    "fi": "toimintaterapia",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar ergoterapi."
+  },
+  {
+    "id": "v291",
+    "term": "en äldrevård",
+    "fi": "vanhustenhoito",
+    "part": 3,
+    "category": "alat",
+    "example": "Hon jobbar inom äldrevården."
+  },
+  {
+    "id": "v292",
+    "term": "en småbarnspedagogik",
+    "fi": "varhaiskasvatus",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar småbarnspedagogik."
+  },
+  {
+    "id": "v293",
+    "term": "en agrolog",
+    "fi": "agrologi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som agrolog på en gård."
+  },
+  {
+    "id": "v294",
+    "term": "en automationsingenjör",
+    "fi": "automaatioinsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är automationsingenjör på fabriken."
+  },
+  {
+    "id": "v295",
+    "term": "en energiingenjör",
+    "fi": "energiainsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som energiingenjör."
+  },
+  {
+    "id": "v296",
+    "term": "en ingenjör inom energi- och miljöteknik",
+    "fi": "energia- ja ympäristötekniikan insinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är ingenjör inom energi- och miljöteknik."
+  },
+  {
+    "id": "v297",
+    "term": "en fysioterapeut",
+    "fi": "fysioterapeutti",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som fysioterapeut."
+  },
+  {
+    "id": "v298",
+    "term": "en ingenjör",
+    "fi": "insinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är ingenjör på ett byggföretag."
+  },
+  {
+    "id": "v299",
+    "term": "en maskiningenjör",
+    "fi": "koneinsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som maskiningenjör."
+  },
+  {
+    "id": "v300",
+    "term": "en rehabiliteringshandledare",
+    "fi": "kuntoutuksenohjaaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är rehabiliteringshandledare."
+  },
+  {
+    "id": "v301",
+    "term": "en barnmorska",
+    "fi": "kätilö",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som barnmorska på sjukhuset."
+  },
+  {
+    "id": "v302",
+    "term": "en logistikingenjör",
+    "fi": "logistiikan insinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är logistikingenjör."
+  },
+  {
+    "id": "v303",
+    "term": "en medianom",
+    "fi": "medianomi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som medianom."
+  },
+  {
+    "id": "v304",
+    "term": "en musikpedagog",
+    "fi": "musiikkipedagogi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är musikpedagog vid musikskolan."
+  },
+  {
+    "id": "v305",
+    "term": "en musiker",
+    "fi": "muusikko",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon är musiker och spelar i en orkester."
+  },
+  {
+    "id": "v306",
+    "term": "en barnträdgårdslärare",
+    "fi": "lastentarhanopettaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han jobbar som barnträdgårdslärare."
+  },
+  {
+    "id": "v307",
+    "term": "en sångare",
+    "fi": "laulaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon är sångare i ett band."
+  },
+  {
+    "id": "v308",
+    "term": "en byggnadsingenjör",
+    "fi": "rakennusinsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är byggnadsingenjör."
+  },
+  {
+    "id": "v309",
+    "term": "en restonom",
+    "fi": "restonomi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som restonom på hotellet."
+  },
+  {
+    "id": "v310",
+    "term": "en sjukskötare",
+    "fi": "sairaanhoitaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är sjukskötare på sjukhuset."
+  },
+  {
+    "id": "v311",
+    "term": "en socionom",
+    "fi": "sosionomi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som socionom."
+  },
+  {
+    "id": "v312",
+    "term": "en munhygienist",
+    "fi": "suuhygienisti",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är munhygienist på tandkliniken."
+  },
+  {
+    "id": "v313",
+    "term": "en elingenjör",
+    "fi": "sähköinsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som elingenjör."
+  },
+  {
+    "id": "v314",
+    "term": "en hälsovårdare",
+    "fi": "terveydenhoitaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är hälsovårdare på skolan."
+  },
+  {
+    "id": "v315",
+    "term": "en informationsbehandlingstradenom",
+    "fi": "tietojenkäsittelytradenomi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som informationsbehandlingstradenom."
+  },
+  {
+    "id": "v316",
+    "term": "en ingenjör i informations- och kommunikationsteknik",
+    "fi": "tieto- ja viestintätekniikan insinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är ingenjör i informations- och kommunikationsteknik."
+  },
+  {
+    "id": "v317",
+    "term": "en ergoterapeut",
+    "fi": "toimintaterapeutti",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som ergoterapeut."
+  },
+  {
+    "id": "v318",
+    "term": "en tradenom",
+    "fi": "tradenomi",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är tradenom och jobbar med ekonomi."
+  },
+  {
+    "id": "v319",
+    "term": "en företagare/en entreprenör",
+    "fi": "yrittäjä",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon är företagare och driver ett eget kafé."
   }
 ]

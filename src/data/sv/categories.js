@@ -33,4 +33,6 @@ export const CATEGORIES = [
   { id: 'mielipiteet', label: 'Mielipiteet' },
   { id: 'kannanotot', label: 'Samaa vai eri mieltä' },
   { id: 'opinnoistakertominen', label: 'Opinnoista kertominen' },
+  { id: 'alat', label: 'Alat' },
+  { id: 'ammatit', label: 'Ammatit' },
 ]
