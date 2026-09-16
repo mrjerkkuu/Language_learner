@@ -1,0 +1,21 @@
+{
+  "name": "language-learner-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Backend for the Työelämän ruotsi practice app (Fastify + Prisma).",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.10.0",
+    "fastify": "^5.12.4"
+  },
+  "devDependencies": {
+    "prisma": "^7.10.0"
+  }
+}

@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  displayName  String?
+  createdAt    DateTime   @default(now())
+  progress     Progress[]
+  activity     Activity[]
+}
+
+model Progress {
+  id           String   @id @default(cuid())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String
+  language     String
+  itemId       String
+  weight       Float    @default(1.0)
+  lastSeen     DateTime @default(now())
+  timesCorrect Int      @default(0)
+  timesWrong   Int      @default(0)
+  learned      Boolean  @default(false)
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, language, itemId])
+}
+
+model Activity {
+  id     String @id @default(cuid())
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  date   String // format YYYY-MM-DD
+  count  Int    @default(0)
+
+  @@unique([userId, date])
+}
