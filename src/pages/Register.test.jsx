@@ -2,7 +2,16 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { screen, fireEvent, waitFor } from '@testing-library/react'
 import { renderWithProviders } from '../test/renderWithProviders'
+import * as authService from '../services/authService'
 import Register from './Register'
+
+// Mock only the network-touching functions — mapAuthError stays real so the
+// error copy asserted below matches production wording. These are UI tests:
+// the HTTP layer itself is covered by apiClient.test.js/authService.test.js.
+vi.mock('../services/authService', async (importOriginal) => {
+  const actual = await importOriginal()
+  return { ...actual, register: vi.fn(), login: vi.fn(), logout: vi.fn(), me: vi.fn() }
+})
 
 const mockNavigate = vi.fn()
 vi.mock('react-router-dom', async (importOriginal) => {
@@ -10,7 +19,10 @@ vi.mock('react-router-dom', async (importOriginal) => {
   return { ...actual, useNavigate: () => mockNavigate }
 })
 
-beforeEach(() => mockNavigate.mockReset())
+beforeEach(() => {
+  mockNavigate.mockReset()
+  vi.mocked(authService.me).mockResolvedValue(null)
+})
 
 const fill = (label, value) =>
   fireEvent.change(screen.getByLabelText(label), { target: { value } })
@@ -37,9 +49,14 @@ describe('Register (integration)', () => {
   })
 
   it('shows the "email already taken" server error', async () => {
+    vi.mocked(authService.register).mockResolvedValue({
+      ok: false,
+      code: 'email_taken',
+      message: 'Tällä sähköpostilla on jo tili. Kirjaudu sisään.',
+    })
     renderWithProviders(<Register />)
     fill('Näyttönimi', 'Jeremia')
-    fill('Sähköposti', 'taken@example.com') // the stub rejects this one
+    fill('Sähköposti', 'taken@example.com')
     fill('Salasana', 'salasana123')
     submit()
     expect(
@@ -48,12 +65,32 @@ describe('Register (integration)', () => {
     expect(mockNavigate).not.toHaveBeenCalled()
   })
 
-  it('navigates on a successful registration', async () => {
+  it('navigates to /app on a successful registration', async () => {
+    vi.mocked(authService.register).mockResolvedValue({
+      ok: true,
+      user: { id: '1', email: 'uusi@example.fi', displayName: 'Jeremia' },
+    })
     renderWithProviders(<Register />)
     fill('Näyttönimi', 'Jeremia')
     fill('Sähköposti', 'uusi@example.fi')
     fill('Salasana', 'salasana123')
     submit()
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/'))
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/app', { replace: true }))
+  })
+
+  it('returns to the original deep-linked destination after registering, via state.from', async () => {
+    vi.mocked(authService.register).mockResolvedValue({
+      ok: true,
+      user: { id: '1', email: 'uusi@example.fi', displayName: 'Jeremia' },
+    })
+    renderWithProviders(<Register />, {
+      route: '/register',
+      state: { from: { pathname: '/app/quiz' } },
+    })
+    fill('Näyttönimi', 'Jeremia')
+    fill('Sähköposti', 'uusi@example.fi')
+    fill('Salasana', 'salasana123')
+    submit()
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/app/quiz', { replace: true }))
   })
 })
