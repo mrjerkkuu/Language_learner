@@ -7,9 +7,10 @@
 // sentences — stays in Swedish; that lives in the sv/*.json data files.)
 // The `id`s are the stable keys referenced by the data, so never change them.
 export const PARTS = [
-  { id: 1, label: 'Opiskelu ja tutustuminen' },
+  { id: 1, label: 'Tutustuminen' },
   { id: 2, label: 'Työelämä ja viestintä' },
   { id: 3, label: 'Oma ala' },
+  { id: 4, label: 'Opiskelu' },
 ]
 
 export const CATEGORIES = [

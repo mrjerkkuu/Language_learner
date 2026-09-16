@@ -14,7 +14,7 @@ import { categoriesForPart } from '../lib/categoryFilter'
 //
 // The topic chips shown are narrowed to whichever categories actually occur
 // (in any content type) for the selected area — e.g. "ICT" doesn't show up
-// under "Opiskelu ja tutustuminen". This is computed from the data itself
+// under "Tutustuminen". This is computed from the data itself
 // (see lib/categoryFilter) rather than a maintained area→topic table.
 // -----------------------------------------------------------------------------
 

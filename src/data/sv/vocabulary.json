@@ -99,7 +99,7 @@
     "id": "v013",
     "term": "att studera",
     "fi": "opiskella",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag studerar informationsteknik."
   },
@@ -107,7 +107,7 @@
     "id": "v014",
     "term": "en kurs",
     "fi": "kurssi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Den här kursen är intressant."
   },
@@ -115,7 +115,7 @@
     "id": "v015",
     "term": "en yrkeshögskola",
     "fi": "ammattikorkeakoulu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag går på yrkeshögskola."
   },
@@ -123,7 +123,7 @@
     "id": "v016",
     "term": "en tentamen",
     "fi": "tentti",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag har en tentamen på fredag."
   },
@@ -131,7 +131,7 @@
     "id": "v017",
     "term": "en lärare",
     "fi": "opettaja",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vår lärare är hjälpsam."
   },
@@ -139,7 +139,7 @@
     "id": "v018",
     "term": "ett schema",
     "fi": "lukujärjestys",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Schemat ändras varje vecka."
   },
@@ -1051,7 +1051,7 @@
     "id": "v132",
     "term": "ett tema",
     "fi": "aihe",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vilket tema har din uppsats?"
   },
@@ -1059,7 +1059,7 @@
     "id": "v133",
     "term": "en bransch",
     "fi": "ala",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vilken bransch vill du jobba inom?"
   },
@@ -1067,7 +1067,7 @@
     "id": "v134",
     "term": "ett yrke",
     "fi": "ammatti",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vad är ditt drömyrke?"
   },
@@ -1075,7 +1075,7 @@
     "id": "v135",
     "term": "en lägre yrkeshögskoleexamen",
     "fi": "alempi ammattikorkeakoulututkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han har en lägre yrkeshögskoleexamen i teknik."
   },
@@ -1083,7 +1083,7 @@
     "id": "v136",
     "term": "en yrkesskola",
     "fi": "ammattikoulu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag gick i yrkesskola i tre år."
   },
@@ -1091,7 +1091,7 @@
     "id": "v137",
     "term": "yrkesstudier",
     "fi": "ammattiopinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Yrkesstudierna börjar i augusti."
   },
@@ -1099,7 +1099,7 @@
     "id": "v138",
     "term": "ett yrkesinstitut",
     "fi": "ammattiopisto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Yrkesinstitutet ligger i centrum."
   },
@@ -1107,7 +1107,7 @@
     "id": "v139",
     "term": "en yrkesexamen",
     "fi": "ammattitutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon avlade en yrkesexamen i vård."
   },
@@ -1115,7 +1115,7 @@
     "id": "v140",
     "term": "ett vitsord (Suomessa) / ett betyg (Ruotsissa)",
     "fi": "arvosana",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vilket vitsord fick du i matte?"
   },
@@ -1123,7 +1123,7 @@
     "id": "v141",
     "term": "ett bostadstillägg",
     "fi": "asumislisä",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag ansökte om bostadstillägg."
   },
@@ -1131,7 +1131,7 @@
     "id": "v142",
     "term": "en öppen yrkeshögskola",
     "fi": "avoin ammattikorkeakoulu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Kursen ordnas av den öppna yrkeshögskolan."
   },
@@ -1139,7 +1139,7 @@
     "id": "v143",
     "term": "ett öppet universitet",
     "fi": "avoin yliopisto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag läser en kurs vid öppna universitetet."
   },
@@ -1147,7 +1147,7 @@
     "id": "v144",
     "term": "en specialyrkesexamen",
     "fi": "erikoisammattitutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han tog en specialyrkesexamen i ledarskap."
   },
@@ -1155,7 +1155,7 @@
     "id": "v145",
     "term": "en distansundervisning",
     "fi": "etäopetus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Distansundervisningen fungerar bra."
   },
@@ -1163,7 +1163,7 @@
     "id": "v146",
     "term": "distansstudier",
     "fi": "etäopinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Distansstudierna kräver disciplin."
   },
@@ -1171,7 +1171,7 @@
     "id": "v147",
     "term": "att söka till",
     "fi": "hakea johonkin",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag ska söka till yrkeshögskolan i vår."
   },
@@ -1179,7 +1179,7 @@
     "id": "v148",
     "term": "en praktikant",
     "fi": "harjoittelija",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi har en ny praktikant på kontoret."
   },
@@ -1187,7 +1187,7 @@
     "id": "v149",
     "term": "en praktik",
     "fi": "harjoittelu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Praktiken varar i sex veckor."
   },
@@ -1195,7 +1195,7 @@
     "id": "v150",
     "term": "underkänd/underkänt",
     "fi": "hylätty (arvosana)",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Provet blev tyvärr underkänt."
   },
@@ -1203,7 +1203,7 @@
     "id": "v151",
     "term": "godkänd/godkänt",
     "fi": "hyväksytty (arvosana)",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Kursen är nu godkänd."
   },
@@ -1211,7 +1211,7 @@
     "id": "v152",
     "term": "självständiga studier",
     "fi": "itsenäiset opinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag gör självständiga studier den här terminen."
   },
@@ -1219,7 +1219,7 @@
     "id": "v153",
     "term": "att fortsätta studier",
     "fi": "jatkaa opintoja",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag vill fortsätta studier vid universitetet."
   },
@@ -1227,7 +1227,7 @@
     "id": "v154",
     "term": "en fortbildning",
     "fi": "jatkokoulutus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Företaget erbjuder fortbildning."
   },
@@ -1235,7 +1235,7 @@
     "id": "v155",
     "term": "fortsatta studier",
     "fi": "jatko-opinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon planerar fortsatta studier utomlands."
   },
@@ -1243,7 +1243,7 @@
     "id": "v156",
     "term": "en dubbelexamen",
     "fi": "kaksoistutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han tog en dubbelexamen i juridik och ekonomi."
   },
@@ -1251,7 +1251,7 @@
     "id": "v157",
     "term": "ett handelsinstitut",
     "fi": "kauppaopisto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon studerade vid handelsinstitutet."
   },
@@ -1259,7 +1259,7 @@
     "id": "v158",
     "term": "en uppsats",
     "fi": "kirjoitelma",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag skriver en uppsats om klimatet."
   },
@@ -1267,7 +1267,7 @@
     "id": "v159",
     "term": "ett prov",
     "fi": "koe",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi har ett prov på fredag."
   },
@@ -1275,7 +1275,7 @@
     "id": "v160",
     "term": "kontaktstudier",
     "fi": "kontaktiopinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Kontaktstudierna ordnas en gång i månaden."
   },
@@ -1283,7 +1283,7 @@
     "id": "v161",
     "term": "en högskola",
     "fi": "korkeakoulu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han studerar vid en högskola i Åbo."
   },
@@ -1291,7 +1291,7 @@
     "id": "v162",
     "term": "en högskoleexamen",
     "fi": "korkeakoulututkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon har en högskoleexamen i pedagogik."
   },
@@ -1299,7 +1299,7 @@
     "id": "v163",
     "term": "en utbildning",
     "fi": "koulutus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Utbildningen tar tre och ett halvt år."
   },
@@ -1307,7 +1307,7 @@
     "id": "v164",
     "term": "ett utbildningsprogram",
     "fi": "koulutusohjelma",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Utbildningsprogrammet omfattar praktik."
   },
@@ -1315,7 +1315,7 @@
     "id": "v165",
     "term": "ett examensarbete",
     "fi": "lopputyö",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag skriver mitt examensarbete just nu."
   },
@@ -1323,7 +1323,7 @@
     "id": "v166",
     "term": "en föreläsning",
     "fi": "luento",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Föreläsningen börjar klockan nio."
   },
@@ -1331,7 +1331,7 @@
     "id": "v167",
     "term": "ett gymnasium",
     "fi": "lukio",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag gick i gymnasiet i Vasa."
   },
@@ -1339,7 +1339,7 @@
     "id": "v168",
     "term": "en termin",
     "fi": "lukukausi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Terminen slutar i maj."
   },
@@ -1347,7 +1347,7 @@
     "id": "v169",
     "term": "ett läsår",
     "fi": "lukuvuosi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Läsåret börjar i augusti."
   },
@@ -1355,7 +1355,7 @@
     "id": "v170",
     "term": "en närundervisning",
     "fi": "lähiopetus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi har närundervisning två dagar i veckan."
   },
@@ -1363,7 +1363,7 @@
     "id": "v171",
     "term": "närstudier",
     "fi": "lähiopinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Närstudierna ordnas på campus."
   },
@@ -1371,7 +1371,7 @@
     "id": "v172",
     "term": "att klara av provet/tentan/kursen",
     "fi": "läpäistä koe/kurssi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag hoppas klara av tentan imorgon."
   },
@@ -1379,7 +1379,7 @@
     "id": "v173",
     "term": "en flerformsstudent",
     "fi": "monimuoto-opiskelija",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Som flerformsstudent studerar jag både på distans och på campus."
   },
@@ -1387,7 +1387,7 @@
     "id": "v174",
     "term": "flerformsstudier",
     "fi": "monimuoto-opinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Flerformsstudier passar mig bra."
   },
@@ -1395,7 +1395,7 @@
     "id": "v175",
     "term": "en flerformsundervisning",
     "fi": "monimuoto-opetus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Flerformsundervisningen kombinerar närträffar och distansstudier."
   },
@@ -1403,7 +1403,7 @@
     "id": "v176",
     "term": "en undervisning",
     "fi": "opetus",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Undervisningen är på svenska."
   },
@@ -1411,7 +1411,7 @@
     "id": "v177",
     "term": "studier",
     "fi": "opinnot/opiskelu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Mina studier går bra."
   },
@@ -1419,7 +1419,7 @@
     "id": "v178",
     "term": "ett lärdomsprov",
     "fi": "opinnäytetyö",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Lärdomsprovet ska vara klart i maj."
   },
@@ -1427,7 +1427,7 @@
     "id": "v179",
     "term": "ett studielån",
     "fi": "opintolaina",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag har tagit studielån."
   },
@@ -1435,7 +1435,7 @@
     "id": "v180",
     "term": "ett studiepoäng",
     "fi": "opintopiste",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Kursen ger fem studiepoäng."
   },
@@ -1443,7 +1443,7 @@
     "id": "v181",
     "term": "ett studiestöd",
     "fi": "opintotuki",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag får studiestöd varje månad."
   },
@@ -1451,7 +1451,7 @@
     "id": "v182",
     "term": "en studerande",
     "fi": "opiskelija",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon är en flitig studerande."
   },
@@ -1459,7 +1459,7 @@
     "id": "v183",
     "term": "ett studentliv",
     "fi": "opiskelijaelämä",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Studentlivet är fullt av nya vänner."
   },
@@ -1467,7 +1467,7 @@
     "id": "v184",
     "term": "ett studentutbyte",
     "fi": "opiskelijavaihto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag åkte på studentutbyte till Tyskland."
   },
@@ -1475,7 +1475,7 @@
     "id": "v185",
     "term": "att studera till",
     "fi": "opiskella joksikin ammattiin",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag studerar till sjuksköterska."
   },
@@ -1483,7 +1483,7 @@
     "id": "v186",
     "term": "en studietid",
     "fi": "opiskeluaika",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Studietiden var den bästa tiden i mitt liv."
   },
@@ -1491,7 +1491,7 @@
     "id": "v187",
     "term": "en studiekompis",
     "fi": "opiskelukaveri",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Min studiekompis hjälpte mig med uppgiften."
   },
@@ -1499,7 +1499,7 @@
     "id": "v188",
     "term": "en lektion",
     "fi": "oppitunti",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Nästa lektion börjar om tio minuter."
   },
@@ -1507,7 +1507,7 @@
     "id": "v189",
     "term": "obligatoriska studier",
     "fi": "pakolliset opinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "De obligatoriska studierna tar två år."
   },
@@ -1515,7 +1515,7 @@
     "id": "v190",
     "term": "en feedback",
     "fi": "palaute",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag fick bra feedback på min uppsats."
   },
@@ -1523,7 +1523,7 @@
     "id": "v191",
     "term": "en grundskola",
     "fi": "peruskoulu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag gick i grundskolan i nio år."
   },
@@ -1531,7 +1531,7 @@
     "id": "v192",
     "term": "grundstudier",
     "fi": "perusopinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Grundstudierna omfattar 60 studiepoäng."
   },
@@ -1539,7 +1539,7 @@
     "id": "v193",
     "term": "en grundexamen",
     "fi": "perustutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han har en grundexamen i teknik."
   },
@@ -1547,7 +1547,7 @@
     "id": "v194",
     "term": "ett projekt",
     "fi": "projekti",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi jobbar med ett nytt projekt."
   },
@@ -1555,7 +1555,7 @@
     "id": "v195",
     "term": "att komma in (vid/på en högskola)",
     "fi": "päästä sisään korkeakouluun",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag hoppas komma in på högskolan i höst."
   },
@@ -1563,7 +1563,7 @@
     "id": "v196",
     "term": "att ta studenten",
     "fi": "päästä ylioppilaaksi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag tog studenten för tre år sedan."
   },
@@ -1571,7 +1571,7 @@
     "id": "v197",
     "term": "ett inträdesprov",
     "fi": "pääsykoe",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Inträdesprovet är i juni."
   },
@@ -1579,7 +1579,7 @@
     "id": "v198",
     "term": "ett grupparbete",
     "fi": "ryhmätyö",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi gör ett grupparbete tillsammans."
   },
@@ -1587,7 +1587,7 @@
     "id": "v199",
     "term": "att genomföra en kurs",
     "fi": "suorittaa kurssi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag ska genomföra en kurs i projektledning."
   },
@@ -1595,7 +1595,7 @@
     "id": "v200",
     "term": "att avlägga examen",
     "fi": "suorittaa tutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon avlägger sin examen nästa vår."
   },
@@ -1603,7 +1603,7 @@
     "id": "v201",
     "term": "att avlägga studentexamen",
     "fi": "suorittaa yo-tutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han avlägger studentexamen i vår."
   },
@@ -1611,7 +1611,7 @@
     "id": "v202",
     "term": "att inrikta sig på",
     "fi": "suuntautua johonkin",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag inriktar mig på marknadsföring."
   },
@@ -1619,7 +1619,7 @@
     "id": "v203",
     "term": "ett inriktningsalternativ",
     "fi": "suuntautumisvaihtoehto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Det finns flera inriktningsalternativ i programmet."
   },
@@ -1627,7 +1627,7 @@
     "id": "v204",
     "term": "en paus",
     "fi": "tauko",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi tar en paus om tio minuter."
   },
@@ -1635,7 +1635,7 @@
     "id": "v205",
     "term": "en uppgift",
     "fi": "tehtävä",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag måste göra en uppgift till imorgon."
   },
@@ -1643,7 +1643,7 @@
     "id": "v206",
     "term": "en tenta",
     "fi": "tentti (puhekielinen)",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag pluggar till tentan hela helgen."
   },
@@ -1651,7 +1651,7 @@
     "id": "v207",
     "term": "en examen",
     "fi": "tutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon har tagit en examen i ekonomi."
   },
@@ -1659,7 +1659,7 @@
     "id": "v208",
     "term": "en arbetspraktik",
     "fi": "työharjoittelu",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag gör min arbetspraktik på ett företag."
   },
@@ -1667,7 +1667,7 @@
     "id": "v209",
     "term": "att jobba/arbeta",
     "fi": "työskennellä",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag jobbar deltid vid sidan av studierna."
   },
@@ -1675,7 +1675,7 @@
     "id": "v210",
     "term": "att tenta om",
     "fi": "uusia koe/tentti",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag måste tenta om nästa månad."
   },
@@ -1683,7 +1683,7 @@
     "id": "v211",
     "term": "en omtenta/omtagning",
     "fi": "uusintakoe",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Omtentan är i januari."
   },
@@ -1691,7 +1691,7 @@
     "id": "v212",
     "term": "att välja",
     "fi": "valita",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Det är svårt att välja rätt kurser."
   },
@@ -1699,7 +1699,7 @@
     "id": "v213",
     "term": "att bli färdig/utexamineras",
     "fi": "valmistua",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag blir färdig om ett år."
   },
@@ -1707,7 +1707,7 @@
     "id": "v214",
     "term": "valfri/valfritt/valfria",
     "fi": "valinnainen",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Den här kursen är valfri."
   },
@@ -1715,7 +1715,7 @@
     "id": "v215",
     "term": "en valfri kurs",
     "fi": "valinnainen kurssi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag valde en valfri kurs i fotografi."
   },
@@ -1723,7 +1723,7 @@
     "id": "v216",
     "term": "valfria studier",
     "fi": "vapaavalintaiset opinnot",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vapaavalintaiset opinnot ger mer frihet."
   },
@@ -1731,7 +1731,7 @@
     "id": "v217",
     "term": "en årskurs",
     "fi": "vuosikurssi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Vi går i samma årskurs."
   },
@@ -1739,7 +1739,7 @@
     "id": "v218",
     "term": "ett sabbatsår",
     "fi": "välivuosi",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Jag tog ett sabbatsår efter gymnasiet."
   },
@@ -1747,7 +1747,7 @@
     "id": "v219",
     "term": "ett universitet",
     "fi": "yliopisto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Hon studerar vid universitetet i Helsingfors."
   },
@@ -1755,7 +1755,7 @@
     "id": "v220",
     "term": "en student",
     "fi": "ylioppilas",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Han blev student förra våren."
   },
@@ -1763,7 +1763,7 @@
     "id": "v221",
     "term": "en studentexamen",
     "fi": "ylioppilastutkinto",
-    "part": 1,
+    "part": 4,
     "category": "opiskelu",
     "example": "Studentexamen avlades i juni."
   },
