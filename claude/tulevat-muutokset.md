@@ -51,6 +51,12 @@ oma testi-SQLite, samaan CI:hin.
 - Vaatii rikkaamman datamallin (`wordForms.json` / oma `verbs.json`) + tehtävätyypit per muoto.
 - UI samalla 2a-tyylillä; Muodot-moduulin alatila (artikkelit / substantiivit / verbit) tai
   erillinen "Verbit"-tyyppi.
+- **Ajoituspäätös (sanaston uudelleenrakennuksen yhteydessä):** CV-verbit
+  (~200 kpl, cv_verbit.pdf) lisätään ensin Sanakortteina imperfektimuodossa
+  sellaisenaan, jotta ne ovat heti käytössä. K3-laajennus (täysi taivutussarja
+  infinitiivi→preesens→imperfekti→perfekti kaikille sanaluokille) tehdään
+  omana projektinaan Tailscale Funnel -julkaisun jälkeen — samoja 200 verbiä
+  voidaan silloin käyttää uudelleen täydellä taivutuksella.
 
 ---
 

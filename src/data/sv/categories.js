@@ -18,4 +18,7 @@ export const CATEGORIES = [
   { id: 'tyoelama', label: 'Työelämä' },
   { id: 'viestinta', label: 'Viestintä' },
   { id: 'ict', label: 'ICT' },
+  { id: 'perhe', label: 'Perhe' },
+  { id: 'asuminen', label: 'Asuminen' },
+  { id: 'kysymyssanat', label: 'Kysymyssanat' },
 ]

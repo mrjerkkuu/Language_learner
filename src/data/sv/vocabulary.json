@@ -430,5 +430,277 @@
     "part": 3,
     "category": "ict",
     "example": "Datasäkerhet är mycket viktigt."
+  },
+  {
+    "id": "v055",
+    "term": "en man/make",
+    "fi": "aviomies",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min man heter Anders."
+  },
+  {
+    "id": "v056",
+    "term": "en fru/hustru/maka",
+    "fi": "aviovaimo",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min fru är läkare."
+  },
+  {
+    "id": "v057",
+    "term": "en pappa",
+    "fi": "isä",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min pappa bor i Åbo."
+  },
+  {
+    "id": "v058",
+    "term": "en tvilling",
+    "fi": "kaksonen",
+    "part": 1,
+    "category": "perhe",
+    "example": "Jag har en tvilling."
+  },
+  {
+    "id": "v059",
+    "term": "ett barn",
+    "fi": "lapsi",
+    "part": 1,
+    "category": "perhe",
+    "example": "Vi har ett barn."
+  },
+  {
+    "id": "v060",
+    "term": "en son",
+    "fi": "poika",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min son går i skolan."
+  },
+  {
+    "id": "v061",
+    "term": "en syster",
+    "fi": "sisko",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min syster bor i Helsingfors."
+  },
+  {
+    "id": "v062",
+    "term": "en dotter",
+    "fi": "tytär",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min dotter älskar att läsa."
+  },
+  {
+    "id": "v063",
+    "term": "föräldrar",
+    "fi": "vanhemmat",
+    "part": 1,
+    "category": "perhe",
+    "example": "Mina föräldrar ringer varje söndag."
+  },
+  {
+    "id": "v064",
+    "term": "en bror",
+    "fi": "veli",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min bror jobbar inom IT."
+  },
+  {
+    "id": "v065",
+    "term": "en mamma",
+    "fi": "äiti",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min mamma lagar god mat."
+  },
+  {
+    "id": "v066",
+    "term": "att bo ihop",
+    "fi": "asua yhdessä",
+    "part": 1,
+    "category": "perhe",
+    "example": "Vi bor ihop sedan i våras."
+  },
+  {
+    "id": "v067",
+    "term": "frånskild",
+    "fi": "eronnut",
+    "part": 1,
+    "category": "perhe",
+    "example": "Han är frånskild sedan två år."
+  },
+  {
+    "id": "v068",
+    "term": "ogift",
+    "fi": "naimaton",
+    "part": 1,
+    "category": "perhe",
+    "example": "Jag är fortfarande ogift."
+  },
+  {
+    "id": "v069",
+    "term": "gift",
+    "fi": "naimisissa",
+    "part": 1,
+    "category": "perhe",
+    "example": "Vi har varit gifta i tio år."
+  },
+  {
+    "id": "v070",
+    "term": "att vara sambo",
+    "fi": "olla avoliitossa",
+    "part": 1,
+    "category": "perhe",
+    "example": "Vi är sambo och trivs bra."
+  },
+  {
+    "id": "v071",
+    "term": "en pojkvän",
+    "fi": "poikaystävä",
+    "part": 1,
+    "category": "perhe",
+    "example": "Min pojkvän jobbar som kock."
+  },
+  {
+    "id": "v072",
+    "term": "att dejta",
+    "fi": "seurustella",
+    "part": 1,
+    "category": "perhe",
+    "example": "Vi har dejtat i ett år."
+  },
+  {
+    "id": "v073",
+    "term": "en singel",
+    "fi": "sinkku",
+    "part": 1,
+    "category": "perhe",
+    "example": "Jag är singel just nu."
+  },
+  {
+    "id": "v074",
+    "term": "en flickvän",
+    "fi": "tyttöystävä",
+    "part": 1,
+    "category": "perhe",
+    "example": "Hans flickvän studerar medicin."
+  },
+  {
+    "id": "v075",
+    "term": "en tvåa",
+    "fi": "kaksio",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Vi bor i en tvåa."
+  },
+  {
+    "id": "v076",
+    "term": "stan",
+    "fi": "kaupunki",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Jag jobbar i stan."
+  },
+  {
+    "id": "v077",
+    "term": "ett höghus",
+    "fi": "kerrostalo",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Vi bor i ett höghus."
+  },
+  {
+    "id": "v078",
+    "term": "centrum",
+    "fi": "keskusta",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Butiken ligger i centrum."
+  },
+  {
+    "id": "v079",
+    "term": "en trea",
+    "fi": "kolmio",
+    "part": 1,
+    "category": "asuminen",
+    "example": "De har precis köpt en trea."
+  },
+  {
+    "id": "v080",
+    "term": "en by",
+    "fi": "kylä",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Han växte upp i en liten by."
+  },
+  {
+    "id": "v081",
+    "term": "en förort",
+    "fi": "lähiö",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Vi bor i en förort till Stockholm."
+  },
+  {
+    "id": "v082",
+    "term": "landet",
+    "fi": "maaseutu",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Jag trivs bäst på landet."
+  },
+  {
+    "id": "v083",
+    "term": "en stuga",
+    "fi": "mökki",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Vi har en stuga vid sjön."
+  },
+  {
+    "id": "v084",
+    "term": "ett egnahemshus/en villa",
+    "fi": "omakotitalo",
+    "part": 1,
+    "category": "asuminen",
+    "example": "De bor i en villa."
+  },
+  {
+    "id": "v085",
+    "term": "ett radhus",
+    "fi": "rivitalo",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Vi flyttade till ett radhus i somras."
+  },
+  {
+    "id": "v086",
+    "term": "ett parhus",
+    "fi": "paritalo",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Grannarna bor i ett parhus."
+  },
+  {
+    "id": "v087",
+    "term": "ensam",
+    "fi": "yksin",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Hon bor ensam sedan i fjol."
+  },
+  {
+    "id": "v088",
+    "term": "en etta",
+    "fi": "yksiö",
+    "part": 1,
+    "category": "asuminen",
+    "example": "Jag hyr en etta i centrum."
   }
 ]

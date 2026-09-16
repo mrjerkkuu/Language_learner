@@ -152,5 +152,75 @@
     "fi": "Meidän täytyy testata koodi ennen julkaisua.",
     "part": 3,
     "category": "ict"
+  },
+  {
+    "id": "p023",
+    "term": "Var bor du?",
+    "fi": "Missä sinä asut?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p024",
+    "term": "Vart är du på väg?",
+    "fi": "Minne olet menossa?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p025",
+    "term": "Varför studerar du svenska?",
+    "fi": "Miksi opiskelet ruotsia?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p026",
+    "term": "Vem är det?",
+    "fi": "Kuka se on?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p027",
+    "term": "Vems är den här boken?",
+    "fi": "Kenen tämä kirja on?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p028",
+    "term": "Hur länge har du bott här?",
+    "fi": "Kuinka kauan olet asunut täällä?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p029",
+    "term": "Hur ofta tränar du?",
+    "fi": "Kuinka usein sinä treenaat?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p030",
+    "term": "Hur mycket kostar biljetten?",
+    "fi": "Kuinka paljon lippu maksaa?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p031",
+    "term": "Hurdan är din lägenhet?",
+    "fi": "Millainen asuntosi on?",
+    "part": 1,
+    "category": "kysymyssanat"
+  },
+  {
+    "id": "p032",
+    "term": "Vilken våning bor du på?",
+    "fi": "Millä kerroksessa sinä asut?",
+    "part": 1,
+    "category": "kysymyssanat"
   }
 ]
