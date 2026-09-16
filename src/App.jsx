@@ -1,7 +1,9 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import { FilterProvider } from './context/FilterContext'
 import { ROUTES } from './lib/routes'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
@@ -15,12 +17,14 @@ import WordForms from './components/WordForms'
 // -----------------------------------------------------------------------------
 // App root
 // -----------------------------------------------------------------------------
+// - AuthProvider holds the session (GET /api/auth/me on mount) for the whole
+//   app, including the public screens (Landing/Login/Register need it too).
 // - LanguageProvider holds the selected target language + its content.
 // - FilterProvider is keyed by language, so switching language remounts the
 //   routed subtree and cleanly re-initialises per-language state (spaced
 //   repetition, the area+topic filter).
-// - HashRouter keeps routing in the URL hash — GitHub Pages friendly (no
-//   server-side rewrites / 404.html needed).
+// - BrowserRouter (not Hash) since the backend now serves the SPA from a
+//   single origin — see vite.config.js's `base` and dev proxy.
 // -----------------------------------------------------------------------------
 
 // The routed part of the app, remounted per language via key.
@@ -29,23 +33,20 @@ function LanguageScopedRoutes() {
   return (
     <FilterProvider key={lang}>
       <Routes>
-        <Route path={ROUTES.home} element={<Home />} />
-
-        {/* Auth screens (Vaihe 3 frontti). Built now with an isolated
-            authService STUB — no real backend yet, so auth is NOT enforced and
-            these are simply reachable by URL. When the backend lands, the
-            landing becomes "/", the practice area moves behind a guard + demo
-            flag, and routing switches to BrowserRouter. */}
-        <Route path={ROUTES.welcome} element={<Landing />} />
+        <Route path={ROUTES.landing} element={<Landing />} />
         <Route path={ROUTES.login} element={<Login />} />
         <Route path={ROUTES.register} element={<Register />} />
 
-        <Route path={ROUTES.flashcards} element={<Flashcard />} />
-        <Route path={ROUTES.phrases} element={<PhraseBank />} />
-        <Route path={ROUTES.writing} element={<WritingPractice />} />
-        <Route path={ROUTES.quiz} element={<Quiz />} />
-        <Route path={ROUTES.forms} element={<WordForms />} />
-        <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path={ROUTES.app} element={<Home />} />
+          <Route path={ROUTES.flashcards} element={<Flashcard />} />
+          <Route path={ROUTES.phrases} element={<PhraseBank />} />
+          <Route path={ROUTES.writing} element={<WritingPractice />} />
+          <Route path={ROUTES.quiz} element={<Quiz />} />
+          <Route path={ROUTES.forms} element={<WordForms />} />
+        </Route>
+
+        <Route path="*" element={<Navigate to={ROUTES.landing} replace />} />
       </Routes>
     </FilterProvider>
   )
@@ -53,10 +54,12 @@ function LanguageScopedRoutes() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <HashRouter>
-        <LanguageScopedRoutes />
-      </HashRouter>
-    </LanguageProvider>
+    <AuthProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+          <LanguageScopedRoutes />
+        </BrowserRouter>
+      </LanguageProvider>
+    </AuthProvider>
   )
 }

@@ -72,6 +72,10 @@ export function AuthProvider({ children }) {
     // instead of silently pretending logout always succeeds.
     setUser(null)
     setStatus('anon')
+    // Always drop demo mode too — otherwise, on a shared device, the next
+    // visitor would still see the previous user's practice area/progress
+    // (isDemo alone is enough for ProtectedRoute to let someone through).
+    setIsDemo(false)
     if (!res.ok) {
       console.error('Logout request failed server-side; local session state was cleared anyway.', res.code)
     }

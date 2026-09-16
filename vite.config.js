@@ -6,18 +6,24 @@ import tailwindcss from '@tailwindcss/vite'
 // Vite configuration.
 // https://vite.dev/config/
 export default defineConfig({
-  // CRITICAL for GitHub Pages deployment:
-  // The site is published at https://mrjerkkuu.github.io/Language_learner/,
-  // i.e. under the subfolder "/Language_learner/". `base` tells Vite to link
-  // every asset (JS, CSS, images) relative to this path. Without it the links
-  // and assets break in production (you get a blank white page).
-  // If the repository is renamed, update this path to match the new name.
-  base: '/Language_learner/',
+  // Vaihe 3: Fastify now serves the built SPA from its own origin's root
+  // (see server/src/app.js's serveStatic), so assets are linked from "/".
+  // The old GitHub Pages subfolder deploy ('/Language_learner/') is on hold —
+  // see claude/vaihe-3-suunnitelma.md.
+  base: '/',
 
   plugins: [
     react(),        // React + JSX + Fast Refresh
     tailwindcss(),  // Tailwind CSS v4 (CSS-first, no separate tailwind.config.js)
   ],
+
+  // Dev-time proxy so the frontend (Vite, :5173) and backend (Fastify, :3000)
+  // behave as one origin, same as production — cookies/CSRF work without CORS.
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
+  },
 
   // Vitest config. Pure-logic tests run in the default node environment;
   // component tests opt into jsdom with a `// @vitest-environment jsdom`

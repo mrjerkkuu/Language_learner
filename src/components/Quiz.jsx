@@ -234,10 +234,8 @@ function ResultScreen({ total, correctCount, wrong, onRetryWrong }) {
             Kertaa väärät
           </button>
         )}
-        {/* react-router Link (not a raw href): stays correct when routing
-            switches from HashRouter to BrowserRouter in Vaihe 3. */}
         <Link
-          to={ROUTES.home}
+          to={ROUTES.app}
           className="touch-target block w-full rounded-xl bg-card py-3 text-center font-semibold text-ink ring-1 ring-line active:bg-bg"
         >
           Takaisin

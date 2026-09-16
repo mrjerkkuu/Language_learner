@@ -1,26 +1,36 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import FormField from '../components/FormField'
 import PasswordInput from '../components/PasswordInput'
 import { validateForm, PASSWORD_MIN_LENGTH } from '../lib/validation'
-import { register, mapAuthError } from '../services/authService'
+import { mapAuthError } from '../services/authService'
+import { useAuth } from '../context/AuthContext'
 import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Register (/register)
 // -----------------------------------------------------------------------------
-// Display name + email + password. Same flow and states as Login; all backend
-// contact goes through authService (a stub today). The display name is what the
-// app greets the user by ("Hei, Jeremia").
+// Display name + email + password. Same flow and states as Login. Goes
+// through useAuth().register (not authService directly) so AuthContext's
+// status updates synchronously — see Login.jsx for why that matters.
 // -----------------------------------------------------------------------------
 
 export default function Register() {
+  const { register, status } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
   const [values, setValues] = useState({ displayName: '', email: '', password: '' })
   const [errors, setErrors] = useState({})
   const [formError, setFormError] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+
+  // Already logged in (e.g. back button, or a stale tab): leave this screen.
+  useEffect(() => {
+    if (status === 'authed') {
+      navigate(ROUTES.app, { replace: true })
+    }
+  }, [status, navigate])
 
   const setField = (name) => (e) => setValues((v) => ({ ...v, [name]: e.target.value }))
 
@@ -36,7 +46,8 @@ export default function Register() {
     try {
       const res = await register(values)
       if (res.ok) {
-        navigate(ROUTES.home) // TODO (Vaihe 3): go to "/app" (and offer demo-progress import)
+        const from = location.state?.from?.pathname ?? ROUTES.app
+        navigate(from, { replace: true })
       } else {
         setFormError(res.message)
       }
@@ -48,7 +59,7 @@ export default function Register() {
   }
 
   return (
-    <AuthShell kicker="Aloita ilmaiseksi" title="Luo tili" backTo={ROUTES.welcome}>
+    <AuthShell kicker="Aloita ilmaiseksi" title="Luo tili" backTo={ROUTES.landing}>
       <form onSubmit={handleSubmit} noValidate className="mt-2">
         {formError && (
           <div

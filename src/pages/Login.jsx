@@ -1,29 +1,40 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import FormField from '../components/FormField'
 import PasswordInput from '../components/PasswordInput'
 import { validateForm } from '../lib/validation'
-import { login, mapAuthError } from '../services/authService'
+import { mapAuthError } from '../services/authService'
+import { useAuth } from '../context/AuthContext'
 import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Login (/login)
 // -----------------------------------------------------------------------------
 // Email + password. Client validation is UX-only; the server is the real check.
-// All backend contact goes through authService (a stub today), so this screen
-// won't change when the real API is wired in.
+// Goes through useAuth().login (not authService directly) so AuthContext's
+// status updates synchronously — otherwise ProtectedRoute would still see
+// 'anon' on the very next render and bounce back to /login.
 //
 // Form states: idle -> (submit) validating -> submitting (button spinner +
 // inputs locked) -> success (navigate) | error (message above the form).
 // -----------------------------------------------------------------------------
 
 export default function Login() {
+  const { login, status } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
   const [values, setValues] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({}) // per-field
   const [formError, setFormError] = useState(null) // top-level (server) error
   const [submitting, setSubmitting] = useState(false)
+
+  // Already logged in (e.g. back button, or a stale tab): leave this screen.
+  useEffect(() => {
+    if (status === 'authed') {
+      navigate(ROUTES.app, { replace: true })
+    }
+  }, [status, navigate])
 
   const setField = (name) => (e) => setValues((v) => ({ ...v, [name]: e.target.value }))
 
@@ -39,7 +50,8 @@ export default function Login() {
     try {
       const res = await login({ email: values.email, password: values.password })
       if (res.ok) {
-        navigate(ROUTES.home) // TODO (Vaihe 3): go to intended route / "/app"
+        const from = location.state?.from?.pathname ?? ROUTES.app
+        navigate(from, { replace: true })
       } else {
         setFormError(res.message)
       }
@@ -51,7 +63,7 @@ export default function Login() {
   }
 
   return (
-    <AuthShell kicker="Tervetuloa takaisin" title="Kirjaudu" backTo={ROUTES.welcome}>
+    <AuthShell kicker="Tervetuloa takaisin" title="Kirjaudu" backTo={ROUTES.landing}>
       <form onSubmit={handleSubmit} noValidate className="mt-2">
         {formError && (
           <div

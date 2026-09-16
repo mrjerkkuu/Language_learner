@@ -1,21 +1,25 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTheme } from '../hooks/useTheme'
+import { useAuth } from '../context/AuthContext'
 import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
-// Landing (/welcome)
+// Landing (/)
 // -----------------------------------------------------------------------------
 // The public entry screen: a short pitch and the three ways in — Register
-// (primary), Login (secondary), or "try without an account" (demo).
-//
-// NOTE (pre-backend): auth is not yet enforced, so "Kokeile ilman tiliä" and,
-// for now, the auth buttons all lead into the existing app at "/". When the
-// backend lands (Vaihe 3), this becomes the real "/" and access to the practice
-// area moves behind the auth guard + demo flag.
+// (primary), Login (secondary), or "try without an account" (demo, via
+// AuthContext's isDemo flag so ProtectedRoute lets the visitor through).
 // -----------------------------------------------------------------------------
 
 export default function Landing() {
   const { isDark, toggle } = useTheme()
+  const { startDemo } = useAuth()
+  const navigate = useNavigate()
+
+  function handleDemo() {
+    startDemo()
+    navigate(ROUTES.app)
+  }
 
   return (
     <div className="app-safe min-h-screen">
@@ -72,10 +76,13 @@ export default function Landing() {
         </div>
 
         <div className="mt-5 text-center">
-          {/* Demo entry. Pre-backend this just opens the current app. */}
-          <Link to={ROUTES.home} className="text-sm font-semibold text-muted active:opacity-70">
+          <button
+            type="button"
+            onClick={handleDemo}
+            className="text-sm font-semibold text-muted active:opacity-70"
+          >
             Kokeile ilman tiliä →
-          </Link>
+          </button>
         </div>
       </main>
     </div>
