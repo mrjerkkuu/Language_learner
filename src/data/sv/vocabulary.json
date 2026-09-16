@@ -702,5 +702,349 @@
     "part": 1,
     "category": "asuminen",
     "example": "Jag hyr en etta i centrum."
+  },
+  {
+    "id": "v089",
+    "term": "en biltrimning",
+    "fi": "auton tuunaus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han trimmar bilar på fritiden."
+  },
+  {
+    "id": "v090",
+    "term": "filmer",
+    "fi": "elokuvat",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi går på bio varje fredag."
+  },
+  {
+    "id": "v091",
+    "term": "en skidåkning",
+    "fi": "hiihto",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag åker skidor varje vinter."
+  },
+  {
+    "id": "v092",
+    "term": "en joggning",
+    "fi": "hölkkäily",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag joggar tre gånger i veckan."
+  },
+  {
+    "id": "v093",
+    "term": "en fotboll",
+    "fi": "jalkapallo",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi spelar fotboll på lördagar."
+  },
+  {
+    "id": "v094",
+    "term": "en gympa",
+    "fi": "jumppa",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Hon går på gympa på tisdagar."
+  },
+  {
+    "id": "v095",
+    "term": "en löpning",
+    "fi": "juokseminen",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag löper fem kilometer varje morgon."
+  },
+  {
+    "id": "v096",
+    "term": "en ishockey",
+    "fi": "jääkiekko",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Killarna spelar ishockey varje vecka."
+  },
+  {
+    "id": "v097",
+    "term": "ett fiske",
+    "fi": "kalastus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi fiskar ofta på sommaren."
+  },
+  {
+    "id": "v098",
+    "term": "en korgboll",
+    "fi": "koripallo",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "De spelar korgboll efter skolan."
+  },
+  {
+    "id": "v099",
+    "term": "en motionering",
+    "fi": "kuntoilu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag motionerar regelbundet."
+  },
+  {
+    "id": "v100",
+    "term": "ett gym",
+    "fi": "kuntosali",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag går på gym tre gånger i veckan."
+  },
+  {
+    "id": "v101",
+    "term": "handarbeten",
+    "fi": "käsityöt",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Min mormor gör handarbeten på kvällarna."
+  },
+  {
+    "id": "v102",
+    "term": "en promenering",
+    "fi": "kävely",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi promenerar i parken varje kväll."
+  },
+  {
+    "id": "v103",
+    "term": "en utförsåkning",
+    "fi": "laskettelu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi åker slalom i fjällen varje år."
+  },
+  {
+    "id": "v104",
+    "term": "en volleyboll",
+    "fi": "lentopallo",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Tjejerna spelar volleyboll på stranden."
+  },
+  {
+    "id": "v105",
+    "term": "en skrinning",
+    "fi": "luistelu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Barnen åker skridsko på sjön."
+  },
+  {
+    "id": "v106",
+    "term": "en läsning",
+    "fi": "lukeminen",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag läser böcker varje kväll innan jag somnar."
+  },
+  {
+    "id": "v107",
+    "term": "en snowboardåkning",
+    "fi": "lumilautailu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han åker snowboard i backen varje helg."
+  },
+  {
+    "id": "v108",
+    "term": "en målning",
+    "fi": "maalaaminen",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag målar tavlor på min fritid."
+  },
+  {
+    "id": "v109",
+    "term": "en paddling",
+    "fi": "melonta",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi paddlar kajak på sommaren."
+  },
+  {
+    "id": "v110",
+    "term": "en jakt",
+    "fi": "metsästys",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Min pappa jagar älg varje höst."
+  },
+  {
+    "id": "v111",
+    "term": "en mc-touring",
+    "fi": "moottoripyöräily",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han kör motorcykel varje sommar."
+  },
+  {
+    "id": "v112",
+    "term": "en musik",
+    "fi": "musiikki",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag spelar gitarr och lyssnar på musik varje dag."
+  },
+  {
+    "id": "v113",
+    "term": "en boxing",
+    "fi": "nyrkkeily",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han boxas på gymmet två gånger i veckan."
+  },
+  {
+    "id": "v114",
+    "term": "en tyngdlyftning",
+    "fi": "painonnosto",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag lyfter tyngder på gymmet."
+  },
+  {
+    "id": "v115",
+    "term": "en boboll",
+    "fi": "pesäpallo",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi spelar boboll på sommaren."
+  },
+  {
+    "id": "v116",
+    "term": "en cykling",
+    "fi": "pyöräily",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag cyklar till jobbet varje dag."
+  },
+  {
+    "id": "v117",
+    "term": "en ridning",
+    "fi": "ratsastus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Hon rider varje lördag."
+  },
+  {
+    "id": "v118",
+    "term": "en rullskridskoåkning",
+    "fi": "rullaluistelu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Barnen åker rullskridskor i parken."
+  },
+  {
+    "id": "v119",
+    "term": "en matlagning",
+    "fi": "ruoanlaitto",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag lagar mat nästan varje kväll."
+  },
+  {
+    "id": "v120",
+    "term": "en stavgång",
+    "fi": "sauvakävely",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Mormor stavgår varje morgon."
+  },
+  {
+    "id": "v121",
+    "term": "en skateboarding",
+    "fi": "skeittailu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Killen åker skateboard vid skolan."
+  },
+  {
+    "id": "v122",
+    "term": "en dykning",
+    "fi": "sukellus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi dyker i havet på semestern."
+  },
+  {
+    "id": "v123",
+    "term": "en badminton",
+    "fi": "sulkapallo",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi spelar badminton på onsdagar."
+  },
+  {
+    "id": "v124",
+    "term": "en orientering",
+    "fi": "suunnistus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han orienterar i skogen varje helg."
+  },
+  {
+    "id": "v125",
+    "term": "en innebandy",
+    "fi": "sähly",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Killarna spelar innebandy i hallen."
+  },
+  {
+    "id": "v126",
+    "term": "en dans",
+    "fi": "tanssi",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi dansar salsa på fredagar."
+  },
+  {
+    "id": "v127",
+    "term": "en camping",
+    "fi": "telttailu",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi campar i skärgården varje sommar."
+  },
+  {
+    "id": "v128",
+    "term": "en dator",
+    "fi": "tietokone (pelit)",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Han spelar dator flera timmar varje dag."
+  },
+  {
+    "id": "v129",
+    "term": "en simning",
+    "fi": "uinti",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Jag simmar varje morgon innan jobbet."
+  },
+  {
+    "id": "v130",
+    "term": "en vandring",
+    "fi": "vaellus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Vi vandrar i fjällen varje sommar."
+  },
+  {
+    "id": "v131",
+    "term": "en fotografering",
+    "fi": "valokuvaus",
+    "part": 1,
+    "category": "harrastukset",
+    "example": "Hon fotograferar natur på sin fritid."
   }
 ]

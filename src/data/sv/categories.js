@@ -21,4 +21,5 @@ export const CATEGORIES = [
   { id: 'perhe', label: 'Perhe' },
   { id: 'asuminen', label: 'Asuminen' },
   { id: 'kysymyssanat', label: 'Kysymyssanat' },
+  { id: 'harrastukset', label: 'Harrastukset' },
 ]

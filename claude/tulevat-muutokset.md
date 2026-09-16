@@ -64,3 +64,12 @@ oma testi-SQLite, samaan CI:hin.
 - AI-tarkistus kirjoitusharjoituksiin (`aiService.js`-rajapinta valmiina).
 - Lisää opeteltavia kieliä (rakenne tukee jo).
 - Sähköpostivarmennus + salasanan palautus (Vaihe 3:n jälkeen).
+- **Rajattu harjoittelusessio (esim. 10 sanaa kerralla):** sanakortteja
+  pelatessa voisi valita kiinteän kokoisen, satunnaistetun erän koko
+  kategorian sijaan — painotettuna srLogic.js:n olemassa olevalla weight-
+  järjestelmällä (vaikeat sanat useammin) JA priorisoiden vielä
+  oppimattomia/uusia sanoja. Hyödyllinen kun haluaa harjoitella hetken
+  ilman koko kategorian läpikäyntiä. Ajoitus: ensimmäisen julkaisun
+  (Tailscale Funnel) jälkeen — UI/UX-ominaisuus, ei sanastodataa, vaatii
+  oman suunnittelunsa (esim. tarkistaa nykyisen pickNext-logiikan kattaako
+  se jo "uudet sanat ensin" -priorisoinnin).
