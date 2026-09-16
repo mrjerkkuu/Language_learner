@@ -26,4 +26,7 @@ export const CATEGORIES = [
   { id: 'tervehdykset', label: 'Tervehdys ja hyvästely' },
   { id: 'kuulumiset', label: 'Kuulumiset' },
   { id: 'kiitokset', label: 'Kiitos ja anteeksi' },
+  { id: 'kuuntelu', label: 'Aktiivinen kuuntelu' },
+  { id: 'selvennys', label: 'Kun et ymmärrä' },
+  { id: 'puheenvuoro', label: 'Puheenvuoro ja ehdotukset' },
 ]
