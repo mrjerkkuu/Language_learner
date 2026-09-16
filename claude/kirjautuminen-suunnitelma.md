@@ -115,6 +115,13 @@ Salasanan näyttö/piilotus: yksi kenttä + silmä-nappi (ei erillistä vahvistu
 `AuthContext`: `{ user, status:'loading'|'authed'|'anon', isDemo, login, register, logout, startDemo, endDemo }`.
 Latauksessa `GET /api/auth/me`. `<ProtectedRoute>` päästää läpi jos `authed || isDemo`, muuten `/login` (`state.from`).
 
+- **Askel 4 code-review, jätetty myöhemmäksi:** apiClient tulkitsee kaikki
+  403-vastaukset vanhentuneeksi CSRF-tokeniksi statuskoodin perusteella
+  eikä erottelevan code-kentän mukaan (riski: turha retry tulevilla
+  ei-idempotenteilla POST-reiteillä, Vaihe B); fetchCsrfToken() ei tarkista
+  res.ok:ia ennen cachetusta. Ei estä nykyistä käyttöä, tarkista kun
+  progress-reitit rakennetaan.
+
 ## 6. Demo → tili -siirtymä (tallennusratkaisu)
 
 | Vaihtoehto | Plussat | Miinukset | Suositus |

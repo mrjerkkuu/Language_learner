@@ -2,96 +2,77 @@
 // authService — single, backend-agnostic interface for ALL authentication.
 // -----------------------------------------------------------------------------
 // SAME PATTERN AS aiService: this file is the ONLY place that knows how auth
-// talks to the outside world. Today there is no backend, so every function
-// returns a simulated result. Tomorrow (Vaihe 3) we swap the bodies for real
-// `fetch('/api/auth/...')` calls — the screens, forms and (future) AuthContext
-// keep calling these exact functions and never change.
+// talks to the outside world — every call goes through apiClient
+// (credentials + CSRF handled there), never a bare `fetch`. Screens, forms
+// and AuthContext call these exact functions and never need to change when
+// the transport underneath does.
 //
-// Return-value SHAPES are fixed here and must stay stable across the swap:
+// Return-value SHAPES are fixed here and must stay stable:
 //   register / login -> { ok: true, user } | { ok: false, code, message }
 //   me                -> user | null
-//   logout            -> void
+//   logout            -> { ok: true } | { ok: false, code }
 // where `user` is { id, email, displayName }.
 //
 // `code` is a stable machine key the UI maps to a Finnish message
 // (see mapAuthError below), so error copy lives in one place.
 // -----------------------------------------------------------------------------
 
-// Simulated network latency so the form's loading state is visible while
-// stubbed. Removed/irrelevant once real fetch calls replace these.
-const FAKE_LATENCY_MS = 450
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-
-// While there is no server we keep the "logged in" user only in memory, so a
-// reload starts logged out. This is intentional for the stub — the real session
-// will live in an httpOnly cookie the server sets.
-let currentUser = null
-
-// A tiny helper to make a user object from a form's fields.
-function makeUser({ email, displayName }) {
-  return {
-    id: 'demo-' + Math.random().toString(36).slice(2, 10),
-    email,
-    displayName: displayName || email.split('@')[0],
-  }
-}
+import { apiClient, clearCsrfToken } from './apiClient'
 
 // -----------------------------------------------------------------------------
 // register({ displayName, email, password })
 // -----------------------------------------------------------------------------
-// STUB: pretends to create an account and start a session. The only simulated
-// failure is the email "taken@example.com", so the 409 UI path can be seen.
-// TODO (Vaihe 3): POST /api/auth/register (argon2 hash server-side); on success
-// the server sets the session cookie and returns the user.
+// POST /api/auth/register — server hashes the password (argon2) and, on
+// success, has already started the session (cookie set by the response).
 export async function register({ displayName, email, password }) {
-  await wait(FAKE_LATENCY_MS)
-  void password // not used in the stub; never logged or stored
-  if (email.trim().toLowerCase() === 'taken@example.com') {
-    return { ok: false, code: 'email_taken', message: mapAuthError('email_taken') }
+  const res = await apiClient.post('/api/auth/register', { displayName, email, password })
+  if (res.ok) {
+    return { ok: true, user: res.data.user }
   }
-  currentUser = makeUser({ email: email.trim(), displayName })
-  return { ok: true, user: currentUser }
+  return { ok: false, code: res.code, message: mapAuthError(res.code) }
 }
 
 // -----------------------------------------------------------------------------
 // login({ email, password })
 // -----------------------------------------------------------------------------
-// STUB: any email + a password of length >= 8 "succeeds"; the reserved password
-// "wrongpass" simulates bad credentials so the 401 UI path can be seen.
-// TODO (Vaihe 3): POST /api/auth/login; server verifies + sets the cookie.
+// POST /api/auth/login. Wrong password and unknown email both come back as
+// the same `bad_credentials` — the server never reveals which one it was.
 export async function login({ email, password }) {
-  await wait(FAKE_LATENCY_MS)
-  if (password === 'wrongpass') {
-    return { ok: false, code: 'bad_credentials', message: mapAuthError('bad_credentials') }
+  const res = await apiClient.post('/api/auth/login', { email, password })
+  if (res.ok) {
+    return { ok: true, user: res.data.user }
   }
-  currentUser = makeUser({ email: email.trim() })
-  return { ok: true, user: currentUser }
+  return { ok: false, code: res.code, message: mapAuthError(res.code) }
 }
 
 // -----------------------------------------------------------------------------
 // logout()
 // -----------------------------------------------------------------------------
-// TODO (Vaihe 3): POST /api/auth/logout to clear the server session cookie.
+// POST /api/auth/logout clears the server-side session cookie; the cached
+// CSRF token is invalidated along with it, so drop our copy too. Returns
+// whether the server call actually succeeded — the caller decides what to
+// do locally if it didn't (see AuthContext.logout).
 export async function logout() {
-  await wait(FAKE_LATENCY_MS)
-  currentUser = null
+  const res = await apiClient.post('/api/auth/logout')
+  clearCsrfToken()
+  return res.ok ? { ok: true } : { ok: false, code: res.code }
 }
 
 // -----------------------------------------------------------------------------
 // me()
 // -----------------------------------------------------------------------------
-// Returns the current user or null. TODO (Vaihe 3): GET /api/auth/me (200 -> user,
-// 401 -> null) so the app knows on load whether a cookie session is active.
+// GET /api/auth/me — the current user, or null (200 -> user, 401 -> null),
+// so the app knows on load whether a cookie session is active.
 export async function me() {
-  await wait(FAKE_LATENCY_MS)
-  return currentUser
+  const res = await apiClient.get('/api/auth/me')
+  return res.ok ? res.data.user : null
 }
 
 // -----------------------------------------------------------------------------
 // mapAuthError(code) -> Finnish, user-facing message.
 // -----------------------------------------------------------------------------
-// One home for auth error copy. The screens call this with either a `code` from
-// the service or a thrown/network condition, so wording stays consistent.
+// One home for auth error copy. The screens call this with either a `code`
+// from the service or a thrown/network condition, so wording stays consistent.
 export function mapAuthError(code) {
   switch (code) {
     case 'bad_credentials':
