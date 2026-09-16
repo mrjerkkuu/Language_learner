@@ -18,6 +18,8 @@ export const sessionOptions = {
     path: '/',
     httpOnly: true,
     sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
+    // Fail-safe: secure unless NODE_ENV is explicitly 'development' — an
+    // unset/unexpected NODE_ENV must never silently drop the Secure flag.
+    secure: process.env.NODE_ENV !== 'development',
   },
 }

@@ -81,6 +81,8 @@ Suojattu:   /app         (Harjoittele-valikko)
 - **Otsakkeet:** `@fastify/helmet`.
 - **Salaisuudet:** `server/.env` (gitignore) — `SESSION_SECRET`, `DATABASE_URL`; **ei koskaan frontin buildiin**.
 - **HTTPS pakollinen** (Funnel hoitaa sertin).
+- **trustProxy on asetettava true:ksi ennen Tailscale Funnel -julkaisua,** jotta
+  rate limit näkee oikean asiakas-IP:n.
 
 ## Repo-rakenne (lisäys)
 ```
@@ -136,3 +138,9 @@ Language_learner/
   annetaan `PrismaClient`:lle. Muista: jos/kun siirrytään PostgreSQL:ään, adapteri
   pitää vaihtaa vastaavaan Postgres-adapteriin — se ei vaihdu automaattisesti
   pelkällä `DATABASE_URL`:n muutoksella.
+- **Auth code review -löydökset jätetty myöhemmäksi (askel 2, code-reviewer):**
+  T1 (login-ajoitushyökkäys, dummy-hash-korjaus puuttuu), T4 (istuntoa ei voi
+  mitätöidä palvelimelta — tunnettu rajaus, ks. Session-taulu-maininta yllä),
+  T5 (session-avaimen johto on suolaton yksi SHA-256-kierros, riippuu
+  SESSION_SECRET:n entropiasta). Ei estä julkaisua, mutta tarkista ennen
+  laajempaa käyttäjämäärää.

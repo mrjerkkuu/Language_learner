@@ -1,16 +1,11 @@
-import Fastify from "fastify";
+import { buildApp } from './app.js'
 
-const app = Fastify({ logger: true });
+const app = await buildApp({ serveStatic: process.env.NODE_ENV === 'production' })
 
-app.get("/api/health", async () => {
-  return { ok: true };
-});
-
-const PORT = process.env.PORT ?? 3000;
-
+const PORT = process.env.PORT ?? 3000
 try {
-  await app.listen({ port: PORT, host: "0.0.0.0" });
+  await app.listen({ port: PORT, host: '0.0.0.0' })
 } catch (err) {
-  app.log.error(err);
-  process.exit(1);
+  app.log.error(err)
+  process.exit(1)
 }
