@@ -83,6 +83,9 @@ export default function PhraseBank() {
                       )}
                     </div>
                     {isRevealed && <div className="mt-2 text-muted">{phrase.fi}</div>}
+                    {isRevealed && phrase.note && (
+                      <div className="mt-1 text-xs text-muted/70">{phrase.note}</div>
+                    )}
                   </button>
                 </li>
               )

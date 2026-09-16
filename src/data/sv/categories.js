@@ -29,4 +29,7 @@ export const CATEGORIES = [
   { id: 'kuuntelu', label: 'Aktiivinen kuuntelu' },
   { id: 'selvennys', label: 'Kun et ymmärrä' },
   { id: 'puheenvuoro', label: 'Puheenvuoro ja ehdotukset' },
+  { id: 'smalltalk', label: 'Small talk' },
+  { id: 'mielipiteet', label: 'Mielipiteet' },
+  { id: 'kannanotot', label: 'Samaa vai eri mieltä' },
 ]

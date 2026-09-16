@@ -73,3 +73,25 @@ oma testi-SQLite, samaan CI:hin.
   (Tailscale Funnel) jälkeen — UI/UX-ominaisuus, ei sanastodataa, vaatii
   oman suunnittelunsa (esim. tarkistaa nykyisen pickNext-logiikan kattaako
   se jo "uudet sanat ensin" -priorisoinnin).
+- **Fraasipankin selattavuus isolla määrällä (120+ fraasia):** nykyinen
+  "selaa ylhäältä alas" -malli raskastuu kun kategoriat kasvavat. Harkittavia
+  ratkaisuja: (A) yksinkertainen tekstihaku/suodatus listan yläpuolelle —
+  halvin toteuttaa; (B) fraaseille oma kevyt SR-painotus (osaan/en osaa
+  -merkintä, ei täyttä oikea/väärä-logiikkaa kuten Sanakorteissa); (C) erillinen
+  "Harjoittele"-näkymä nykyisen "Selaa"-näkymän rinnalle, joka näyttäisi
+  rajatun satunnaisotannan painotettuna (B):n mukaan — yhdistettävissä samaan
+  aikaan toteutettavan Sanakorttien rajattu-sessio-idean kanssa (ks. yllä).
+  (D) note-kenttää (lisätty ensin voimakkuustason merkintään "Samaa vai eri
+  mieltä" -kategoriassa) voisi käyttää myös suodattimena isoissa kategorioissa.
+  Ajoitus: ensimmäisen julkaisun jälkeen, samassa yhteydessä kuin
+  Sanakorttien rajattu sessio -ominaisuus, koska logiikka on osin
+  jaettavissa.
+
+  Lisähuomio, päätetty (E1): Fraasipankki näyttää kategoria-chipit AINA,
+  myös "Kaikki"-tilassa — poikkeus 8dfd15d:n yleissääntöön, joka piilottaa
+  chipit "Kaikki"-tilassa Sanakorteissa ja Fraasipankissa yhtäläisesti.
+  Perusteluna fraasimäärän kasvu (181+ ja kasvaa edelleen erien myötä),
+  toisin kuin Sanakortit jotka ovat yhä kohtuullisen kokoisia. Sanakortit
+  pysyvät nykyisellä säännöllä (chipit piilossa "Kaikki"-tilassa). Ei
+  toteuteta vielä nyt — toteutetaan omana pienenä committinaan lähitulevaisuudessa,
+  ei osana isompaa selattavuus-uudistusta.
