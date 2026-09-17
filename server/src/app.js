@@ -21,15 +21,20 @@ export async function buildApp(opts = {}) {
   // instead, so plain script-src 'self' covers it — no nonce/hash plumbing
   // needed. styleSrc/fontSrc allow Google Fonts (the only cross-origin assets
   // the app loads); everything else defaults to 'self'.
+  //
+  // Umami analytics (index.html) is loaded from cloud.umami.is and, by
+  // default (no data-host-url override), reports collected events back to
+  // that SAME host — so it needs both scriptSrc (to load script.js) and
+  // connectSrc (for its background POST to /api/send) entries, not just one.
   await app.register(helmet, {
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'"],
+        scriptSrc: ["'self'", 'https://cloud.umami.is'],
         styleSrc: ["'self'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com'],
         imgSrc: ["'self'"],
-        connectSrc: ["'self'"],
+        connectSrc: ["'self'", 'https://cloud.umami.is'],
         // helmet's default CSP includes upgrade-insecure-requests, which
         // makes the browser rewrite every http:// sub-resource request on
         // the page to https:// — fine once this sits behind Tailscale
