@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { buildApp } from '../app.js'
-import { getCsrf, registerUser } from '../test/helpers.js'
+import { getCsrf, registerUser, approveUser } from '../test/helpers.js'
 
 const CREDENTIALS = { displayName: 'Testi', email: 'testi@example.com', password: 'correcthorsebatterystaple' }
 
@@ -16,14 +16,54 @@ describe('auth routes', () => {
     await app.close()
   })
 
-  it('registers a user, returns it without passwordHash, and sets a session cookie', async () => {
+  it('registers a user without starting a session, pending approval', async () => {
     const { res, cookie } = await registerUser(app, CREDENTIALS)
 
+    // registerUser approves + logs in right after for other tests'
+    // convenience, but `res` here is the raw /register response — it must
+    // reflect the real, unapproved-by-default contract.
     expect(res.statusCode).toBe(201)
-    const body = res.json()
-    expect(body.user).toEqual({ id: expect.any(String), email: CREDENTIALS.email, displayName: CREDENTIALS.displayName })
-    expect(body.user.passwordHash).toBeUndefined()
+    expect(res.json()).toEqual({ pending: true })
+    expect(res.headers['set-cookie']).toBeUndefined()
+
+    // The helper's post-approval login cookie still works as documented.
     expect(cookie).toMatch(/^tr_session=/)
+  })
+
+  it('blocks login until the account is approved, then lets it through', async () => {
+    const pending = { displayName: 'Odottaja', email: 'odottaja@example.com', password: 'correcthorsebatterystaple' }
+
+    const { csrfToken, cookie: csrfCookie } = await getCsrf(app)
+    const register = await app.inject({
+      method: 'POST',
+      url: '/api/auth/register',
+      headers: { cookie: csrfCookie, 'x-csrf-token': csrfToken },
+      payload: pending,
+    })
+    expect(register.statusCode).toBe(201)
+
+    const { csrfToken: loginCsrf, cookie: loginCsrfCookie } = await getCsrf(app)
+    const deniedLogin = await app.inject({
+      method: 'POST',
+      url: '/api/auth/login',
+      headers: { cookie: loginCsrfCookie, 'x-csrf-token': loginCsrf },
+      payload: { email: pending.email, password: pending.password },
+    })
+    expect(deniedLogin.statusCode).toBe(401)
+    expect(deniedLogin.json()).toEqual({ code: 'account_pending' })
+    expect(deniedLogin.headers['set-cookie']).toBeUndefined()
+
+    await approveUser(pending.email)
+
+    const { csrfToken: approvedCsrf, cookie: approvedCsrfCookie } = await getCsrf(app)
+    const allowedLogin = await app.inject({
+      method: 'POST',
+      url: '/api/auth/login',
+      headers: { cookie: approvedCsrfCookie, 'x-csrf-token': approvedCsrf },
+      payload: { email: pending.email, password: pending.password },
+    })
+    expect(allowedLogin.statusCode).toBe(200)
+    expect(allowedLogin.headers['set-cookie']).toMatch(/^tr_session=/)
   })
 
   it('rejects a duplicate email with 409 email_taken', async () => {
