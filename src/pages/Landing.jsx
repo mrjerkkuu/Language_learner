@@ -61,6 +61,20 @@ export default function Landing() {
         <div className="flex-1" />
 
         <div className="space-y-3">
+          {/* "Try without an account" grouped with Register/Login (not up by
+              the hero, where it read as floating in empty space) — placed
+              right above Register since that's the button it's an
+              alternative to. Kept as a plain text link, not a button, so
+              demo doesn't read as the primary/recommended option. */}
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={handleDemo}
+              className="text-sm font-semibold text-muted active:opacity-70"
+            >
+              Kokeile ilman tiliä →
+            </button>
+          </div>
           <Link
             to={ROUTES.register}
             className="touch-target flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-base font-semibold text-white active:brightness-95"
@@ -73,16 +87,6 @@ export default function Landing() {
           >
             Kirjaudu
           </Link>
-        </div>
-
-        <div className="mt-5 text-center">
-          <button
-            type="button"
-            onClick={handleDemo}
-            className="text-sm font-semibold text-muted active:opacity-70"
-          >
-            Kokeile ilman tiliä →
-          </button>
         </div>
       </main>
     </div>
