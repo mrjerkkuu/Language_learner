@@ -88,6 +88,12 @@ export default function Landing() {
             Kirjaudu
           </Link>
         </div>
+
+        <div className="mt-4 text-center">
+          <Link to={ROUTES.privacy} className="text-xs text-muted active:opacity-70">
+            Tietoa ja tietosuoja
+          </Link>
+        </div>
       </main>
     </div>
   )

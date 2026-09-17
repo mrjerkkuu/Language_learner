@@ -10,6 +10,7 @@ export const ROUTES = {
   landing: '/',
   login: '/login',
   register: '/register',
+  privacy: '/tietoa',
 
   // Practice area — behind ProtectedRoute (authed or demo)
   app: '/app',

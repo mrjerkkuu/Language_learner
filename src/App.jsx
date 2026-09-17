@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Privacy from './pages/Privacy'
 import Flashcard from './components/Flashcard'
 import PhraseBank from './components/PhraseBank'
 import WritingPractice from './components/WritingPractice'
@@ -44,6 +45,7 @@ function LanguageScopedRoutes() {
         <Route path={ROUTES.landing} element={<Landing />} />
         <Route path={ROUTES.login} element={<Login />} />
         <Route path={ROUTES.register} element={<Register />} />
+        <Route path={ROUTES.privacy} element={<Privacy />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path={ROUTES.app} element={<Home />} />
