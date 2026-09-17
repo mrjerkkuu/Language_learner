@@ -7,8 +7,10 @@ It currently ships as a **static MVP** focused on work-life Swedish (ICT), with
 all progress saved locally in the browser. It is actively evolving toward a
 **multi-language app with user accounts and a backend** — see the Roadmap below.
 
-**Stack:** Vite + React 19 + Tailwind CSS v4 + React Router (HashRouter).
-**Deploy:** GitHub Pages (static) via GitHub Actions.
+**Stack:** Vite + React 19 + Tailwind CSS v4 + React Router (BrowserRouter) +
+Node.js/Fastify + Prisma/SQLite backend.
+**Deploy:** self-hosted (Fastify serves the built frontend + the API from one
+origin), published via Tailscale Funnel.
 
 ## Status
 
@@ -42,19 +44,13 @@ npm run build    # production build into dist/
 npm run preview  # preview the production build locally
 ```
 
-## Deploy (GitHub Pages)
+## Deploy
 
-The workflow in `.github/workflows/deploy.yml` builds and deploys on every push
-to `main`. One-time setup: repo **Settings → Pages → Build and deployment →
-Source = "GitHub Actions"**. The site then publishes to
-`https://mrjerkkuu.github.io/Language_learner/`.
-
-> **Important:** `vite.config.js` sets `base: '/Language_learner/'`, which must
-> match the repository name exactly (case-sensitive), or assets break in
-> production (blank page). Update both together if the repo is renamed.
-
-A manual alternative exists: `npm run deploy` (publishes `dist/` to a `gh-pages`
-branch via the `gh-pages` package).
+The app now requires a backend (auth, progress/activity sync — see
+`server/`), so it no longer ships as a static GitHub Pages site. Fastify
+serves the built frontend (`npm run build` → `dist/`) and the `/api/*` routes
+from the same origin (see `server/src/app.js`'s `serveStatic` option), and the
+result is published via Tailscale Funnel rather than GitHub Pages.
 
 ## Editing the content
 
