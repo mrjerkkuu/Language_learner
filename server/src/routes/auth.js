@@ -47,12 +47,11 @@ export default async function authRoutes(app) {
       }
 
       const passwordHash = await hashPassword(password)
-      const user = await prisma.user.create({
+      await prisma.user.create({
         data: { email: normalizedEmail, passwordHash, displayName },
       })
 
-      req.session.set('userId', user.id)
-      return reply.code(201).send({ user: toPublicUser(user) })
+      return reply.code(201).send({ pending: true })
     },
   )
 
@@ -73,6 +72,13 @@ export default async function authRoutes(app) {
       const valid = user ? await verifyPassword(user.passwordHash, password) : false
       if (!valid) {
         return reply.code(401).send({ code: 'bad_credentials' })
+      }
+
+      // Unlike bad_credentials, this MAY reveal the reason: the caller
+      // already knows they just registered with this exact email, so
+      // "not approved yet" isn't a new information leak.
+      if (!user.approved) {
+        return reply.code(401).send({ code: 'account_pending' })
       }
 
       req.session.set('userId', user.id)
