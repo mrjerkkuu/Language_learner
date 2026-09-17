@@ -101,3 +101,13 @@ oma testi-SQLite, samaan CI:hin.
   pysyvät nykyisellä säännöllä (chipit piilossa "Kaikki"-tilassa). Ei
   toteuteta vielä nyt — toteutetaan omana pienenä committinaan lähitulevaisuudessa,
   ei osana isompaa selattavuus-uudistusta.
+- **Kutsulinkkirajoitus rekisteröintiin (julkaisun jälkeen, korkea
+  prioriteetti):** kun sovellus on julkinen Tailscale Funnelin kautta,
+  kuka tahansa linkin tietävä voi rekisteröityä. Rajataan rekisteröinti
+  vain kutsulinkillä/kutsukoodilla (esim. yksinkertainen jaettu koodi
+  POST /api/auth/register:n bodyssa, tarkistettu palvelimella
+  ympäristömuuttujaa vasten — ei vaadi täyttä kutsujärjestelmää tässä
+  vaiheessa, riittää yksi jaettu koodi). Tehdään ENSIMMÄISENÄ asiana
+  Funnel-julkaisun jälkeen, samassa yhteydessä kuin muut UI-korjaukset
+  (ks. muut rivit tässä osiossa: kategoriasuodattimen E1, Sanakorttien
+  rajattu sessio, Fraasipankin selattavuus).

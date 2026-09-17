@@ -13,6 +13,10 @@ dist-ssr/
 .env.local
 .env.*.local
 
+# --- TLS certs/keys (e.g. `tailscale cert` output) — never committed ---
+*.crt
+*.key
+
 # --- Editor / OS noise ---
 .vscode/*
 !.vscode/extensions.json
