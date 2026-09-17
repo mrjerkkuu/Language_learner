@@ -15,10 +15,36 @@ export async function buildApp(opts = {}) {
   // once this sits behind Tailscale Funnel / any reverse proxy in production.
   const app = Fastify({ logger: opts.logger ?? true, trustProxy: true })
 
-  // index.html's early inline theme script would be blocked by helmet's
-  // default CSP. Disabled for now — see claude/vaihe-3-suunnitelma.md for the
-  // nonce/hash follow-up needed before a public (Tailscale Funnel) release.
-  await app.register(helmet, { contentSecurityPolicy: false })
+  // The early theme-flash-prevention script used to be inline in index.html,
+  // which helmet's default CSP would block (script-src has no 'unsafe-inline'
+  // by default). Moved to public/theme-init.js and loaded via <script src>
+  // instead, so plain script-src 'self' covers it — no nonce/hash plumbing
+  // needed. styleSrc/fontSrc allow Google Fonts (the only cross-origin assets
+  // the app loads); everything else defaults to 'self'.
+  await app.register(helmet, {
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        imgSrc: ["'self'"],
+        connectSrc: ["'self'"],
+        // helmet's default CSP includes upgrade-insecure-requests, which
+        // makes the browser rewrite every http:// sub-resource request on
+        // the page to https:// — fine once this sits behind Tailscale
+        // Funnel (which terminates real HTTPS in front of it), but this
+        // Fastify process itself only ever speaks plain HTTP. Rewritten to
+        // https:// against a host with no TLS listener, every asset request
+        // (scripts, styles) fails outright — a blank page, not a CSP block
+        // in the usual sense. `null` removes the directive from the header
+        // entirely (helmet's way to drop a default). Re-enable this
+        // (remove the `null` override) once Funnel is actually in front and
+        // the app is reachable over real HTTPS.
+        upgradeInsecureRequests: null,
+      },
+    },
+  })
 
   // No global limit — only routes that opt in via config.rateLimit are limited.
   await app.register(rateLimit, { global: false })
