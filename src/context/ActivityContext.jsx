@@ -1,4 +1,5 @@
 import { createContext, useContext, useCallback, useEffect, useMemo, useState } from 'react'
+import { useAuth } from './AuthContext'
 import { progressStore } from '../services/progressStore'
 
 // -----------------------------------------------------------------------------
@@ -23,6 +24,12 @@ const ActivityContext = createContext(null)
 const EMPTY_SUMMARY = { today: 0, weekCount: 0, activeDaysThisWeek: 0, currentStreak: 0, bestStreak: 0 }
 
 export function ActivityProvider({ children }) {
+  // See ProgressContext.jsx's identical comment: without depending on
+  // status/user here, this effect ran once with progressStore.isAuthed()
+  // unavoidably false (status still 'loading') and never re-ran once auth
+  // resolved, so a logged-in user's activity summary silently loaded from
+  // localStorage on every page visit instead of the server.
+  const { status, user } = useAuth()
   const [summary, setSummary] = useState(EMPTY_SUMMARY)
   const [ready, setReady] = useState(false)
 
@@ -36,7 +43,7 @@ export function ActivityProvider({ children }) {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [status, user?.id])
 
   // Updates state immediately (so the UI reflects the rep right away), then
   // fires the real record call and reconciles with its authoritative summary

@@ -1,5 +1,6 @@
 import { createContext, useContext, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from './LanguageContext'
+import { useAuth } from './AuthContext'
 import { progressStore } from '../services/progressStore'
 import { defaultCardState, deriveStatus, computeStats as computeStatsPure, pickNext as pickNextPure } from '../lib/srLogic'
 
@@ -25,10 +26,21 @@ const LEARNED_SHOW_EVERY = 10
 
 export function ProgressProvider({ children }) {
   const { lang } = useLanguage()
+  // `status`/`user` are needed so the load effect below can re-run once auth
+  // actually resolves — see the dependency array comment.
+  const { status, user } = useAuth()
   const [data, setDataState] = useState({})
   const [ready, setReady] = useState(false)
   const pickCounter = useRef(0)
 
+  // Runs on mount with `status` still 'loading' (progressStore.isAuthed()
+  // is unavoidably false at that point — GET /api/auth/me hasn't resolved
+  // yet), so it would otherwise ALWAYS load from localStorage on first
+  // paint, even for a logged-in user, and nothing would ever correct it:
+  // this effect's old dependency array was [lang] only, so it never re-ran
+  // once auth settled. Depending on `status`/`user?.id` too makes it re-run
+  // the moment AuthContext's own effect resolves 'loading' -> 'authed' (or
+  // 'anon'), this time with progressStore.isAuthed() reporting correctly.
   useEffect(() => {
     let cancelled = false
     setReady(false)
@@ -40,7 +52,7 @@ export function ProgressProvider({ children }) {
     return () => {
       cancelled = true
     }
-  }, [lang])
+  }, [lang, status, user?.id])
 
   // Update in-memory state AND persist through the store. Accepts a value or a
   // functional updater, mirroring setState. Used by resetProgress; per-answer
