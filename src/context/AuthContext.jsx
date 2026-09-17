@@ -1,5 +1,6 @@
-import { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react'
+import { createContext, useContext, useEffect, useState, useMemo, useCallback, useRef } from 'react'
 import * as authService from '../services/authService'
+import { progressStore } from '../services/progressStore'
 
 // -----------------------------------------------------------------------------
 // AuthContext
@@ -42,6 +43,29 @@ export function AuthProvider({ children }) {
       cancelled = true
     }
   }, [])
+
+  // progressStore is a plain module (not a hook), so it can't call useAuth()
+  // itself — push the current auth state into it here DURING render (NOT in
+  // a useEffect): a consumer that newly mounts in the very commit where
+  // `status` flips (e.g. Home, right as ProtectedRoute stops blocking) runs
+  // its own mount effects BEFORE this component's effects — React fires
+  // child effects before parent effects within one commit — so an
+  // effect-based sync here would still leave progressStore.authState stale
+  // ('loading') at the exact moment that child's first load fires. Syncing
+  // during render instead guarantees it's up to date before ANY effect in
+  // the tree can run.
+  //
+  // React's own "adjusting state during render" pattern (see the React docs)
+  // requires guarding this kind of render-time side effect with a ref
+  // comparison, so it only fires when the relevant value actually changed —
+  // not unconditionally on every render (e.g. StrictMode's double-render, or
+  // a re-render caused by something unrelated to auth).
+  const prevAuthRef = useRef()
+  const userId = user?.id ?? null
+  if (prevAuthRef.current?.status !== status || prevAuthRef.current?.userId !== userId) {
+    progressStore.setAuthState({ status, userId })
+    prevAuthRef.current = { status, userId }
+  }
 
   const login = useCallback(async (credentials) => {
     const res = await authService.login(credentials)

@@ -7,6 +7,8 @@ import csrfProtection from '@fastify/csrf-protection'
 import fastifyStatic from '@fastify/static'
 import { deriveSessionKey, sessionOptions } from './lib/session.js'
 import authRoutes from './routes/auth.js'
+import progressRoutes from './routes/progress.js'
+import activityRoutes from './routes/activity.js'
 
 export async function buildApp(opts = {}) {
   // Required so @fastify/rate-limit sees the real client IP (not the proxy's)
@@ -43,8 +45,8 @@ export async function buildApp(opts = {}) {
 
   app.get('/api/health', async () => ({ ok: true }))
   await app.register(authRoutes, { prefix: '/api/auth' })
-  // TODO (Phase B): await app.register(progressRoutes, { prefix: '/api/progress' })
-  // TODO (Phase B): await app.register(activityRoutes, { prefix: '/api/activity' })
+  await app.register(progressRoutes, { prefix: '/api/progress' })
+  await app.register(activityRoutes, { prefix: '/api/activity' })
 
   if (opts.serveStatic) {
     const root = path.join(import.meta.dirname, '../../dist')

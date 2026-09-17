@@ -5,6 +5,8 @@ import { MemoryRouter } from 'react-router-dom'
 import { AuthProvider } from '../context/AuthContext'
 import { LanguageProvider } from '../context/LanguageContext'
 import { FilterProvider, useFilter } from '../context/FilterContext'
+import { ProgressProvider } from '../context/ProgressContext'
+import { ActivityProvider } from '../context/ActivityContext'
 import { renderWithProviders } from '../test/renderWithProviders'
 import PhraseBank from './PhraseBank'
 import { getContent } from '../data/contentService'
@@ -36,12 +38,16 @@ function renderPhraseBankAtPart(part) {
   render(
     <AuthProvider>
       <LanguageProvider>
-        <MemoryRouter>
-          <FilterProvider>
-            <PartSetter part={part} />
-            <PhraseBank />
-          </FilterProvider>
-        </MemoryRouter>
+        <ProgressProvider>
+          <ActivityProvider>
+            <MemoryRouter>
+              <FilterProvider>
+                <PartSetter part={part} />
+                <PhraseBank />
+              </FilterProvider>
+            </MemoryRouter>
+          </ActivityProvider>
+        </ProgressProvider>
       </LanguageProvider>
     </AuthProvider>,
   )

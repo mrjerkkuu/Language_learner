@@ -34,10 +34,21 @@ export default function SwipeableCard({
   const [dragging, setDragging] = useState(false) // finger/mouse currently down
   const [exiting, setExiting] = useState(false) // playing the fly-off animation
   const startX = useRef(0)
+  // Guards handlePointerUp against running twice for the SAME gesture. Some
+  // browsers/devices fire both `pointerup` and `pointercancel` back-to-back
+  // for one physical release, synchronously enough that React hasn't
+  // re-rendered between them — so a `dragging` check via React state (read
+  // through the closure) would still see the OLD `true` on the second call.
+  // A ref is mutated synchronously and is immediately visible to that second
+  // call, unlike state. Reset only on the NEXT pointerdown (not at the end of
+  // pointerup), so a late-arriving duplicate event for the gesture that just
+  // ended still gets blocked.
+  const isProcessingRef = useRef(false)
 
   // --- Pointer down: begin a drag ---
   function handlePointerDown(e) {
     if (exiting) return
+    isProcessingRef.current = false
     setDragging(true)
     startX.current = e.clientX
     // Capture the pointer so we keep getting move/up events even if the finger
@@ -58,7 +69,8 @@ export default function SwipeableCard({
 
   // --- Pointer up: decide swipe vs. snap back ---
   function handlePointerUp() {
-    if (!dragging) return
+    if (!dragging || isProcessingRef.current) return
+    isProcessingRef.current = true
     setDragging(false)
 
     if (dx > SWIPE_THRESHOLD) {

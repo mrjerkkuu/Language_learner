@@ -29,15 +29,20 @@ export default function PhraseBank() {
   const [revealed, setRevealed] = useState(() => new Set())
 
   function toggle(id) {
+    const willReveal = !revealed.has(id)
     setRevealed((prev) => {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
-      else {
-        next.add(id)
-        logActivity(1)
-      }
+      else next.add(id)
       return next
     })
+    // Side effect kept OUT of the setState updater above: React may invoke an
+    // updater function more than once for one state change (e.g. Strict
+    // Mode's dev-only double-invoke), and calling another context's setState
+    // from inside it triggers "Cannot update a component while rendering a
+    // different component" — see PhraseBank's earlier logActivity-in-updater
+    // bug, which double-posted /api/activity/record for a single reveal.
+    if (willReveal) logActivity(1)
   }
 
   return (

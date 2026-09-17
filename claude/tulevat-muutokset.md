@@ -40,6 +40,12 @@ oma testi-SQLite, samaan CI:hin.
 
 ---
 
+## Havaittu koodikonventio
+
+- **Älä kutsu toisen komponentin/contextin `setState`:a tai verkko-/tallennuskutsua `setState`-updater-funktion SISÄLLÄ** — laske arvo ensin, tee sivuvaikutus erillisenä lauseena. Syy: React voi ajaa updater-funktion useammin kuin kerran per tilanmuutos (esim. Strict Moden dev-only kaksinkertainen ajo), joten sen sisällä oleva sivuvaikutus voi toistua tahattomasti. Havaittu käytännössä `PhraseBank.jsx`:n `logActivity`-kutsussa (tuplasi `POST /api/activity/record`:n joka fraasin paljastuksella + Reactin oma "Cannot update a component while rendering a different component" -varoitus); korjattu myös ennaltaehkäisevästi `ProgressContext.jsx`:n `setData`:ssa.
+
+---
+
 ## Jäljellä olevat korjaukset / parannukset
 
 ### K3. Muodot-moduulin laajennus kattavaksi taivutusharjoitukseksi

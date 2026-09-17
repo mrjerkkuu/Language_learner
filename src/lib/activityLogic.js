@@ -2,6 +2,13 @@
 // activityLogic — pure activity-log + streak logic (no React, no storage).
 // -----------------------------------------------------------------------------
 // Log shape: { sessions: [ { date: 'YYYY-MM-DD', count: number }, ... ] }
+//
+// ⚠️ SHARED SINGLE SOURCE — do NOT duplicate this logic.
+// Like srLogic.js, this module is plain, dependency-free ESM (only `Date`),
+// so server/src/routes/activity.js imports THIS SAME FILE to compute the
+// today/week/streak summary from the Activity table, after mapping rows to
+// the { date, count } shape above. Keep it free of React/browser/Node-only
+// APIs so it runs in both places unchanged.
 // -----------------------------------------------------------------------------
 
 // Local date as YYYY-MM-DD (not UTC), so "today" matches the user's calendar.

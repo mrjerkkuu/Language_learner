@@ -3,6 +3,8 @@ import { MemoryRouter } from 'react-router-dom'
 import { AuthProvider } from '../context/AuthContext'
 import { LanguageProvider } from '../context/LanguageContext'
 import { FilterProvider } from '../context/FilterContext'
+import { ProgressProvider } from '../context/ProgressContext'
+import { ActivityProvider } from '../context/ActivityContext'
 
 // Render a component with the same providers the real app uses (auth,
 // language, router, filter). Used by component/integration tests.
@@ -19,9 +21,13 @@ export function renderWithProviders(ui, { route = '/', state } = {}) {
   return render(
     <AuthProvider>
       <LanguageProvider>
-        <MemoryRouter initialEntries={[initialEntry]}>
-          <FilterProvider>{ui}</FilterProvider>
-        </MemoryRouter>
+        <ProgressProvider>
+          <ActivityProvider>
+            <MemoryRouter initialEntries={[initialEntry]}>
+              <FilterProvider>{ui}</FilterProvider>
+            </MemoryRouter>
+          </ActivityProvider>
+        </ProgressProvider>
       </LanguageProvider>
     </AuthProvider>,
   )

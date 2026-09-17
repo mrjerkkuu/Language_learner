@@ -159,6 +159,6 @@ describe('auth routes', () => {
     expect(health.statusCode).toBe(200)
   })
 
-  // TODO (Phase B): once /api/progress and /api/activity exist, add an
-  // "only own data" isolation test (user A can never read/write user B's rows).
+  // "Only own data" isolation is covered in progress.test.js and
+  // activity.test.js, now that those routes exist.
 })
