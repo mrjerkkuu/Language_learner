@@ -1,0 +1,48 @@
+# Runs the test suites (frontend + server) on every push to main and on
+# every pull request. No build/deploy step — the app is self-hosted (Fastify
+# + Tailscale Funnel, see README.md), not deployed via GitHub Actions. This
+# replaces the test step that used to live inside the old GitHub Pages
+# deploy.yml (removed when Pages was dropped) so pushes/PRs still get an
+# automated test gate.
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # Node 22 (current LTS). Required by our toolchain: jsdom 30 /
+          # undici 8 (used by the component tests) needs Node 22+.
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test
+
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      # `npm test`'s `pretest` hook resets the SQLite test DB
+      # (DATABASE_URL is hardcoded in that script for prisma/test.db); the
+      # actual test run gets DATABASE_URL/SESSION_SECRET/NODE_ENV from
+      # server/vitest.config.js, so no secrets need to be configured here.
+      - run: npm test
