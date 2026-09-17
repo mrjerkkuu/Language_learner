@@ -1,5 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
+import { Link } from 'react-router-dom'
 import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
@@ -19,21 +18,6 @@ import { ROUTES } from '../lib/routes'
 
 export default function Layout({ title, back = false, backTo = ROUTES.app, right = null, progress = null, children }) {
   const showHeader = Boolean(title) || back
-  const { logout } = useAuth()
-  const navigate = useNavigate()
-
-  // Navigate away from the protected area FIRST, then clear the session.
-  // Doing it in the other order let ProtectedRoute's own guard race us: as
-  // soon as logout() flips status to 'anon' while we're still mounted on a
-  // protected route, ProtectedRoute re-renders and redirects to /login on
-  // its own — which then won the race against our explicit navigate() call
-  // here, landing the user on /login instead of the landing page. Leaving
-  // first means ProtectedRoute has already unmounted by the time status
-  // changes, so it never gets a chance to redirect.
-  async function handleLogout() {
-    navigate(ROUTES.landing, { replace: true })
-    await logout()
-  }
 
   return (
     <div className="app-safe min-h-screen">
@@ -54,13 +38,6 @@ export default function Layout({ title, back = false, backTo = ROUTES.app, right
             )}
             <h1 className="flex-1 font-display text-lg font-bold text-ink">{title}</h1>
             {right != null && <span className="text-sm font-medium text-muted">{right}</span>}
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="touch-target -mr-2 text-sm font-semibold text-muted active:opacity-70"
-            >
-              Kirjaudu ulos
-            </button>
           </div>
 
           {/* Thin progress bar (4px) under the header. */}
