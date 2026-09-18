@@ -24,19 +24,20 @@ Repo: https://github.com/mrjerkkuu/Language_learner
 - *Infra:* `vite.config.js` test-lohko, `src/test/setup.js` (jest-dom + per-testi localStorage/teema-reset), `src/test/renderWithProviders.jsx` (Language + Router + Filter).
 - *CI:* `.github/workflows/deploy.yml` ajaa `npm run test` ennen buildia/julkaisua → **punaiset testit estävät julkaisun.** Ajetaan **Node 22:lla** (jsdom 30 / undici 8 vaatii sen).
 
----
+**Vaihe 3 — Backend + kirjautuminen + tietokanta (VALMIS, tuotannossa):**
+Node.js/Fastify + Prisma/SQLite (User/Progress/Activity), sessiot
+(`@fastify/secure-session`, httpOnly+Secure+SameSite=Lax), argon2-hashays,
+CSRF-suojaus, rate limiting, CSP (`@fastify/helmet`), progress/activity-sync
+kirjautuneille käyttäjille. Julkaistu systemd-palveluna
+(`language-learner.service`) + Tailscale Funnel. Suunnitelma:
+`vaihe-3-suunnitelma.md` (ks. myös sen oma "✅ Toteutunut" -huomautus).
 
-## Vaihe 3 — Backend + kirjautuminen + tietokanta  ⭐ SEURAAVAKSI
-Backend-suunnitelma: **`vaihe-3-suunnitelma.md`**. Stack: Node.js + Fastify, sessiot (httpOnly),
-relaatiokanta + Prisma (SQLite→Postgres), hosting läppäri + Tailscale Funnel. Ei toteutettu vielä
-(odottaa serverikoneen pystytystä).
-
-Kirjautumissivun (frontin) suunnitelma: **`kirjautuminen-suunnitelma.md`** — landing + login + rekisteröinti,
-pakollinen kirjautuminen + demotila, näyttönimi+sähköposti+salasana, AuthContext/ProtectedRoute,
-virheviestit, tietoturva, testit. Valmis suunnitelmana, toteutus backendin yhteydessä.
-
-**Testit laajennetaan tässä vaiheessa:** palvelintestit (Fastify `inject` → API/auth/route-guard),
-oma testi-SQLite, samaan CI:hin.
+**Approval-gate — rekisteröinnin "pyydä pääsyä" -malli (VALMIS,
+tuotannossa):** rekisteröinti luo käyttäjän mutta ei enää aloita sessiota
+suoraan — tili odottaa admin-hyväksyntää (`User.approved`) ennen kuin
+kirjautuminen onnistuu; `server/approve-user.js`-CLI admin-hyväksyntään
+(lista + yksittäisen tilin hyväksyntä varmistuskysymyksellä). Committit
+`4eaa65e..6e33963` (GitHub `main`).
 
 ---
 
@@ -64,21 +65,29 @@ oma testi-SQLite, samaan CI:hin.
   omana projektinaan Tailscale Funnel -julkaisun jälkeen — samoja 200 verbiä
   voidaan silloin käyttää uudelleen täydellä taivutuksella.
 
+### K4. Harjoittelusession koon rajaus (Sanakortit/Muodot/Kirjoitus/Quiz)
+- Nykyisin käyttäjä käy aina läpi **koko kategorian** kortit kerralla kaikissa
+  neljässä moduulissa — ei tapaa harjoitella lyhyttä, rajattua erää.
+- Halutaan: valittavissa oleva session-koko (esim. 10–20 korttia) joka
+  arvotaan/painotetaan koko kategoriasta sen sijaan että koko lista käydään
+  läpi.
+- **Painotuslogiikka on jo olemassa** — `srLogic.js`:n `weight`-pohjainen
+  järjestelmä (vaikeat/väärin menneet useammin, opitut harvemmin) kelpaa
+  sellaisenaan valinnan perustaksi.
+- **Puuttuu:** UI-toteutus — session-koon valinta ennen harjoittelun alkua ja
+  katkaisu N kortin jälkeen (nykyinen `pickNext`/session-kulku ei tunne
+  "lopeta N:n jälkeen" -käsitettä).
+- Ajoitus: nyt vapaa toteutettavaksi — Tailscale Funnel -julkaisu on jo
+  tapahtunut (ks. Vaihe 3 + approval-gate yllä "✅ Tehty"-osiossa), joka oli
+  aiemmin tämän kohdan ajoitusedellytys (ks. aiempi kirjaus "Myöhempää
+  harkintaa" -osiossa, konsolidoitu tähän).
+
 ---
 
 ## Myöhempää harkintaa
 - AI-tarkistus kirjoitusharjoituksiin (`aiService.js`-rajapinta valmiina).
 - Lisää opeteltavia kieliä (rakenne tukee jo).
 - Sähköpostivarmennus + salasanan palautus (Vaihe 3:n jälkeen).
-- **Rajattu harjoittelusessio (esim. 10 sanaa kerralla):** sanakortteja
-  pelatessa voisi valita kiinteän kokoisen, satunnaistetun erän koko
-  kategorian sijaan — painotettuna srLogic.js:n olemassa olevalla weight-
-  järjestelmällä (vaikeat sanat useammin) JA priorisoiden vielä
-  oppimattomia/uusia sanoja. Hyödyllinen kun haluaa harjoitella hetken
-  ilman koko kategorian läpikäyntiä. Ajoitus: ensimmäisen julkaisun
-  (Tailscale Funnel) jälkeen — UI/UX-ominaisuus, ei sanastodataa, vaatii
-  oman suunnittelunsa (esim. tarkistaa nykyisen pickNext-logiikan kattaako
-  se jo "uudet sanat ensin" -priorisoinnin).
 - **Fraasipankin selattavuus isolla määrällä (120+ fraasia):** nykyinen
   "selaa ylhäältä alas" -malli raskastuu kun kategoriat kasvavat. Harkittavia
   ratkaisuja: (A) yksinkertainen tekstihaku/suodatus listan yläpuolelle —
@@ -86,12 +95,12 @@ oma testi-SQLite, samaan CI:hin.
   -merkintä, ei täyttä oikea/väärä-logiikkaa kuten Sanakorteissa); (C) erillinen
   "Harjoittele"-näkymä nykyisen "Selaa"-näkymän rinnalle, joka näyttäisi
   rajatun satunnaisotannan painotettuna (B):n mukaan — yhdistettävissä samaan
-  aikaan toteutettavan Sanakorttien rajattu-sessio-idean kanssa (ks. yllä).
+  aikaan toteutettavan session-koon rajaus -idean kanssa (ks. K4 yllä).
   (D) note-kenttää (lisätty ensin voimakkuustason merkintään "Samaa vai eri
   mieltä" -kategoriassa) voisi käyttää myös suodattimena isoissa kategorioissa.
-  Ajoitus: ensimmäisen julkaisun jälkeen, samassa yhteydessä kuin
-  Sanakorttien rajattu sessio -ominaisuus, koska logiikka on osin
-  jaettavissa.
+  Ajoitus: ensimmäisen julkaisun jälkeen (joka on jo tapahtunut), samassa
+  yhteydessä kuin K4:n session-koon rajaus -ominaisuus, koska logiikka on
+  osin jaettavissa.
 
   Lisähuomio, päätetty (E1): Fraasipankki näyttää kategoria-chipit AINA,
   myös "Kaikki"-tilassa — poikkeus 8dfd15d:n yleissääntöön, joka piilottaa
@@ -101,13 +110,3 @@ oma testi-SQLite, samaan CI:hin.
   pysyvät nykyisellä säännöllä (chipit piilossa "Kaikki"-tilassa). Ei
   toteuteta vielä nyt — toteutetaan omana pienenä committinaan lähitulevaisuudessa,
   ei osana isompaa selattavuus-uudistusta.
-- **Kutsulinkkirajoitus rekisteröintiin (julkaisun jälkeen, korkea
-  prioriteetti):** kun sovellus on julkinen Tailscale Funnelin kautta,
-  kuka tahansa linkin tietävä voi rekisteröityä. Rajataan rekisteröinti
-  vain kutsulinkillä/kutsukoodilla (esim. yksinkertainen jaettu koodi
-  POST /api/auth/register:n bodyssa, tarkistettu palvelimella
-  ympäristömuuttujaa vasten — ei vaadi täyttä kutsujärjestelmää tässä
-  vaiheessa, riittää yksi jaettu koodi). Tehdään ENSIMMÄISENÄ asiana
-  Funnel-julkaisun jälkeen, samassa yhteydessä kuin muut UI-korjaukset
-  (ks. muut rivit tässä osiossa: kategoriasuodattimen E1, Sanakorttien
-  rajattu sessio, Fraasipankin selattavuus).

@@ -1,6 +1,17 @@
 # Vaihe 3 — Backend, kirjautuminen & tietokanta (SUUNNITELMA)
 
-**Ei toteutettu vielä — tämä on suunnitelma.** Repo: https://github.com/mrjerkkuu/Language_learner
+> **✅ Toteutunut (tuotannossa).** Tämän suunnitelman mukainen backend
+> (Fastify + Prisma/SQLite, sessiot, CSRF, rate limit, CSP, progress/activity-
+> sync) on rakennettu, julkaistu systemd-palveluna + Tailscale Funnelilla, ja
+> laajennettu approval-gate-mallilla (rekisteröinti ei enää aloita sessiota
+> suoraan — odottaa admin-hyväksyntää, ks. `server/approve-user.js`).
+> Committit `4eaa65e..6e33963` (GitHub `main`), yhteenveto myös
+> `tulevat-muutokset.md`:n "✅ Tehty" -osiossa. Loput tästä tiedostosta on
+> alkuperäinen suunnitelma, säilytetty historiallisena viitteenä — ei enää
+> ajantasainen kuvaus nykytilasta kaikilta osin (esim. CSP-kompromissi alla
+> on sittemmin korjattu).
+
+Repo: https://github.com/mrjerkkuu/Language_learner
 
 > **⚡ Frontti pohjustettu etukäteen (14.9.):** kirjautumis-/rekisteröinti-/landing-näytöt,
 > lomakelogiikka ja **eristetty `authService`-kerros STUBINA** on jo rakennettu ja testattu
@@ -124,12 +135,10 @@ Language_learner/
 - Sähköpostivarmennus + salasanan palautus (out of scope nyt).
 - Sisällön siirto kantaan (jos halutaan muokata sisältöä ilman deployta) — nyt JSON riittää.
 - Siirto Renderiin + Neon-Postgresiin jos sovelluksen pitää olla aina päällä ilman läppäriä (Prisma tekee kannan vaihdon helpoksi).
-- **CSP korjattava ennen tuotantojulkaisua:** auth-toteutuksessa
-  `@fastify/helmet` otettiin käyttöön asetuksella `contentSecurityPolicy: false`,
-  koska `index.html`:n inline-teemaskripti olisi vaatinut nonce/hash-viritystä.
-  Tämä on tietoinen, väliaikainen kompromissi kehitysvaiheessa. Korjaa (ota CSP
-  käyttöön asianmukaisella nonce/hash-määrityksellä) viimeistään ennen Tailscale
-  Funnel -julkaisua, koska CSP on tärkeä XSS-suoja julkisessa palvelussa.
+- **CSP korjattu ennen Funnel-julkaisua (✅):** oli väliaikaisesti
+  `contentSecurityPolicy: false` kehitysvaiheessa; tuotannossa palvelin
+  lähettää nyt oikean CSP-otsakkeen (vahvistettu curl-todisteissa,
+  `default-src 'self'` + kohdennetut poikkeukset fontit/Umami-analytiikalle).
 - **Prisma 7 -adapterimuutos (havaittu auth-toteutuksessa, askel 1):**
   alkuperäinen suunnitelma oletti `new PrismaClient({ datasourceUrl: ... })`
   toimivan, mutta Prisma 7:n uusi client-generaattori (`provider = "prisma-client"`)
