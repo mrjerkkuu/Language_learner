@@ -8,8 +8,9 @@ import * as authService from '../services/authService'
 vi.mock('../services/authService')
 
 function Probe() {
-  const { user, status, isDemo, login, logout, startDemo } = useAuth()
+  const { user, status, isDemo, login, register, logout, startDemo } = useAuth()
   const [lastLogoutResult, setLastLogoutResult] = useState(null)
+  const [lastRegisterResult, setLastRegisterResult] = useState(null)
 
   return (
     <div>
@@ -17,7 +18,11 @@ function Probe() {
       <span data-testid="user">{user?.email ?? 'none'}</span>
       <span data-testid="demo">{String(isDemo)}</span>
       <span data-testid="logout-result">{lastLogoutResult ? JSON.stringify(lastLogoutResult) : ''}</span>
+      <span data-testid="register-result">{lastRegisterResult ? JSON.stringify(lastRegisterResult) : ''}</span>
       <button onClick={() => login({ email: 'b@c.fi', password: 'x' })}>login</button>
+      <button onClick={async () => setLastRegisterResult(await register({ displayName: 'B', email: 'b@c.fi', password: 'x' }))}>
+        register
+      </button>
       <button onClick={async () => setLastLogoutResult(await logout())}>logout</button>
       <button onClick={() => startDemo()}>demo</button>
     </div>
@@ -84,6 +89,25 @@ describe('AuthContext', () => {
     expect(screen.getByTestId('user')).toHaveTextContent('b@c.fi')
     // Only the one me() call on mount — login doesn't trigger a follow-up.
     expect(authService.me).toHaveBeenCalledTimes(1)
+  })
+
+  it('register() does NOT log the visitor in on success — status stays anon (pending admin approval)', async () => {
+    authService.me.mockResolvedValue(null)
+    authService.register.mockResolvedValue({ ok: true, pending: true })
+    render(
+      <AuthProvider>
+        <Probe />
+      </AuthProvider>,
+    )
+    await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('anon'))
+
+    await act(async () => {
+      screen.getByText('register').click()
+    })
+
+    expect(screen.getByTestId('status')).toHaveTextContent('anon')
+    expect(screen.getByTestId('user')).toHaveTextContent('none')
+    expect(screen.getByTestId('register-result')).toHaveTextContent('"pending":true')
   })
 
   it('logout() always clears local state and returns the error, even when the server call fails', async () => {

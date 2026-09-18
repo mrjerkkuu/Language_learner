@@ -53,6 +53,20 @@ describe('Login (integration)', () => {
     expect(mockNavigate).not.toHaveBeenCalled()
   })
 
+  it('shows the "account pending" message when the account is not yet approved', async () => {
+    vi.mocked(authService.login).mockResolvedValue({
+      ok: false,
+      code: 'account_pending',
+      message: 'Tilisi odottaa vielä hyväksyntää.',
+    })
+    renderWithProviders(<Login />)
+    fill('Sähköposti', 'jeremia@example.fi')
+    fill('Salasana', 'salasana123')
+    submit()
+    expect(await screen.findByText('Tilisi odottaa vielä hyväksyntää.')).toBeInTheDocument()
+    expect(mockNavigate).not.toHaveBeenCalled()
+  })
+
   it('navigates to /app on a successful login', async () => {
     vi.mocked(authService.login).mockResolvedValue({
       ok: true,

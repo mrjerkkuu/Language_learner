@@ -8,9 +8,10 @@
 // the transport underneath does.
 //
 // Return-value SHAPES are fixed here and must stay stable:
-//   register / login -> { ok: true, user } | { ok: false, code, message }
-//   me                -> user | null
-//   logout            -> { ok: true } | { ok: false, code }
+//   register -> { ok: true, pending: true } | { ok: false, code, message }
+//   login    -> { ok: true, user } | { ok: false, code, message }
+//   me       -> user | null
+//   logout   -> { ok: true } | { ok: false, code }
 // where `user` is { id, email, displayName }.
 //
 // `code` is a stable machine key the UI maps to a Finnish message
@@ -22,12 +23,13 @@ import { apiClient, clearCsrfToken } from './apiClient'
 // -----------------------------------------------------------------------------
 // register({ displayName, email, password })
 // -----------------------------------------------------------------------------
-// POST /api/auth/register — server hashes the password (argon2) and, on
-// success, has already started the session (cookie set by the response).
+// POST /api/auth/register — server hashes the password (argon2) and creates
+// the account, but does NOT start a session: the account sits pending until
+// an admin approves it, so there's no `user` to hand back here.
 export async function register({ displayName, email, password }) {
   const res = await apiClient.post('/api/auth/register', { displayName, email, password })
   if (res.ok) {
-    return { ok: true, user: res.data.user }
+    return { ok: true, pending: true }
   }
   return { ok: false, code: res.code, message: mapAuthError(res.code) }
 }
@@ -79,6 +81,8 @@ export function mapAuthError(code) {
       return 'Sähköposti tai salasana ei täsmää.'
     case 'email_taken':
       return 'Tällä sähköpostilla on jo tili. Kirjaudu sisään.'
+    case 'account_pending':
+      return 'Tilisi odottaa vielä hyväksyntää.'
     case 'rate_limited':
       return 'Liian monta yritystä. Odota hetki ja yritä uudelleen.'
     case 'network':

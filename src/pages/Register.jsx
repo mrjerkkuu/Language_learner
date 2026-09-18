@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import FormField from '../components/FormField'
 import PasswordInput from '../components/PasswordInput'
@@ -11,19 +11,21 @@ import { ROUTES } from '../lib/routes'
 // -----------------------------------------------------------------------------
 // Register (/register)
 // -----------------------------------------------------------------------------
-// Display name + email + password. Same flow and states as Login. Goes
-// through useAuth().register (not authService directly) so AuthContext's
-// status updates synchronously — see Login.jsx for why that matters.
+// Display name + email + password. Goes through useAuth().register (not
+// authService directly) for consistency with Login, even though a
+// successful registration does NOT log the visitor in: the new account sits
+// pending admin approval, so AuthContext's status stays 'anon' and this
+// screen shows a confirmation message instead of navigating to /app.
 // -----------------------------------------------------------------------------
 
 export default function Register() {
   const { register, status } = useAuth()
   const navigate = useNavigate()
-  const location = useLocation()
   const [values, setValues] = useState({ displayName: '', email: '', password: '' })
   const [errors, setErrors] = useState({})
   const [formError, setFormError] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+  const [pending, setPending] = useState(false)
 
   // Already logged in (e.g. back button, or a stale tab): leave this screen.
   useEffect(() => {
@@ -46,8 +48,7 @@ export default function Register() {
     try {
       const res = await register(values)
       if (res.ok) {
-        const from = location.state?.from?.pathname ?? ROUTES.app
-        navigate(from, { replace: true })
+        setPending(true)
       } else {
         setFormError(res.message)
       }
@@ -56,6 +57,23 @@ export default function Register() {
     } finally {
       setSubmitting(false)
     }
+  }
+
+  if (pending) {
+    return (
+      <AuthShell kicker="Kiitos!" title="Pääsysi odottaa hyväksyntää" backTo={ROUTES.landing}>
+        <p className="mt-4 text-base leading-relaxed text-muted">
+          Tilisi luotiin onnistuneesti. Ylläpitäjä hyväksyy tilit manuaalisesti — saat
+          kirjautua sisään, kun tilisi on hyväksytty.
+        </p>
+        <Link
+          to={ROUTES.login}
+          className="touch-target mt-6 flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-base font-semibold text-white active:brightness-95"
+        >
+          Kirjaudu →
+        </Link>
+      </AuthShell>
+    )
   }
 
   return (

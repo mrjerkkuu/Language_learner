@@ -65,32 +65,14 @@ describe('Register (integration)', () => {
     expect(mockNavigate).not.toHaveBeenCalled()
   })
 
-  it('navigates to /app on a successful registration', async () => {
-    vi.mocked(authService.register).mockResolvedValue({
-      ok: true,
-      user: { id: '1', email: 'uusi@example.fi', displayName: 'Jeremia' },
-    })
+  it('shows a pending-approval message instead of navigating on a successful registration', async () => {
+    vi.mocked(authService.register).mockResolvedValue({ ok: true, pending: true })
     renderWithProviders(<Register />)
     fill('Näyttönimi', 'Jeremia')
     fill('Sähköposti', 'uusi@example.fi')
     fill('Salasana', 'salasana123')
     submit()
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/app', { replace: true }))
-  })
-
-  it('returns to the original deep-linked destination after registering, via state.from', async () => {
-    vi.mocked(authService.register).mockResolvedValue({
-      ok: true,
-      user: { id: '1', email: 'uusi@example.fi', displayName: 'Jeremia' },
-    })
-    renderWithProviders(<Register />, {
-      route: '/register',
-      state: { from: { pathname: '/app/quiz' } },
-    })
-    fill('Näyttönimi', 'Jeremia')
-    fill('Sähköposti', 'uusi@example.fi')
-    fill('Salasana', 'salasana123')
-    submit()
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/app/quiz', { replace: true }))
+    expect(await screen.findByText(/pääsysi odottaa hyväksyntää/i)).toBeInTheDocument()
+    expect(mockNavigate).not.toHaveBeenCalled()
   })
 })

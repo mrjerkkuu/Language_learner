@@ -12,13 +12,15 @@ afterEach(() => {
 })
 
 describe('authService', () => {
-  it('register() returns {ok:true,user} on success', async () => {
-    const user = { id: '1', email: 'a@b.fi', displayName: 'A' }
-    vi.stubGlobal('fetch', mockFetch({ 'POST /api/auth/register': () => ({ status: 201, body: { user } }) }))
+  it('register() returns {ok:true,pending:true} on success (no session is started)', async () => {
+    vi.stubGlobal(
+      'fetch',
+      mockFetch({ 'POST /api/auth/register': () => ({ status: 201, body: { pending: true } }) }),
+    )
 
     expect(await register({ displayName: 'A', email: 'a@b.fi', password: 'longenough' })).toEqual({
       ok: true,
-      user,
+      pending: true,
     })
   })
 
@@ -57,6 +59,19 @@ describe('authService', () => {
       message: 'Sähköposti tai salasana ei täsmää.',
     })
     expect(unknownEmail).toEqual(wrongPassword)
+  })
+
+  it('login() returns {ok:false,code:account_pending} for a not-yet-approved account', async () => {
+    vi.stubGlobal(
+      'fetch',
+      mockFetch({ 'POST /api/auth/login': () => ({ status: 401, body: { code: 'account_pending' } }) }),
+    )
+
+    expect(await login({ email: 'a@b.fi', password: 'correct' })).toEqual({
+      ok: false,
+      code: 'account_pending',
+      message: 'Tilisi odottaa vielä hyväksyntää.',
+    })
   })
 
   it('logout() returns {ok:true} on success and drops the cached CSRF token', async () => {
@@ -99,6 +114,7 @@ describe('authService', () => {
   it('mapAuthError() covers every known code plus a default fallback for unknown ones', () => {
     expect(mapAuthError('bad_credentials')).toBe('Sähköposti tai salasana ei täsmää.')
     expect(mapAuthError('email_taken')).toBe('Tällä sähköpostilla on jo tili. Kirjaudu sisään.')
+    expect(mapAuthError('account_pending')).toBe('Tilisi odottaa vielä hyväksyntää.')
     expect(mapAuthError('rate_limited')).toBe('Liian monta yritystä. Odota hetki ja yritä uudelleen.')
     expect(mapAuthError('network')).toBe('Yhteysvirhe. Tarkista yhteys ja yritä uudelleen.')
     expect(mapAuthError('something_unexpected')).toBe('Yhteysvirhe. Tarkista yhteys ja yritä uudelleen.')

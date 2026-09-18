@@ -9,10 +9,12 @@ import { progressStore } from '../services/progressStore'
 // computing a memoised value, and a useAuth() hook that throws outside it.
 //
 // `status` starts 'loading' while GET /api/auth/me (via authService.me()) is
-// in flight on mount, then settles to 'authed' or 'anon'. login/register
-// update `user`/`status` synchronously from their own response — no follow-up
-// /me call — so a ProtectedRoute render right after a successful submit sees
-// the new status immediately.
+// in flight on mount, then settles to 'authed' or 'anon'. login updates
+// `user`/`status` synchronously from its own response — no follow-up /me
+// call — so a ProtectedRoute render right after a successful submit sees the
+// new status immediately. register() does NOT: a new account sits pending
+// admin approval and never gets a session, so a successful registration
+// leaves `status` at 'anon'.
 // -----------------------------------------------------------------------------
 
 const AuthContext = createContext(null)
@@ -77,14 +79,12 @@ export function AuthProvider({ children }) {
     return res
   }, [])
 
+  // Registration no longer starts a session — the account sits pending until
+  // an admin approves it — so a successful register() must NOT touch
+  // user/status here. The visitor stays 'anon' even after a successful
+  // submit; only login() (once approved) transitions to 'authed'.
   const register = useCallback(async (fields) => {
-    const res = await authService.register(fields)
-    if (res.ok) {
-      setUser(res.user)
-      setStatus('authed')
-      setIsDemo(false)
-    }
-    return res
+    return authService.register(fields)
   }, [])
 
   const logout = useCallback(async () => {

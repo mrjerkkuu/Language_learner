@@ -79,7 +79,7 @@ export default function Landing() {
             to={ROUTES.register}
             className="touch-target flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-base font-semibold text-white active:brightness-95"
           >
-            Rekisteröidy
+            Pyydä pääsyä
           </Link>
           <Link
             to={ROUTES.login}
