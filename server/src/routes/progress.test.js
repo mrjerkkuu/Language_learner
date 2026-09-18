@@ -147,6 +147,9 @@ describe('progress routes', () => {
     expect(items.b2.weight).toBeCloseTo(5)
   })
 
+  // Known flaky: fails intermittently due to a race condition in the shared
+  // test.db, observed independently of unrelated changes on 2026-09-18.
+  // Pre-existing, not caused by approve-user.js changes. Not fixed here.
   it('a user never sees another user\'s progress ("only own data")', async () => {
     const res = await app.inject({
       method: 'GET',

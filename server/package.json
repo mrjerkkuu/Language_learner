@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
+    "approve-user": "node approve-user.js",
     "postinstall": "prisma generate",
     "pretest": "DATABASE_URL=\"file:./prisma/test.db\" npx prisma migrate reset --force",
     "test": "vitest run",
