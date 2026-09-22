@@ -65,4 +65,27 @@ describe('PhraseBank', () => {
     renderPhraseBankAtPart(kysymyssanatPart)
     expect(screen.getByText(kysymyssanatLabel)).toBeInTheDocument()
   })
+
+  it('filters the list by typing in the search box', () => {
+    renderWithProviders(<PhraseBank />)
+    const first = sv.phrases[0]
+    const other = sv.phrases.find((p) => p.id !== first.id)
+    expect(screen.getByText(other.term)).toBeInTheDocument()
+
+    fireEvent.change(screen.getByLabelText('Hae fraasia'), { target: { value: first.term } })
+
+    expect(screen.getByText(first.term)).toBeInTheDocument()
+    expect(screen.queryByText(other.term)).toBeNull()
+  })
+
+  it('shows a clear-search action when nothing matches, and clearing it restores the list', () => {
+    renderWithProviders(<PhraseBank />)
+    fireEvent.change(screen.getByLabelText('Hae fraasia'), { target: { value: 'epatodennakoinenhakusana' } })
+    expect(screen.getByText(/Ei hakutuloksia/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByText('Tyhjennä haku'))
+
+    expect(screen.getByLabelText('Hae fraasia')).toHaveValue('')
+    expect(screen.getByText(sv.phrases[0].term)).toBeInTheDocument()
+  })
 })

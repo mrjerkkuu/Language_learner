@@ -3,6 +3,7 @@ import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useActivityLog } from '../hooks/useActivityLog'
 import { categoriesForPart } from '../lib/categoryFilter'
+import { searchPhrases } from '../lib/phraseSearch'
 import Layout from './Layout'
 import EmptyState from './EmptyState'
 
@@ -19,7 +20,9 @@ export default function PhraseBank() {
   const { content } = useLanguage()
   const { logActivity } = useActivityLog()
 
-  const list = useMemo(() => filterItems(content.phrases), [filterItems, content])
+  const categoryFiltered = useMemo(() => filterItems(content.phrases), [filterItems, content])
+  const [query, setQuery] = useState('')
+  const list = useMemo(() => searchPhrases(categoryFiltered, query), [categoryFiltered, query])
   // Only chips for categories that actually occur among phrases for the
   // selected area — e.g. "ICT" phrases won't show a chip under part 1.
   const visibleCategories = useMemo(
@@ -48,6 +51,15 @@ export default function PhraseBank() {
   return (
     <Layout back title="Fraasipankki" right={list.length}>
       <div className="space-y-4">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Hae fraasia..."
+          aria-label="Hae fraasia"
+          className="w-full rounded-2xl border border-line bg-card px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-accent"
+        />
+
         {/* Category chips (topic filter). Unlike FilterBar's topic row (which
             hides under "Kaikki" since there's nothing to narrow down to on
             the Home page), PhraseBank always shows its chips — the phrase
@@ -69,7 +81,22 @@ export default function PhraseBank() {
         </div>
 
         {list.length === 0 ? (
-          <EmptyState title="Ei fraaseja" />
+          query.trim() ? (
+            <div className="rounded-2xl border border-line bg-card p-8 text-center">
+              <p className="text-sm text-muted">
+                Ei hakutuloksia haulla <strong className="text-ink">&quot;{query.trim()}&quot;</strong>.
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                className="touch-target mt-4 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white active:brightness-95"
+              >
+                Tyhjennä haku
+              </button>
+            </div>
+          ) : (
+            <EmptyState title="Ei fraaseja" />
+          )
         ) : (
           <ul className="space-y-2">
             {list.map((phrase) => {
