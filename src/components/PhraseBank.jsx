@@ -55,7 +55,7 @@ export default function PhraseBank() {
             useful even without an area selected first (see E1 in
             claude/tulevat-muutokset.md). "Kaikki" here clears the topic
             selection (not the area). */}
-        <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
+        <div className="no-scrollbar scroll-fade-x -mx-4 overflow-x-auto px-4 py-1.5">
           <div className="flex w-max gap-2">
             <Chip active={categories.length === 0} onClick={clearFilters}>
               Kaikki
