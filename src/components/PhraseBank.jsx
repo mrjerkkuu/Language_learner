@@ -48,24 +48,25 @@ export default function PhraseBank() {
   return (
     <Layout back title="Fraasipankki" right={list.length}>
       <div className="space-y-4">
-        {/* Category chips (topic filter). Hidden entirely under "Kaikki"
-            (part === 'all'), same rule as FilterBar's topic row — there's
-            nothing to narrow down to yet. "Kaikki" here clears the topic
+        {/* Category chips (topic filter). Unlike FilterBar's topic row (which
+            hides under "Kaikki" since there's nothing to narrow down to on
+            the Home page), PhraseBank always shows its chips — the phrase
+            count has grown large enough (180+) that browsing by category is
+            useful even without an area selected first (see E1 in
+            claude/tulevat-muutokset.md). "Kaikki" here clears the topic
             selection (not the area). */}
-        {part !== 'all' && (
-          <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
-            <div className="flex w-max gap-2">
-              <Chip active={categories.length === 0} onClick={clearFilters}>
-                Kaikki
+        <div className="no-scrollbar -mx-4 overflow-x-auto px-4 py-1.5">
+          <div className="flex w-max gap-2">
+            <Chip active={categories.length === 0} onClick={clearFilters}>
+              Kaikki
+            </Chip>
+            {visibleCategories.map((c) => (
+              <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
+                {c.label}
               </Chip>
-              {visibleCategories.map((c) => (
-                <Chip key={c.id} active={categories.includes(c.id)} onClick={() => toggleCategory(c.id)}>
-                  {c.label}
-                </Chip>
-              ))}
-            </div>
+            ))}
           </div>
-        )}
+        </div>
 
         {list.length === 0 ? (
           <EmptyState title="Ei fraaseja" />

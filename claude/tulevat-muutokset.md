@@ -39,6 +39,12 @@ kirjautuminen onnistuu; `server/approve-user.js`-CLI admin-hyväksyntään
 (lista + yksittäisen tilin hyväksyntä varmistuskysymyksellä). Committit
 `4eaa65e..6e33963` (GitHub `main`).
 
+**E1 — Fraasipankin kategoriachipit näkyvät aina (VALMIS):** poikkeus
+8dfd15d:n yleissääntöön (joka piilottaa chipit "Kaikki"-tilassa) — toteutettu
+vain `PhraseBank.jsx`:ään, koska fraasimäärä (181+) hyötyy selailusta myös
+ilman aluevalintaa. `FilterBar.jsx` (Etusivu) ja Sanakortit säilyttävät
+alkuperäisen piilotussäännön.
+
 ---
 
 ## Havaittu koodikonventio
@@ -101,12 +107,3 @@ kirjautuminen onnistuu; `server/approve-user.js`-CLI admin-hyväksyntään
   Ajoitus: ensimmäisen julkaisun jälkeen (joka on jo tapahtunut), samassa
   yhteydessä kuin K4:n session-koon rajaus -ominaisuus, koska logiikka on
   osin jaettavissa.
-
-  Lisähuomio, päätetty (E1): Fraasipankki näyttää kategoria-chipit AINA,
-  myös "Kaikki"-tilassa — poikkeus 8dfd15d:n yleissääntöön, joka piilottaa
-  chipit "Kaikki"-tilassa Sanakorteissa ja Fraasipankissa yhtäläisesti.
-  Perusteluna fraasimäärän kasvu (181+ ja kasvaa edelleen erien myötä),
-  toisin kuin Sanakortit jotka ovat yhä kohtuullisen kokoisia. Sanakortit
-  pysyvät nykyisellä säännöllä (chipit piilossa "Kaikki"-tilassa). Ei
-  toteuteta vielä nyt — toteutetaan omana pienenä committinaan lähitulevaisuudessa,
-  ei osana isompaa selattavuus-uudistusta.

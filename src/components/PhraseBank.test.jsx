@@ -12,11 +12,12 @@ import PhraseBank from './PhraseBank'
 import { getContent } from '../data/contentService'
 
 // -----------------------------------------------------------------------------
-// PhraseBank: same "Kaikki hides the topic row" rule as FilterBar, scoped to
-// phrases.json's own categories. Since PhraseBank never changes `part` itself
-// (only Home's FilterBar does), we pre-select a part via a small test-only
-// setter that shares PhraseBank's own FilterProvider instance (renderWithProviders
-// can't inject an extra sibling into its provider tree, so we rebuild it here).
+// PhraseBank: unlike FilterBar, the topic row is always shown (even under
+// "Kaikki") — see E1 in claude/tulevat-muutokset.md. Since PhraseBank never
+// changes `part` itself (only Home's FilterBar does), we pre-select a part via
+// a small test-only setter that shares PhraseBank's own FilterProvider
+// instance (renderWithProviders can't inject an extra sibling into its
+// provider tree, so we rebuild it here).
 // -----------------------------------------------------------------------------
 
 const sv = getContent('sv')
@@ -55,9 +56,9 @@ function renderPhraseBankAtPart(part) {
 }
 
 describe('PhraseBank', () => {
-  it('renders no topic chip when part is "all" (default)', () => {
+  it('shows topic chips even when part is "all" (default)', () => {
     renderWithProviders(<PhraseBank />)
-    expect(screen.queryByText(kysymyssanatLabel)).toBeNull()
+    expect(screen.getByText(kysymyssanatLabel)).toBeInTheDocument()
   })
 
   it('shows the phrase-bank topics that occur under the selected part', () => {
