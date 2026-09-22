@@ -3,6 +3,7 @@ import { useLanguage } from './LanguageContext'
 import { useAuth } from './AuthContext'
 import { progressStore } from '../services/progressStore'
 import { defaultCardState, deriveStatus, computeStats as computeStatsPure, pickNext as pickNextPure } from '../lib/srLogic'
+import { buildSession as buildSessionPure } from '../lib/sessionLogic'
 
 // -----------------------------------------------------------------------------
 // ProgressContext
@@ -104,11 +105,23 @@ export function ProgressProvider({ children }) {
 
   const computeStats = useCallback((items) => computeStatsPure(data, items), [data])
 
+  const buildSession = useCallback((items) => buildSessionPure(data, items), [data])
+
   const resetProgress = useCallback(() => setData({}), [setData])
 
   const value = useMemo(
-    () => ({ getState, getStatus, recordResult, recordQuiz, pickNext, computeStats, resetProgress, ready }),
-    [getState, getStatus, recordResult, recordQuiz, pickNext, computeStats, resetProgress, ready],
+    () => ({
+      getState,
+      getStatus,
+      recordResult,
+      recordQuiz,
+      pickNext,
+      computeStats,
+      buildSession,
+      resetProgress,
+      ready,
+    }),
+    [getState, getStatus, recordResult, recordQuiz, pickNext, computeStats, buildSession, resetProgress, ready],
   )
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>

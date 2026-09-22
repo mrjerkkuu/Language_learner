@@ -60,4 +60,42 @@ describe('Flashcard (integration)', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
     expect(container.querySelector('.flip-inner').classList.contains('is-flipped')).toBe(false)
   })
+
+  it('ends the session after 20 cards and shows the result screen', () => {
+    const { container } = renderWithProviders(<Flashcard />)
+
+    for (let i = 0; i < 20; i++) {
+      fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+    }
+
+    expect(screen.getByText('Sanakortit — tulos')).toBeInTheDocument()
+    expect(container.querySelectorAll('ul li')).toHaveLength(20)
+  })
+
+  it('lists every word from the session on the result screen with its translation and result', () => {
+    const { container } = renderWithProviders(<Flashcard />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Väärin' }))
+    for (let i = 0; i < 19; i++) {
+      fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+    }
+
+    const rows = container.querySelectorAll('ul li')
+    expect(rows).toHaveLength(20)
+    // Rows are in answer order: the first answer was "Väärin", the rest "Oikein".
+    expect(rows[0].textContent).toContain('väärin')
+    expect(rows[0].textContent).toContain(' — ') // term — translation
+    expect(rows[1].textContent).toContain('oikein')
+  })
+
+  it('links back to the app menu from the result screen', () => {
+    renderWithProviders(<Flashcard />)
+
+    for (let i = 0; i < 20; i++) {
+      fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+    }
+
+    const link = screen.getByRole('link', { name: 'Valikkoon' })
+    expect(link).toHaveAttribute('href', '/app')
+  })
 })
