@@ -10,7 +10,8 @@ logged-in users. The in-app UI is in Finnish.
 ## Features
 
 - **Five practice modules:**
-  - **Sanakortit** (Flashcards) — flip card, 3-level self-assessment, swipe gestures
+  - **Sanakortit** (Flashcards) — flip card, 3-level self-assessment, swipe
+    gestures, sessions limited to a weighted 20-card batch
   - **Fraasipankki** (Phrase bank) — tap-to-reveal, filterable by topic
   - **Muodot** (Word forms) — multiple-choice drilling for articles/inflected forms
   - **Kirjoitus** (Writing) — prompt → own answer → model answer to compare against
@@ -171,8 +172,6 @@ Full backlog tracked in `claude/tulevat-muutokset.md`. Near-term items:
 - **K3 — full word-form drilling** — extend the Muodot module from a light
   article/inflection check to full conjugation/declension chains (e.g.
   Swedish infinitiv→presens→preteritum→supinum).
-- **Limited, weighted flashcard sessions** — practice a fixed-size, weighted
-  random batch instead of the whole category at once.
 - **Phrase bank browsability at scale** — search/filter as the phrase count
   grows past what a scroll-down list handles well.
 - **Persistent phrase bank category chips** — keep the topic chips visible
