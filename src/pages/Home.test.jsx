@@ -42,6 +42,15 @@ describe('Home (integration)', () => {
     expect(sanakortitCount()).toBe(enCount)
   })
 
+  it('hides the Muodot module in English (no word-form data yet)', () => {
+    renderWithProviders(<Home />)
+    expect(screen.getByText('Muodot')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Englanti' }))
+    expect(screen.queryByText('Muodot')).not.toBeInTheDocument()
+    expect(screen.getByText('Sanakortit')).toBeInTheDocument()
+  })
+
   it('narrows the counts when a topic-area pill is selected', () => {
     const sv = getContent('sv')
     // "Oma ala" is area (part) 3 in the Swedish data (Finnish UI label).

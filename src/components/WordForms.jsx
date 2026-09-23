@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import { Navigate } from 'react-router-dom'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
@@ -6,6 +7,7 @@ import { useActivityLog } from '../hooks/useActivityLog'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
 import EmptyState from './EmptyState'
+import { ROUTES } from '../lib/routes'
 
 // -----------------------------------------------------------------------------
 // Muodot (Word forms) module
@@ -26,7 +28,19 @@ const TYPE_LABEL = {
   past: 'Valitse imperfekti',
 }
 
+// Route guard: a language without word-form data has no Muodot module, so a
+// direct visit to its URL goes back to the home page instead of crashing.
+// English Muodot hidden until structured inflection data exists for English.
+// SALDO (used for Swedish, see scripts/fetch-saldo-forms.mjs) covers Swedish only;
+// English needs another open machine-readable source, same method. See K3 in
+// claude/tulevat-muutokset.md.
 export default function WordForms() {
+  const { content } = useLanguage()
+  if (!content.wordForms) return <Navigate to={ROUTES.app} replace />
+  return <WordFormsPractice />
+}
+
+function WordFormsPractice() {
   const { filterItems } = useFilter()
   const { content } = useLanguage()
   const { pickNext, recordResult } = useSpacedRepetition()

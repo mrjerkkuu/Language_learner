@@ -11,9 +11,4 @@ describe('wordFormItems', () => {
     const data = { source: {}, verbs: [{ id: 'v' }], nouns: [{ id: 'n' }] }
     expect(wordFormItems(data)).toEqual([{ id: 'v' }, { id: 'n' }])
   })
-
-  it('passes a legacy array through unchanged', () => {
-    const legacy = [{ id: 'wf-1' }]
-    expect(wordFormItems(legacy)).toBe(legacy)
-  })
 })

@@ -31,13 +31,18 @@ export default function Home() {
   const activity = getSummary()
 
   // Module rows use the current language's content for the live counters.
+  // A module whose data is null does not exist for this language and is hidden.
+  // English Muodot hidden until structured inflection data exists for English.
+  // SALDO (used for Swedish, see scripts/fetch-saldo-forms.mjs) covers Swedish only;
+  // English needs another open machine-readable source, same method. See K3 in
+  // claude/tulevat-muutokset.md.
   const modules = [
     { to: ROUTES.flashcards, title: 'Sanakortit', data: content.vocabulary },
     { to: ROUTES.phrases, title: 'Fraasipankki', data: content.phrases },
     { to: ROUTES.writing, title: 'Kirjoitus', data: content.writingTasks },
     { to: ROUTES.quiz, title: 'Quiz', data: content.vocabulary },
-    { to: ROUTES.forms, title: 'Muodot', data: wordFormItems(content.wordForms) },
-  ]
+    { to: ROUTES.forms, title: 'Muodot', data: content.wordForms && wordFormItems(content.wordForms) },
+  ].filter((m) => m.data !== null)
 
   return (
     <Layout>

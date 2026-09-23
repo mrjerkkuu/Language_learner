@@ -74,17 +74,6 @@ for (const { id } of LANGUAGES) {
       }
     })
 
-    // Legacy flat format (English, until its Muodot is hidden).
-    if (Array.isArray(c.wordForms)) {
-      it('wordForms options always include the correct answer', () => {
-        for (const w of c.wordForms) {
-          expect(Array.isArray(w.options)).toBe(true)
-          expect(w.options.length).toBeGreaterThanOrEqual(2)
-          expect(w.options).toContain(w.answer)
-        }
-      })
-    }
-
     it('writingTasks have task + finnish translation + model answer', () => {
       for (const t of c.writingTasks) {
         expect(typeof t.task).toBe('string')
@@ -142,5 +131,12 @@ describe('word forms data: sv (SALDO)', () => {
         expect(n.forms.plDef, n.id).toBeTruthy()
       }
     }
+  })
+})
+
+// English has no word-form data yet, so its Muodot module is hidden.
+describe('word forms data: en', () => {
+  it('is null until English inflection data exists', () => {
+    expect(getContent('en').wordForms).toBeNull()
   })
 })
