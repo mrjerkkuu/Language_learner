@@ -70,6 +70,23 @@ alkuperäisen piilotussäännön.
   infinitiivi→preesens→imperfekti→perfekti kaikille sanaluokille) tehdään
   omana projektinaan Tailscale Funnel -julkaisun jälkeen — samoja 200 verbiä
   voidaan silloin käyttää uudelleen täydellä taivutuksella.
+- **Tilanne (2026-09-23, haara `feat/k3-muodot`):** Vaihe A (data) valmis, vaihe B
+  (Muodot-UI + SR-malli) suunnitellaan erikseen. Haara yhdistetään mainiin vasta B:n jälkeen.
+  - **Rajaus:** vain ruotsi. Vanha kevyt Muodot korvataan kokonaan (ei rinnakkaista versiota).
+  - **Datalähde, SALDO-menetelmä:** taivutusmuodot haetaan SALDOsta (Språkbanken Text,
+    Göteborgs universitet, Karp v7 -rajapinta, CC BY 4.0) skriptillä
+    `scripts/fetch-saldo-forms.mjs` → `src/data/sv/wordForms.json` (`{ source, verbs, nouns }`).
+    Säännöt ovat testattuina puhtaina funktioina `src/lib/saldoForms.js`:ssä.
+  - **Periaate:** ylläpitäjä ei osaa ruotsia, joten SALDOn yksiselitteiset osumat hyväksytään
+    automaattisesti, ja osumattomat jätetään pois (ei yhdyssanasääntöä, ei käsin täydennystä).
+    Muotoja ei tarkisteta rivi riviltä. Jokaisella rivillä on SALDO-`lemgram`, jolla sen voi jäljittää lähteeseen.
+  - **Tulos:** 235 verbiketjua (245 sanaston riviä) ja 163 substantiivia (monikkoa kysytään 122:lta).
+    Pois jäi 2 verbiä ja 72 substantiivia (pääosin alojen nimiä, ammattinimikkeitä ja yhdyssanoja).
+  - **Lähdemaininta:** `source`-kenttä datassa, `NOTICE`-tiedosto ja Muodot-sivun alalinkki
+    (alalinkki toteutetaan vaiheessa B).
+  - **Englanti:** Muodot piilotettu englannilta (ks. "Myöhempää harkintaa").
+  - **Päivitys:** aja `node scripts/fetch-saldo-forms.mjs` uudelleen, kun sanasto muuttuu, ja pistokoe
+    `--verify`-lipulla.
 
 ### K4. Harjoittelusession koon rajaus (Sanakortit/Muodot/Kirjoitus/Quiz)
 - Nykyisin käyttäjä käy aina läpi **koko kategorian** kortit kerralla kaikissa
@@ -94,6 +111,13 @@ alkuperäisen piilotussäännön.
 - AI-tarkistus kirjoitusharjoituksiin (`aiService.js`-rajapinta valmiina).
 - Lisää opeteltavia kieliä (rakenne tukee jo).
 - Sähköpostivarmennus + salasanan palautus (Vaihe 3:n jälkeen).
+- **Muodot englanniksi:** Muodot-moduuli on piilotettu englannilta (K3). Se palautetaan, kun
+  englannille on koneluettavaa taivutusdataa samalla menetelmällä kuin ruotsille:
+  generointiskripti + avoin rakenteinen sanakirjalähde + automaattisesti hyväksytyt
+  yksiselitteiset osumat + lähdemaininta. Ruotsin lähde oli SALDO (Språkbanken, Karp v7
+  -rajapinta, CC BY 4.0), joka ei kata englantia, joten englannille valitaan eri lähde.
+  Palautus: korvaa `wordForms: null` englannin datalla (`contentService.js`); Home ja reittisuoja
+  näyttävät moduulin silloin automaattisesti.
 - **Fraasipankin selattavuus isolla määrällä (120+ fraasia):** nykyinen
   "selaa ylhäältä alas" -malli raskastuu kun kategoriat kasvavat. Harkittavia
   ratkaisuja: (A) yksinkertainen tekstihaku/suodatus listan yläpuolelle —
