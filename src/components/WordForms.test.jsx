@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { screen, fireEvent, waitFor } from '@testing-library/react'
+import { screen, fireEvent, waitFor, act } from '@testing-library/react'
 import { Routes, Route } from 'react-router-dom'
 import { renderWithProviders } from '../test/renderWithProviders'
 import { STORAGE_KEYS, srsDataKey } from '../lib/storageKeys'
@@ -333,5 +333,69 @@ describe('WordForms sessions', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Uusi sessio' }))
     expect(screen.getByText('Montako sanaa?')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '5' })).toHaveAttribute('aria-pressed', 'true')
+  })
+})
+
+// Muodot progress built up BEFORE sessions existed (same card ids, same
+// storage) must be read, kept and extended — never reset or reinterpreted.
+describe('WordForms sessions with earlier progress', () => {
+  const HOUR_AGO = Date.now() - 60 * 60 * 1000
+  const card = (over) => ({ weight: 2.5, lastSeen: HOUR_AGO, timesCorrect: 0, timesWrong: 0, learned: false, ...over })
+  const newNoun = (i) => ({
+    ...base,
+    id: `wf-nn-x${i}`,
+    vocabId: `x${i}`,
+    fi: `sana ${i}`,
+    gender: 'en',
+    forms: { sgIndef: `ord${i}`, sgDef: `ord${i}en`, plIndef: null, plDef: null },
+    askPlural: false,
+  })
+
+  // Let the progress provider finish loading from localStorage.
+  const settle = () => act(() => new Promise((resolve) => setTimeout(resolve, 0)))
+
+  it('picks a word with earlier progress into the session and extends its cards', async () => {
+    const earlier = {
+      'wf-vb-v070:presens': card({ weight: 1, timesCorrect: 4, learned: true }),
+      'wf-vb-v070:preteritum': card({ weight: 8, timesCorrect: 1, timesWrong: 3 }),
+      'wf-vb-v070:supinum': card({ weight: 2, timesCorrect: 2, timesWrong: 1 }),
+      'wf-art-v006': card({ timesCorrect: 5 }), // legacy Muodot card
+      v001: card({ timesCorrect: 7 }), // a Sanakortit card
+    }
+    localStorage.setItem(srsDataKey('sv'), JSON.stringify(earlier))
+
+    // ga is the only practised word among six; a 5-word session's practised
+    // quota (3) can only be filled by it, so it is always in the session.
+    mock.svWordForms = withWords({ verbs: [ga], nouns: [1, 2, 3, 4, 5].map(newNoun) })
+    renderForms({ start: false })
+    await settle()
+    fireEvent.click(screen.getByRole('button', { name: '5' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Aloita (5 sanaa)' }))
+
+    // Play the whole session: ga right on every step, other words with the first option.
+    for (let w = 0; w < 5; w++) {
+      const isGa = Boolean(screen.queryByText('att gå', { selector: 'div' }))
+      const answers = isGa ? ['går', 'gick', 'gått'] : null
+      for (let i = 0; !screen.queryByRole('button', { name: /Seuraava sana|Näytä tulos/ }); i++) {
+        const option = answers ? screen.getByRole('button', { name: answers[i] }) : screen.getAllByRole('button').find((b) => b.closest('.grid'))
+        fireEvent.click(option)
+        fireEvent.click(screen.getByRole('button', { name: 'Jatka' }))
+      }
+      fireEvent.click(screen.getByRole('button', { name: /Seuraava sana|Näytä tulos/ }))
+    }
+    expect(screen.getByText('att gå', { selector: 'span' }).closest('li').textContent).toContain('3/3')
+
+    // Earlier counts are kept and extended by exactly one answer each.
+    await waitFor(() => {
+      const cards = JSON.parse(localStorage.getItem(srsDataKey('sv')))
+      expect(cards['wf-vb-v070:presens']).toMatchObject({ timesCorrect: 5, timesWrong: 0 })
+      expect(cards['wf-vb-v070:preteritum']).toMatchObject({ timesCorrect: 2, timesWrong: 3 })
+      expect(cards['wf-vb-v070:supinum']).toMatchObject({ timesCorrect: 3, timesWrong: 1 })
+      // The hard preteritum card came down from its earlier weight (not reset to default).
+      expect(cards['wf-vb-v070:preteritum'].weight).toBeCloseTo(8 * 0.6)
+      // Cards Muodot doesn't use are untouched.
+      expect(cards['wf-art-v006']).toEqual(earlier['wf-art-v006'])
+      expect(cards.v001).toEqual(earlier.v001)
+    })
   })
 })
