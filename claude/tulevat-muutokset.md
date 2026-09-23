@@ -45,8 +45,8 @@ vain `PhraseBank.jsx`:ään, koska fraasimäärä (181+) hyötyy selailusta myö
 ilman aluevalintaa. `FilterBar.jsx` (Etusivu) ja Sanakortit säilyttävät
 alkuperäisen piilotussäännön.
 
-**K3 — Muodot: täysi taivutusharjoitus, ruotsi (VALMIS, haarassa
-`feat/k3-muodot`, ei vielä mainissa):** vanha kevyt Muodot (en/ett + muutama
+**K3 — Muodot: täysi taivutusharjoitus, ruotsi (VALMIS, mergetty mainiin
+6c97bff, tuotannossa; haara poistettu):** vanha kevyt Muodot (en/ett + muutama
 määräinen muoto) korvattu kokonaan.
 - *Harjoitus:* sana kysytään taivutusketjuna askel kerrallaan, monivalintana
   sanan omista muodoista, ja palaute tulee heti. Verbit: preesens → imperfekti →
@@ -54,8 +54,12 @@ määräinen muoto) korvattu kokonaan.
   monikko, jos `askPlural`). Lopuksi yhteenveto koko ketjusta. Valinta
   *Kaikki sanat / Verbit / Substantiivit* lisäksi osa- ja kategoriasuodattimen.
 - *SR-malli (välimuoto):* jokainen muoto on oma korttinsa (`<id>:<muoto>`, esim.
-  `wf-vb-v070:preteritum`), ja sana valitaan vaikeimman muodon painon mukaan
-  (`srLogic.pickNext` sellaisenaan, `src/lib/wordFormsLogic.js`). srLogiciin,
+  `wf-vb-v070:preteritum`). Sanan tila kootaan sen muotokorteista
+  (`wordStateMap`/`aggregateWordState`, `src/lib/wordFormsLogic.js`: paino = vaikeimman
+  muodon paino), ja session sanat valitaan sen perusteella:
+  `buildSession(wordStateMap(getState, pool), pool, { size })` (`src/lib/sessionLogic.js`).
+  Sanat käydään session järjestyksessä. (K3:ssa valinta tehtiin alun perin
+  `srLogic.pickNext`-funktiolla sana kerrallaan; K4 korvasi sen `buildSession`:lla.) srLogiciin,
   palvelimeen ja skeemaan ei tullut muutoksia. Vanhojen `wf-art-*`/`wf-def-*`-korttien
   edistyminen jää orvoksi (hyväksytty).
 - *Data, SALDO-menetelmä:* taivutusmuodot haetaan SALDOsta (Språkbanken Text,
@@ -84,7 +88,7 @@ määräinen muoto) korvattu kokonaan.
 ## Jäljellä olevat korjaukset / parannukset
 
 ### K4. Harjoittelusession koon rajaus (Sanakortit/Muodot/Kirjoitus/Quiz)
-- **Sanakortit + Muodot: VALMIS (2026-09-23, haara `feat/session-size`).**
+- **Sanakortit + Muodot: VALMIS (2026-09-23, mergetty mainiin dcb80f4, tuotannossa; haara poistettu).**
   - Ennen jokaista sessiota näytetään valintanäyttö (`SessionSizePicker`): koko **5 / 10 / 15 / 20**
     (Muodoissa **sanoja**, 1 sana = 2–4 askelta). Valinta ei käynnistä sessiota; "Aloita" käynnistää.
   - Edellinen koko muistetaan esivalittuna, **erikseen kummallekin moduulille**
@@ -115,8 +119,7 @@ määräinen muoto) korvattu kokonaan.
   näyttävät moduulin silloin automaattisesti.
 - **Fraasipankin selattavuus isolla määrällä (120+ fraasia):** nykyinen
   "selaa ylhäältä alas" -malli raskastuu kun kategoriat kasvavat. Harkittavia
-  ratkaisuja: (A) yksinkertainen tekstihaku/suodatus listan yläpuolelle —
-  halvin toteuttaa; (B) fraaseille oma kevyt SR-painotus (osaan/en osaa
+  ratkaisuja: (B) fraaseille oma kevyt SR-painotus (osaan/en osaa
   -merkintä, ei täyttä oikea/väärä-logiikkaa kuten Sanakorteissa); (C) erillinen
   "Harjoittele"-näkymä nykyisen "Selaa"-näkymän rinnalle, joka näyttäisi
   rajatun satunnaisotannan painotettuna (B):n mukaan — yhdistettävissä samaan

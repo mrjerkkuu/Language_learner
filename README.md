@@ -16,7 +16,8 @@ logged-in users. The in-app UI is in Finnish.
   - **Muodot** (Word forms) — Swedish inflection chains step by step (verbs:
     presens → preteritum → supinum; nouns: en/ett → definite → plural), multiple
     choice among the word's own forms; each form is its own spaced-repetition card.
-    Inflection data from SALDO (Språkbanken Text, CC BY 4.0), see `NOTICE`.
+    Inflection data from SALDO (Språkbanken Text, CC BY 4.0), see `NOTICE`;
+    credited in-app with a link at the bottom of the Muodot page.
     Practised in sessions of a chosen number of words (5/10/15/20) with a
     session result screen
   - **Kirjoitus** (Writing) — prompt → own answer → model answer to compare against
@@ -37,7 +38,7 @@ logged-in users. The in-app UI is in Finnish.
 - **Backend:** Node.js 22, Fastify, Prisma ORM + SQLite.
 - **Auth/security:** argon2 password hashing, `@fastify/secure-session`
   (httpOnly cookie), CSRF protection, rate limiting.
-- **Tests:** Vitest — 128 frontend tests, 37 server tests.
+- **Tests:** Vitest — 253 frontend tests, 37 server tests.
 
 ## Live deployment
 
@@ -109,7 +110,7 @@ behave as one origin in development too.
 ## Tests
 
 ```bash
-npm run test           # frontend — 128 tests
+npm run test           # frontend — 253 tests
 cd server && npm test  # server — 37 tests (resets a local SQLite test db first)
 ```
 
@@ -150,10 +151,15 @@ src/
 ├── hooks/        # thin wrappers around context (spaced repetition, activity log), localStorage, theme, AI settings
 ├── context/      # Auth, Language, Progress, Activity, Filter — app-wide state
 ├── components/   # the five practice modules + shared UI (Layout, forms, etc.)
-├── pages/        # Home, Landing, Login, Register
-├── lib/          # pure logic: srLogic, activityLogic, quizLogic, validation, routes
+├── pages/        # Home, Landing, Login, Register, Privacy
+├── lib/          # pure logic: srLogic, sessionLogic, activityLogic, quizLogic, saldoForms, wordFormsLogic, validation, routes
 ├── App.jsx       # routes + provider tree
 └── main.jsx      # entry point
+
+scripts/
+└── fetch-saldo-forms.mjs  # one-off generator for src/data/sv/wordForms.json (SALDO, Karp v7 API)
+
+NOTICE              # third-party data licensing (SALDO, CC BY 4.0)
 
 server/
 ├── src/
@@ -174,11 +180,15 @@ server/
 
 Full backlog tracked in `claude/tulevat-muutokset.md`. Near-term items:
 
-- **Phrase bank browsability at scale** — search/filter as the phrase count
-  grows past what a scroll-down list handles well.
-- **Persistent phrase bank category chips** — keep the topic chips visible
-  even in the "all" view (currently hidden, unlike the rest of the app's
-  general rule).
+- **K4 remainder — choosable session size for Kirjoitus and Quiz** — Sanakortit
+  and Muodot already pick a session size (5/10/15/20) before each session;
+  Quiz still has a fixed 10-question session and Kirjoitus goes through the
+  whole list.
+
+## License
+
+No license file yet — all rights reserved by default; see `NOTICE` for
+third-party data licensing.
 
 ## Adding AI later (optional)
 
