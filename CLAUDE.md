@@ -44,6 +44,18 @@ Frontend: React + Vite + Tailwind (`src/`). Backend: Node.js + Fastify + Prisma/
 ## Testing
 - Vitest. In automation run one-shot, not watch mode: `npm run test` (or `vitest run`).
 
+## Production & builds — `npm run build` IS a production deploy
+- `npm run build` in the repo root writes straight into `dist/`, which the production
+  service (`language-learner.service`, `server/src/app.js` → `@fastify/static`) reads from
+  disk on EVERY request, with no restart. So a plain `npm run build` ships the change to
+  production IMMEDIATELY, even without `systemctl restart`, whatever branch is checked out.
+- Build checks ("does the code compile?") must ALWAYS use a separate outDir, never `dist/`:
+  `npx vite build --outDir /tmp/vite-build-check --emptyOutDir`
+- Build into `dist/` only when the goal is explicitly to deploy to production AND the
+  maintainer has given separate permission for it.
+- `systemctl restart language-learner.service` is only needed for `server/` changes, and
+  also needs the maintainer's separate, explicit permission.
+
 ## Subagents (.claude/agents/)
 - `test-runner` — runs the test suite and reports only the result. Use after code changes.
 - `code-reviewer` — security review of backend/auth code. Use before accepting
