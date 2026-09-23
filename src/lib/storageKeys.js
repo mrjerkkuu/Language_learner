@@ -23,6 +23,9 @@ export const STORAGE_KEYS = {
   language: 'language-v1',
   theme: 'theme-v1', // keep in sync with index.html early script
   aiSettings: 'ai-settings-v1',
+  // Last chosen session size, remembered separately per module (device-local).
+  flashcardSessionSize: 'flashcard-session-size-v1',
+  formsSessionSize: 'forms-session-size-v1',
 }
 
 // Per-language spaced-repetition key, e.g. srsDataKey('sv') -> 'srs-data-v1:sv'.

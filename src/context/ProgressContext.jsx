@@ -105,7 +105,7 @@ export function ProgressProvider({ children }) {
 
   const computeStats = useCallback((items) => computeStatsPure(data, items), [data])
 
-  const buildSession = useCallback((items) => buildSessionPure(data, items), [data])
+  const buildSession = useCallback((items, size) => buildSessionPure(data, items, { size }), [data])
 
   const resetProgress = useCallback(() => setData({}), [setData])
 
