@@ -8,25 +8,43 @@ import Layout from './Layout'
 import FilterTag from './FilterTag'
 import EmptyState from './EmptyState'
 import { ROUTES } from '../lib/routes'
+import { pickNext } from '../lib/srLogic'
+import { buildSteps, itemsOfKind, wordKind, wordStateMap } from '../lib/wordFormsLogic'
 
 // -----------------------------------------------------------------------------
 // Muodot (Word forms) module
 // -----------------------------------------------------------------------------
-// Practises word FORMS, not translation. Each item is a small multiple-choice
-// question driven by data (src/data/<lang>/wordForms.json):
-//   - Swedish: "en vai ett?" (article) and definite forms
-//   - English: plurals and past-tense forms
-// Unlike the Quiz, feedback here is immediate (form drilling). Results feed
-// spaced repetition so the trickier forms come back more often.
+// Practises a word's INFLECTION CHAIN, one step at a time (data generated from
+// SALDO, see src/data/sv/wordForms.json and scripts/fetch-saldo-forms.mjs):
+//   - verb: presens -> preteritum -> supinum
+//   - noun: en/ett -> definite singular (-> plural -> definite plural)
+// Each step is multiple choice among the word's OWN forms, with immediate
+// feedback, and is recorded as its own spaced-repetition card
+// (`<item id>:<step>`). Words are picked by srLogic.pickNext over a per-word
+// state aggregated from those cards, so a weak form brings its word back.
+// See src/lib/wordFormsLogic.js.
 // -----------------------------------------------------------------------------
 
-// Instruction shown per question type. Falls back for unknown types.
-const TYPE_LABEL = {
-  article: 'en vai ett?',
-  definite: 'Valitse määräinen muoto',
-  plural: 'Valitse monikko',
-  past: 'Valitse imperfekti',
+// Instruction + a short Swedish cue per step. `{article}` is filled per noun.
+const STEP_LABEL = {
+  presens: { title: 'Preesens', cue: 'jag ___ (nyt)' },
+  preteritum: { title: 'Imperfekti', cue: 'jag ___ (eilen)' },
+  supinum: { title: 'Perfekti', cue: 'jag har ___' },
+  gender: { title: 'en vai ett?', cue: null },
+  sgDef: { title: 'Määräinen muoto', cue: '{article} ___' },
+  plIndef: { title: 'Monikko', cue: 'många ___' },
+  plDef: { title: 'Määräinen monikko', cue: 'de ___' },
 }
+
+function stepCue(step, item) {
+  const cue = STEP_LABEL[step.key].cue
+  return cue && cue.replace('{article}', item.gender === 'ett' ? 'det' : 'den')
+}
+
+// The word as shown on the card: verbs with "att", nouns bare (the article is
+// what the gender step asks).
+const promptFor = (item) =>
+  wordKind(item) === 'verb' ? `att ${item.forms.infinitiv}` : item.forms.sgIndef
 
 // Route guard: a language without word-form data has no Muodot module, so a
 // direct visit to its URL goes back to the home page instead of crashing.
@@ -43,37 +61,58 @@ export default function WordForms() {
 function WordFormsPractice() {
   const { filterItems } = useFilter()
   const { content } = useLanguage()
-  const { pickNext, recordResult } = useSpacedRepetition()
+  const { getState, recordResult } = useSpacedRepetition()
   const { logActivity } = useActivityLog()
 
-  const pool = useMemo(() => filterItems(content.wordForms), [filterItems, content])
+  const pool = useMemo(
+    () => filterItems(itemsOfKind(content.wordForms, 'all')),
+    [filterItems, content],
+  )
 
-  const [current, setCurrent] = useState(null)
-  const [selected, setSelected] = useState(null)
+  // task = { item, steps } — steps (with shuffled options) are built once per
+  // word so options don't reshuffle on re-render.
+  const [task, setTask] = useState(null)
+  const [stepIndex, setStepIndex] = useState(0)
+  const [answers, setAnswers] = useState([])
   const [reviewed, setReviewed] = useState(0)
+
+  function pickWord(excludeId = null) {
+    return pickNext(wordStateMap(getState, pool), pool, { excludeId })
+  }
+
+  function startTask(item) {
+    setTask(item ? { item, steps: buildSteps(item) } : null)
+    setStepIndex(0)
+    setAnswers([])
+  }
 
   useEffect(() => {
     if (pool.length === 0) {
-      setCurrent(null)
+      startTask(null)
       return
     }
-    setCurrent((prev) => (prev && pool.some((c) => c.id === prev.id) ? prev : pickNext(pool)))
-    setSelected(null)
+    if (!task || !pool.some((i) => i.id === task.item.id)) startTask(pickWord())
     setReviewed(0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool])
 
+  // Answer the current step: immediate feedback + its own SR card.
   function choose(option) {
-    if (selected || !current) return // ignore taps after the first answer
-    setSelected(option)
-    recordResult(current.id, option === current.answer)
-    logActivity(1)
-    setReviewed((n) => n + 1)
+    const current = task?.steps[stepIndex]
+    if (!current || answers[stepIndex] !== undefined) return // one answer per step
+    setAnswers((prev) => [...prev, option])
+    recordResult(current.cardId, option === current.answer)
   }
 
-  function nextItem() {
-    setCurrent(pickNext(pool, current?.id))
-    setSelected(null)
+  // Next step; after the last one the index moves past the end (summary view)
+  // and the word counts as one practised item.
+  function continueStep() {
+    const next = stepIndex + 1
+    setStepIndex(next)
+    if (next === task.steps.length) {
+      logActivity(1)
+      setReviewed((n) => n + 1)
+    }
   }
 
   const done = Math.min(reviewed, pool.length)
@@ -90,9 +129,66 @@ function WordFormsPractice() {
       </Layout>
     )
   }
-  if (!current) return null
+  if (!task) return null
 
-  const instruction = TYPE_LABEL[current.type] ?? 'Valitse oikea muoto'
+  const { item, steps } = task
+  const step = steps[stepIndex]
+
+  function nextWord() {
+    startTask(pickWord(item.id))
+  }
+
+  // Summary after the last step: the whole chain with what was right/wrong.
+  if (!step) {
+    const correctCount = steps.filter((s, i) => answers[i] === s.answer).length
+    return (
+      <Layout back title="Muodot" right={rightText} progress={progress}>
+        <div className="space-y-4">
+          <FilterTag />
+
+          <div className="rounded-2xl border border-line bg-card p-6">
+            <div className="text-center">
+              <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
+              <div className="mt-1 text-sm text-muted">{item.fi}</div>
+              <div className="mt-3 text-sm font-semibold text-ink">
+                {correctCount}/{steps.length} oikein
+              </div>
+            </div>
+
+            <ul className="mt-4 divide-y divide-line">
+              {steps.map((s, i) => {
+                const ok = answers[i] === s.answer
+                return (
+                  <li key={s.key} className="flex items-center justify-between gap-3 py-2">
+                    <span className="text-sm text-muted">{STEP_LABEL[s.key].title}</span>
+                    <span className="text-right">
+                      <span className={`font-semibold ${ok ? 'text-learned' : 'text-wrong'}`}>
+                        {ok ? '✓' : '✗'} {s.answer}
+                      </span>
+                      {!ok && (
+                        <span className="block text-xs text-muted">valitsit: {answers[i]}</span>
+                      )}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+
+          <button
+            type="button"
+            onClick={nextWord}
+            className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+          >
+            Seuraava sana
+          </button>
+        </div>
+      </Layout>
+    )
+  }
+
+  const selected = answers[stepIndex]
+  const answered = selected !== undefined
 
   return (
     <Layout back title="Muodot" right={rightText} progress={progress}>
@@ -101,17 +197,19 @@ function WordFormsPractice() {
 
         <div className="rounded-2xl border border-line bg-card p-6 text-center">
           <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-            {instruction}
+            {STEP_LABEL[step.key].title} · {stepIndex + 1}/{steps.length}
           </div>
-          <div className="font-display text-3xl font-bold text-ink">{current.prompt}</div>
-          {current.fi && <div className="mt-1 text-sm text-muted">{current.fi}</div>}
+          <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
+          <div className="mt-1 text-sm text-muted">{item.fi}</div>
+          {stepCue(step, item) && (
+            <div className="mt-3 text-base italic text-ink">{stepCue(step, item)}</div>
+          )}
         </div>
 
-        {/* Options with immediate correct/wrong feedback. */}
+        {/* Options: the word's own forms, with immediate correct/wrong feedback. */}
         <div className="grid gap-2">
-          {current.options.map((opt) => {
-            const answered = selected !== null
-            const isCorrect = opt === current.answer
+          {step.options.map((opt) => {
+            const isCorrect = opt === step.answer
             const isChosen = opt === selected
             let style = 'border-line bg-card text-ink active:bg-bg'
             if (answered && isCorrect) style = 'border-learned bg-learned-soft text-learned'
@@ -131,23 +229,23 @@ function WordFormsPractice() {
           })}
         </div>
 
-        {/* Feedback + next */}
-        {selected && (
+        {/* Feedback + continue */}
+        {answered && (
           <div>
             <p
               className={
                 'mb-3 text-center font-semibold ' +
-                (selected === current.answer ? 'text-learned' : 'text-wrong')
+                (selected === step.answer ? 'text-learned' : 'text-wrong')
               }
             >
-              {selected === current.answer ? 'Oikein!' : `Oikea vastaus: ${current.answer}`}
+              {selected === step.answer ? 'Oikein!' : `Oikea vastaus: ${step.answer}`}
             </p>
             <button
               type="button"
-              onClick={nextItem}
+              onClick={continueStep}
               className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
             >
-              Seuraava
+              Jatka
             </button>
           </div>
         )}
