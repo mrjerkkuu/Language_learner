@@ -6,6 +6,7 @@ import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
+import { Pill } from './FilterBar'
 import EmptyState from './EmptyState'
 import { ROUTES } from '../lib/routes'
 import { pickNext } from '../lib/srLogic'
@@ -46,6 +47,58 @@ function stepCue(step, item) {
 const promptFor = (item) =>
   wordKind(item) === 'verb' ? `att ${item.forms.infinitiv}` : item.forms.sgIndef
 
+const KINDS = [
+  { id: 'all', label: 'Kaikki' },
+  { id: 'verbs', label: 'Verbit' },
+  { id: 'nouns', label: 'Substantiivit' },
+]
+
+// Kaikki / Verbit / Substantiivit — the same pill style as the area filter.
+function KindToggle({ kind, onChange }) {
+  return (
+    <div className="flex flex-wrap gap-2" role="group" aria-label="Sanaluokka">
+      {KINDS.map((k) => (
+        <Pill key={k.id} active={kind === k.id} onClick={() => onChange(k.id)}>
+          {k.label}
+        </Pill>
+      ))}
+    </div>
+  )
+}
+
+// CC BY 4.0 attribution for the SALDO data, read from the data's own `source`
+// (same small muted style as the "Tietoa ja tietosuoja" link on Landing).
+function SourceCredit({ source }) {
+  if (!source?.url) return null
+  return (
+    <div className="pt-2 text-center">
+      <a
+        href={source.url}
+        target="_blank"
+        rel="noreferrer"
+        className="text-xs text-muted underline-offset-2 active:opacity-70"
+      >
+        Taivutusmuodot: {source.name} ({source.license})
+      </a>
+    </div>
+  )
+}
+
+// Shared frame for every Muodot view: filter tag and kind toggle on top,
+// source credit at the bottom.
+function Page({ right = null, progress = null, kind, onKind, source, children }) {
+  return (
+    <Layout back title="Muodot" right={right} progress={progress}>
+      <div className="space-y-4">
+        <FilterTag />
+        <KindToggle kind={kind} onChange={onKind} />
+        {children}
+        <SourceCredit source={source} />
+      </div>
+    </Layout>
+  )
+}
+
 // Route guard: a language without word-form data has no Muodot module, so a
 // direct visit to its URL goes back to the home page instead of crashing.
 // English Muodot hidden until structured inflection data exists for English.
@@ -64,9 +117,10 @@ function WordFormsPractice() {
   const { getState, recordResult } = useSpacedRepetition()
   const { logActivity } = useActivityLog()
 
+  const [kind, setKind] = useState('all')
   const pool = useMemo(
-    () => filterItems(itemsOfKind(content.wordForms, 'all')),
-    [filterItems, content],
+    () => filterItems(itemsOfKind(content.wordForms, kind)),
+    [filterItems, content, kind],
   )
 
   // task = { item, steps } — steps (with shuffled options) are built once per
@@ -118,15 +172,13 @@ function WordFormsPractice() {
   const done = Math.min(reviewed, pool.length)
   const rightText = pool.length ? `${done}/${pool.length}` : null
   const progress = pool.length ? done / pool.length : null
+  const frame = { kind, onKind: setKind, source: content.wordForms.source }
 
   if (pool.length === 0) {
     return (
-      <Layout back title="Muodot">
-        <div className="space-y-4">
-          <FilterTag />
-          <EmptyState title="Ei harjoituksia" />
-        </div>
-      </Layout>
+      <Page {...frame}>
+        <EmptyState title="Ei harjoituksia" />
+      </Page>
     )
   }
   if (!task) return null
@@ -142,48 +194,44 @@ function WordFormsPractice() {
   if (!step) {
     const correctCount = steps.filter((s, i) => answers[i] === s.answer).length
     return (
-      <Layout back title="Muodot" right={rightText} progress={progress}>
-        <div className="space-y-4">
-          <FilterTag />
-
-          <div className="rounded-2xl border border-line bg-card p-6">
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
-              <div className="mt-1 text-sm text-muted">{item.fi}</div>
-              <div className="mt-3 text-sm font-semibold text-ink">
-                {correctCount}/{steps.length} oikein
-              </div>
+      <Page right={rightText} progress={progress} {...frame}>
+        <div className="rounded-2xl border border-line bg-card p-6">
+          <div className="text-center">
+            <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
+            <div className="mt-1 text-sm text-muted">{item.fi}</div>
+            <div className="mt-3 text-sm font-semibold text-ink">
+              {correctCount}/{steps.length} oikein
             </div>
-
-            <ul className="mt-4 divide-y divide-line">
-              {steps.map((s, i) => {
-                const ok = answers[i] === s.answer
-                return (
-                  <li key={s.key} className="flex items-center justify-between gap-3 py-2">
-                    <span className="text-sm text-muted">{STEP_LABEL[s.key].title}</span>
-                    <span className="text-right">
-                      <span className={`font-semibold ${ok ? 'text-learned' : 'text-wrong'}`}>
-                        {ok ? '✓' : '✗'} {s.answer}
-                      </span>
-                      {!ok && (
-                        <span className="block text-xs text-muted">valitsit: {answers[i]}</span>
-                      )}
-                    </span>
-                  </li>
-                )
-              })}
-            </ul>
           </div>
 
-          <button
-            type="button"
-            onClick={nextWord}
-            className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
-          >
-            Seuraava sana
-          </button>
+          <ul className="mt-4 divide-y divide-line">
+            {steps.map((s, i) => {
+              const ok = answers[i] === s.answer
+              return (
+                <li key={s.key} className="flex items-center justify-between gap-3 py-2">
+                  <span className="text-sm text-muted">{STEP_LABEL[s.key].title}</span>
+                  <span className="text-right">
+                    <span className={`font-semibold ${ok ? 'text-learned' : 'text-wrong'}`}>
+                      {ok ? '✓' : '✗'} {s.answer}
+                    </span>
+                    {!ok && (
+                      <span className="block text-xs text-muted">valitsit: {answers[i]}</span>
+                    )}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-      </Layout>
+
+        <button
+          type="button"
+          onClick={nextWord}
+          className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+        >
+          Seuraava sana
+        </button>
+      </Page>
     )
   }
 
@@ -191,65 +239,61 @@ function WordFormsPractice() {
   const answered = selected !== undefined
 
   return (
-    <Layout back title="Muodot" right={rightText} progress={progress}>
-      <div className="space-y-4">
-        <FilterTag />
-
-        <div className="rounded-2xl border border-line bg-card p-6 text-center">
-          <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-            {STEP_LABEL[step.key].title} · {stepIndex + 1}/{steps.length}
-          </div>
-          <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
-          <div className="mt-1 text-sm text-muted">{item.fi}</div>
-          {stepCue(step, item) && (
-            <div className="mt-3 text-base italic text-ink">{stepCue(step, item)}</div>
-          )}
+    <Page right={rightText} progress={progress} {...frame}>
+      <div className="rounded-2xl border border-line bg-card p-6 text-center">
+        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
+          {STEP_LABEL[step.key].title} · {stepIndex + 1}/{steps.length}
         </div>
-
-        {/* Options: the word's own forms, with immediate correct/wrong feedback. */}
-        <div className="grid gap-2">
-          {step.options.map((opt) => {
-            const isCorrect = opt === step.answer
-            const isChosen = opt === selected
-            let style = 'border-line bg-card text-ink active:bg-bg'
-            if (answered && isCorrect) style = 'border-learned bg-learned-soft text-learned'
-            else if (answered && isChosen) style = 'border-wrong bg-card text-wrong'
-            else if (answered) style = 'border-line bg-card text-muted'
-            return (
-              <button
-                key={opt}
-                type="button"
-                onClick={() => choose(opt)}
-                disabled={answered}
-                className={`touch-target rounded-xl border px-4 py-3 text-center text-lg font-semibold transition-colors ${style}`}
-              >
-                {opt}
-              </button>
-            )
-          })}
-        </div>
-
-        {/* Feedback + continue */}
-        {answered && (
-          <div>
-            <p
-              className={
-                'mb-3 text-center font-semibold ' +
-                (selected === step.answer ? 'text-learned' : 'text-wrong')
-              }
-            >
-              {selected === step.answer ? 'Oikein!' : `Oikea vastaus: ${step.answer}`}
-            </p>
-            <button
-              type="button"
-              onClick={continueStep}
-              className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
-            >
-              Jatka
-            </button>
-          </div>
+        <div className="font-display text-3xl font-bold text-ink">{promptFor(item)}</div>
+        <div className="mt-1 text-sm text-muted">{item.fi}</div>
+        {stepCue(step, item) && (
+          <div className="mt-3 text-base italic text-ink">{stepCue(step, item)}</div>
         )}
       </div>
-    </Layout>
+
+      {/* Options: the word's own forms, with immediate correct/wrong feedback. */}
+      <div className="grid gap-2">
+        {step.options.map((opt) => {
+          const isCorrect = opt === step.answer
+          const isChosen = opt === selected
+          let style = 'border-line bg-card text-ink active:bg-bg'
+          if (answered && isCorrect) style = 'border-learned bg-learned-soft text-learned'
+          else if (answered && isChosen) style = 'border-wrong bg-card text-wrong'
+          else if (answered) style = 'border-line bg-card text-muted'
+          return (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => choose(opt)}
+              disabled={answered}
+              className={`touch-target rounded-xl border px-4 py-3 text-center text-lg font-semibold transition-colors ${style}`}
+            >
+              {opt}
+            </button>
+          )
+        })}
+      </div>
+
+      {/* Feedback + continue */}
+      {answered && (
+        <div>
+          <p
+            className={
+              'mb-3 text-center font-semibold ' +
+              (selected === step.answer ? 'text-learned' : 'text-wrong')
+            }
+          >
+            {selected === step.answer ? 'Oikein!' : `Oikea vastaus: ${step.answer}`}
+          </p>
+          <button
+            type="button"
+            onClick={continueStep}
+            className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+          >
+            Jatka
+          </button>
+        </div>
+      )}
+    </Page>
   )
 }

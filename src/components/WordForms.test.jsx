@@ -197,6 +197,63 @@ describe('WordForms practice', () => {
     expect(screen.getByText(second, { selector: 'div' })).toBeInTheDocument()
   })
 
+  it('narrows practice to verbs or nouns with the kind toggle', () => {
+    mock.svWordForms = withWords({ verbs: [ga], nouns: [helg] })
+    renderForms()
+    expect(screen.getByRole('button', { name: 'Kaikki' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('0/2')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
+    expect(screen.getByRole('button', { name: 'Verbit' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('att gå')).toBeInTheDocument()
+    expect(screen.getByText('0/1')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Substantiivit' }))
+    expect(screen.getByText('helg')).toBeInTheDocument()
+    expect(screen.getByText('en vai ett? · 1/4')).toBeInTheDocument()
+  })
+
+  it('keeps the toggle visible when a kind has no words, so it can be switched back', () => {
+    mock.svWordForms = withWords({ verbs: [ga] })
+    renderForms()
+    fireEvent.click(screen.getByRole('button', { name: 'Substantiivit' }))
+    expect(screen.getByText('Ei harjoituksia')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
+    expect(screen.getByText('att gå')).toBeInTheDocument()
+  })
+
+  it('credits SALDO with a link from the data source (question, summary and empty views)', () => {
+    const source = {
+      name: 'SALDO, Språkbanken Text, Göteborgs universitet',
+      license: 'CC BY 4.0',
+      url: 'https://spraakbanken.gu.se/en/resources/saldom',
+    }
+    mock.svWordForms = { ...withWords({ nouns: [sjukvard] }), source }
+    renderForms()
+
+    const credit = () =>
+      screen.getByRole('link', {
+        name: 'Taivutusmuodot: SALDO, Språkbanken Text, Göteborgs universitet (CC BY 4.0)',
+      })
+    expect(credit()).toHaveAttribute('href', source.url)
+    expect(credit()).toHaveAttribute('target', '_blank')
+    expect(credit()).toHaveAttribute('rel', 'noreferrer')
+
+    // Summary view.
+    for (const text of ['en', 'sjukvården']) {
+      fireEvent.click(screen.getByRole('button', { name: text }))
+      fireEvent.click(screen.getByRole('button', { name: 'Jatka' }))
+    }
+    expect(screen.getByText('2/2 oikein')).toBeInTheDocument()
+    expect(credit()).toBeInTheDocument()
+
+    // Empty view.
+    fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
+    expect(screen.getByText('Ei harjoituksia')).toBeInTheDocument()
+    expect(credit()).toBeInTheDocument()
+  })
+
   it('shows the empty state when there are no words', () => {
     mock.svWordForms = withWords({})
     renderForms()

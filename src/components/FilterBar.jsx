@@ -103,8 +103,9 @@ export default function FilterBar() {
   )
 }
 
-// A single area pill (single-choice). Active = filled accent.
-function Pill({ active, onClick, children }) {
+// A single area pill (single-choice). Active = filled accent. Also used by
+// the Muodot word-kind toggle.
+export function Pill({ active, onClick, children }) {
   return (
     <button
       type="button"
