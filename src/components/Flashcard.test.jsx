@@ -1,12 +1,23 @@
 // @vitest-environment jsdom
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { screen, fireEvent } from '@testing-library/react'
 import { renderWithProviders } from '../test/renderWithProviders'
 import Flashcard from './Flashcard'
+import { STORAGE_KEYS } from '../lib/storageKeys'
+
+// Every session starts from the size picker; "Aloita" builds it. Default 20.
+function renderSession(size = 20) {
+  const utils = renderWithProviders(<Flashcard />)
+  if (size !== 20) fireEvent.click(screen.getByRole('button', { name: String(size) }))
+  fireEvent.click(screen.getByRole('button', { name: /^Aloita/ }))
+  return utils
+}
+
+beforeEach(() => localStorage.clear())
 
 describe('Flashcard (integration)', () => {
   it('shows the Swedish side first and flips on tap', () => {
-    const { container } = renderWithProviders(<Flashcard />)
+    const { container } = renderSession()
 
     // Front is showing: the "Svenska" label + the flip hint.
     expect(screen.getByText('Svenska')).toBeInTheDocument()
@@ -23,7 +34,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('records a correct answer to spaced-repetition storage when "Oikein" is clicked', () => {
-    renderWithProviders(<Flashcard />)
+    renderSession()
 
     fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
 
@@ -39,7 +50,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('records a wrong answer (weight goes up) when "Väärin" is clicked', () => {
-    renderWithProviders(<Flashcard />)
+    renderSession()
     fireEvent.click(screen.getByRole('button', { name: 'Väärin' }))
     const entries = Object.values(JSON.parse(localStorage.getItem('srs-data-v1:sv')))
     expect(entries[0].timesWrong).toBe(1)
@@ -47,7 +58,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('shows the next card front-first after answering (no flipped answer leaks)', () => {
-    const { container } = renderWithProviders(<Flashcard />)
+    const { container } = renderSession()
 
     // Flip the current card to its answer side...
     const card = container.querySelector('.cursor-grab')
@@ -62,7 +73,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('ends the session after 20 cards and shows the result screen', () => {
-    const { container } = renderWithProviders(<Flashcard />)
+    const { container } = renderSession()
 
     for (let i = 0; i < 20; i++) {
       fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
@@ -73,7 +84,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('lists every word from the session on the result screen with its translation and result', () => {
-    const { container } = renderWithProviders(<Flashcard />)
+    const { container } = renderSession()
 
     fireEvent.click(screen.getByRole('button', { name: 'Väärin' }))
     for (let i = 0; i < 19; i++) {
@@ -89,7 +100,7 @@ describe('Flashcard (integration)', () => {
   })
 
   it('links back to the app menu from the result screen', () => {
-    renderWithProviders(<Flashcard />)
+    renderSession()
 
     for (let i = 0; i < 20; i++) {
       fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
@@ -97,5 +108,47 @@ describe('Flashcard (integration)', () => {
 
     const link = screen.getByRole('link', { name: 'Valikkoon' })
     expect(link).toHaveAttribute('href', '/app')
+  })
+
+  it('shows the size picker first and does not start a session by itself', () => {
+    renderWithProviders(<Flashcard />)
+    expect(screen.getByText('Montako korttia?')).toBeInTheDocument()
+    expect(screen.queryByText('Napauta kääntääksesi')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Oikein' })).not.toBeInTheDocument()
+    // First visit: 20 is preselected.
+    expect(screen.getByRole('button', { name: '20' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('runs a session of the chosen size and remembers it for next time', () => {
+    const { container, unmount } = renderSession(5)
+    expect(screen.getByText('1/5')).toBeInTheDocument()
+    for (let i = 0; i < 5; i++) fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+    expect(screen.getByText('Sanakortit — tulos')).toBeInTheDocument()
+    expect(container.querySelectorAll('ul li')).toHaveLength(5)
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEYS.flashcardSessionSize))).toBe(5)
+    unmount()
+
+    // Next visit: the picker again, with 5 preselected.
+    renderWithProviders(<Flashcard />)
+    expect(screen.getByRole('button', { name: '5' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: '20' })).toHaveAttribute('aria-pressed', 'false')
+  })
+
+  it('does not remember a size that was only tapped, not started', () => {
+    renderWithProviders(<Flashcard />)
+    fireEvent.click(screen.getByRole('button', { name: '10' }))
+    expect(localStorage.getItem(STORAGE_KEYS.flashcardSessionSize)).toBeNull()
+  })
+
+  it('starts over from the size picker with "Uusi sessio"', () => {
+    renderSession(5)
+    for (let i = 0; i < 5; i++) fireEvent.click(screen.getByRole('button', { name: 'Oikein' }))
+
+    fireEvent.click(screen.getByRole('button', { name: 'Uusi sessio' }))
+    expect(screen.getByText('Montako korttia?')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '5' })).toHaveAttribute('aria-pressed', 'true')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Aloita (5 korttia)' }))
+    expect(screen.getByText('1/5')).toBeInTheDocument()
   })
 })
