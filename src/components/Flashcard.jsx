@@ -4,19 +4,24 @@ import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
+import { useSessionSize } from '../hooks/useSessionSize'
+import { STORAGE_KEYS } from '../lib/storageKeys'
 import { ROUTES } from '../lib/routes'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
 import SwipeableCard from './SwipeableCard'
 import EmptyState from './EmptyState'
+import SessionSizePicker from './SessionSizePicker'
 
 // -----------------------------------------------------------------------------
 // Sanakortit (Flashcards) module
 // -----------------------------------------------------------------------------
-// A limited, weighted SESSION of (up to) 20 cards is built up front (see
-// src/lib/sessionLogic.js): mostly difficult/old cards, a couple of learned
-// ones so they keep cycling in, and a couple of never-seen cards (more if the
-// other two buckets can't fill the session). Shows a word in the target
+// Before every session the user picks its size (5/10/15/20, last choice
+// remembered, see SessionSizePicker); nothing starts until "Aloita". A
+// limited, weighted SESSION of that many cards is then built up front (see
+// src/lib/sessionLogic.js): mostly difficult/old cards, a few learned ones so
+// they keep cycling in, and a few never-seen cards (more if the other two
+// buckets can't fill the session). Shows a word in the target
 // language; tap to flip (a real 3D flip) to the Finnish meaning + example.
 // Then mark whether you knew it: Oikein / Väärin — via the buttons OR by
 // swiping (right = Oikein, left = Väärin).
@@ -34,20 +39,36 @@ export default function Flashcard() {
 
   const pool = useMemo(() => filterItems(content.vocabulary), [filterItems, content])
 
+  const [sessionSize, setSessionSize] = useSessionSize(STORAGE_KEYS.flashcardSessionSize, 20)
   const [session, setSession] = useState([])
   const [index, setIndex] = useState(0)
   const [flipped, setFlipped] = useState(false)
-  const [phase, setPhase] = useState('practice')
+  const [phase, setPhase] = useState('select') // 'select' | 'practice' | 'result'
   const [results, setResults] = useState([])
 
-  useEffect(() => {
-    setSession(buildSession(pool))
+  // A changed filter (or a finished session) goes back to the size picker;
+  // a session is only ever built by "Aloita".
+  function backToSelect() {
+    setSession([])
     setIndex(0)
     setFlipped(false)
-    setPhase('practice')
+    setPhase('select')
     setResults([])
+  }
+
+  useEffect(() => {
+    backToSelect()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool])
+
+  function startSession(size) {
+    setSessionSize(size)
+    setSession(buildSession(pool, size))
+    setIndex(0)
+    setFlipped(false)
+    setResults([])
+    setPhase('practice')
+  }
 
   const current = session[index] ?? null
 
@@ -81,8 +102,25 @@ export default function Flashcard() {
     )
   }
 
+  if (phase === 'select') {
+    return (
+      <Layout back title="Sanakortit">
+        <div className="space-y-4">
+          <FilterTag />
+          <SessionSizePicker
+            title="Montako korttia?"
+            unit="korttia"
+            initialSize={sessionSize}
+            available={pool.length}
+            onStart={startSession}
+          />
+        </div>
+      </Layout>
+    )
+  }
+
   if (phase === 'result') {
-    return <SessionResultScreen results={results} />
+    return <SessionResultScreen results={results} onNewSession={backToSelect} />
   }
 
   if (!current) return null
@@ -163,7 +201,7 @@ export default function Flashcard() {
   )
 }
 
-function SessionResultScreen({ results }) {
+function SessionResultScreen({ results, onNewSession }) {
   const total = results.length
   const correctCount = results.filter((r) => r.correct).length
   const wrongCount = total - correctCount
@@ -209,9 +247,17 @@ function SessionResultScreen({ results }) {
           </ul>
         </div>
 
+        {/* New session -> back to the size picker (remembered size preselected). */}
+        <button
+          type="button"
+          onClick={onNewSession}
+          className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+        >
+          Uusi sessio
+        </button>
         <Link
           to={ROUTES.app}
-          className="touch-target block w-full rounded-xl bg-accent py-3 text-center font-semibold text-white active:brightness-95"
+          className="touch-target block w-full rounded-xl border border-line bg-card py-3 text-center font-semibold text-ink active:bg-bg"
         >
           Valikkoon
         </Link>

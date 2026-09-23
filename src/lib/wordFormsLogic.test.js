@@ -10,6 +10,8 @@ import {
   aggregateWordState,
   wordStateMap,
   itemsOfKind,
+  wordResult,
+  sessionSummary,
 } from './wordFormsLogic'
 
 const identity = (arr) => arr
@@ -167,5 +169,40 @@ describe('itemsOfKind', () => {
 
   it('returns nothing for a language without word forms', () => {
     expect(itemsOfKind(null, 'all')).toEqual([])
+  })
+})
+
+describe('wordResult', () => {
+  const steps = buildSteps(ga, identity) // presens går, preteritum gick, supinum gått
+
+  it('counts the steps answered right', () => {
+    expect(wordResult(steps, ['går', 'gått', 'gått'])).toEqual({ correct: 2, total: 3 })
+  })
+
+  it('treats unanswered steps as wrong', () => {
+    expect(wordResult(steps, ['går'])).toEqual({ correct: 1, total: 3 })
+  })
+})
+
+describe('sessionSummary', () => {
+  it('splits words into fully right, partly right and all wrong', () => {
+    const summary = sessionSummary([
+      { correct: 3, total: 3 },
+      { correct: 2, total: 2 },
+      { correct: 1, total: 4 },
+      { correct: 0, total: 3 },
+    ])
+    expect(summary).toEqual({
+      words: 4,
+      perfect: 2,
+      partial: 1,
+      missed: 1,
+      correctSteps: 6,
+      totalSteps: 12,
+    })
+  })
+
+  it('is all zeros for an empty session', () => {
+    expect(sessionSummary([])).toMatchObject({ words: 0, perfect: 0, correctSteps: 0, totalSteps: 0 })
   })
 })

@@ -11,12 +11,14 @@ logged-in users. The in-app UI is in Finnish.
 
 - **Five practice modules:**
   - **Sanakortit** (Flashcards) — flip card, 3-level self-assessment, swipe
-    gestures, sessions limited to a weighted 20-card batch
+    gestures, weighted sessions of a chosen size (5/10/15/20, last choice remembered)
   - **Fraasipankki** (Phrase bank) — tap-to-reveal, filterable by topic
   - **Muodot** (Word forms) — Swedish inflection chains step by step (verbs:
     presens → preteritum → supinum; nouns: en/ett → definite → plural), multiple
     choice among the word's own forms; each form is its own spaced-repetition card.
-    Inflection data from SALDO (Språkbanken Text, CC BY 4.0), see `NOTICE`
+    Inflection data from SALDO (Språkbanken Text, CC BY 4.0), see `NOTICE`.
+    Practised in sessions of a chosen number of words (5/10/15/20) with a
+    session result screen
   - **Kirjoitus** (Writing) — prompt → own answer → model answer to compare against
   - **Quiz** — multiple choice + fill-in-the-blank, feedback at the end of the session
 - A weighted spaced-repetition system decides which items come up more often:
