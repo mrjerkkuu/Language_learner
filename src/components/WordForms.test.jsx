@@ -51,14 +51,17 @@ const sjukvard = {
 
 const withWords = ({ verbs = [], nouns = [] }) => ({ source: {}, verbs, nouns })
 
-function renderForms() {
-  return renderWithProviders(
+// Renders Muodot and, by default, starts a session from the size picker.
+function renderForms({ start = true } = {}) {
+  const utils = renderWithProviders(
     <Routes>
       <Route path={ROUTES.app} element={<div>Etusivu</div>} />
       <Route path={ROUTES.forms} element={<WordForms />} />
     </Routes>,
     { route: ROUTES.forms },
   )
+  if (start) fireEvent.click(screen.getByRole('button', { name: /^Aloita/ }))
+  return utils
 }
 
 beforeEach(() => {
@@ -70,7 +73,7 @@ beforeEach(() => {
 describe('WordForms route guard', () => {
   it('redirects to the home page when the language has no word forms', () => {
     localStorage.setItem(STORAGE_KEYS.language, JSON.stringify('en'))
-    renderForms()
+    renderForms({ start: false })
     expect(screen.getByText('Etusivu')).toBeInTheDocument()
   })
 })
@@ -172,16 +175,14 @@ describe('WordForms practice', () => {
     expect(screen.getByText('✗ gick')).toBeInTheDocument()
     expect(screen.getByText('valitsit: gått')).toBeInTheDocument()
     expect(screen.getByText('✓ gått')).toBeInTheDocument()
-    // The finished word counts in the header progress.
+    // Header shows the word's place in the session (1 of 1).
     expect(screen.getByText('1/1')).toBeInTheDocument()
-
-    // Next word starts again from step 1 (only one word in the pool here).
-    fireEvent.click(screen.getByRole('button', { name: 'Seuraava sana' }))
-    expect(screen.getByText('Preesens · 1/3')).toBeInTheDocument()
-    expect(screen.queryByText('Oikein!')).not.toBeInTheDocument()
+    // Last word of the session -> the button leads to the session result.
+    expect(screen.getByRole('button', { name: 'Näytä tulos' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Seuraava sana' })).not.toBeInTheDocument()
   })
 
-  it('does not repeat the word just practised when others are available', () => {
+  it('moves on to the other word of the session with "Seuraava sana"', () => {
     mock.svWordForms = withWords({ verbs: [ga], nouns: [sjukvard] })
     renderForms()
 
@@ -197,30 +198,29 @@ describe('WordForms practice', () => {
     expect(screen.getByText(second, { selector: 'div' })).toBeInTheDocument()
   })
 
-  it('narrows practice to verbs or nouns with the kind toggle', () => {
+  it('picks the word set (Kaikki sanat / Verbit / Substantiivit) before the session', () => {
     mock.svWordForms = withWords({ verbs: [ga], nouns: [helg] })
-    renderForms()
+    renderForms({ start: false })
     expect(screen.getByRole('button', { name: 'Kaikki sanat' })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByText('0/2')).toBeInTheDocument()
+    expect(screen.getByText('Valittavissa 2 – sessiossa kaikki 2')).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
     expect(screen.getByRole('button', { name: 'Verbit' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('Valittavissa 1 – sessiossa kaikki 1')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Aloita (1 sanaa)' }))
     expect(screen.getByText('att gå')).toBeInTheDocument()
-    expect(screen.getByText('0/1')).toBeInTheDocument()
-
-    fireEvent.click(screen.getByRole('button', { name: 'Substantiivit' }))
-    expect(screen.getByText('helg')).toBeInTheDocument()
-    expect(screen.getByText('en vai ett? · 1/4')).toBeInTheDocument()
+    // The toggle is part of the setup, not shown during practice.
+    expect(screen.queryByRole('button', { name: 'Substantiivit' })).not.toBeInTheDocument()
   })
 
   it('keeps the toggle visible when a kind has no words, so it can be switched back', () => {
     mock.svWordForms = withWords({ verbs: [ga] })
-    renderForms()
+    renderForms({ start: false })
     fireEvent.click(screen.getByRole('button', { name: 'Substantiivit' }))
     expect(screen.getByText('Ei harjoituksia')).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
-    expect(screen.getByText('att gå')).toBeInTheDocument()
+    expect(screen.getByText('Montako sanaa?')).toBeInTheDocument()
   })
 
   it('credits SALDO with a link from the data source (question, summary and empty views)', () => {
@@ -248,15 +248,90 @@ describe('WordForms practice', () => {
     expect(screen.getByText('2/2 oikein')).toBeInTheDocument()
     expect(credit()).toBeInTheDocument()
 
-    // Empty view.
-    fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
-    expect(screen.getByText('Ei harjoituksia')).toBeInTheDocument()
+    // Session result view.
+    fireEvent.click(screen.getByRole('button', { name: 'Näytä tulos' }))
     expect(credit()).toBeInTheDocument()
   })
 
   it('shows the empty state when there are no words', () => {
     mock.svWordForms = withWords({})
-    renderForms()
+    renderForms({ start: false })
     expect(screen.getByText('Ei harjoituksia')).toBeInTheDocument()
+  })
+})
+
+describe('WordForms sessions', () => {
+  // Answers per word prompt: ga all right (3/3), helg partly (2/4), sjukvård all wrong (0/2).
+  const ANSWERS = {
+    'att gå': ['går', 'gick', 'gått'],
+    helg: ['en', 'helgen', 'helgerna', 'helger'],
+    sjukvård: ['ett', 'sjukvård'],
+  }
+  const currentPrompt = () =>
+    Object.keys(ANSWERS).find((p) => screen.queryByText(p, { selector: 'div' }))
+
+  // Answer every step of the word on screen, then press its summary button.
+  function finishWord() {
+    for (const text of ANSWERS[currentPrompt()]) {
+      fireEvent.click(screen.getByRole('button', { name: text }))
+      fireEvent.click(screen.getByRole('button', { name: 'Jatka' }))
+    }
+  }
+
+  it('opens on the size picker with 10 words preselected and does not start by itself', () => {
+    mock.svWordForms = withWords({ verbs: [ga], nouns: [helg] })
+    renderForms({ start: false })
+    expect(screen.getByText('Montako sanaa?')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '10' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.queryByText(/· 1\//)).not.toBeInTheDocument() // no step card yet
+  })
+
+  it('runs a session word by word and sums it up by words and answers', () => {
+    mock.svWordForms = withWords({ verbs: [ga], nouns: [helg, sjukvard] })
+    renderForms({ start: false })
+    fireEvent.click(screen.getByRole('button', { name: '5' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Aloita (3 sanaa)' }))
+
+    expect(screen.getByText('1/3')).toBeInTheDocument()
+    finishWord()
+    fireEvent.click(screen.getByRole('button', { name: 'Seuraava sana' }))
+    expect(screen.getByText('2/3')).toBeInTheDocument()
+    finishWord()
+    fireEvent.click(screen.getByRole('button', { name: 'Seuraava sana' }))
+    expect(screen.getByText('3/3')).toBeInTheDocument()
+    finishWord()
+    fireEvent.click(screen.getByRole('button', { name: 'Näytä tulos' }))
+
+    expect(screen.getByText('Muodot — tulos')).toBeInTheDocument()
+    expect(screen.getByText('Sanat kokonaan oikein')).toBeInTheDocument()
+    expect(screen.getByText('Vastauksista oikein 5/9')).toBeInTheDocument()
+    const tile = (label) => screen.getByText(label).previousSibling.textContent
+    expect(tile('kokonaan oikein')).toBe('1')
+    expect(tile('osittain')).toBe('1')
+    expect(tile('kokonaan väärin')).toBe('1')
+
+    // Every word with its steps-right count.
+    const row = (prompt) => screen.getByText(prompt, { selector: 'span' }).closest('li').textContent
+    expect(row('att gå')).toContain('3/3')
+    expect(row('helg')).toContain('2/4')
+    expect(row('sjukvård')).toContain('0/2')
+    expect(screen.getByRole('link', { name: 'Valikkoon' })).toHaveAttribute('href', '/app')
+  })
+
+  it('remembers its own size, separate from Sanakortit, and starts over with "Uusi sessio"', () => {
+    localStorage.setItem(STORAGE_KEYS.flashcardSessionSize, JSON.stringify(20))
+    mock.svWordForms = withWords({ verbs: [ga] })
+    renderForms({ start: false })
+    fireEvent.click(screen.getByRole('button', { name: '5' }))
+    fireEvent.click(screen.getByRole('button', { name: /^Aloita/ }))
+    finishWord()
+    fireEvent.click(screen.getByRole('button', { name: 'Näytä tulos' }))
+
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEYS.formsSessionSize))).toBe(5)
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEYS.flashcardSessionSize))).toBe(20)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Uusi sessio' }))
+    expect(screen.getByText('Montako sanaa?')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '5' })).toHaveAttribute('aria-pressed', 'true')
   })
 })

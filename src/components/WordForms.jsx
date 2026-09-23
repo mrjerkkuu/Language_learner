@@ -1,16 +1,26 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useSpacedRepetition } from '../hooks/useSpacedRepetition'
 import { useActivityLog } from '../hooks/useActivityLog'
+import { useSessionSize } from '../hooks/useSessionSize'
 import Layout from './Layout'
 import FilterTag from './FilterTag'
 import { Pill } from './FilterBar'
 import EmptyState from './EmptyState'
+import SessionSizePicker from './SessionSizePicker'
 import { ROUTES } from '../lib/routes'
-import { pickNext } from '../lib/srLogic'
-import { buildSteps, itemsOfKind, wordKind, wordStateMap } from '../lib/wordFormsLogic'
+import { STORAGE_KEYS } from '../lib/storageKeys'
+import { buildSession } from '../lib/sessionLogic'
+import {
+  buildSteps,
+  itemsOfKind,
+  sessionSummary,
+  wordKind,
+  wordResult,
+  wordStateMap,
+} from '../lib/wordFormsLogic'
 
 // -----------------------------------------------------------------------------
 // Muodot (Word forms) module
@@ -21,9 +31,14 @@ import { buildSteps, itemsOfKind, wordKind, wordStateMap } from '../lib/wordForm
 //   - noun: en/ett -> definite singular (-> plural -> definite plural)
 // Each step is multiple choice among the word's OWN forms, with immediate
 // feedback, and is recorded as its own spaced-repetition card
-// (`<item id>:<step>`). Words are picked by srLogic.pickNext over a per-word
-// state aggregated from those cards, so a weak form brings its word back.
-// See src/lib/wordFormsLogic.js.
+// (`<item id>:<step>`).
+//
+// Practice runs in SESSIONS: the user first picks how many WORDS (5/10/15/20,
+// last choice remembered per module; default 10) and the word set (Kaikki
+// sanat / Verbit / Substantiivit). "Aloita" builds the session with
+// sessionLogic.buildSession over a per-word state aggregated from the step
+// cards, so the hardest form decides how likely a word is. After the last
+// word a session result screen sums up the words. See src/lib/wordFormsLogic.js.
 // -----------------------------------------------------------------------------
 
 // Instruction + a short Swedish cue per step. `{article}` is filled per noun.
@@ -84,14 +99,23 @@ function SourceCredit({ source }) {
   )
 }
 
-// Shared frame for every Muodot view: filter tag and kind toggle on top,
-// source credit at the bottom.
-function Page({ right = null, progress = null, kind, onKind, source, children }) {
+// Shared frame for every Muodot view: filter tag on top (plus the kind toggle
+// before a session starts), source credit at the bottom.
+function Page({
+  title = 'Muodot',
+  right = null,
+  progress = null,
+  showKind = false,
+  kind,
+  onKind,
+  source,
+  children,
+}) {
   return (
-    <Layout back title="Muodot" right={right} progress={progress}>
+    <Layout back title={title} right={right} progress={progress}>
       <div className="space-y-4">
         <FilterTag />
-        <KindToggle kind={kind} onChange={onKind} />
+        {showKind && <KindToggle kind={kind} onChange={onKind} />}
         {children}
         <SourceCredit source={source} />
       </div>
@@ -123,16 +147,17 @@ function WordFormsPractice() {
     [filterItems, content, kind],
   )
 
+  const [sessionSize, setSessionSize] = useSessionSize(STORAGE_KEYS.formsSessionSize, 10)
+  const [phase, setPhase] = useState('select') // 'select' | 'practice' | 'result'
+  const [session, setSession] = useState([]) // the session's words, in order
+  const [wordIndex, setWordIndex] = useState(0)
+  const [results, setResults] = useState([]) // [{ item, correct, total }] per finished word
+
   // task = { item, steps } — steps (with shuffled options) are built once per
   // word so options don't reshuffle on re-render.
   const [task, setTask] = useState(null)
   const [stepIndex, setStepIndex] = useState(0)
   const [answers, setAnswers] = useState([])
-  const [reviewed, setReviewed] = useState(0)
-
-  function pickWord(excludeId = null) {
-    return pickNext(wordStateMap(getState, pool), pool, { excludeId })
-  }
 
   function startTask(item) {
     setTask(item ? { item, steps: buildSteps(item) } : null)
@@ -140,15 +165,30 @@ function WordFormsPractice() {
     setAnswers([])
   }
 
+  // A changed filter or word set (or a finished session) goes back to the size
+  // picker; a session is only ever built by "Aloita".
+  function backToSelect() {
+    setPhase('select')
+    setSession([])
+    setWordIndex(0)
+    setResults([])
+    startTask(null)
+  }
+
   useEffect(() => {
-    if (pool.length === 0) {
-      startTask(null)
-      return
-    }
-    if (!task || !pool.some((i) => i.id === task.item.id)) startTask(pickWord())
-    setReviewed(0)
+    backToSelect()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool])
+
+  function startSession(size) {
+    setSessionSize(size)
+    const words = buildSession(wordStateMap(getState, pool), pool, { size })
+    setSession(words)
+    setWordIndex(0)
+    setResults([])
+    startTask(words[0])
+    setPhase('practice')
+  }
 
   // Answer the current step: immediate feedback + its own SR card.
   function choose(option) {
@@ -158,37 +198,66 @@ function WordFormsPractice() {
     recordResult(current.cardId, option === current.answer)
   }
 
-  // Next step; after the last one the index moves past the end (summary view)
+  // Next step; after the last one the index moves past the end (word summary)
   // and the word counts as one practised item.
   function continueStep() {
     const next = stepIndex + 1
     setStepIndex(next)
     if (next === task.steps.length) {
       logActivity(1)
-      setReviewed((n) => n + 1)
+      setResults((prev) => [...prev, { item: task.item, ...wordResult(task.steps, answers) }])
     }
   }
 
-  const done = Math.min(reviewed, pool.length)
-  const rightText = pool.length ? `${done}/${pool.length}` : null
-  const progress = pool.length ? done / pool.length : null
+  // Next word of the session, or the session result after the last one.
+  function nextWord() {
+    if (wordIndex < session.length - 1) {
+      setWordIndex(wordIndex + 1)
+      startTask(session[wordIndex + 1])
+    } else {
+      setPhase('result')
+    }
+  }
+
   const frame = { kind, onKind: setKind, source: content.wordForms.source }
 
   if (pool.length === 0) {
     return (
-      <Page {...frame}>
+      <Page showKind {...frame}>
         <EmptyState title="Ei harjoituksia" />
       </Page>
     )
   }
+
+  if (phase === 'select') {
+    return (
+      <Page showKind {...frame}>
+        <SessionSizePicker
+          title="Montako sanaa?"
+          unit="sanaa"
+          initialSize={sessionSize}
+          available={pool.length}
+          onStart={startSession}
+        />
+      </Page>
+    )
+  }
+
+  if (phase === 'result') {
+    return (
+      <Page title="Muodot — tulos" source={content.wordForms.source}>
+        <SessionResult results={results} onNewSession={backToSelect} />
+      </Page>
+    )
+  }
+
   if (!task) return null
 
   const { item, steps } = task
   const step = steps[stepIndex]
-
-  function nextWord() {
-    startTask(pickWord(item.id))
-  }
+  const rightText = `${wordIndex + 1}/${session.length}`
+  const progress = results.length / session.length
+  const isLastWord = wordIndex === session.length - 1
 
   // Summary after the last step: the whole chain with what was right/wrong.
   if (!step) {
@@ -229,7 +298,7 @@ function WordFormsPractice() {
           onClick={nextWord}
           className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
         >
-          Seuraava sana
+          {isLastWord ? 'Näytä tulos' : 'Seuraava sana'}
         </button>
       </Page>
     )
@@ -295,5 +364,77 @@ function WordFormsPractice() {
         </div>
       )}
     </Page>
+  )
+}
+
+// Session result: how many WORDS went fully right, partly right or all wrong,
+// the answer total, and every word with its steps-right count. Same look as the
+// Sanakortit result screen.
+function SessionResult({ results, onNewSession }) {
+  const summary = sessionSummary(results)
+  const tone = ({ correct, total }) =>
+    correct === total ? 'text-learned' : correct === 0 ? 'text-wrong' : 'text-ink'
+
+  return (
+    <>
+      <div className="bg-motivation rounded-2xl p-6 text-center text-white">
+        <div className="text-xs font-semibold uppercase tracking-wider text-white/80">
+          Sanat kokonaan oikein
+        </div>
+        <div className="font-display text-5xl font-bold">
+          {summary.perfect}
+          <span className="text-2xl font-medium text-white/80">/{summary.words}</span>
+        </div>
+        <div className="mt-2 text-sm text-white/90">
+          Vastauksista oikein {summary.correctSteps}/{summary.totalSteps}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-2">
+        <div className="rounded-xl bg-card p-3 text-center ring-1 ring-line">
+          <div className="font-display text-2xl font-bold text-learned">{summary.perfect}</div>
+          <div className="text-xs text-muted">kokonaan oikein</div>
+        </div>
+        <div className="rounded-xl bg-card p-3 text-center ring-1 ring-line">
+          <div className="font-display text-2xl font-bold text-ink">{summary.partial}</div>
+          <div className="text-xs text-muted">osittain</div>
+        </div>
+        <div className="rounded-xl bg-card p-3 text-center ring-1 ring-line">
+          <div className="font-display text-2xl font-bold text-wrong">{summary.missed}</div>
+          <div className="text-xs text-muted">kokonaan väärin</div>
+        </div>
+      </div>
+
+      <div className="rounded-xl bg-card p-4 ring-1 ring-line">
+        <ul className="space-y-2">
+          {results.map((r) => (
+            <li key={r.item.id} className="flex items-center justify-between gap-3 text-sm">
+              <span>
+                <span className="font-semibold text-ink">{promptFor(r.item)}</span>
+                <span className="text-muted"> — {r.item.fi}</span>
+              </span>
+              <span className={`shrink-0 font-semibold ${tone(r)}`}>
+                {r.correct}/{r.total}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* New session -> back to the size picker (remembered size preselected). */}
+      <button
+        type="button"
+        onClick={onNewSession}
+        className="touch-target w-full rounded-xl bg-accent py-3 font-semibold text-white active:brightness-95"
+      >
+        Uusi sessio
+      </button>
+      <Link
+        to={ROUTES.app}
+        className="touch-target block w-full rounded-xl border border-line bg-card py-3 text-center font-semibold text-ink active:bg-bg"
+      >
+        Valikkoon
+      </Link>
+    </>
   )
 }

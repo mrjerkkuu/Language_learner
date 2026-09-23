@@ -75,3 +75,23 @@ export function itemsOfKind(wordForms, kind) {
   if (kind === 'nouns') return wordForms.nouns
   return [...wordForms.verbs, ...wordForms.nouns]
 }
+
+// One finished word: how many of its steps were answered right.
+export function wordResult(steps, answers) {
+  const correct = steps.filter((step, i) => answers[i] === step.answer).length
+  return { correct, total: steps.length }
+}
+
+// Session totals over finished words ([{ correct, total }, ...]):
+// words fully right / partly right / all wrong, plus answer counts.
+export function sessionSummary(results) {
+  const summary = { words: results.length, perfect: 0, partial: 0, missed: 0, correctSteps: 0, totalSteps: 0 }
+  for (const { correct, total } of results) {
+    if (correct === total) summary.perfect += 1
+    else if (correct === 0) summary.missed += 1
+    else summary.partial += 1
+    summary.correctSteps += correct
+    summary.totalSteps += total
+  }
+  return summary
+}
