@@ -13,7 +13,10 @@ logged-in users. The in-app UI is in Finnish.
   - **Sanakortit** (Flashcards) — flip card, 3-level self-assessment, swipe
     gestures, sessions limited to a weighted 20-card batch
   - **Fraasipankki** (Phrase bank) — tap-to-reveal, filterable by topic
-  - **Muodot** (Word forms) — multiple-choice drilling for articles/inflected forms
+  - **Muodot** (Word forms) — Swedish inflection chains step by step (verbs:
+    presens → preteritum → supinum; nouns: en/ett → definite → plural), multiple
+    choice among the word's own forms; each form is its own spaced-repetition card.
+    Inflection data from SALDO (Språkbanken Text, CC BY 4.0), see `NOTICE`
   - **Kirjoitus** (Writing) — prompt → own answer → model answer to compare against
   - **Quiz** — multiple choice + fill-in-the-blank, feedback at the end of the session
 - A weighted spaced-repetition system decides which items come up more often:
@@ -169,9 +172,6 @@ server/
 
 Full backlog tracked in `claude/tulevat-muutokset.md`. Near-term items:
 
-- **K3 — full word-form drilling** — extend the Muodot module from a light
-  article/inflection check to full conjugation/declension chains (e.g.
-  Swedish infinitiv→presens→preteritum→supinum).
 - **Phrase bank browsability at scale** — search/filter as the phrase count
   grows past what a scroll-down list handles well.
 - **Persistent phrase bank category chips** — keep the topic chips visible

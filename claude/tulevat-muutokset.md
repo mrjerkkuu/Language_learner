@@ -45,6 +45,34 @@ vain `PhraseBank.jsx`:ään, koska fraasimäärä (181+) hyötyy selailusta myö
 ilman aluevalintaa. `FilterBar.jsx` (Etusivu) ja Sanakortit säilyttävät
 alkuperäisen piilotussäännön.
 
+**K3 — Muodot: täysi taivutusharjoitus, ruotsi (VALMIS, haarassa
+`feat/k3-muodot`, ei vielä mainissa):** vanha kevyt Muodot (en/ett + muutama
+määräinen muoto) korvattu kokonaan.
+- *Harjoitus:* sana kysytään taivutusketjuna askel kerrallaan, monivalintana
+  sanan omista muodoista, ja palaute tulee heti. Verbit: preesens → imperfekti →
+  perfekti (supinum). Substantiivit: en/ett → määräinen muoto (→ monikko → määräinen
+  monikko, jos `askPlural`). Lopuksi yhteenveto koko ketjusta. Valinta
+  *Kaikki sanat / Verbit / Substantiivit* lisäksi osa- ja kategoriasuodattimen.
+- *SR-malli (välimuoto):* jokainen muoto on oma korttinsa (`<id>:<muoto>`, esim.
+  `wf-vb-v070:preteritum`), ja sana valitaan vaikeimman muodon painon mukaan
+  (`srLogic.pickNext` sellaisenaan, `src/lib/wordFormsLogic.js`). srLogiciin,
+  palvelimeen ja skeemaan ei tullut muutoksia. Vanhojen `wf-art-*`/`wf-def-*`-korttien
+  edistyminen jää orvoksi (hyväksytty).
+- *Data, SALDO-menetelmä:* taivutusmuodot haetaan SALDOsta (Språkbanken Text,
+  Göteborgs universitet, Karp v7 -rajapinta, CC BY 4.0) skriptillä
+  `scripts/fetch-saldo-forms.mjs` → `src/data/sv/wordForms.json` (`{ source, verbs,
+  nouns }`). Säännöt ovat testattuina puhtaina funktioina `src/lib/saldoForms.js`:ssä.
+  Ylläpitäjä ei osaa ruotsia, joten SALDOn yksiselitteiset osumat hyväksytään
+  automaattisesti ja osumattomat jätetään pois. Muotoja ei tarkisteta rivi riviltä,
+  ja jokaisella rivillä on SALDO-`lemgram`, jolla sen voi jäljittää lähteeseen.
+  Tulos: 235 verbiketjua (245 sanaston riviä) ja 163 substantiivia; pois jäi
+  2 verbiä ja 72 substantiivia (pääosin alojen nimiä, ammattinimikkeitä ja yhdyssanoja).
+  **Päivitys:** aja skripti uudelleen, kun sanasto muuttuu, ja pistokoe `--verify`-lipulla.
+- *Lähdemaininta:* `source`-kenttä datassa, `NOTICE`-tiedosto ja linkki Muodot-sivun
+  alalaidassa.
+- *Englanti:* Muodot piilotettu englannilta (ks. "Myöhempää harkintaa").
+- *Ei tehty:* session-rajaus Muodoille (jää K4:ään).
+
 ---
 
 ## Havaittu koodikonventio
@@ -54,39 +82,6 @@ alkuperäisen piilotussäännön.
 ---
 
 ## Jäljellä olevat korjaukset / parannukset
-
-### K3. Muodot-moduulin laajennus kattavaksi taivutusharjoitukseksi
-- Nykyinen Muodot on kevyt (en/ett + muutama muoto). Halutaan **täysi taivutus**:
-  - **Verbit:** perusmuoto → preesens → imperfekti (→ perfekti).
-    - Ruotsi: infinitiv / presens / preteritum / supinum (*att gå → går → gick → gått*).
-    - Englanti: base / present / past / past participle (*go → goes → went → gone*).
-  - **Substantiivit:** laajemmin (epämääräinen/määräinen, yksikkö/monikko).
-- Vaatii rikkaamman datamallin (`wordForms.json` / oma `verbs.json`) + tehtävätyypit per muoto.
-- UI samalla 2a-tyylillä; Muodot-moduulin alatila (artikkelit / substantiivit / verbit) tai
-  erillinen "Verbit"-tyyppi.
-- **Ajoituspäätös (sanaston uudelleenrakennuksen yhteydessä):** CV-verbit
-  (~200 kpl, cv_verbit.pdf) lisätään ensin Sanakortteina imperfektimuodossa
-  sellaisenaan, jotta ne ovat heti käytössä. K3-laajennus (täysi taivutussarja
-  infinitiivi→preesens→imperfekti→perfekti kaikille sanaluokille) tehdään
-  omana projektinaan Tailscale Funnel -julkaisun jälkeen — samoja 200 verbiä
-  voidaan silloin käyttää uudelleen täydellä taivutuksella.
-- **Tilanne (2026-09-23, haara `feat/k3-muodot`):** Vaihe A (data) valmis, vaihe B
-  (Muodot-UI + SR-malli) suunnitellaan erikseen. Haara yhdistetään mainiin vasta B:n jälkeen.
-  - **Rajaus:** vain ruotsi. Vanha kevyt Muodot korvataan kokonaan (ei rinnakkaista versiota).
-  - **Datalähde, SALDO-menetelmä:** taivutusmuodot haetaan SALDOsta (Språkbanken Text,
-    Göteborgs universitet, Karp v7 -rajapinta, CC BY 4.0) skriptillä
-    `scripts/fetch-saldo-forms.mjs` → `src/data/sv/wordForms.json` (`{ source, verbs, nouns }`).
-    Säännöt ovat testattuina puhtaina funktioina `src/lib/saldoForms.js`:ssä.
-  - **Periaate:** ylläpitäjä ei osaa ruotsia, joten SALDOn yksiselitteiset osumat hyväksytään
-    automaattisesti, ja osumattomat jätetään pois (ei yhdyssanasääntöä, ei käsin täydennystä).
-    Muotoja ei tarkisteta rivi riviltä. Jokaisella rivillä on SALDO-`lemgram`, jolla sen voi jäljittää lähteeseen.
-  - **Tulos:** 235 verbiketjua (245 sanaston riviä) ja 163 substantiivia (monikkoa kysytään 122:lta).
-    Pois jäi 2 verbiä ja 72 substantiivia (pääosin alojen nimiä, ammattinimikkeitä ja yhdyssanoja).
-  - **Lähdemaininta:** `source`-kenttä datassa, `NOTICE`-tiedosto ja Muodot-sivun alalinkki
-    (alalinkki toteutetaan vaiheessa B).
-  - **Englanti:** Muodot piilotettu englannilta (ks. "Myöhempää harkintaa").
-  - **Päivitys:** aja `node scripts/fetch-saldo-forms.mjs` uudelleen, kun sanasto muuttuu, ja pistokoe
-    `--verify`-lipulla.
 
 ### K4. Harjoittelusession koon rajaus (Sanakortit/Muodot/Kirjoitus/Quiz)
 - Nykyisin käyttäjä käy aina läpi **koko kategorian** kortit kerralla kaikissa
