@@ -4,6 +4,7 @@ import { LANGUAGES } from './languages'
 import { distractorsFrom } from '../lib/quizLogic'
 import { categoriesForPart } from '../lib/categoryFilter'
 import { wordFormItems } from '../lib/wordFormItems'
+import { buildSteps } from '../lib/wordFormsLogic'
 
 describe('contentService', () => {
   it('falls back to the default language for an unknown id', () => {
@@ -117,6 +118,16 @@ describe('word forms data: sv (SALDO)', () => {
     for (const v of wordForms.verbs) {
       for (const key of ['infinitiv', 'presens', 'preteritum', 'supinum']) {
         expect(v.forms[key], `${v.id} ${key}`).toBeTruthy()
+      }
+    }
+  })
+
+  it('yields a practice step list whose options always contain the answer', () => {
+    for (const item of items) {
+      for (const step of buildSteps(item)) {
+        expect(step.answer, step.cardId).toBeTruthy()
+        expect(step.options, step.cardId).toContain(step.answer)
+        expect(step.options.length, step.cardId).toBeGreaterThanOrEqual(2)
       }
     }
   })
