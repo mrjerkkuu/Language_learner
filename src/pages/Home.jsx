@@ -10,6 +10,7 @@ import FilterBar from '../components/FilterBar'
 import MotivationBar from '../components/MotivationBar'
 import StreakSheet from '../components/StreakSheet'
 import { ROUTES } from '../lib/routes'
+import { wordFormItems } from '../lib/wordFormItems'
 
 // -----------------------------------------------------------------------------
 // Home page (menu)
@@ -35,7 +36,7 @@ export default function Home() {
     { to: ROUTES.phrases, title: 'Fraasipankki', data: content.phrases },
     { to: ROUTES.writing, title: 'Kirjoitus', data: content.writingTasks },
     { to: ROUTES.quiz, title: 'Quiz', data: content.vocabulary },
-    { to: ROUTES.forms, title: 'Muodot', data: content.wordForms },
+    { to: ROUTES.forms, title: 'Muodot', data: wordFormItems(content.wordForms) },
   ]
 
   return (

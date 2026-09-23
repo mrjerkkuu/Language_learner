@@ -1,621 +1,6392 @@
-[
-  {
-    "id": "wf-art-v006",
-    "type": "article",
-    "prompt": "helg",
-    "fi": "viikonloppu",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 1,
-    "category": "smaprat"
+{
+  "source": {
+    "name": "SALDO, Språkbanken Text, Göteborgs universitet",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "url": "https://spraakbanken.gu.se/en/resources/saldom",
+    "retrieved": "2026-09-23",
+    "modified": "Valikoidut taivutusmuodot poimittu; muotoja ei muutettu"
   },
-  {
-    "id": "wf-art-v007",
-    "type": "article",
-    "prompt": "väder",
-    "fi": "sää",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 1,
-    "category": "smaprat"
-  },
-  {
-    "id": "wf-art-v008",
-    "type": "article",
-    "prompt": "fritid",
-    "fi": "vapaa-aika",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 1,
-    "category": "smaprat"
-  },
-  {
-    "id": "wf-art-v009",
-    "type": "article",
-    "prompt": "hobby",
-    "fi": "harrastus",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 1,
-    "category": "smaprat"
-  },
-  {
-    "id": "wf-art-v011",
-    "type": "article",
-    "prompt": "familj",
-    "fi": "perhe",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 1,
-    "category": "smaprat"
-  },
-  {
-    "id": "wf-art-v014",
-    "type": "article",
-    "prompt": "kurs",
-    "fi": "kurssi",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 4,
-    "category": "opiskelu"
-  },
-  {
-    "id": "wf-art-v015",
-    "type": "article",
-    "prompt": "yrkeshögskola",
-    "fi": "ammattikorkeakoulu",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 4,
-    "category": "opiskelu"
-  },
-  {
-    "id": "wf-art-v016",
-    "type": "article",
-    "prompt": "tentamen",
-    "fi": "tentti",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 4,
-    "category": "opiskelu"
-  },
-  {
-    "id": "wf-art-v017",
-    "type": "article",
-    "prompt": "lärare",
-    "fi": "opettaja",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 4,
-    "category": "opiskelu"
-  },
-  {
-    "id": "wf-art-v018",
-    "type": "article",
-    "prompt": "schema",
-    "fi": "lukujärjestys",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 4,
-    "category": "opiskelu"
-  },
-  {
-    "id": "wf-art-v019",
-    "type": "article",
-    "prompt": "arbete",
-    "fi": "työ",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v020",
-    "type": "article",
-    "prompt": "jobb",
-    "fi": "työ / duuni",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v021",
-    "type": "article",
-    "prompt": "möte",
-    "fi": "kokous",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v022",
-    "type": "article",
-    "prompt": "kollega",
-    "fi": "työkaveri",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v023",
-    "type": "article",
-    "prompt": "chef",
-    "fi": "esimies / pomo",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v024",
-    "type": "article",
-    "prompt": "företag",
-    "fi": "yritys",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v025",
-    "type": "article",
-    "prompt": "kund",
-    "fi": "asiakas",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v026",
-    "type": "article",
-    "prompt": "deadline",
-    "fi": "määräaika",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v028",
-    "type": "article",
-    "prompt": "lön",
-    "fi": "palkka",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v029",
-    "type": "article",
-    "prompt": "semester",
-    "fi": "loma",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "tyoelama"
-  },
-  {
-    "id": "wf-art-v030",
-    "type": "article",
-    "prompt": "mejl",
-    "fi": "sähköposti(viesti)",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "viestinta"
-  },
-  {
-    "id": "wf-art-v033",
-    "type": "article",
-    "prompt": "rapport",
-    "fi": "raportti",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "viestinta"
-  },
-  {
-    "id": "wf-art-v035",
-    "type": "article",
-    "prompt": "fråga",
-    "fi": "kysymys",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 2,
-    "category": "viestinta"
-  },
-  {
-    "id": "wf-art-v037",
-    "type": "article",
-    "prompt": "programmering",
-    "fi": "ohjelmointi",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v038",
-    "type": "article",
-    "prompt": "dator",
-    "fi": "tietokone",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v039",
-    "type": "article",
-    "prompt": "programvara",
-    "fi": "ohjelmisto",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v040",
-    "type": "article",
-    "prompt": "hårdvara",
-    "fi": "laitteisto",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v041",
-    "type": "article",
-    "prompt": "kod",
-    "fi": "koodi",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v043",
-    "type": "article",
-    "prompt": "databas",
-    "fi": "tietokanta",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v044",
-    "type": "article",
-    "prompt": "nätverk",
-    "fi": "verkko",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v045",
-    "type": "article",
-    "prompt": "server",
-    "fi": "palvelin",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v046",
-    "type": "article",
-    "prompt": "fil",
-    "fi": "tiedosto",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v047",
-    "type": "article",
-    "prompt": "lösenord",
-    "fi": "salasana",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v048",
-    "type": "article",
-    "prompt": "användare",
-    "fi": "käyttäjä",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v049",
-    "type": "article",
-    "prompt": "utveckling",
-    "fi": "kehitys",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v050",
-    "type": "article",
-    "prompt": "fel",
-    "fi": "virhe / bugi",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v052",
-    "type": "article",
-    "prompt": "system",
-    "fi": "järjestelmä",
-    "answer": "ett",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v053",
-    "type": "article",
-    "prompt": "webbsida",
-    "fi": "verkkosivu",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-art-v054",
-    "type": "article",
-    "prompt": "säkerhet",
-    "fi": "turvallisuus",
-    "answer": "en",
-    "options": [
-      "en",
-      "ett"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-1",
-    "type": "definite",
-    "prompt": "en dator",
-    "answer": "datorn",
-    "options": [
-      "datorn",
-      "dator",
-      "datoren",
-      "datoret"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-2",
-    "type": "definite",
-    "prompt": "ett arbete",
-    "answer": "arbetet",
-    "options": [
-      "arbetet",
-      "arbeten",
-      "arbetdet",
-      "arbetten"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-3",
-    "type": "definite",
-    "prompt": "ett jobb",
-    "answer": "jobbet",
-    "options": [
-      "jobbet",
-      "jobben",
-      "jobbe",
-      "jobbn"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-4",
-    "type": "definite",
-    "prompt": "ett möte",
-    "answer": "mötet",
-    "options": [
-      "mötet",
-      "möten",
-      "möteet",
-      "möter"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-5",
-    "type": "definite",
-    "prompt": "en kollega",
-    "answer": "kollegan",
-    "options": [
-      "kollegan",
-      "kollegen",
-      "kollegat",
-      "kollegorna"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-6",
-    "type": "definite",
-    "prompt": "en fråga",
-    "answer": "frågan",
-    "options": [
-      "frågan",
-      "frågen",
-      "frågat",
-      "frågorna"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-7",
-    "type": "definite",
-    "prompt": "ett fel",
-    "answer": "felet",
-    "options": [
-      "felet",
-      "felen",
-      "fellet",
-      "fels"
-    ],
-    "part": 3,
-    "category": "ict"
-  },
-  {
-    "id": "wf-def-8",
-    "type": "definite",
-    "prompt": "en kod",
-    "answer": "koden",
-    "options": [
-      "koden",
-      "kodet",
-      "koda",
-      "kodarna"
-    ],
-    "part": 3,
-    "category": "ict"
-  }
-]
+  "verbs": [
+    {
+      "id": "wf-vb-v010",
+      "vocabIds": [
+        "v010",
+        "v066"
+      ],
+      "lemgram": "bo..vb.1",
+      "fi": "asua",
+      "part": 1,
+      "category": "smaprat",
+      "forms": {
+        "infinitiv": "bo",
+        "presens": "bor",
+        "preteritum": "bodde",
+        "supinum": "bott"
+      }
+    },
+    {
+      "id": "wf-vb-v012",
+      "vocabIds": [
+        "v012"
+      ],
+      "lemgram": "tycka_om..vbm.1",
+      "fi": "pitää jostakin",
+      "part": 1,
+      "category": "smaprat",
+      "forms": {
+        "infinitiv": "tycka om",
+        "presens": "tycker om",
+        "preteritum": "tyckte om",
+        "supinum": "tyckt om"
+      }
+    },
+    {
+      "id": "wf-vb-v013",
+      "vocabIds": [
+        "v013",
+        "v185"
+      ],
+      "lemgram": "studera..vb.1",
+      "fi": "opiskella",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "studera",
+        "presens": "studerar",
+        "preteritum": "studerade",
+        "supinum": "studerat"
+      }
+    },
+    {
+      "id": "wf-vb-v027",
+      "vocabIds": [
+        "v027"
+      ],
+      "lemgram": "ansvara..vb.1",
+      "fi": "vastata jostakin",
+      "part": 2,
+      "category": "tyoelama",
+      "forms": {
+        "infinitiv": "ansvara",
+        "presens": "ansvarar",
+        "preteritum": "ansvarade",
+        "supinum": "ansvarat"
+      }
+    },
+    {
+      "id": "wf-vb-v031",
+      "vocabIds": [
+        "v031",
+        "v479"
+      ],
+      "lemgram": "samarbeta..vb.1",
+      "fi": "tehdä yhteistyötä",
+      "part": 2,
+      "category": "viestinta",
+      "forms": {
+        "infinitiv": "samarbeta",
+        "presens": "samarbetar",
+        "preteritum": "samarbetade",
+        "supinum": "samarbetat"
+      }
+    },
+    {
+      "id": "wf-vb-v032",
+      "vocabIds": [
+        "v032",
+        "v456"
+      ],
+      "lemgram": "presentera..vb.1",
+      "fi": "esitellä",
+      "part": 2,
+      "category": "viestinta",
+      "forms": {
+        "infinitiv": "presentera",
+        "presens": "presenterar",
+        "preteritum": "presenterade",
+        "supinum": "presenterat"
+      }
+    },
+    {
+      "id": "wf-vb-v034",
+      "vocabIds": [
+        "v034"
+      ],
+      "lemgram": "diskutera..vb.1",
+      "fi": "keskustella",
+      "part": 2,
+      "category": "viestinta",
+      "forms": {
+        "infinitiv": "diskutera",
+        "presens": "diskuterar",
+        "preteritum": "diskuterade",
+        "supinum": "diskuterat"
+      }
+    },
+    {
+      "id": "wf-vb-v036",
+      "vocabIds": [
+        "v036"
+      ],
+      "lemgram": "svara..vb.1",
+      "fi": "vastata",
+      "part": 2,
+      "category": "viestinta",
+      "forms": {
+        "infinitiv": "svara",
+        "presens": "svarar",
+        "preteritum": "svarade",
+        "supinum": "svarat"
+      }
+    },
+    {
+      "id": "wf-vb-v042",
+      "vocabIds": [
+        "v042"
+      ],
+      "lemgram": "koda..vb.1",
+      "fi": "koodata",
+      "part": 3,
+      "category": "ict",
+      "forms": {
+        "infinitiv": "koda",
+        "presens": "kodar",
+        "preteritum": "kodade",
+        "supinum": "kodat"
+      }
+    },
+    {
+      "id": "wf-vb-v051",
+      "vocabIds": [
+        "v051",
+        "v511"
+      ],
+      "lemgram": "uppdatera..vb.1",
+      "fi": "päivittää",
+      "part": 3,
+      "category": "ict",
+      "forms": {
+        "infinitiv": "uppdatera",
+        "presens": "uppdaterar",
+        "preteritum": "uppdaterade",
+        "supinum": "uppdaterat"
+      }
+    },
+    {
+      "id": "wf-vb-v070",
+      "vocabIds": [
+        "v070",
+        "v525"
+      ],
+      "lemgram": "vara..vb.1",
+      "fi": "olla avoliitossa",
+      "part": 5,
+      "category": "perhe",
+      "forms": {
+        "infinitiv": "vara",
+        "presens": "är",
+        "preteritum": "var",
+        "supinum": "varit"
+      }
+    },
+    {
+      "id": "wf-vb-v072",
+      "vocabIds": [
+        "v072"
+      ],
+      "lemgram": "dejta..vb.1",
+      "fi": "seurustella",
+      "part": 5,
+      "category": "perhe",
+      "forms": {
+        "infinitiv": "dejta",
+        "presens": "dejtar",
+        "preteritum": "dejtade",
+        "supinum": "dejtat"
+      }
+    },
+    {
+      "id": "wf-vb-v147",
+      "vocabIds": [
+        "v147"
+      ],
+      "lemgram": "söka..vb.1",
+      "fi": "hakea johonkin",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "söka",
+        "presens": "söker",
+        "preteritum": "sökte",
+        "supinum": "sökt"
+      }
+    },
+    {
+      "id": "wf-vb-v153",
+      "vocabIds": [
+        "v153"
+      ],
+      "lemgram": "fortsätta..vb.1",
+      "fi": "jatkaa opintoja",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "fortsätta",
+        "presens": "fortsätter",
+        "preteritum": "fortsatte",
+        "supinum": "fortsatt"
+      }
+    },
+    {
+      "id": "wf-vb-v172",
+      "vocabIds": [
+        "v172"
+      ],
+      "lemgram": "klara_av..vbm.1",
+      "fi": "läpäistä koe/kurssi",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "klara av",
+        "presens": "klarar av",
+        "preteritum": "klarade av",
+        "supinum": "klarat av"
+      }
+    },
+    {
+      "id": "wf-vb-v195",
+      "vocabIds": [
+        "v195"
+      ],
+      "lemgram": "komma_in..vbm.1",
+      "fi": "päästä sisään korkeakouluun",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "komma in",
+        "presens": "kommer in",
+        "preteritum": "kom in",
+        "supinum": "kommit in"
+      }
+    },
+    {
+      "id": "wf-vb-v196",
+      "vocabIds": [
+        "v196",
+        "v503"
+      ],
+      "lemgram": "ta..vb.1",
+      "fi": "päästä ylioppilaaksi",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "ta",
+        "presens": "tar",
+        "preteritum": "tog",
+        "supinum": "tagit"
+      }
+    },
+    {
+      "id": "wf-vb-v199",
+      "vocabIds": [
+        "v199",
+        "v394"
+      ],
+      "lemgram": "genomföra..vb.1",
+      "fi": "suorittaa kurssi",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "genomföra",
+        "presens": "genomför",
+        "preteritum": "genomförde",
+        "supinum": "genomfört"
+      }
+    },
+    {
+      "id": "wf-vb-v200",
+      "vocabIds": [
+        "v200",
+        "v201"
+      ],
+      "lemgram": "avlägga..vb.1",
+      "fi": "suorittaa tutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "avlägga",
+        "presens": "avlägger",
+        "preteritum": "avlade",
+        "supinum": "avlagt"
+      }
+    },
+    {
+      "id": "wf-vb-v202",
+      "vocabIds": [
+        "v202"
+      ],
+      "lemgram": "inrikta_sig..vbm.1",
+      "fi": "suuntautua johonkin",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "inrikta sig",
+        "presens": "inriktar sig",
+        "preteritum": "inriktade sig",
+        "supinum": "inriktat sig"
+      }
+    },
+    {
+      "id": "wf-vb-v209",
+      "vocabIds": [
+        "v209"
+      ],
+      "lemgram": "jobba..vb.1",
+      "fi": "työskennellä",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "jobba",
+        "presens": "jobbar",
+        "preteritum": "jobbade",
+        "supinum": "jobbat"
+      }
+    },
+    {
+      "id": "wf-vb-v210",
+      "vocabIds": [
+        "v210"
+      ],
+      "lemgram": "tenta..vb.1",
+      "fi": "uusia koe/tentti",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "tenta",
+        "presens": "tentar",
+        "preteritum": "tentade",
+        "supinum": "tentat"
+      }
+    },
+    {
+      "id": "wf-vb-v212",
+      "vocabIds": [
+        "v212",
+        "v529"
+      ],
+      "lemgram": "välja..vb.1",
+      "fi": "valita",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "välja",
+        "presens": "väljer",
+        "preteritum": "valde",
+        "supinum": "valt"
+      }
+    },
+    {
+      "id": "wf-vb-v213",
+      "vocabIds": [
+        "v213"
+      ],
+      "lemgram": "bli..vb.1",
+      "fi": "valmistua",
+      "part": 4,
+      "category": "opiskelu",
+      "forms": {
+        "infinitiv": "bli",
+        "presens": "blir",
+        "preteritum": "blev",
+        "supinum": "blivit"
+      }
+    },
+    {
+      "id": "wf-vb-v320",
+      "vocabIds": [
+        "v320"
+      ],
+      "lemgram": "administrera..vb.1",
+      "fi": "Hallinnoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "administrera",
+        "presens": "administrerar",
+        "preteritum": "administrerade",
+        "supinum": "administrerat"
+      }
+    },
+    {
+      "id": "wf-vb-v321",
+      "vocabIds": [
+        "v321"
+      ],
+      "lemgram": "aktivera..vb.1",
+      "fi": "Aktivoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "aktivera",
+        "presens": "aktiverar",
+        "preteritum": "aktiverade",
+        "supinum": "aktiverat"
+      }
+    },
+    {
+      "id": "wf-vb-v322",
+      "vocabIds": [
+        "v322"
+      ],
+      "lemgram": "analysera..vb.1",
+      "fi": "Analysoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "analysera",
+        "presens": "analyserar",
+        "preteritum": "analyserade",
+        "supinum": "analyserat"
+      }
+    },
+    {
+      "id": "wf-vb-v323",
+      "vocabIds": [
+        "v323"
+      ],
+      "lemgram": "anförtro..vb.1",
+      "fi": "Uskoi (jollekulle tehtävän)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "anförtro",
+        "presens": "anförtror",
+        "preteritum": "anförtrodde",
+        "supinum": "anförtrott"
+      }
+    },
+    {
+      "id": "wf-vb-v324",
+      "vocabIds": [
+        "v324"
+      ],
+      "lemgram": "ansluta..vb.1",
+      "fi": "Liittyi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ansluta",
+        "presens": "ansluter",
+        "preteritum": "anslöt",
+        "supinum": "anslutit"
+      }
+    },
+    {
+      "id": "wf-vb-v325",
+      "vocabIds": [
+        "v325"
+      ],
+      "lemgram": "anställa..vb.1",
+      "fi": "Palkkasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "anställa",
+        "presens": "anställer",
+        "preteritum": "anställde",
+        "supinum": "anställt"
+      }
+    },
+    {
+      "id": "wf-vb-v326",
+      "vocabIds": [
+        "v326"
+      ],
+      "lemgram": "använda..vb.1",
+      "fi": "Käytti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "använda",
+        "presens": "använder",
+        "preteritum": "använde",
+        "supinum": "använt"
+      }
+    },
+    {
+      "id": "wf-vb-v327",
+      "vocabIds": [
+        "v327"
+      ],
+      "lemgram": "arbeta..vb.1",
+      "fi": "Työskenteli huolellisesti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "arbeta",
+        "presens": "arbetar",
+        "preteritum": "arbetade",
+        "supinum": "arbetat"
+      }
+    },
+    {
+      "id": "wf-vb-v328",
+      "vocabIds": [
+        "v328"
+      ],
+      "lemgram": "arrangera..vb.1",
+      "fi": "Järjesti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "arrangera",
+        "presens": "arrangerar",
+        "preteritum": "arrangerade",
+        "supinum": "arrangerat"
+      }
+    },
+    {
+      "id": "wf-vb-v329",
+      "vocabIds": [
+        "v329"
+      ],
+      "lemgram": "assistera..vb.1",
+      "fi": "Avusti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "assistera",
+        "presens": "assisterar",
+        "preteritum": "assisterade",
+        "supinum": "assisterat"
+      }
+    },
+    {
+      "id": "wf-vb-v330",
+      "vocabIds": [
+        "v330"
+      ],
+      "lemgram": "avgöra..vb.1",
+      "fi": "Ratkaisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "avgöra",
+        "presens": "avgör",
+        "preteritum": "avgjorde",
+        "supinum": "avgjort"
+      }
+    },
+    {
+      "id": "wf-vb-v331",
+      "vocabIds": [
+        "v331"
+      ],
+      "lemgram": "avskeda..vb.1",
+      "fi": "Irtisanoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "avskeda",
+        "presens": "avskedar",
+        "preteritum": "avskedade",
+        "supinum": "avskedat"
+      }
+    },
+    {
+      "id": "wf-vb-v332",
+      "vocabIds": [
+        "v332"
+      ],
+      "lemgram": "balansera..vb.1",
+      "fi": "Tasapainotti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "balansera",
+        "presens": "balanserar",
+        "preteritum": "balanserade",
+        "supinum": "balanserat"
+      }
+    },
+    {
+      "id": "wf-vb-v333",
+      "vocabIds": [
+        "v333"
+      ],
+      "lemgram": "bedöma..vb.1",
+      "fi": "Arvioi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "bedöma",
+        "presens": "bedömer",
+        "preteritum": "bedömde",
+        "supinum": "bedömt"
+      }
+    },
+    {
+      "id": "wf-vb-v334",
+      "vocabIds": [
+        "v334"
+      ],
+      "lemgram": "befordra..vb.1",
+      "fi": "Ylensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "befordra",
+        "presens": "befordrar",
+        "preteritum": "befordrade",
+        "supinum": "befordrat"
+      }
+    },
+    {
+      "id": "wf-vb-v335",
+      "vocabIds": [
+        "v335"
+      ],
+      "lemgram": "behålla..vb.1",
+      "fi": "Piti/säilytti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "behålla",
+        "presens": "behåller",
+        "preteritum": "behöll",
+        "supinum": "behållit"
+      }
+    },
+    {
+      "id": "wf-vb-v336",
+      "vocabIds": [
+        "v336"
+      ],
+      "lemgram": "bekräfta..vb.1",
+      "fi": "Vahvisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "bekräfta",
+        "presens": "bekräftar",
+        "preteritum": "bekräftade",
+        "supinum": "bekräftat"
+      }
+    },
+    {
+      "id": "wf-vb-v337",
+      "vocabIds": [
+        "v337"
+      ],
+      "lemgram": "berika..vb.1",
+      "fi": "Rikastutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "berika",
+        "presens": "berikar",
+        "preteritum": "berikade",
+        "supinum": "berikat"
+      }
+    },
+    {
+      "id": "wf-vb-v338",
+      "vocabIds": [
+        "v338"
+      ],
+      "lemgram": "beräkna..vb.1",
+      "fi": "Laski",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "beräkna",
+        "presens": "beräknar",
+        "preteritum": "beräknade",
+        "supinum": "beräknat"
+      }
+    },
+    {
+      "id": "wf-vb-v339",
+      "vocabIds": [
+        "v339"
+      ],
+      "lemgram": "beskriva..vb.1",
+      "fi": "Kuvasi yksityiskohtia",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "beskriva",
+        "presens": "beskriver",
+        "preteritum": "beskrev",
+        "supinum": "beskrivit"
+      }
+    },
+    {
+      "id": "wf-vb-v340",
+      "vocabIds": [
+        "v340"
+      ],
+      "lemgram": "bestämma..vb.1",
+      "fi": "Päätti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "bestämma",
+        "presens": "bestämmer",
+        "preteritum": "bestämde",
+        "supinum": "bestämt"
+      }
+    },
+    {
+      "id": "wf-vb-v341",
+      "vocabIds": [
+        "v341"
+      ],
+      "lemgram": "bevisa..vb.1",
+      "fi": "Todisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "bevisa",
+        "presens": "bevisar",
+        "preteritum": "bevisade",
+        "supinum": "bevisat"
+      }
+    },
+    {
+      "id": "wf-vb-v342",
+      "vocabIds": [
+        "v342"
+      ],
+      "lemgram": "budgetera..vb.1",
+      "fi": "Budjetoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "budgetera",
+        "presens": "budgeterar",
+        "preteritum": "budgeterade",
+        "supinum": "budgeterat"
+      }
+    },
+    {
+      "id": "wf-vb-v343",
+      "vocabIds": [
+        "v343"
+      ],
+      "lemgram": "bygga..vb.1",
+      "fi": "Rakensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "bygga",
+        "presens": "bygger",
+        "preteritum": "byggde",
+        "supinum": "byggt"
+      }
+    },
+    {
+      "id": "wf-vb-v344",
+      "vocabIds": [
+        "v344"
+      ],
+      "lemgram": "byta..vb.1",
+      "fi": "Vaihtoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "byta",
+        "presens": "byter",
+        "preteritum": "bytte",
+        "supinum": "bytt"
+      }
+    },
+    {
+      "id": "wf-vb-v345",
+      "vocabIds": [
+        "v345"
+      ],
+      "lemgram": "centralisera..vb.1",
+      "fi": "Keskitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "centralisera",
+        "presens": "centraliserar",
+        "preteritum": "centraliserade",
+        "supinum": "centraliserat"
+      }
+    },
+    {
+      "id": "wf-vb-v346",
+      "vocabIds": [
+        "v346"
+      ],
+      "lemgram": "datorisera..vb.1",
+      "fi": "Tietokoneisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "datorisera",
+        "presens": "datoriserar",
+        "preteritum": "datoriserade",
+        "supinum": "datoriserat"
+      }
+    },
+    {
+      "id": "wf-vb-v347",
+      "vocabIds": [
+        "v347"
+      ],
+      "lemgram": "decentralisera..vb.1",
+      "fi": "Hajautti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "decentralisera",
+        "presens": "decentraliserar",
+        "preteritum": "decentraliserade",
+        "supinum": "decentraliserat"
+      }
+    },
+    {
+      "id": "wf-vb-v348",
+      "vocabIds": [
+        "v348"
+      ],
+      "lemgram": "definiera..vb.1",
+      "fi": "Määritteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "definiera",
+        "presens": "definierar",
+        "preteritum": "definierade",
+        "supinum": "definierat"
+      }
+    },
+    {
+      "id": "wf-vb-v349",
+      "vocabIds": [
+        "v349"
+      ],
+      "lemgram": "dekorera..vb.1",
+      "fi": "Somisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "dekorera",
+        "presens": "dekorerar",
+        "preteritum": "dekorerade",
+        "supinum": "dekorerat"
+      }
+    },
+    {
+      "id": "wf-vb-v350",
+      "vocabIds": [
+        "v350"
+      ],
+      "lemgram": "dela_ut..vbm.1",
+      "fi": "Jakoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "dela ut",
+        "presens": "delar ut",
+        "preteritum": "delade ut",
+        "supinum": "delat ut"
+      }
+    },
+    {
+      "id": "wf-vb-v351",
+      "vocabIds": [
+        "v351"
+      ],
+      "lemgram": "delegera..vb.1",
+      "fi": "Delegoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "delegera",
+        "presens": "delegerar",
+        "preteritum": "delegerade",
+        "supinum": "delegerat"
+      }
+    },
+    {
+      "id": "wf-vb-v352",
+      "vocabIds": [
+        "v352"
+      ],
+      "lemgram": "delta..vb.1",
+      "fi": "Osallistui",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "delta",
+        "presens": "deltar",
+        "preteritum": "deltog",
+        "supinum": "deltagit"
+      }
+    },
+    {
+      "id": "wf-vb-v353",
+      "vocabIds": [
+        "v353"
+      ],
+      "lemgram": "demonstrera..vb.1",
+      "fi": "Esitteli (demonstroi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "demonstrera",
+        "presens": "demonstrerar",
+        "preteritum": "demonstrerade",
+        "supinum": "demonstrerat"
+      }
+    },
+    {
+      "id": "wf-vb-v354",
+      "vocabIds": [
+        "v354"
+      ],
+      "lemgram": "designa..vb.1",
+      "fi": "Suunnitteli (muotoili)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "designa",
+        "presens": "designar",
+        "preteritum": "designade",
+        "supinum": "designat"
+      }
+    },
+    {
+      "id": "wf-vb-v355",
+      "vocabIds": [
+        "v355"
+      ],
+      "lemgram": "diagnosticera..vb.1",
+      "fi": "Diagnosoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "diagnosticera",
+        "presens": "diagnosticerar",
+        "preteritum": "diagnosticerade",
+        "supinum": "diagnosticerat"
+      }
+    },
+    {
+      "id": "wf-vb-v356",
+      "vocabIds": [
+        "v356"
+      ],
+      "lemgram": "distribuera..vb.1",
+      "fi": "Jakeli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "distribuera",
+        "presens": "distribuerar",
+        "preteritum": "distribuerade",
+        "supinum": "distribuerat"
+      }
+    },
+    {
+      "id": "wf-vb-v357",
+      "vocabIds": [
+        "v357"
+      ],
+      "lemgram": "dokumentera..vb.1",
+      "fi": "Dokumentoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "dokumentera",
+        "presens": "dokumenterar",
+        "preteritum": "dokumenterade",
+        "supinum": "dokumenterat"
+      }
+    },
+    {
+      "id": "wf-vb-v358",
+      "vocabIds": [
+        "v358"
+      ],
+      "lemgram": "dra_slutsatser..vbm.1",
+      "fi": "Teki johtopäätöksiä",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "dra slutsatser",
+        "presens": "drar slutsatser",
+        "preteritum": "drog slutsatser",
+        "supinum": "dragit slutsatser"
+      }
+    },
+    {
+      "id": "wf-vb-v359",
+      "vocabIds": [
+        "v359"
+      ],
+      "lemgram": "effektivisera..vb.1",
+      "fi": "Tehosti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "effektivisera",
+        "presens": "effektiviserar",
+        "preteritum": "effektiviserade",
+        "supinum": "effektiviserat"
+      }
+    },
+    {
+      "id": "wf-vb-v360",
+      "vocabIds": [
+        "v360"
+      ],
+      "lemgram": "ena..vb.1",
+      "fi": "Yhdisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ena",
+        "presens": "enar",
+        "preteritum": "enade",
+        "supinum": "enat"
+      }
+    },
+    {
+      "id": "wf-vb-v361",
+      "vocabIds": [
+        "v361"
+      ],
+      "lemgram": "erkänna..vb.1",
+      "fi": "Tunnusti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "erkänna",
+        "presens": "erkänner",
+        "preteritum": "erkände",
+        "supinum": "erkänt"
+      }
+    },
+    {
+      "id": "wf-vb-v362",
+      "vocabIds": [
+        "v362"
+      ],
+      "lemgram": "etablera..vb.1",
+      "fi": "Perusti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "etablera",
+        "presens": "etablerar",
+        "preteritum": "etablerade",
+        "supinum": "etablerat"
+      }
+    },
+    {
+      "id": "wf-vb-v363",
+      "vocabIds": [
+        "v363"
+      ],
+      "lemgram": "experimentera..vb.1",
+      "fi": "Kokeili",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "experimentera",
+        "presens": "experimenterar",
+        "preteritum": "experimenterade",
+        "supinum": "experimenterat"
+      }
+    },
+    {
+      "id": "wf-vb-v364",
+      "vocabIds": [
+        "v364"
+      ],
+      "lemgram": "exportera..vb.1",
+      "fi": "Vei (vientiä)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "exportera",
+        "presens": "exporterar",
+        "preteritum": "exporterade",
+        "supinum": "exporterat"
+      }
+    },
+    {
+      "id": "wf-vb-v365",
+      "vocabIds": [
+        "v365"
+      ],
+      "lemgram": "finansiera..vb.1",
+      "fi": "Rahoitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "finansiera",
+        "presens": "finansierar",
+        "preteritum": "finansierade",
+        "supinum": "finansierat"
+      }
+    },
+    {
+      "id": "wf-vb-v366",
+      "vocabIds": [
+        "v366"
+      ],
+      "lemgram": "flytta_fram..vbm.1",
+      "fi": "Siirsi (eteenpäin)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "flytta fram",
+        "presens": "flyttar fram",
+        "preteritum": "flyttade fram",
+        "supinum": "flyttat fram"
+      }
+    },
+    {
+      "id": "wf-vb-v367",
+      "vocabIds": [
+        "v367"
+      ],
+      "lemgram": "forma..vb.1",
+      "fi": "Muotoili",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "forma",
+        "presens": "formar",
+        "preteritum": "formade",
+        "supinum": "format"
+      }
+    },
+    {
+      "id": "wf-vb-v368",
+      "vocabIds": [
+        "v368"
+      ],
+      "lemgram": "forska..vb.1",
+      "fi": "Tutki",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "forska",
+        "presens": "forskar",
+        "preteritum": "forskade",
+        "supinum": "forskat"
+      }
+    },
+    {
+      "id": "wf-vb-v369",
+      "vocabIds": [
+        "v369"
+      ],
+      "lemgram": "fostra..vb.1",
+      "fi": "Kasvatti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "fostra",
+        "presens": "fostrar",
+        "preteritum": "fostrade",
+        "supinum": "fostrat"
+      }
+    },
+    {
+      "id": "wf-vb-v370",
+      "vocabIds": [
+        "v370"
+      ],
+      "lemgram": "fotografera..vb.1",
+      "fi": "Kuvasi (valokuvasi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "fotografera",
+        "presens": "fotograferar",
+        "preteritum": "fotograferade",
+        "supinum": "fotograferat"
+      }
+    },
+    {
+      "id": "wf-vb-v371",
+      "vocabIds": [
+        "v371"
+      ],
+      "lemgram": "framkalla..vb.1",
+      "fi": "Aiheutti (kehitti filmiä)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "framkalla",
+        "presens": "framkallar",
+        "preteritum": "framkallade",
+        "supinum": "framkallat"
+      }
+    },
+    {
+      "id": "wf-vb-v372",
+      "vocabIds": [
+        "v372"
+      ],
+      "lemgram": "framställa..vb.1",
+      "fi": "Tuotti (valmisti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "framställa",
+        "presens": "framställer",
+        "preteritum": "framställde",
+        "supinum": "framställt"
+      }
+    },
+    {
+      "id": "wf-vb-v373",
+      "vocabIds": [
+        "v373"
+      ],
+      "lemgram": "fråga_ut..vbm.1",
+      "fi": "Kuulusteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "fråga ut",
+        "presens": "frågar ut",
+        "preteritum": "frågade ut",
+        "supinum": "frågat ut"
+      }
+    },
+    {
+      "id": "wf-vb-v374",
+      "vocabIds": [
+        "v374"
+      ],
+      "lemgram": "förbereda..vb.1",
+      "fi": "Valmisteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förbereda",
+        "presens": "förbereder",
+        "preteritum": "förberedde",
+        "supinum": "förberett"
+      }
+    },
+    {
+      "id": "wf-vb-v375",
+      "vocabIds": [
+        "v375"
+      ],
+      "lemgram": "förbättra..vb.1",
+      "fi": "Paransi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förbättra",
+        "presens": "förbättrar",
+        "preteritum": "förbättrade",
+        "supinum": "förbättrat"
+      }
+    },
+    {
+      "id": "wf-vb-v376",
+      "vocabIds": [
+        "v376"
+      ],
+      "lemgram": "förebygga..vb.1",
+      "fi": "Ennaltaehkäisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förebygga",
+        "presens": "förebygger",
+        "preteritum": "förebyggde",
+        "supinum": "förebyggt"
+      }
+    },
+    {
+      "id": "wf-vb-v377",
+      "vocabIds": [
+        "v377"
+      ],
+      "lemgram": "förena..vb.1",
+      "fi": "Yhdisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förena",
+        "presens": "förenar",
+        "preteritum": "förenade",
+        "supinum": "förenat"
+      }
+    },
+    {
+      "id": "wf-vb-v378",
+      "vocabIds": [
+        "v378"
+      ],
+      "lemgram": "föreslå..vb.1",
+      "fi": "Ehdotti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "föreslå",
+        "presens": "föreslår",
+        "preteritum": "föreslog",
+        "supinum": "föreslagit"
+      }
+    },
+    {
+      "id": "wf-vb-v379",
+      "vocabIds": [
+        "v379"
+      ],
+      "lemgram": "föreställa_sig..vbm.1",
+      "fi": "Kuvittelin",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "föreställa sig",
+        "presens": "föreställer sig",
+        "preteritum": "föreställde sig",
+        "supinum": "föreställt sig"
+      }
+    },
+    {
+      "id": "wf-vb-v380",
+      "vocabIds": [
+        "v380"
+      ],
+      "lemgram": "förfina..vb.1",
+      "fi": "Hioi (tarkensi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förfina",
+        "presens": "förfinar",
+        "preteritum": "förfinade",
+        "supinum": "förfinat"
+      }
+    },
+    {
+      "id": "wf-vb-v381",
+      "vocabIds": [
+        "v381"
+      ],
+      "lemgram": "förhandla..vb.1",
+      "fi": "Neuvotteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förhandla",
+        "presens": "förhandlar",
+        "preteritum": "förhandlade",
+        "supinum": "förhandlat"
+      }
+    },
+    {
+      "id": "wf-vb-v382",
+      "vocabIds": [
+        "v382"
+      ],
+      "lemgram": "förklara..vb.1",
+      "fi": "Selitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förklara",
+        "presens": "förklarar",
+        "preteritum": "förklarade",
+        "supinum": "förklarat"
+      }
+    },
+    {
+      "id": "wf-vb-v383",
+      "vocabIds": [
+        "v383"
+      ],
+      "lemgram": "förstå..vb.1",
+      "fi": "Ymmärsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förstå",
+        "presens": "förstår",
+        "preteritum": "förstod",
+        "supinum": "förstått"
+      }
+    },
+    {
+      "id": "wf-vb-v384",
+      "vocabIds": [
+        "v384"
+      ],
+      "lemgram": "förstärka..vb.1",
+      "fi": "Vahvisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förstärka",
+        "presens": "förstärker",
+        "preteritum": "förstärkte",
+        "supinum": "förstärkt"
+      }
+    },
+    {
+      "id": "wf-vb-v385",
+      "vocabIds": [
+        "v385"
+      ],
+      "lemgram": "försvara..vb.1",
+      "fi": "Puolusti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "försvara",
+        "presens": "försvarar",
+        "preteritum": "försvarade",
+        "supinum": "försvarat"
+      }
+    },
+    {
+      "id": "wf-vb-v386",
+      "vocabIds": [
+        "v386"
+      ],
+      "lemgram": "förtydliga..vb.1",
+      "fi": "Selvensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förtydliga",
+        "presens": "förtydligar",
+        "preteritum": "förtydligade",
+        "supinum": "förtydligat"
+      }
+    },
+    {
+      "id": "wf-vb-v387",
+      "vocabIds": [
+        "v387"
+      ],
+      "lemgram": "förutse..vb.1",
+      "fi": "Ennakoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förutse",
+        "presens": "förutser",
+        "preteritum": "förutsåg",
+        "supinum": "förutsett"
+      }
+    },
+    {
+      "id": "wf-vb-v388",
+      "vocabIds": [
+        "v388"
+      ],
+      "lemgram": "förvärva..vb.1",
+      "fi": "Hankki",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förvärva",
+        "presens": "förvärvar",
+        "preteritum": "förvärvade",
+        "supinum": "förvärvat"
+      }
+    },
+    {
+      "id": "wf-vb-v389",
+      "vocabIds": [
+        "v389"
+      ],
+      "lemgram": "förändra..vb.1",
+      "fi": "Muutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "förändra",
+        "presens": "förändrar",
+        "preteritum": "förändrade",
+        "supinum": "förändrat"
+      }
+    },
+    {
+      "id": "wf-vb-v390",
+      "vocabIds": [
+        "v390"
+      ],
+      "lemgram": "garantera..vb.1",
+      "fi": "Takasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "garantera",
+        "presens": "garanterar",
+        "preteritum": "garanterade",
+        "supinum": "garanterat"
+      }
+    },
+    {
+      "id": "wf-vb-v391",
+      "vocabIds": [
+        "v391"
+      ],
+      "lemgram": "ge..vb.1",
+      "fi": "Antoi majoituksen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ge",
+        "presens": "ger",
+        "preteritum": "gav",
+        "supinum": "gett"
+      }
+    },
+    {
+      "id": "wf-vb-v392",
+      "vocabIds": [
+        "v392"
+      ],
+      "lemgram": "inkvartera..vb.1",
+      "fi": "Majoitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "inkvartera",
+        "presens": "inkvarterar",
+        "preteritum": "inkvarterade",
+        "supinum": "inkvarterat"
+      }
+    },
+    {
+      "id": "wf-vb-v393",
+      "vocabIds": [
+        "v393"
+      ],
+      "lemgram": "ge_upphov..vbm.1",
+      "fi": "Sai aikaan",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ge upphov",
+        "presens": "ger upphov",
+        "preteritum": "gav upphov",
+        "supinum": "gett upphov"
+      }
+    },
+    {
+      "id": "wf-vb-v395",
+      "vocabIds": [
+        "v395"
+      ],
+      "lemgram": "verkställa..vb.1",
+      "fi": "Pani täytäntöön",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "verkställa",
+        "presens": "verkställer",
+        "preteritum": "verkställde",
+        "supinum": "verkställt"
+      }
+    },
+    {
+      "id": "wf-vb-v396",
+      "vocabIds": [
+        "v396"
+      ],
+      "lemgram": "godkänna..vb.1",
+      "fi": "Hyväksyi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "godkänna",
+        "presens": "godkänner",
+        "preteritum": "godkände",
+        "supinum": "godkänt"
+      }
+    },
+    {
+      "id": "wf-vb-v397",
+      "vocabIds": [
+        "v397"
+      ],
+      "lemgram": "guida..vb.1",
+      "fi": "Opasti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "guida",
+        "presens": "guidar",
+        "preteritum": "guidade",
+        "supinum": "guidat"
+      }
+    },
+    {
+      "id": "wf-vb-v398",
+      "vocabIds": [
+        "v398"
+      ],
+      "lemgram": "gå_vidare..vbm.1",
+      "fi": "Eteni",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "gå vidare",
+        "presens": "går vidare",
+        "preteritum": "gick vidare",
+        "supinum": "gått vidare"
+      }
+    },
+    {
+      "id": "wf-vb-v399",
+      "vocabIds": [
+        "v399"
+      ],
+      "lemgram": "göra_färdigt..vbm.1",
+      "fi": "Sai valmiiksi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "göra färdigt",
+        "presens": "gör färdigt",
+        "preteritum": "gjorde färdigt",
+        "supinum": "gjort färdigt"
+      }
+    },
+    {
+      "id": "wf-vb-v400",
+      "vocabIds": [
+        "v400"
+      ],
+      "lemgram": "hantera..vb.1",
+      "fi": "Käsitteli (hallinnoi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "hantera",
+        "presens": "hanterar",
+        "preteritum": "hanterade",
+        "supinum": "hanterat"
+      }
+    },
+    {
+      "id": "wf-vb-v401",
+      "vocabIds": [
+        "v401"
+      ],
+      "lemgram": "hjälpa..vb.1",
+      "fi": "Auttoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "hjälpa",
+        "presens": "hjälper",
+        "preteritum": "hjälpte",
+        "supinum": "hjälpt"
+      }
+    },
+    {
+      "id": "wf-vb-v402",
+      "vocabIds": [
+        "v402"
+      ],
+      "lemgram": "hålla_tal..vbm.1",
+      "fi": "Piti puheen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "hålla tal",
+        "presens": "håller tal",
+        "preteritum": "höll tal",
+        "supinum": "hållit tal"
+      }
+    },
+    {
+      "id": "wf-vb-v403",
+      "vocabIds": [
+        "v403"
+      ],
+      "lemgram": "hålla_ut..vbm.1",
+      "fi": "Kesti (sinnitteli)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "hålla ut",
+        "presens": "håller ut",
+        "preteritum": "höll ut",
+        "supinum": "hållit ut"
+      }
+    },
+    {
+      "id": "wf-vb-v404",
+      "vocabIds": [
+        "v404"
+      ],
+      "lemgram": "identifiera..vb.1",
+      "fi": "Tunnisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "identifiera",
+        "presens": "identifierar",
+        "preteritum": "identifierade",
+        "supinum": "identifierat"
+      }
+    },
+    {
+      "id": "wf-vb-v405",
+      "vocabIds": [
+        "v405"
+      ],
+      "lemgram": "illustrera..vb.1",
+      "fi": "Havainnollisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "illustrera",
+        "presens": "illustrerar",
+        "preteritum": "illustrerade",
+        "supinum": "illustrerat"
+      }
+    },
+    {
+      "id": "wf-vb-v406",
+      "vocabIds": [
+        "v406"
+      ],
+      "lemgram": "importera..vb.1",
+      "fi": "Toi maahan (tuonti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "importera",
+        "presens": "importerar",
+        "preteritum": "importerade",
+        "supinum": "importerat"
+      }
+    },
+    {
+      "id": "wf-vb-v407",
+      "vocabIds": [
+        "v407"
+      ],
+      "lemgram": "improvisera..vb.1",
+      "fi": "Improvisoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "improvisera",
+        "presens": "improviserar",
+        "preteritum": "improviserade",
+        "supinum": "improviserat"
+      }
+    },
+    {
+      "id": "wf-vb-v408",
+      "vocabIds": [
+        "v408"
+      ],
+      "lemgram": "indexera..vb.1",
+      "fi": "Indeksoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "indexera",
+        "presens": "indexerar",
+        "preteritum": "indexerade",
+        "supinum": "indexerat"
+      }
+    },
+    {
+      "id": "wf-vb-v409",
+      "vocabIds": [
+        "v409"
+      ],
+      "lemgram": "informera..vb.1",
+      "fi": "Tiedotti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "informera",
+        "presens": "informerar",
+        "preteritum": "informerade",
+        "supinum": "informerat"
+      }
+    },
+    {
+      "id": "wf-vb-v410",
+      "vocabIds": [
+        "v410"
+      ],
+      "lemgram": "införa..vb.1",
+      "fi": "Otti käyttöön",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "införa",
+        "presens": "inför",
+        "preteritum": "införde",
+        "supinum": "infört"
+      }
+    },
+    {
+      "id": "wf-vb-v411",
+      "vocabIds": [
+        "v411"
+      ],
+      "lemgram": "ingripa..vb.1",
+      "fi": "Puuttui asiaan",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ingripa",
+        "presens": "ingriper",
+        "preteritum": "ingrep",
+        "supinum": "ingripit"
+      }
+    },
+    {
+      "id": "wf-vb-v412",
+      "vocabIds": [
+        "v412"
+      ],
+      "lemgram": "inse..vb.1",
+      "fi": "Tajusi (oivalsi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "inse",
+        "presens": "inser",
+        "preteritum": "insåg",
+        "supinum": "insett"
+      }
+    },
+    {
+      "id": "wf-vb-v413",
+      "vocabIds": [
+        "v413"
+      ],
+      "lemgram": "inspektera..vb.1",
+      "fi": "Tarkasti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "inspektera",
+        "presens": "inspekterar",
+        "preteritum": "inspekterade",
+        "supinum": "inspekterat"
+      }
+    },
+    {
+      "id": "wf-vb-v414",
+      "vocabIds": [
+        "v414"
+      ],
+      "lemgram": "inspirera..vb.1",
+      "fi": "Innosti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "inspirera",
+        "presens": "inspirerar",
+        "preteritum": "inspirerade",
+        "supinum": "inspirerat"
+      }
+    },
+    {
+      "id": "wf-vb-v415",
+      "vocabIds": [
+        "v415"
+      ],
+      "lemgram": "intyga..vb.1",
+      "fi": "Todisti (vahvisti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "intyga",
+        "presens": "intygar",
+        "preteritum": "intygade",
+        "supinum": "intygat"
+      }
+    },
+    {
+      "id": "wf-vb-v416",
+      "vocabIds": [
+        "v416"
+      ],
+      "lemgram": "investera..vb.1",
+      "fi": "Investoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "investera",
+        "presens": "investerar",
+        "preteritum": "investerade",
+        "supinum": "investerat"
+      }
+    },
+    {
+      "id": "wf-vb-v417",
+      "vocabIds": [
+        "v417"
+      ],
+      "lemgram": "kalkylera..vb.1",
+      "fi": "Laski (kalkyloi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kalkylera",
+        "presens": "kalkylerar",
+        "preteritum": "kalkylerade",
+        "supinum": "kalkylerat"
+      }
+    },
+    {
+      "id": "wf-vb-v418",
+      "vocabIds": [
+        "v418"
+      ],
+      "lemgram": "katalogisera..vb.1",
+      "fi": "Luetteloi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "katalogisera",
+        "presens": "katalogiserar",
+        "preteritum": "katalogiserade",
+        "supinum": "katalogiserat"
+      }
+    },
+    {
+      "id": "wf-vb-v419",
+      "vocabIds": [
+        "v419"
+      ],
+      "lemgram": "klassificera..vb.1",
+      "fi": "Luokitteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "klassificera",
+        "presens": "klassificerar",
+        "preteritum": "klassificerade",
+        "supinum": "klassificerat"
+      }
+    },
+    {
+      "id": "wf-vb-v420",
+      "vocabIds": [
+        "v420"
+      ],
+      "lemgram": "kombinera..vb.1",
+      "fi": "Yhdisteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kombinera",
+        "presens": "kombinerar",
+        "preteritum": "kombinerade",
+        "supinum": "kombinerat"
+      }
+    },
+    {
+      "id": "wf-vb-v421",
+      "vocabIds": [
+        "v421"
+      ],
+      "lemgram": "kommunicera..vb.1",
+      "fi": "Viestitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kommunicera",
+        "presens": "kommunicerar",
+        "preteritum": "kommunicerade",
+        "supinum": "kommunicerat"
+      }
+    },
+    {
+      "id": "wf-vb-v422",
+      "vocabIds": [
+        "v422"
+      ],
+      "lemgram": "komponera..vb.1",
+      "fi": "Sävelsi (koosti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "komponera",
+        "presens": "komponerar",
+        "preteritum": "komponerade",
+        "supinum": "komponerat"
+      }
+    },
+    {
+      "id": "wf-vb-v423",
+      "vocabIds": [
+        "v423"
+      ],
+      "lemgram": "koncentrera..vb.1",
+      "fi": "Keskitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "koncentrera",
+        "presens": "koncentrerar",
+        "preteritum": "koncentrerade",
+        "supinum": "koncentrerat"
+      }
+    },
+    {
+      "id": "wf-vb-v424",
+      "vocabIds": [
+        "v424"
+      ],
+      "lemgram": "konsolidera..vb.1",
+      "fi": "Vakiinnutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "konsolidera",
+        "presens": "konsoliderar",
+        "preteritum": "konsoliderade",
+        "supinum": "konsoliderat"
+      }
+    },
+    {
+      "id": "wf-vb-v425",
+      "vocabIds": [
+        "v425"
+      ],
+      "lemgram": "konstruera..vb.1",
+      "fi": "Suunnitteli (rakensi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "konstruera",
+        "presens": "konstruerar",
+        "preteritum": "konstruerade",
+        "supinum": "konstruerat"
+      }
+    },
+    {
+      "id": "wf-vb-v426",
+      "vocabIds": [
+        "v426"
+      ],
+      "lemgram": "konsultera..vb.1",
+      "fi": "Konsultoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "konsultera",
+        "presens": "konsulterar",
+        "preteritum": "konsulterade",
+        "supinum": "konsulterat"
+      }
+    },
+    {
+      "id": "wf-vb-v427",
+      "vocabIds": [
+        "v427"
+      ],
+      "lemgram": "kontraktera..vb.1",
+      "fi": "Teki sopimuksen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kontraktera",
+        "presens": "kontrakterar",
+        "preteritum": "kontrakterade",
+        "supinum": "kontrakterat"
+      }
+    },
+    {
+      "id": "wf-vb-v428",
+      "vocabIds": [
+        "v428"
+      ],
+      "lemgram": "kontrollera..vb.1",
+      "fi": "Tarkisti (valvoi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kontrollera",
+        "presens": "kontrollerar",
+        "preteritum": "kontrollerade",
+        "supinum": "kontrollerat"
+      }
+    },
+    {
+      "id": "wf-vb-v429",
+      "vocabIds": [
+        "v429"
+      ],
+      "lemgram": "konversera..vb.1",
+      "fi": "Keskusteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "konversera",
+        "presens": "konverserar",
+        "preteritum": "konverserade",
+        "supinum": "konverserat"
+      }
+    },
+    {
+      "id": "wf-vb-v430",
+      "vocabIds": [
+        "v430"
+      ],
+      "lemgram": "konvertera..vb.1",
+      "fi": "Muunsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "konvertera",
+        "presens": "konverterar",
+        "preteritum": "konverterade",
+        "supinum": "konverterat"
+      }
+    },
+    {
+      "id": "wf-vb-v431",
+      "vocabIds": [
+        "v431"
+      ],
+      "lemgram": "koordinera..vb.1",
+      "fi": "Koordinoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "koordinera",
+        "presens": "koordinerar",
+        "preteritum": "koordinerade",
+        "supinum": "koordinerat"
+      }
+    },
+    {
+      "id": "wf-vb-v432",
+      "vocabIds": [
+        "v432"
+      ],
+      "lemgram": "kopiera..vb.1",
+      "fi": "Kopioi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kopiera",
+        "presens": "kopierar",
+        "preteritum": "kopierade",
+        "supinum": "kopierat"
+      }
+    },
+    {
+      "id": "wf-vb-v433",
+      "vocabIds": [
+        "v433"
+      ],
+      "lemgram": "korrigera..vb.1",
+      "fi": "Korjasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "korrigera",
+        "presens": "korrigerar",
+        "preteritum": "korrigerade",
+        "supinum": "korrigerat"
+      }
+    },
+    {
+      "id": "wf-vb-v434",
+      "vocabIds": [
+        "v434"
+      ],
+      "lemgram": "kvalificera..vb.1",
+      "fi": "Pätevöitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kvalificera",
+        "presens": "kvalificerar",
+        "preteritum": "kvalificerade",
+        "supinum": "kvalificerat"
+      }
+    },
+    {
+      "id": "wf-vb-v435",
+      "vocabIds": [
+        "v435"
+      ],
+      "lemgram": "kvantifiera..vb.1",
+      "fi": "Määritti määrällisesti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "kvantifiera",
+        "presens": "kvantifierar",
+        "preteritum": "kvantifierade",
+        "supinum": "kvantifierat"
+      }
+    },
+    {
+      "id": "wf-vb-v436",
+      "vocabIds": [
+        "v436"
+      ],
+      "lemgram": "köpa..vb.1",
+      "fi": "Osti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "köpa",
+        "presens": "köper",
+        "preteritum": "köpte",
+        "supinum": "köpt"
+      }
+    },
+    {
+      "id": "wf-vb-v437",
+      "vocabIds": [
+        "v437"
+      ],
+      "lemgram": "köra..vb.1",
+      "fi": "Ajoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "köra",
+        "presens": "kör",
+        "preteritum": "körde",
+        "supinum": "kört"
+      }
+    },
+    {
+      "id": "wf-vb-v438",
+      "vocabIds": [
+        "v438"
+      ],
+      "lemgram": "lagra..vb.1",
+      "fi": "Varastoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "lagra",
+        "presens": "lagrar",
+        "preteritum": "lagrade",
+        "supinum": "lagrat"
+      }
+    },
+    {
+      "id": "wf-vb-v439",
+      "vocabIds": [
+        "v439"
+      ],
+      "lemgram": "leda..vb.1",
+      "fi": "Johti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "leda",
+        "presens": "leder",
+        "preteritum": "ledde",
+        "supinum": "lett"
+      }
+    },
+    {
+      "id": "wf-vb-v440",
+      "vocabIds": [
+        "v440"
+      ],
+      "lemgram": "leta..vb.1",
+      "fi": "Etsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "leta",
+        "presens": "letar",
+        "preteritum": "letade",
+        "supinum": "letat"
+      }
+    },
+    {
+      "id": "wf-vb-v441",
+      "vocabIds": [
+        "v441"
+      ],
+      "lemgram": "leverera..vb.1",
+      "fi": "Toimitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "leverera",
+        "presens": "levererar",
+        "preteritum": "levererade",
+        "supinum": "levererat"
+      }
+    },
+    {
+      "id": "wf-vb-v442",
+      "vocabIds": [
+        "v442"
+      ],
+      "lemgram": "lösa..vb.1",
+      "fi": "Ratkaisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "lösa",
+        "presens": "löser",
+        "preteritum": "löste",
+        "supinum": "löst"
+      }
+    },
+    {
+      "id": "wf-vb-v443",
+      "vocabIds": [
+        "v443"
+      ],
+      "lemgram": "manövrera..vb.1",
+      "fi": "Ohjasi (manöveroi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "manövrera",
+        "presens": "manövrerar",
+        "preteritum": "manövrerade",
+        "supinum": "manövrerat"
+      }
+    },
+    {
+      "id": "wf-vb-v444",
+      "vocabIds": [
+        "v444"
+      ],
+      "lemgram": "matcha..vb.1",
+      "fi": "Sovitti yhteen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "matcha",
+        "presens": "matchar",
+        "preteritum": "matchade",
+        "supinum": "matchat"
+      }
+    },
+    {
+      "id": "wf-vb-v445",
+      "vocabIds": [
+        "v445"
+      ],
+      "lemgram": "medla..vb.1",
+      "fi": "Sovitteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "medla",
+        "presens": "medlar",
+        "preteritum": "medlade",
+        "supinum": "medlat"
+      }
+    },
+    {
+      "id": "wf-vb-v446",
+      "vocabIds": [
+        "v446"
+      ],
+      "lemgram": "motivera..vb.1",
+      "fi": "Motivoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "motivera",
+        "presens": "motiverar",
+        "preteritum": "motiverade",
+        "supinum": "motiverat"
+      }
+    },
+    {
+      "id": "wf-vb-v447",
+      "vocabIds": [
+        "v447"
+      ],
+      "lemgram": "mäta..vb.1",
+      "fi": "Mittasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "mäta",
+        "presens": "mäter",
+        "preteritum": "mätte",
+        "supinum": "mätt"
+      }
+    },
+    {
+      "id": "wf-vb-v448",
+      "vocabIds": [
+        "v448"
+      ],
+      "lemgram": "navigera..vb.1",
+      "fi": "Navigoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "navigera",
+        "presens": "navigerar",
+        "preteritum": "navigerade",
+        "supinum": "navigerat"
+      }
+    },
+    {
+      "id": "wf-vb-v449",
+      "vocabIds": [
+        "v449"
+      ],
+      "lemgram": "observera..vb.1",
+      "fi": "Havainnoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "observera",
+        "presens": "observerar",
+        "preteritum": "observerade",
+        "supinum": "observerat"
+      }
+    },
+    {
+      "id": "wf-vb-v450",
+      "vocabIds": [
+        "v450"
+      ],
+      "lemgram": "omarbeta..vb.1",
+      "fi": "Muokkasi uudelleen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "omarbeta",
+        "presens": "omarbetar",
+        "preteritum": "omarbetade",
+        "supinum": "omarbetat"
+      }
+    },
+    {
+      "id": "wf-vb-v451",
+      "vocabIds": [
+        "v451"
+      ],
+      "lemgram": "omorganisera..vb.1",
+      "fi": "Uudelleenjärjesteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "omorganisera",
+        "presens": "omorganiserar",
+        "preteritum": "omorganiserade",
+        "supinum": "omorganiserat"
+      }
+    },
+    {
+      "id": "wf-vb-v452",
+      "vocabIds": [
+        "v452"
+      ],
+      "lemgram": "omstrukturera..vb.1",
+      "fi": "Uudelleenrakensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "omstrukturera",
+        "presens": "omstrukturerar",
+        "preteritum": "omstrukturerade",
+        "supinum": "omstrukturerat"
+      }
+    },
+    {
+      "id": "wf-vb-v453",
+      "vocabIds": [
+        "v453"
+      ],
+      "lemgram": "ordinera..vb.1",
+      "fi": "Määräsi (esim. lääke)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ordinera",
+        "presens": "ordinerar",
+        "preteritum": "ordinerade",
+        "supinum": "ordinerat"
+      }
+    },
+    {
+      "id": "wf-vb-v454",
+      "vocabIds": [
+        "v454"
+      ],
+      "lemgram": "organisera..vb.1",
+      "fi": "Järjesti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "organisera",
+        "presens": "organiserar",
+        "preteritum": "organiserade",
+        "supinum": "organiserat"
+      }
+    },
+    {
+      "id": "wf-vb-v455",
+      "vocabIds": [
+        "v455"
+      ],
+      "lemgram": "planera..vb.1",
+      "fi": "Suunnitteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "planera",
+        "presens": "planerar",
+        "preteritum": "planerade",
+        "supinum": "planerat"
+      }
+    },
+    {
+      "id": "wf-vb-v457",
+      "vocabIds": [
+        "v457"
+      ],
+      "lemgram": "producera..vb.1",
+      "fi": "Tuotti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "producera",
+        "presens": "producerar",
+        "preteritum": "producerade",
+        "supinum": "producerat"
+      }
+    },
+    {
+      "id": "wf-vb-v458",
+      "vocabIds": [
+        "v458"
+      ],
+      "lemgram": "programmera..vb.1",
+      "fi": "Ohjelmoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "programmera",
+        "presens": "programmerar",
+        "preteritum": "programmerade",
+        "supinum": "programmerat"
+      }
+    },
+    {
+      "id": "wf-vb-v459",
+      "vocabIds": [
+        "v459"
+      ],
+      "lemgram": "projektera..vb.1",
+      "fi": "Projektoi (suunnitteli)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "projektera",
+        "presens": "projekterar",
+        "preteritum": "projekterade",
+        "supinum": "projekterat"
+      }
+    },
+    {
+      "id": "wf-vb-v460",
+      "vocabIds": [
+        "v460"
+      ],
+      "lemgram": "publicera..vb.1",
+      "fi": "Julkaisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "publicera",
+        "presens": "publicerar",
+        "preteritum": "publicerade",
+        "supinum": "publicerat"
+      }
+    },
+    {
+      "id": "wf-vb-v461",
+      "vocabIds": [
+        "v461"
+      ],
+      "lemgram": "påverka..vb.1",
+      "fi": "Vaikutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "påverka",
+        "presens": "påverkar",
+        "preteritum": "påverkade",
+        "supinum": "påverkat"
+      }
+    },
+    {
+      "id": "wf-vb-v462",
+      "vocabIds": [
+        "v462"
+      ],
+      "lemgram": "rapportera..vb.1",
+      "fi": "Raportoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rapportera",
+        "presens": "rapporterar",
+        "preteritum": "rapporterade",
+        "supinum": "rapporterat"
+      }
+    },
+    {
+      "id": "wf-vb-v463",
+      "vocabIds": [
+        "v463"
+      ],
+      "lemgram": "redigera..vb.1",
+      "fi": "Toimitti (tekstiä)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "redigera",
+        "presens": "redigerar",
+        "preteritum": "redigerade",
+        "supinum": "redigerat"
+      }
+    },
+    {
+      "id": "wf-vb-v464",
+      "vocabIds": [
+        "v464"
+      ],
+      "lemgram": "reducera..vb.1",
+      "fi": "Vähensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "reducera",
+        "presens": "reducerar",
+        "preteritum": "reducerade",
+        "supinum": "reducerat"
+      }
+    },
+    {
+      "id": "wf-vb-v465",
+      "vocabIds": [
+        "v465"
+      ],
+      "lemgram": "reformera..vb.1",
+      "fi": "Uudisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "reformera",
+        "presens": "reformerar",
+        "preteritum": "reformerade",
+        "supinum": "reformerat"
+      }
+    },
+    {
+      "id": "wf-vb-v466",
+      "vocabIds": [
+        "v466"
+      ],
+      "lemgram": "reglera..vb.1",
+      "fi": "Säänteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "reglera",
+        "presens": "reglerar",
+        "preteritum": "reglerade",
+        "supinum": "reglerat"
+      }
+    },
+    {
+      "id": "wf-vb-v467",
+      "vocabIds": [
+        "v467"
+      ],
+      "lemgram": "rehabilitera..vb.1",
+      "fi": "Kuntoutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rehabilitera",
+        "presens": "rehabiliterar",
+        "preteritum": "rehabiliterade",
+        "supinum": "rehabiliterat"
+      }
+    },
+    {
+      "id": "wf-vb-v468",
+      "vocabIds": [
+        "v468"
+      ],
+      "lemgram": "rekommendera..vb.1",
+      "fi": "Suositteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rekommendera",
+        "presens": "rekommenderar",
+        "preteritum": "rekommenderade",
+        "supinum": "rekommenderat"
+      }
+    },
+    {
+      "id": "wf-vb-v469",
+      "vocabIds": [
+        "v469"
+      ],
+      "lemgram": "rekrytera..vb.1",
+      "fi": "Rekrytoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rekrytera",
+        "presens": "rekryterar",
+        "preteritum": "rekryterade",
+        "supinum": "rekryterat"
+      }
+    },
+    {
+      "id": "wf-vb-v470",
+      "vocabIds": [
+        "v470"
+      ],
+      "lemgram": "reparera..vb.1",
+      "fi": "Korjasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "reparera",
+        "presens": "reparerar",
+        "preteritum": "reparerade",
+        "supinum": "reparerat"
+      }
+    },
+    {
+      "id": "wf-vb-v471",
+      "vocabIds": [
+        "v471"
+      ],
+      "lemgram": "representera..vb.1",
+      "fi": "Edusti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "representera",
+        "presens": "representerar",
+        "preteritum": "representerade",
+        "supinum": "representerat"
+      }
+    },
+    {
+      "id": "wf-vb-v472",
+      "vocabIds": [
+        "v472"
+      ],
+      "lemgram": "resonera..vb.1",
+      "fi": "Perusteli (pohti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "resonera",
+        "presens": "resonerar",
+        "preteritum": "resonerade",
+        "supinum": "resonerat"
+      }
+    },
+    {
+      "id": "wf-vb-v473",
+      "vocabIds": [
+        "v473"
+      ],
+      "lemgram": "revidera..vb.1",
+      "fi": "Tarkisti (päivitti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "revidera",
+        "presens": "reviderar",
+        "preteritum": "reviderade",
+        "supinum": "reviderat"
+      }
+    },
+    {
+      "id": "wf-vb-v475",
+      "vocabIds": [
+        "v475"
+      ],
+      "lemgram": "rita..vb.1",
+      "fi": "Piirsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rita",
+        "presens": "ritar",
+        "preteritum": "ritade",
+        "supinum": "ritat"
+      }
+    },
+    {
+      "id": "wf-vb-v477",
+      "vocabIds": [
+        "v477"
+      ],
+      "lemgram": "räkna_ut..vbm.1",
+      "fi": "Laski",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "räkna ut",
+        "presens": "räknar ut",
+        "preteritum": "räknade ut",
+        "supinum": "räknat ut"
+      }
+    },
+    {
+      "id": "wf-vb-v478",
+      "vocabIds": [
+        "v478"
+      ],
+      "lemgram": "rättfärdiga..vb.1",
+      "fi": "Oikeutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "rättfärdiga",
+        "presens": "rättfärdigar",
+        "preteritum": "rättfärdigade",
+        "supinum": "rättfärdigat"
+      }
+    },
+    {
+      "id": "wf-vb-v480",
+      "vocabIds": [
+        "v480"
+      ],
+      "lemgram": "samla..vb.1",
+      "fi": "Keräsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "samla",
+        "presens": "samlar",
+        "preteritum": "samlade",
+        "supinum": "samlat"
+      }
+    },
+    {
+      "id": "wf-vb-v481",
+      "vocabIds": [
+        "v481"
+      ],
+      "lemgram": "sammanställa..vb.1",
+      "fi": "Kokosi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sammanställa",
+        "presens": "sammanställer",
+        "preteritum": "sammanställde",
+        "supinum": "sammanställt"
+      }
+    },
+    {
+      "id": "wf-vb-v482",
+      "vocabIds": [
+        "v482"
+      ],
+      "lemgram": "sanktionera..vb.1",
+      "fi": "Hyväksyi (sanktioi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sanktionera",
+        "presens": "sanktionerar",
+        "preteritum": "sanktionerade",
+        "supinum": "sanktionerat"
+      }
+    },
+    {
+      "id": "wf-vb-v483",
+      "vocabIds": [
+        "v483"
+      ],
+      "lemgram": "sätta_ihop..vbm.1",
+      "fi": "Kokosi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sätta ihop",
+        "presens": "sätter ihop",
+        "preteritum": "satte ihop",
+        "supinum": "satt ihop"
+      }
+    },
+    {
+      "id": "wf-vb-v484",
+      "vocabIds": [
+        "v484"
+      ],
+      "lemgram": "sälja..vb.1",
+      "fi": "Myi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sälja",
+        "presens": "säljer",
+        "preteritum": "sålde",
+        "supinum": "sålt"
+      }
+    },
+    {
+      "id": "wf-vb-v485",
+      "vocabIds": [
+        "v485"
+      ],
+      "lemgram": "servera..vb.1",
+      "fi": "Tarjoili",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "servera",
+        "presens": "serverar",
+        "preteritum": "serverade",
+        "supinum": "serverat"
+      }
+    },
+    {
+      "id": "wf-vb-v486",
+      "vocabIds": [
+        "v486"
+      ],
+      "lemgram": "skaffa_fram..vbm.1",
+      "fi": "Hankki",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "skaffa fram",
+        "presens": "skaffar fram",
+        "preteritum": "skaffade fram",
+        "supinum": "skaffat fram"
+      }
+    },
+    {
+      "id": "wf-vb-v487",
+      "vocabIds": [
+        "v487"
+      ],
+      "lemgram": "skapa..vb.1",
+      "fi": "Loi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "skapa",
+        "presens": "skapar",
+        "preteritum": "skapade",
+        "supinum": "skapat"
+      }
+    },
+    {
+      "id": "wf-vb-v488",
+      "vocabIds": [
+        "v488"
+      ],
+      "lemgram": "skriva..vb.1",
+      "fi": "Kirjoitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "skriva",
+        "presens": "skriver",
+        "preteritum": "skrev",
+        "supinum": "skrivit"
+      }
+    },
+    {
+      "id": "wf-vb-v489",
+      "vocabIds": [
+        "v489"
+      ],
+      "lemgram": "sköta_om..vbm.1",
+      "fi": "Hoiti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sköta om",
+        "presens": "sköter om",
+        "preteritum": "skötte om",
+        "supinum": "skött om"
+      }
+    },
+    {
+      "id": "wf-vb-v490",
+      "vocabIds": [
+        "v490"
+      ],
+      "lemgram": "skydda..vb.1",
+      "fi": "Suojeli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "skydda",
+        "presens": "skyddar",
+        "preteritum": "skyddade",
+        "supinum": "skyddat"
+      }
+    },
+    {
+      "id": "wf-vb-v491",
+      "vocabIds": [
+        "v491"
+      ],
+      "lemgram": "slå_ihop..vbm.1",
+      "fi": "Yhdisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "slå ihop",
+        "presens": "slår ihop",
+        "preteritum": "slog ihop",
+        "supinum": "slagit ihop"
+      }
+    },
+    {
+      "id": "wf-vb-v492",
+      "vocabIds": [
+        "v492"
+      ],
+      "lemgram": "sortera..vb.1",
+      "fi": "Lajitteli",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "sortera",
+        "presens": "sorterar",
+        "preteritum": "sorterade",
+        "supinum": "sorterat"
+      }
+    },
+    {
+      "id": "wf-vb-v493",
+      "vocabIds": [
+        "v493"
+      ],
+      "lemgram": "standardisera..vb.1",
+      "fi": "Standardoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "standardisera",
+        "presens": "standardiserar",
+        "preteritum": "standardiserade",
+        "supinum": "standardiserat"
+      }
+    },
+    {
+      "id": "wf-vb-v494",
+      "vocabIds": [
+        "v494"
+      ],
+      "lemgram": "stimulera..vb.1",
+      "fi": "Kannusti (stimuloi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "stimulera",
+        "presens": "stimulerar",
+        "preteritum": "stimulerade",
+        "supinum": "stimulerat"
+      }
+    },
+    {
+      "id": "wf-vb-v495",
+      "vocabIds": [
+        "v495"
+      ],
+      "lemgram": "strukturera..vb.1",
+      "fi": "Jäsensi (strukturoi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "strukturera",
+        "presens": "strukturerar",
+        "preteritum": "strukturerade",
+        "supinum": "strukturerat"
+      }
+    },
+    {
+      "id": "wf-vb-v496",
+      "vocabIds": [
+        "v496"
+      ],
+      "lemgram": "se..vb.1",
+      "fi": "Näki mahdollisuuksia",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "se",
+        "presens": "ser",
+        "preteritum": "såg",
+        "supinum": "sett"
+      }
+    },
+    {
+      "id": "wf-vb-v497",
+      "vocabIds": [
+        "v497"
+      ],
+      "lemgram": "tala..vb.1",
+      "fi": "Puhui",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tala",
+        "presens": "talar",
+        "preteritum": "talade",
+        "supinum": "talat"
+      }
+    },
+    {
+      "id": "wf-vb-v498",
+      "vocabIds": [
+        "v498"
+      ],
+      "lemgram": "testa..vb.1",
+      "fi": "Testasi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "testa",
+        "presens": "testar",
+        "preteritum": "testade",
+        "supinum": "testat"
+      }
+    },
+    {
+      "id": "wf-vb-v499",
+      "vocabIds": [
+        "v499"
+      ],
+      "lemgram": "tillföra..vb.1",
+      "fi": "Toi lisää",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tillföra",
+        "presens": "tillför",
+        "preteritum": "tillförde",
+        "supinum": "tillfört"
+      }
+    },
+    {
+      "id": "wf-vb-v500",
+      "vocabIds": [
+        "v500"
+      ],
+      "lemgram": "tillhandahålla..vb.1",
+      "fi": "Tarjosi (toimitti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tillhandahålla",
+        "presens": "tillhandahåller",
+        "preteritum": "tillhandahöll",
+        "supinum": "tillhandahållit"
+      }
+    },
+    {
+      "id": "wf-vb-v501",
+      "vocabIds": [
+        "v501"
+      ],
+      "lemgram": "tillverka..vb.1",
+      "fi": "Valmisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tillverka",
+        "presens": "tillverkar",
+        "preteritum": "tillverkade",
+        "supinum": "tillverkat"
+      }
+    },
+    {
+      "id": "wf-vb-v502",
+      "vocabIds": [
+        "v502"
+      ],
+      "lemgram": "tillämpa..vb.1",
+      "fi": "Sovelsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tillämpa",
+        "presens": "tillämpar",
+        "preteritum": "tillämpade",
+        "supinum": "tillämpat"
+      }
+    },
+    {
+      "id": "wf-vb-v504",
+      "vocabIds": [
+        "v504"
+      ],
+      "lemgram": "tolka..vb.1",
+      "fi": "Tulkitsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tolka",
+        "presens": "tolkar",
+        "preteritum": "tolkade",
+        "supinum": "tolkat"
+      }
+    },
+    {
+      "id": "wf-vb-v505",
+      "vocabIds": [
+        "v505"
+      ],
+      "lemgram": "transformera..vb.1",
+      "fi": "Muunsi (transformoi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "transformera",
+        "presens": "transformerar",
+        "preteritum": "transformerade",
+        "supinum": "transformerat"
+      }
+    },
+    {
+      "id": "wf-vb-v506",
+      "vocabIds": [
+        "v506"
+      ],
+      "lemgram": "träna..vb.1",
+      "fi": "Valmensi (harjoitti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "träna",
+        "presens": "tränar",
+        "preteritum": "tränade",
+        "supinum": "tränat"
+      }
+    },
+    {
+      "id": "wf-vb-v507",
+      "vocabIds": [
+        "v507"
+      ],
+      "lemgram": "tävla..vb.1",
+      "fi": "Kilpaili",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "tävla",
+        "presens": "tävlar",
+        "preteritum": "tävlade",
+        "supinum": "tävlat"
+      }
+    },
+    {
+      "id": "wf-vb-v508",
+      "vocabIds": [
+        "v508"
+      ],
+      "lemgram": "underhålla..vb.1",
+      "fi": "Ylläpiti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "underhålla",
+        "presens": "underhåller",
+        "preteritum": "underhöll",
+        "supinum": "underhållit"
+      }
+    },
+    {
+      "id": "wf-vb-v509",
+      "vocabIds": [
+        "v509"
+      ],
+      "lemgram": "underlätta..vb.1",
+      "fi": "Helpotti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "underlätta",
+        "presens": "underlättar",
+        "preteritum": "underlättade",
+        "supinum": "underlättat"
+      }
+    },
+    {
+      "id": "wf-vb-v510",
+      "vocabIds": [
+        "v510"
+      ],
+      "lemgram": "undersöka..vb.1",
+      "fi": "Tutki",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "undersöka",
+        "presens": "undersöker",
+        "preteritum": "undersökte",
+        "supinum": "undersökt"
+      }
+    },
+    {
+      "id": "wf-vb-v512",
+      "vocabIds": [
+        "v512"
+      ],
+      "lemgram": "uppleva..vb.1",
+      "fi": "Koki",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uppleva",
+        "presens": "upplever",
+        "preteritum": "upplevde",
+        "supinum": "upplevt"
+      }
+    },
+    {
+      "id": "wf-vb-v513",
+      "vocabIds": [
+        "v513"
+      ],
+      "lemgram": "uppmuntra..vb.1",
+      "fi": "Rohkaisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uppmuntra",
+        "presens": "uppmuntrar",
+        "preteritum": "uppmuntrade",
+        "supinum": "uppmuntrat"
+      }
+    },
+    {
+      "id": "wf-vb-v514",
+      "vocabIds": [
+        "v514"
+      ],
+      "lemgram": "uppnå..vb.1",
+      "fi": "Saavutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uppnå",
+        "presens": "uppnår",
+        "preteritum": "uppnådde",
+        "supinum": "uppnått"
+      }
+    },
+    {
+      "id": "wf-vb-v515",
+      "vocabIds": [
+        "v515"
+      ],
+      "lemgram": "uppskatta..vb.1",
+      "fi": "Arvosti (arvioi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uppskatta",
+        "presens": "uppskattar",
+        "preteritum": "uppskattade",
+        "supinum": "uppskattat"
+      }
+    },
+    {
+      "id": "wf-vb-v516",
+      "vocabIds": [
+        "v516"
+      ],
+      "lemgram": "upptäcka..vb.1",
+      "fi": "Löysi (havaitsi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "upptäcka",
+        "presens": "upptäcker",
+        "preteritum": "upptäckte",
+        "supinum": "upptäckt"
+      }
+    },
+    {
+      "id": "wf-vb-v517",
+      "vocabIds": [
+        "v517"
+      ],
+      "lemgram": "urskilja..vb.1",
+      "fi": "Erotti (erotteli)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "urskilja",
+        "presens": "urskiljer",
+        "preteritum": "urskilde",
+        "supinum": "urskilt"
+      }
+    },
+    {
+      "id": "wf-vb-v518",
+      "vocabIds": [
+        "v518"
+      ],
+      "lemgram": "utbilda..vb.1",
+      "fi": "Kouluti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "utbilda",
+        "presens": "utbildar",
+        "preteritum": "utbildade",
+        "supinum": "utbildat"
+      }
+    },
+    {
+      "id": "wf-vb-v519",
+      "vocabIds": [
+        "v519"
+      ],
+      "lemgram": "utföra..vb.1",
+      "fi": "Suoritti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "utföra",
+        "presens": "utför",
+        "preteritum": "utförde",
+        "supinum": "utfört"
+      }
+    },
+    {
+      "id": "wf-vb-v520",
+      "vocabIds": [
+        "v520"
+      ],
+      "lemgram": "uträtta..vb.1",
+      "fi": "Toteutti (sai aikaan)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uträtta",
+        "presens": "uträttar",
+        "preteritum": "uträttade",
+        "supinum": "uträttat"
+      }
+    },
+    {
+      "id": "wf-vb-v521",
+      "vocabIds": [
+        "v521"
+      ],
+      "lemgram": "uttrycka..vb.1",
+      "fi": "Ilmaisi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "uttrycka",
+        "presens": "uttrycker",
+        "preteritum": "uttryckte",
+        "supinum": "uttryckt"
+      }
+    },
+    {
+      "id": "wf-vb-v522",
+      "vocabIds": [
+        "v522"
+      ],
+      "lemgram": "utveckla..vb.1",
+      "fi": "Kehitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "utveckla",
+        "presens": "utvecklar",
+        "preteritum": "utvecklade",
+        "supinum": "utvecklat"
+      }
+    },
+    {
+      "id": "wf-vb-v523",
+      "vocabIds": [
+        "v523"
+      ],
+      "lemgram": "utvidga..vb.1",
+      "fi": "Laajensi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "utvidga",
+        "presens": "utvidgar",
+        "preteritum": "utvidgade",
+        "supinum": "utvidgat"
+      }
+    },
+    {
+      "id": "wf-vb-v524",
+      "vocabIds": [
+        "v524"
+      ],
+      "lemgram": "utvärdera..vb.1",
+      "fi": "Arvioi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "utvärdera",
+        "presens": "utvärderar",
+        "preteritum": "utvärderade",
+        "supinum": "utvärderat"
+      }
+    },
+    {
+      "id": "wf-vb-v526",
+      "vocabIds": [
+        "v526"
+      ],
+      "lemgram": "verbalisera..vb.1",
+      "fi": "Sanoitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "verbalisera",
+        "presens": "verbaliserar",
+        "preteritum": "verbaliserade",
+        "supinum": "verbaliserat"
+      }
+    },
+    {
+      "id": "wf-vb-v527",
+      "vocabIds": [
+        "v527"
+      ],
+      "lemgram": "verifiera..vb.1",
+      "fi": "Varmisti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "verifiera",
+        "presens": "verifierar",
+        "preteritum": "verifierade",
+        "supinum": "verifierat"
+      }
+    },
+    {
+      "id": "wf-vb-v528",
+      "vocabIds": [
+        "v528"
+      ],
+      "lemgram": "vitalisera..vb.1",
+      "fi": "Elävöitti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "vitalisera",
+        "presens": "vitaliserar",
+        "preteritum": "vitaliserade",
+        "supinum": "vitaliserat"
+      }
+    },
+    {
+      "id": "wf-vb-v530",
+      "vocabIds": [
+        "v530"
+      ],
+      "lemgram": "värdera..vb.1",
+      "fi": "Arvotti (arvioi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "värdera",
+        "presens": "värderar",
+        "preteritum": "värderade",
+        "supinum": "värderat"
+      }
+    },
+    {
+      "id": "wf-vb-v531",
+      "vocabIds": [
+        "v531"
+      ],
+      "lemgram": "värva..vb.1",
+      "fi": "Värväsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "värva",
+        "presens": "värvar",
+        "preteritum": "värvade",
+        "supinum": "värvat"
+      }
+    },
+    {
+      "id": "wf-vb-v532",
+      "vocabIds": [
+        "v532"
+      ],
+      "lemgram": "återskapa..vb.1",
+      "fi": "Loi uudelleen",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "återskapa",
+        "presens": "återskapar",
+        "preteritum": "återskapade",
+        "supinum": "återskapat"
+      }
+    },
+    {
+      "id": "wf-vb-v533",
+      "vocabIds": [
+        "v533"
+      ],
+      "lemgram": "ändra..vb.1",
+      "fi": "Muutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "ändra",
+        "presens": "ändrar",
+        "preteritum": "ändrade",
+        "supinum": "ändrat"
+      }
+    },
+    {
+      "id": "wf-vb-v534",
+      "vocabIds": [
+        "v534"
+      ],
+      "lemgram": "öka..vb.1",
+      "fi": "Lisäsi (kasvatti)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "öka",
+        "presens": "ökar",
+        "preteritum": "ökade",
+        "supinum": "ökat"
+      }
+    },
+    {
+      "id": "wf-vb-v535",
+      "vocabIds": [
+        "v535"
+      ],
+      "lemgram": "överlägga..vb.1",
+      "fi": "Neuvotteli (harkitsi)",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "överlägga",
+        "presens": "överlägger",
+        "preteritum": "överlade",
+        "supinum": "överlagt"
+      }
+    },
+    {
+      "id": "wf-vb-v536",
+      "vocabIds": [
+        "v536"
+      ],
+      "lemgram": "översätta..vb.1",
+      "fi": "Käänsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "översätta",
+        "presens": "översätter",
+        "preteritum": "översatte",
+        "supinum": "översatt"
+      }
+    },
+    {
+      "id": "wf-vb-v537",
+      "vocabIds": [
+        "v537"
+      ],
+      "lemgram": "övertyga..vb.1",
+      "fi": "Vakuutti",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "övertyga",
+        "presens": "övertygar",
+        "preteritum": "övertygade",
+        "supinum": "övertygat"
+      }
+    },
+    {
+      "id": "wf-vb-v538",
+      "vocabIds": [
+        "v538"
+      ],
+      "lemgram": "övervaka..vb.1",
+      "fi": "Valvoi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "övervaka",
+        "presens": "övervakar",
+        "preteritum": "övervakade",
+        "supinum": "övervakat"
+      }
+    },
+    {
+      "id": "wf-vb-v539",
+      "vocabIds": [
+        "v539"
+      ],
+      "lemgram": "överväga..vb.1",
+      "fi": "Harkitsi",
+      "part": 2,
+      "category": "cvverbit",
+      "forms": {
+        "infinitiv": "överväga",
+        "presens": "överväger",
+        "preteritum": "övervägde",
+        "supinum": "övervägt"
+      }
+    }
+  ],
+  "nouns": [
+    {
+      "id": "wf-nn-v006",
+      "vocabId": "v006",
+      "lemgram": "helg..nn.1",
+      "fi": "viikonloppu",
+      "part": 1,
+      "category": "smaprat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "helg",
+        "sgDef": "helgen",
+        "plIndef": "helger",
+        "plDef": "helgerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v007",
+      "vocabId": "v007",
+      "lemgram": "väder..nn.1",
+      "fi": "sää",
+      "part": 1,
+      "category": "smaprat",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "väder",
+        "sgDef": "vädret",
+        "plIndef": "väder",
+        "plDef": "vädren"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v008",
+      "vocabId": "v008",
+      "lemgram": "fritid..nn.1",
+      "fi": "vapaa-aika",
+      "part": 1,
+      "category": "smaprat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fritid",
+        "sgDef": "fritiden",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v009",
+      "vocabId": "v009",
+      "lemgram": "hobby..nn.1",
+      "fi": "harrastus",
+      "part": 1,
+      "category": "smaprat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "hobby",
+        "sgDef": "hobbyn",
+        "plIndef": "hobbier",
+        "plDef": "hobbierna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v011",
+      "vocabId": "v011",
+      "lemgram": "familj..nn.1",
+      "fi": "perhe",
+      "part": 1,
+      "category": "smaprat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "familj",
+        "sgDef": "familjen",
+        "plIndef": "familjer",
+        "plDef": "familjerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v014",
+      "vocabId": "v014",
+      "lemgram": "kurs..nn.1",
+      "fi": "kurssi",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "kurs",
+        "sgDef": "kursen",
+        "plIndef": "kurser",
+        "plDef": "kurserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v016",
+      "vocabId": "v016",
+      "lemgram": "tentamen..nn.1",
+      "fi": "tentti",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "tentamen",
+        "sgDef": "tentamen",
+        "plIndef": "tentamina",
+        "plDef": "tentamina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v017",
+      "vocabId": "v017",
+      "lemgram": "lärare..nn.1",
+      "fi": "opettaja",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "lärare",
+        "sgDef": "läraren",
+        "plIndef": "lärare",
+        "plDef": "lärarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v018",
+      "vocabId": "v018",
+      "lemgram": "schema..nn.1",
+      "fi": "lukujärjestys",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "schema",
+        "sgDef": "schemat",
+        "plIndef": "scheman",
+        "plDef": "schemana"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v019",
+      "vocabId": "v019",
+      "lemgram": "arbete..nn.1",
+      "fi": "työ",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "arbete",
+        "sgDef": "arbetet",
+        "plIndef": "arbeten",
+        "plDef": "arbetena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v020",
+      "vocabId": "v020",
+      "lemgram": "jobb..nn.1",
+      "fi": "työ / duuni",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "jobb",
+        "sgDef": "jobbet",
+        "plIndef": "jobb",
+        "plDef": "jobben"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v021",
+      "vocabId": "v021",
+      "lemgram": "möte..nn.1",
+      "fi": "kokous",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "möte",
+        "sgDef": "mötet",
+        "plIndef": "möten",
+        "plDef": "mötena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v022",
+      "vocabId": "v022",
+      "lemgram": "kollega..nn.1",
+      "fi": "työkaveri",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "kollega",
+        "sgDef": "kollegan",
+        "plIndef": "kolleger",
+        "plDef": "kollegerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v023",
+      "vocabId": "v023",
+      "lemgram": "chef..nn.1",
+      "fi": "esimies / pomo",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "chef",
+        "sgDef": "chefen",
+        "plIndef": "chefer",
+        "plDef": "cheferna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v024",
+      "vocabId": "v024",
+      "lemgram": "företag..nn.1",
+      "fi": "yritys",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "företag",
+        "sgDef": "företaget",
+        "plIndef": "företag",
+        "plDef": "företagen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v025",
+      "vocabId": "v025",
+      "lemgram": "kund..nn.1",
+      "fi": "asiakas",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "kund",
+        "sgDef": "kunden",
+        "plIndef": "kunder",
+        "plDef": "kunderna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v026",
+      "vocabId": "v026",
+      "lemgram": "deadline..nn.1",
+      "fi": "määräaika",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "deadline",
+        "sgDef": "deadlinen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v028",
+      "vocabId": "v028",
+      "lemgram": "lön..nn.1",
+      "fi": "palkka",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "lön",
+        "sgDef": "lönen",
+        "plIndef": "löner",
+        "plDef": "lönerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v029",
+      "vocabId": "v029",
+      "lemgram": "semester..nn.1",
+      "fi": "loma",
+      "part": 2,
+      "category": "tyoelama",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "semester",
+        "sgDef": "semestern",
+        "plIndef": "semestrar",
+        "plDef": "semestrarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v030",
+      "vocabId": "v030",
+      "lemgram": "mejl..nn.2",
+      "fi": "sähköposti(viesti)",
+      "part": 2,
+      "category": "viestinta",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "mejl",
+        "sgDef": "mejlet",
+        "plIndef": "mejl",
+        "plDef": "mejlen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v033",
+      "vocabId": "v033",
+      "lemgram": "rapport..nn.1",
+      "fi": "raportti",
+      "part": 2,
+      "category": "viestinta",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "rapport",
+        "sgDef": "rapporten",
+        "plIndef": "rapporter",
+        "plDef": "rapporterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v035",
+      "vocabId": "v035",
+      "lemgram": "fråga..nn.1",
+      "fi": "kysymys",
+      "part": 2,
+      "category": "viestinta",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fråga",
+        "sgDef": "frågan",
+        "plIndef": "frågor",
+        "plDef": "frågorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v037",
+      "vocabId": "v037",
+      "lemgram": "programmering..nn.1",
+      "fi": "ohjelmointi",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "programmering",
+        "sgDef": "programmeringen",
+        "plIndef": "programmeringar",
+        "plDef": "programmeringarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v038",
+      "vocabId": "v038",
+      "lemgram": "dator..nn.1",
+      "fi": "tietokone",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dator",
+        "sgDef": "datorn",
+        "plIndef": "datorer",
+        "plDef": "datorerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v039",
+      "vocabId": "v039",
+      "lemgram": "programvara..nn.1",
+      "fi": "ohjelmisto",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "programvara",
+        "sgDef": "programvaran",
+        "plIndef": "programvaror",
+        "plDef": "programvarorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v040",
+      "vocabId": "v040",
+      "lemgram": "hårdvara..nn.1",
+      "fi": "laitteisto",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "hårdvara",
+        "sgDef": "hårdvaran",
+        "plIndef": "hårdvaror",
+        "plDef": "hårdvarorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v041",
+      "vocabId": "v041",
+      "lemgram": "kod..nn.1",
+      "fi": "koodi",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "kod",
+        "sgDef": "koden",
+        "plIndef": "koder",
+        "plDef": "koderna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v043",
+      "vocabId": "v043",
+      "lemgram": "databas..nn.1",
+      "fi": "tietokanta",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "databas",
+        "sgDef": "databasen",
+        "plIndef": "databaser",
+        "plDef": "databaserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v044",
+      "vocabId": "v044",
+      "lemgram": "nätverk..nn.1",
+      "fi": "verkko",
+      "part": 3,
+      "category": "ict",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "nätverk",
+        "sgDef": "nätverket",
+        "plIndef": "nätverk",
+        "plDef": "nätverken"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v045",
+      "vocabId": "v045",
+      "lemgram": "server..nn.1",
+      "fi": "palvelin",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "server",
+        "sgDef": "servern",
+        "plIndef": "servrar",
+        "plDef": "servrarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v046",
+      "vocabId": "v046",
+      "lemgram": "fil..nn.1",
+      "fi": "tiedosto",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fil",
+        "sgDef": "filen",
+        "plIndef": "filer",
+        "plDef": "filerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v047",
+      "vocabId": "v047",
+      "lemgram": "lösenord..nn.1",
+      "fi": "salasana",
+      "part": 3,
+      "category": "ict",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "lösenord",
+        "sgDef": "lösenordet",
+        "plIndef": "lösenord",
+        "plDef": "lösenorden"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v048",
+      "vocabId": "v048",
+      "lemgram": "användare..nn.1",
+      "fi": "käyttäjä",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "användare",
+        "sgDef": "användaren",
+        "plIndef": "användare",
+        "plDef": "användarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v049",
+      "vocabId": "v049",
+      "lemgram": "utveckling..nn.1",
+      "fi": "kehitys",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "utveckling",
+        "sgDef": "utvecklingen",
+        "plIndef": "utvecklingar",
+        "plDef": "utvecklingarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v050",
+      "vocabId": "v050",
+      "lemgram": "fel..nn.1",
+      "fi": "virhe / bugi",
+      "part": 3,
+      "category": "ict",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "fel",
+        "sgDef": "felet",
+        "plIndef": "fel",
+        "plDef": "felen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v052",
+      "vocabId": "v052",
+      "lemgram": "system..nn.1",
+      "fi": "järjestelmä",
+      "part": 3,
+      "category": "ict",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "system",
+        "sgDef": "systemet",
+        "plIndef": "system",
+        "plDef": "systemen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v053",
+      "vocabId": "v053",
+      "lemgram": "webbsida..nn.1",
+      "fi": "verkkosivu",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "webbsida",
+        "sgDef": "webbsidan",
+        "plIndef": "webbsidor",
+        "plDef": "webbsidorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v054",
+      "vocabId": "v054",
+      "lemgram": "säkerhet..nn.1",
+      "fi": "turvallisuus",
+      "part": 3,
+      "category": "ict",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "säkerhet",
+        "sgDef": "säkerheten",
+        "plIndef": "säkerheter",
+        "plDef": "säkerheterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v057",
+      "vocabId": "v057",
+      "lemgram": "pappa..nn.1",
+      "fi": "isä",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "pappa",
+        "sgDef": "pappan",
+        "plIndef": "pappor",
+        "plDef": "papporna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v058",
+      "vocabId": "v058",
+      "lemgram": "tvilling..nn.1",
+      "fi": "kaksonen",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "tvilling",
+        "sgDef": "tvillingen",
+        "plIndef": "tvillingar",
+        "plDef": "tvillingarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v059",
+      "vocabId": "v059",
+      "lemgram": "barn..nn.1",
+      "fi": "lapsi",
+      "part": 5,
+      "category": "perhe",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "barn",
+        "sgDef": "barnet",
+        "plIndef": "barn",
+        "plDef": "barnen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v060",
+      "vocabId": "v060",
+      "lemgram": "son..nn.1",
+      "fi": "poika",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "son",
+        "sgDef": "sonen",
+        "plIndef": "söner",
+        "plDef": "sönerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v061",
+      "vocabId": "v061",
+      "lemgram": "syster..nn.1",
+      "fi": "sisko",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "syster",
+        "sgDef": "systern",
+        "plIndef": "systrar",
+        "plDef": "systrarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v062",
+      "vocabId": "v062",
+      "lemgram": "dotter..nn.1",
+      "fi": "tytär",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dotter",
+        "sgDef": "dottern",
+        "plIndef": "döttrar",
+        "plDef": "döttrarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v064",
+      "vocabId": "v064",
+      "lemgram": "bror..nn.1",
+      "fi": "veli",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "broder",
+        "sgDef": "brodern",
+        "plIndef": "bröder",
+        "plDef": "bröderna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v065",
+      "vocabId": "v065",
+      "lemgram": "mamma..nn.1",
+      "fi": "äiti",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "mamma",
+        "sgDef": "mamman",
+        "plIndef": "mammor",
+        "plDef": "mammorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v071",
+      "vocabId": "v071",
+      "lemgram": "pojkvän..nn.1",
+      "fi": "poikaystävä",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "pojkvän",
+        "sgDef": "pojkvännen",
+        "plIndef": "pojkvänner",
+        "plDef": "pojkvännerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v073",
+      "vocabId": "v073",
+      "lemgram": "singel..nn.1",
+      "fi": "sinkku",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "singel",
+        "sgDef": "singeln",
+        "plIndef": "singlar",
+        "plDef": "singlarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v074",
+      "vocabId": "v074",
+      "lemgram": "flickvän..nn.1",
+      "fi": "tyttöystävä",
+      "part": 5,
+      "category": "perhe",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "flickvän",
+        "sgDef": "flickvännen",
+        "plIndef": "flickvänner",
+        "plDef": "flickvännerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v075",
+      "vocabId": "v075",
+      "lemgram": "tvåa..nn.1",
+      "fi": "kaksio",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "tvåa",
+        "sgDef": "tvåan",
+        "plIndef": "tvåor",
+        "plDef": "tvåorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v077",
+      "vocabId": "v077",
+      "lemgram": "höghus..nn.1",
+      "fi": "kerrostalo",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "höghus",
+        "sgDef": "höghuset",
+        "plIndef": "höghus",
+        "plDef": "höghusen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v079",
+      "vocabId": "v079",
+      "lemgram": "trea..nn.1",
+      "fi": "kolmio",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "trea",
+        "sgDef": "trean",
+        "plIndef": "treor",
+        "plDef": "treorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v080",
+      "vocabId": "v080",
+      "lemgram": "by..nn.1",
+      "fi": "kylä",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "by",
+        "sgDef": "byn",
+        "plIndef": "byar",
+        "plDef": "byarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v081",
+      "vocabId": "v081",
+      "lemgram": "förort..nn.1",
+      "fi": "lähiö",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "förort",
+        "sgDef": "förorten",
+        "plIndef": "förorter",
+        "plDef": "förorterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v083",
+      "vocabId": "v083",
+      "lemgram": "stuga..nn.1",
+      "fi": "mökki",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "stuga",
+        "sgDef": "stugan",
+        "plIndef": "stugor",
+        "plDef": "stugorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v085",
+      "vocabId": "v085",
+      "lemgram": "radhus..nn.1",
+      "fi": "rivitalo",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "radhus",
+        "sgDef": "radhuset",
+        "plIndef": "radhus",
+        "plDef": "radhusen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v086",
+      "vocabId": "v086",
+      "lemgram": "parhus..nn.1",
+      "fi": "paritalo",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "parhus",
+        "sgDef": "parhuset",
+        "plIndef": "parhus",
+        "plDef": "parhusen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v088",
+      "vocabId": "v088",
+      "lemgram": "etta..nn.1",
+      "fi": "yksiö",
+      "part": 5,
+      "category": "asuminen",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "etta",
+        "sgDef": "ettan",
+        "plIndef": "ettor",
+        "plDef": "ettorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v091",
+      "vocabId": "v091",
+      "lemgram": "skidåkning..nn.1",
+      "fi": "hiihto",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "skidåkning",
+        "sgDef": "skidåkningen",
+        "plIndef": "skidåkningar",
+        "plDef": "skidåkningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v092",
+      "vocabId": "v092",
+      "lemgram": "joggning..nn.1",
+      "fi": "hölkkäily",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "joggning",
+        "sgDef": "joggningen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v093",
+      "vocabId": "v093",
+      "lemgram": "fotboll..nn.1",
+      "fi": "jalkapallo",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fotboll",
+        "sgDef": "fotbollen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v094",
+      "vocabId": "v094",
+      "lemgram": "gympa..nn.1",
+      "fi": "jumppa",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "gympa",
+        "sgDef": "gympan",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v095",
+      "vocabId": "v095",
+      "lemgram": "löpning..nn.1",
+      "fi": "juokseminen",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "löpning",
+        "sgDef": "löpningen",
+        "plIndef": "löpningar",
+        "plDef": "löpningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v096",
+      "vocabId": "v096",
+      "lemgram": "ishockey..nn.1",
+      "fi": "jääkiekko",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "ishockey",
+        "sgDef": "ishockeyn",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v097",
+      "vocabId": "v097",
+      "lemgram": "fiske..nn.1",
+      "fi": "kalastus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "fiske",
+        "sgDef": "fisket",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v098",
+      "vocabId": "v098",
+      "lemgram": "korgboll..nn.1",
+      "fi": "koripallo",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "korgboll",
+        "sgDef": "korgbollen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v099",
+      "vocabId": "v099",
+      "lemgram": "motionering..nn.1",
+      "fi": "kuntoilu",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "motionering",
+        "sgDef": "motioneringen",
+        "plIndef": "motioneringar",
+        "plDef": "motioneringarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v100",
+      "vocabId": "v100",
+      "lemgram": "gym..nn.1",
+      "fi": "kuntosali",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "gym",
+        "sgDef": "gymet",
+        "plIndef": "gym",
+        "plDef": "gymen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v102",
+      "vocabId": "v102",
+      "lemgram": "promenering..nn.1",
+      "fi": "kävely",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "promenering",
+        "sgDef": "promeneringen",
+        "plIndef": "promeneringar",
+        "plDef": "promeneringarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v103",
+      "vocabId": "v103",
+      "lemgram": "utförsåkning..nn.1",
+      "fi": "laskettelu",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "utförsåkning",
+        "sgDef": "utförsåkningen",
+        "plIndef": "utförsåkningar",
+        "plDef": "utförsåkningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v104",
+      "vocabId": "v104",
+      "lemgram": "volleyboll..nn.1",
+      "fi": "lentopallo",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "volleyboll",
+        "sgDef": "volleybollen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v106",
+      "vocabId": "v106",
+      "lemgram": "läsning..nn.1",
+      "fi": "lukeminen",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "läsning",
+        "sgDef": "läsningen",
+        "plIndef": "läsningar",
+        "plDef": "läsningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v108",
+      "vocabId": "v108",
+      "lemgram": "målning..nn.2",
+      "fi": "maalaaminen",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "målning",
+        "sgDef": "målningen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v109",
+      "vocabId": "v109",
+      "lemgram": "paddling..nn.1",
+      "fi": "melonta",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "paddling",
+        "sgDef": "paddlingen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v110",
+      "vocabId": "v110",
+      "lemgram": "jakt..nn.1",
+      "fi": "metsästys",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "jakt",
+        "sgDef": "jakten",
+        "plIndef": "jakter",
+        "plDef": "jakterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v112",
+      "vocabId": "v112",
+      "lemgram": "musik..nn.1",
+      "fi": "musiikki",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "musik",
+        "sgDef": "musiken",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v114",
+      "vocabId": "v114",
+      "lemgram": "tyngdlyftning..nn.1",
+      "fi": "painonnosto",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "tyngdlyftning",
+        "sgDef": "tyngdlyftningen",
+        "plIndef": "tyngdlyftningar",
+        "plDef": "tyngdlyftningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v115",
+      "vocabId": "v115",
+      "lemgram": "boboll..nn.1",
+      "fi": "pesäpallo",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "boboll",
+        "sgDef": "bobollen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v116",
+      "vocabId": "v116",
+      "lemgram": "cykling..nn.1",
+      "fi": "pyöräily",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "cykling",
+        "sgDef": "cyklingen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v117",
+      "vocabId": "v117",
+      "lemgram": "ridning..nn.1",
+      "fi": "ratsastus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "ridning",
+        "sgDef": "ridningen",
+        "plIndef": "ridningar",
+        "plDef": "ridningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v119",
+      "vocabId": "v119",
+      "lemgram": "matlagning..nn.1",
+      "fi": "ruoanlaitto",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "matlagning",
+        "sgDef": "matlagningen",
+        "plIndef": "matlagningar",
+        "plDef": "matlagningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v120",
+      "vocabId": "v120",
+      "lemgram": "stavgång..nn.1",
+      "fi": "sauvakävely",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "stavgång",
+        "sgDef": "stavgången",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v122",
+      "vocabId": "v122",
+      "lemgram": "dykning..nn.1",
+      "fi": "sukellus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dykning",
+        "sgDef": "dykningen",
+        "plIndef": "dykningar",
+        "plDef": "dykningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v123",
+      "vocabId": "v123",
+      "lemgram": "badminton..nn.1",
+      "fi": "sulkapallo",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "badminton",
+        "sgDef": "badmintonen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v124",
+      "vocabId": "v124",
+      "lemgram": "orientering..nn.1",
+      "fi": "suunnistus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "orientering",
+        "sgDef": "orienteringen",
+        "plIndef": "orienteringar",
+        "plDef": "orienteringarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v125",
+      "vocabId": "v125",
+      "lemgram": "innebandy..nn.1",
+      "fi": "sähly",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "innebandy",
+        "sgDef": "innebandyn",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v126",
+      "vocabId": "v126",
+      "lemgram": "dans..nn.1",
+      "fi": "tanssi",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dans",
+        "sgDef": "dansen",
+        "plIndef": "danser",
+        "plDef": "danserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v127",
+      "vocabId": "v127",
+      "lemgram": "camping..nn.1",
+      "fi": "telttailu",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "camping",
+        "sgDef": "campingen",
+        "plIndef": "campingar",
+        "plDef": "campingarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v128",
+      "vocabId": "v128",
+      "lemgram": "dator..nn.1",
+      "fi": "tietokone (pelit)",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dator",
+        "sgDef": "datorn",
+        "plIndef": "datorer",
+        "plDef": "datorerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v129",
+      "vocabId": "v129",
+      "lemgram": "simning..nn.1",
+      "fi": "uinti",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "simning",
+        "sgDef": "simningen",
+        "plIndef": "simningar",
+        "plDef": "simningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v130",
+      "vocabId": "v130",
+      "lemgram": "vandring..nn.1",
+      "fi": "vaellus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "vandring",
+        "sgDef": "vandringen",
+        "plIndef": "vandringar",
+        "plDef": "vandringarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v131",
+      "vocabId": "v131",
+      "lemgram": "fotografering..nn.1",
+      "fi": "valokuvaus",
+      "part": 5,
+      "category": "harrastukset",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fotografering",
+        "sgDef": "fotograferingen",
+        "plIndef": "fotograferingar",
+        "plDef": "fotograferingarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v132",
+      "vocabId": "v132",
+      "lemgram": "tema..nn.1",
+      "fi": "aihe",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "tema",
+        "sgDef": "temat",
+        "plIndef": "teman",
+        "plDef": "temana"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v133",
+      "vocabId": "v133",
+      "lemgram": "bransch..nn.1",
+      "fi": "ala",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "bransch",
+        "sgDef": "branschen",
+        "plIndef": "branscher",
+        "plDef": "branscherna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v134",
+      "vocabId": "v134",
+      "lemgram": "yrke..nn.1",
+      "fi": "ammatti",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "yrke",
+        "sgDef": "yrket",
+        "plIndef": "yrken",
+        "plDef": "yrkena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v136",
+      "vocabId": "v136",
+      "lemgram": "yrkesskola..nn.1",
+      "fi": "ammattikoulu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "yrkesskola",
+        "sgDef": "yrkesskolan",
+        "plIndef": "yrkesskolor",
+        "plDef": "yrkesskolorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v141",
+      "vocabId": "v141",
+      "lemgram": "bostadstillägg..nn.1",
+      "fi": "asumislisä",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "bostadstillägg",
+        "sgDef": "bostadstillägget",
+        "plIndef": "bostadstillägg",
+        "plDef": "bostadstilläggen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v145",
+      "vocabId": "v145",
+      "lemgram": "distansundervisning..nn.1",
+      "fi": "etäopetus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "distansundervisning",
+        "sgDef": "distansundervisningen",
+        "plIndef": "distansundervisningar",
+        "plDef": "distansundervisningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v148",
+      "vocabId": "v148",
+      "lemgram": "praktikant..nn.1",
+      "fi": "harjoittelija",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "praktikant",
+        "sgDef": "praktikanten",
+        "plIndef": "praktikanter",
+        "plDef": "praktikanterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v149",
+      "vocabId": "v149",
+      "lemgram": "praktik..nn.1",
+      "fi": "harjoittelu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "praktik",
+        "sgDef": "praktiken",
+        "plIndef": "praktiker",
+        "plDef": "praktikerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v154",
+      "vocabId": "v154",
+      "lemgram": "fortbildning..nn.1",
+      "fi": "jatkokoulutus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fortbildning",
+        "sgDef": "fortbildningen",
+        "plIndef": "fortbildningar",
+        "plDef": "fortbildningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v158",
+      "vocabId": "v158",
+      "lemgram": "uppsats..nn.1",
+      "fi": "kirjoitelma",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "uppsats",
+        "sgDef": "uppsatsen",
+        "plIndef": "uppsatser",
+        "plDef": "uppsatserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v159",
+      "vocabId": "v159",
+      "lemgram": "prov..nn.1",
+      "fi": "koe",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "prov",
+        "sgDef": "provet",
+        "plIndef": "prov",
+        "plDef": "proven"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v161",
+      "vocabId": "v161",
+      "lemgram": "högskola..nn.1",
+      "fi": "korkeakoulu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "högskola",
+        "sgDef": "högskolan",
+        "plIndef": "högskolor",
+        "plDef": "högskolorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v162",
+      "vocabId": "v162",
+      "lemgram": "högskoleexamen..nn.1",
+      "fi": "korkeakoulututkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "högskoleexamen",
+        "sgDef": "högskoleexamen",
+        "plIndef": "högskoleexamina",
+        "plDef": "högskoleexamina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v163",
+      "vocabId": "v163",
+      "lemgram": "utbildning..nn.1",
+      "fi": "koulutus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "utbildning",
+        "sgDef": "utbildningen",
+        "plIndef": "utbildningar",
+        "plDef": "utbildningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v164",
+      "vocabId": "v164",
+      "lemgram": "utbildningsprogram..nn.1",
+      "fi": "koulutusohjelma",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "utbildningsprogram",
+        "sgDef": "utbildningsprogrammet",
+        "plIndef": "utbildningsprogram",
+        "plDef": "utbildningsprogrammen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v165",
+      "vocabId": "v165",
+      "lemgram": "examensarbete..nn.1",
+      "fi": "lopputyö",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "examensarbete",
+        "sgDef": "examensarbetet",
+        "plIndef": "examensarbeten",
+        "plDef": "examensarbetena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v166",
+      "vocabId": "v166",
+      "lemgram": "föreläsning..nn.1",
+      "fi": "luento",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "föreläsning",
+        "sgDef": "föreläsningen",
+        "plIndef": "föreläsningar",
+        "plDef": "föreläsningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v167",
+      "vocabId": "v167",
+      "lemgram": "gymnasium..nn.1",
+      "fi": "lukio",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "gymnasium",
+        "sgDef": "gymnasiet",
+        "plIndef": "gymnasier",
+        "plDef": "gymnasierna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v168",
+      "vocabId": "v168",
+      "lemgram": "termin..nn.1",
+      "fi": "lukukausi",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "termin",
+        "sgDef": "terminen",
+        "plIndef": "terminer",
+        "plDef": "terminerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v169",
+      "vocabId": "v169",
+      "lemgram": "läsår..nn.1",
+      "fi": "lukuvuosi",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "läsår",
+        "sgDef": "läsåret",
+        "plIndef": "läsår",
+        "plDef": "läsåren"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v176",
+      "vocabId": "v176",
+      "lemgram": "undervisning..nn.1",
+      "fi": "opetus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "undervisning",
+        "sgDef": "undervisningen",
+        "plIndef": "undervisningar",
+        "plDef": "undervisningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v178",
+      "vocabId": "v178",
+      "lemgram": "lärdomsprov..nn.1",
+      "fi": "opinnäytetyö",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "lärdomsprov",
+        "sgDef": "lärdomsprovet",
+        "plIndef": "lärdomsprov",
+        "plDef": "lärdomsproven"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v179",
+      "vocabId": "v179",
+      "lemgram": "studielån..nn.1",
+      "fi": "opintolaina",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "studielån",
+        "sgDef": "studielånet",
+        "plIndef": "studielån",
+        "plDef": "studielånen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v181",
+      "vocabId": "v181",
+      "lemgram": "studiestöd..nn.1",
+      "fi": "opintotuki",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "studiestöd",
+        "sgDef": "studiestödet",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v182",
+      "vocabId": "v182",
+      "lemgram": "studerande..nn.1",
+      "fi": "opiskelija",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "studerande",
+        "sgDef": "studeranden",
+        "plIndef": "studerande",
+        "plDef": "studerandena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v183",
+      "vocabId": "v183",
+      "lemgram": "studentliv..nn.1",
+      "fi": "opiskelijaelämä",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "studentliv",
+        "sgDef": "studentlivet",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v186",
+      "vocabId": "v186",
+      "lemgram": "studietid..nn.1",
+      "fi": "opiskeluaika",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "studietid",
+        "sgDef": "studietiden",
+        "plIndef": "studietider",
+        "plDef": "studietiderna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v188",
+      "vocabId": "v188",
+      "lemgram": "lektion..nn.1",
+      "fi": "oppitunti",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "lektion",
+        "sgDef": "lektionen",
+        "plIndef": "lektioner",
+        "plDef": "lektionerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v190",
+      "vocabId": "v190",
+      "lemgram": "feedback..nn.1",
+      "fi": "palaute",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "feedback",
+        "sgDef": "feedbacken",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v191",
+      "vocabId": "v191",
+      "lemgram": "grundskola..nn.1",
+      "fi": "peruskoulu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "grundskola",
+        "sgDef": "grundskolan",
+        "plIndef": "grundskolor",
+        "plDef": "grundskolorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v194",
+      "vocabId": "v194",
+      "lemgram": "projekt..nn.1",
+      "fi": "projekti",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "projekt",
+        "sgDef": "projektet",
+        "plIndef": "projekt",
+        "plDef": "projekten"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v197",
+      "vocabId": "v197",
+      "lemgram": "inträdesprov..nn.1",
+      "fi": "pääsykoe",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "inträdesprov",
+        "sgDef": "inträdesprovet",
+        "plIndef": "inträdesprov",
+        "plDef": "inträdesproven"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v198",
+      "vocabId": "v198",
+      "lemgram": "grupparbete..nn.1",
+      "fi": "ryhmätyö",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "grupparbete",
+        "sgDef": "grupparbetet",
+        "plIndef": "grupparbeten",
+        "plDef": "grupparbetena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v204",
+      "vocabId": "v204",
+      "lemgram": "paus..nn.1",
+      "fi": "tauko",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "paus",
+        "sgDef": "pausen",
+        "plIndef": "pauser",
+        "plDef": "pauserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v205",
+      "vocabId": "v205",
+      "lemgram": "uppgift..nn.1",
+      "fi": "tehtävä",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "uppgift",
+        "sgDef": "uppgiften",
+        "plIndef": "uppgifter",
+        "plDef": "uppgifterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v206",
+      "vocabId": "v206",
+      "lemgram": "tenta..nn.1",
+      "fi": "tentti (puhekielinen)",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "tenta",
+        "sgDef": "tentan",
+        "plIndef": "tentor",
+        "plDef": "tentorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v207",
+      "vocabId": "v207",
+      "lemgram": "examen..nn.1",
+      "fi": "tutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "examen",
+        "sgDef": "examen",
+        "plIndef": "examina",
+        "plDef": "examina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v217",
+      "vocabId": "v217",
+      "lemgram": "årskurs..nn.1",
+      "fi": "vuosikurssi",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "årskurs",
+        "sgDef": "årskursen",
+        "plIndef": "årskurser",
+        "plDef": "årskurserna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v218",
+      "vocabId": "v218",
+      "lemgram": "sabbatsår..nn.1",
+      "fi": "välivuosi",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "sabbatsår",
+        "sgDef": "sabbatsåret",
+        "plIndef": "sabbatsår",
+        "plDef": "sabbatsåren"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v219",
+      "vocabId": "v219",
+      "lemgram": "universitet..nn.1",
+      "fi": "yliopisto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "universitet",
+        "sgDef": "universitetet",
+        "plIndef": "universitet",
+        "plDef": "universiteten"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v220",
+      "vocabId": "v220",
+      "lemgram": "student..nn.1",
+      "fi": "ylioppilas",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "student",
+        "sgDef": "studenten",
+        "plIndef": "studenter",
+        "plDef": "studenterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v221",
+      "vocabId": "v221",
+      "lemgram": "studentexamen..nn.1",
+      "fi": "ylioppilastutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "studentexamen",
+        "sgDef": "studentexamen",
+        "plIndef": "studentexamina",
+        "plDef": "studentexamina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v222",
+      "vocabId": "v222",
+      "lemgram": "informationsteknik..nn.1",
+      "fi": "IT",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "informationsteknik",
+        "sgDef": "informationstekniken",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v224",
+      "vocabId": "v224",
+      "lemgram": "medieteknik..nn.1",
+      "fi": "mediatekniikka",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "medieteknik",
+        "sgDef": "medietekniken",
+        "plIndef": "medietekniker",
+        "plDef": "medieteknikerna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v229",
+      "vocabId": "v229",
+      "lemgram": "företagsekonomi..nn.1",
+      "fi": "liiketalous",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "företagsekonomi",
+        "sgDef": "företagsekonomin",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v232",
+      "vocabId": "v232",
+      "lemgram": "ledarskap..nn.1",
+      "fi": "johtajuus",
+      "part": 3,
+      "category": "alat",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "ledarskap",
+        "sgDef": "ledarskapet",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v233",
+      "vocabId": "v233",
+      "lemgram": "marknadsföring..nn.1",
+      "fi": "markkinointi",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "marknadsföring",
+        "sgDef": "marknadsföringen",
+        "plIndef": "marknadsföringar",
+        "plDef": "marknadsföringarna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v235",
+      "vocabId": "v235",
+      "lemgram": "försäljning..nn.1",
+      "fi": "myynti",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "försäljning",
+        "sgDef": "försäljningen",
+        "plIndef": "försäljningar",
+        "plDef": "försäljningarna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v238",
+      "vocabId": "v238",
+      "lemgram": "ekonomi..nn.1",
+      "fi": "taloustiede",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "ekonomi",
+        "sgDef": "ekonomin",
+        "plIndef": "ekonomier",
+        "plDef": "ekonomierna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v240",
+      "vocabId": "v240",
+      "lemgram": "detaljhandel..nn.1",
+      "fi": "vähittäiskauppa",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "detaljhandel",
+        "sgDef": "detaljhandeln",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v241",
+      "vocabId": "v241",
+      "lemgram": "företagsamhet..nn.1",
+      "fi": "yrittäjyys",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "företagsamhet",
+        "sgDef": "företagsamheten",
+        "plIndef": "företagsamheter",
+        "plDef": "företagsamheterna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v251",
+      "vocabId": "v251",
+      "lemgram": "turism..nn.1",
+      "fi": "matkailuala",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "turism",
+        "sgDef": "turismen",
+        "plIndef": "turismer",
+        "plDef": "turismerna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v259",
+      "vocabId": "v259",
+      "lemgram": "energiproduktion..nn.1",
+      "fi": "energiatuotanto",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "energiproduktion",
+        "sgDef": "energiproduktionen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v261",
+      "vocabId": "v261",
+      "lemgram": "underhåll..nn.1",
+      "fi": "kunnossapito",
+      "part": 3,
+      "category": "alat",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "underhåll",
+        "sgDef": "underhållet",
+        "plIndef": "underhåll",
+        "plDef": "underhållen"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v265",
+      "vocabId": "v265",
+      "lemgram": "produktionsteknik..nn.1",
+      "fi": "tuotantotekniikka",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "produktionsteknik",
+        "sgDef": "produktionstekniken",
+        "plIndef": "produktionstekniker",
+        "plDef": "produktionsteknikerna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v266",
+      "vocabId": "v266",
+      "lemgram": "produktutveckling..nn.1",
+      "fi": "tuotekehitys",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "produktutveckling",
+        "sgDef": "produktutvecklingen",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v267",
+      "vocabId": "v267",
+      "lemgram": "logistik..nn.1",
+      "fi": "logistiikka",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "logistik",
+        "sgDef": "logistiken",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v268",
+      "vocabId": "v268",
+      "lemgram": "inköp..nn.1",
+      "fi": "sisäänosto",
+      "part": 3,
+      "category": "alat",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "inköp",
+        "sgDef": "inköpet",
+        "plIndef": "inköp",
+        "plDef": "inköpen"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v273",
+      "vocabId": "v273",
+      "lemgram": "byggmästare..nn.1",
+      "fi": "rakennusmestari",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "byggmästare",
+        "sgDef": "byggmästaren",
+        "plIndef": "byggmästare",
+        "plDef": "byggmästarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v283",
+      "vocabId": "v283",
+      "lemgram": "fysioterapi..nn.1",
+      "fi": "fysioterapia",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fysioterapi",
+        "sgDef": "fysioterapin",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v284",
+      "vocabId": "v284",
+      "lemgram": "rehabilitering..nn.1",
+      "fi": "kuntoutus",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "rehabilitering",
+        "sgDef": "rehabiliteringen",
+        "plIndef": "rehabiliteringar",
+        "plDef": "rehabiliteringarna"
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v286",
+      "vocabId": "v286",
+      "lemgram": "sjukvård..nn.1",
+      "fi": "sairaanhoito",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sjukvård",
+        "sgDef": "sjukvården",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v289",
+      "vocabId": "v289",
+      "lemgram": "hälsovård..nn.1",
+      "fi": "terveydenhoito",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "hälsovård",
+        "sgDef": "hälsovården",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v291",
+      "vocabId": "v291",
+      "lemgram": "äldrevård..nn.1",
+      "fi": "vanhustenhoito",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "äldrevård",
+        "sgDef": "äldrevården",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
+      "id": "wf-nn-v297",
+      "vocabId": "v297",
+      "lemgram": "fysioterapeut..nn.1",
+      "fi": "fysioterapeutti",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "fysioterapeut",
+        "sgDef": "fysioterapeuten",
+        "plIndef": "fysioterapeuter",
+        "plDef": "fysioterapeuterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v298",
+      "vocabId": "v298",
+      "lemgram": "ingenjör..nn.1",
+      "fi": "insinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "ingenjör",
+        "sgDef": "ingenjören",
+        "plIndef": "ingenjörer",
+        "plDef": "ingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v301",
+      "vocabId": "v301",
+      "lemgram": "barnmorska..nn.1",
+      "fi": "kätilö",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "barnmorska",
+        "sgDef": "barnmorskan",
+        "plIndef": "barnmorskor",
+        "plDef": "barnmorskorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v305",
+      "vocabId": "v305",
+      "lemgram": "musiker..nn.1",
+      "fi": "muusikko",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "musiker",
+        "sgDef": "musikern",
+        "plIndef": "musiker",
+        "plDef": "musikerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v307",
+      "vocabId": "v307",
+      "lemgram": "sångare..nn.1",
+      "fi": "laulaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sångare",
+        "sgDef": "sångaren",
+        "plIndef": "sångare",
+        "plDef": "sångarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v310",
+      "vocabId": "v310",
+      "lemgram": "sjukskötare..nn.1",
+      "fi": "sairaanhoitaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sjukskötare",
+        "sgDef": "sjukskötaren",
+        "plIndef": "sjukskötare",
+        "plDef": "sjukskötarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v311",
+      "vocabId": "v311",
+      "lemgram": "socionom..nn.1",
+      "fi": "sosionomi",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "socionom",
+        "sgDef": "socionomen",
+        "plIndef": "socionomer",
+        "plDef": "socionomerna"
+      },
+      "askPlural": true
+    }
+  ]
+}

@@ -47,11 +47,17 @@ export const SENSE_OVERRIDES = {
   'ett prov': 'prov..nn.1', // "koe" (test -> prov), not a sample (prover)
 }
 
+const isReflexiveSig = (form) => /(^|\s)sig(\s|$)/.test(form)
+
 // Map msd -> first writtenForm (SALDO lists the modern/default variant first).
+// Exception: reflexive verbs list every pronoun (inrikta mig/dig/sig/...), and
+// the dictionary form uses "sig", so that variant wins.
 export function firstForms(entry) {
   const table = {}
   for (const { msd, writtenForm } of entry.inflectionTable ?? []) {
-    if (!(msd in table)) table[msd] = writtenForm
+    if (!(msd in table) || (isReflexiveSig(writtenForm) && !isReflexiveSig(table[msd]))) {
+      table[msd] = writtenForm
+    }
   }
   return table
 }
@@ -80,7 +86,11 @@ export function extractNounForms(entry) {
 export function parseVerbTerm(term) {
   const isInfinitive = term.startsWith('att ')
   const text = (isInfinitive ? term.slice(4) : term).split(/[/(]/)[0].trim().toLowerCase()
-  const words = text.split(/\s+/).filter(Boolean)
+  // "Föreställde mig" -> "föreställde sig": match SALDO's dictionary form.
+  const words = text
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w, i) => (i > 0 && (w === 'mig' || w === 'dig') ? 'sig' : w))
   const candidates = words.map((_, i) => words.slice(0, words.length - i).join(' '))
   return { kind: isInfinitive ? 'infinitive' : 'preterite', candidates }
 }

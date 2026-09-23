@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { categoriesForPart } from '../lib/categoryFilter'
+import { wordFormItems } from '../lib/wordFormItems'
 
 // -----------------------------------------------------------------------------
 // FilterBar
@@ -30,7 +31,7 @@ export default function FilterBar() {
       ...content.phrases,
       ...content.writingTasks,
       ...content.fillBlanks,
-      ...content.wordForms,
+      ...wordFormItems(content.wordForms),
     ],
     [content],
   )

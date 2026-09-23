@@ -54,6 +54,13 @@ describe('firstForms', () => {
     }
     expect(firstForms(bli)).toEqual({ 'pres ind aktiv': 'blir', 'inf aktiv': 'bli' })
   })
+
+  it('prefers the "sig" variant of a reflexive verb (inrikta sig, not inrikta mig)', () => {
+    const inrikta = {
+      inflectionTable: ['mig', 'dig', 'sig', 'oss'].map((p) => ({ msd: 'inf aktiv', writtenForm: `inrikta ${p}` })),
+    }
+    expect(firstForms(inrikta)['inf aktiv']).toBe('inrikta sig')
+  })
 })
 
 describe('extractVerbForms', () => {
@@ -97,6 +104,10 @@ describe('parseVerbTerm', () => {
 
   it('treats capitalised CV verbs as lower-cased preterites', () => {
     expect(parseVerbTerm('Flyttade fram')).toEqual({ kind: 'preterite', candidates: ['flyttade fram', 'flyttade'] })
+  })
+
+  it('normalises a reflexive pronoun to the dictionary "sig"', () => {
+    expect(parseVerbTerm('Föreställde mig').candidates[0]).toBe('föreställde sig')
   })
 })
 

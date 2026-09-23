@@ -3,6 +3,7 @@ import { getContent } from './contentService'
 import { LANGUAGES } from './languages'
 import { distractorsFrom } from '../lib/quizLogic'
 import { categoriesForPart } from '../lib/categoryFilter'
+import { wordFormItems } from '../lib/wordFormItems'
 
 describe('contentService', () => {
   it('falls back to the default language for an unknown id', () => {
@@ -15,7 +16,7 @@ describe('contentService', () => {
 // under another (this is what feeds the "available categories" chip list).
 describe('categoriesForPart (sv content)', () => {
   const c = getContent('sv')
-  const allItems = [...c.vocabulary, ...c.phrases, ...c.writingTasks, ...c.fillBlanks, ...c.wordForms]
+  const allItems = [...c.vocabulary, ...c.phrases, ...c.writingTasks, ...c.fillBlanks, ...wordFormItems(c.wordForms)]
 
   it('excludes ICT from part 1 (ICT items only exist under part 3)', () => {
     const visible = categoriesForPart(allItems, 1, c.CATEGORIES)
@@ -38,7 +39,7 @@ for (const { id } of LANGUAGES) {
     const c = getContent(id)
 
     it('exposes all collections', () => {
-      for (const key of ['vocabulary', 'phrases', 'writingTasks', 'fillBlanks', 'wordForms', 'PARTS', 'CATEGORIES']) {
+      for (const key of ['vocabulary', 'phrases', 'writingTasks', 'fillBlanks', 'PARTS', 'CATEGORIES']) {
         expect(Array.isArray(c[key]), `${key} should be an array`).toBe(true)
       }
       expect(c.vocabulary.length).toBeGreaterThanOrEqual(4)
@@ -73,13 +74,16 @@ for (const { id } of LANGUAGES) {
       }
     })
 
-    it('wordForms options always include the correct answer', () => {
-      for (const w of c.wordForms) {
-        expect(Array.isArray(w.options)).toBe(true)
-        expect(w.options.length).toBeGreaterThanOrEqual(2)
-        expect(w.options).toContain(w.answer)
-      }
-    })
+    // Legacy flat format (English, until its Muodot is hidden).
+    if (Array.isArray(c.wordForms)) {
+      it('wordForms options always include the correct answer', () => {
+        for (const w of c.wordForms) {
+          expect(Array.isArray(w.options)).toBe(true)
+          expect(w.options.length).toBeGreaterThanOrEqual(2)
+          expect(w.options).toContain(w.answer)
+        }
+      })
+    }
 
     it('writingTasks have task + finnish translation + model answer', () => {
       for (const t of c.writingTasks) {
@@ -90,3 +94,53 @@ for (const { id } of LANGUAGES) {
     })
   })
 }
+
+// Word forms generated from SALDO (scripts/fetch-saldo-forms.mjs).
+describe('word forms data: sv (SALDO)', () => {
+  const { vocabulary, wordForms } = getContent('sv')
+  const vocabIds = new Set(vocabulary.map((v) => v.id))
+  const items = wordFormItems(wordForms)
+
+  it('credits SALDO under CC BY 4.0', () => {
+    expect(wordForms.source.license).toBe('CC BY 4.0')
+    expect(wordForms.source.url).toMatch(/^https:\/\//)
+  })
+
+  it('has unique ids, a lemgram, and part + category on every row', () => {
+    const ids = items.map((i) => i.id)
+    expect(new Set(ids).size).toBe(ids.length)
+    for (const i of items) {
+      expect(i.lemgram, i.id).toMatch(/\.\.(vb|vbm|nn)\.\d+$/)
+      expect(typeof i.part).toBe('number')
+      expect(typeof i.category).toBe('string')
+    }
+  })
+
+  it('links every row to existing vocabulary', () => {
+    for (const v of wordForms.verbs) {
+      expect(v.vocabIds.length, v.id).toBeGreaterThan(0)
+      for (const id of v.vocabIds) expect(vocabIds.has(id), `${v.id} -> ${id}`).toBe(true)
+    }
+    for (const n of wordForms.nouns) expect(vocabIds.has(n.vocabId), n.id).toBe(true)
+  })
+
+  it('gives every verb the full four-form chain', () => {
+    for (const v of wordForms.verbs) {
+      for (const key of ['infinitiv', 'presens', 'preteritum', 'supinum']) {
+        expect(v.forms[key], `${v.id} ${key}`).toBeTruthy()
+      }
+    }
+  })
+
+  it('gives every noun a gender and singular forms, and plural forms when asked', () => {
+    for (const n of wordForms.nouns) {
+      expect(['en', 'ett']).toContain(n.gender)
+      expect(n.forms.sgIndef, n.id).toBeTruthy()
+      expect(n.forms.sgDef, n.id).toBeTruthy()
+      if (n.askPlural) {
+        expect(n.forms.plIndef, n.id).toBeTruthy()
+        expect(n.forms.plDef, n.id).toBeTruthy()
+      }
+    }
+  })
+})

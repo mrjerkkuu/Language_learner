@@ -1,0 +1,20 @@
+Työelämän ruotsi — third-party data notices
+============================================
+
+Swedish word forms (src/data/sv/wordForms.json)
+-----------------------------------------------
+The Swedish inflection data (verb chains infinitiv / presens / preteritum /
+supinum, noun gender and singular / plural forms) is taken from:
+
+  SALDO morphology (saldom)
+  Språkbanken Text, University of Gothenburg
+  https://spraakbanken.gu.se/en/resources/saldom
+
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+  https://creativecommons.org/licenses/by/4.0/
+
+Changes: a selection of forms was extracted for the words in this app's
+vocabulary; the forms themselves are unchanged. Each row keeps its SALDO
+lemgram identifier (e.g. "gå..vb.1") so it can be traced back to the source.
+
+The data is generated with scripts/fetch-saldo-forms.mjs (Karp v7 API).
