@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useFilter } from '../context/FilterContext'
 import { useLanguage } from '../context/LanguageContext'
 import { categoriesForPart } from '../lib/categoryFilter'
+import { wordFormItems } from '../lib/wordFormItems'
 
 // -----------------------------------------------------------------------------
 // FilterBar
@@ -30,7 +31,7 @@ export default function FilterBar() {
       ...content.phrases,
       ...content.writingTasks,
       ...content.fillBlanks,
-      ...content.wordForms,
+      ...wordFormItems(content.wordForms),
     ],
     [content],
   )
@@ -102,8 +103,9 @@ export default function FilterBar() {
   )
 }
 
-// A single area pill (single-choice). Active = filled accent.
-function Pill({ active, onClick, children }) {
+// A single area pill (single-choice). Active = filled accent. Also used by
+// the Muodot word-kind toggle.
+export function Pill({ active, onClick, children }) {
   return (
     <button
       type="button"

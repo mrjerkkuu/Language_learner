@@ -16,7 +16,6 @@ import enVocabulary from './en/vocabulary.json'
 import enPhrases from './en/phrases.json'
 import enWritingTasks from './en/writingTasks.json'
 import enFillBlanks from './en/fillBlanks.json'
-import enWordForms from './en/wordForms.json'
 import { PARTS as enParts, CATEGORIES as enCategories } from './en/categories'
 
 import { DEFAULT_LANGUAGE } from './languages'
@@ -36,7 +35,11 @@ const CONTENT = {
     phrases: enPhrases,
     writingTasks: enWritingTasks,
     fillBlanks: enFillBlanks,
-    wordForms: enWordForms,
+    // English Muodot hidden until structured inflection data exists for English.
+    // SALDO (used for Swedish, see scripts/fetch-saldo-forms.mjs) covers Swedish only;
+    // English needs another open machine-readable source, same method. See K3 in
+    // claude/tulevat-muutokset.md.
+    wordForms: null,
     PARTS: enParts,
     CATEGORIES: enCategories,
   },
