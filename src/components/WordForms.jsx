@@ -48,12 +48,12 @@ const promptFor = (item) =>
   wordKind(item) === 'verb' ? `att ${item.forms.infinitiv}` : item.forms.sgIndef
 
 const KINDS = [
-  { id: 'all', label: 'Kaikki' },
+  { id: 'all', label: 'Kaikki sanat' },
   { id: 'verbs', label: 'Verbit' },
   { id: 'nouns', label: 'Substantiivit' },
 ]
 
-// Kaikki / Verbit / Substantiivit — the same pill style as the area filter.
+// Kaikki sanat / Verbit / Substantiivit — the same pill style as the area filter.
 function KindToggle({ kind, onChange }) {
   return (
     <div className="flex flex-wrap gap-2" role="group" aria-label="Sanaluokka">

@@ -200,7 +200,7 @@ describe('WordForms practice', () => {
   it('narrows practice to verbs or nouns with the kind toggle', () => {
     mock.svWordForms = withWords({ verbs: [ga], nouns: [helg] })
     renderForms()
-    expect(screen.getByRole('button', { name: 'Kaikki' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: 'Kaikki sanat' })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByText('0/2')).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: 'Verbit' }))
