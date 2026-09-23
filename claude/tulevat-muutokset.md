@@ -71,7 +71,7 @@ määräinen muoto) korvattu kokonaan.
 - *Lähdemaininta:* `source`-kenttä datassa, `NOTICE`-tiedosto ja linkki Muodot-sivun
   alalaidassa.
 - *Englanti:* Muodot piilotettu englannilta (ks. "Myöhempää harkintaa").
-- *Ei tehty:* session-rajaus Muodoille (jää K4:ään).
+- *Session-rajaus* lisätty myöhemmin K4:ssä (ks. alla, osittain valmis).
 
 ---
 
@@ -84,21 +84,21 @@ määräinen muoto) korvattu kokonaan.
 ## Jäljellä olevat korjaukset / parannukset
 
 ### K4. Harjoittelusession koon rajaus (Sanakortit/Muodot/Kirjoitus/Quiz)
-- Nykyisin käyttäjä käy aina läpi **koko kategorian** kortit kerralla kaikissa
-  neljässä moduulissa — ei tapaa harjoitella lyhyttä, rajattua erää.
-- Halutaan: valittavissa oleva session-koko (esim. 10–20 korttia) joka
-  arvotaan/painotetaan koko kategoriasta sen sijaan että koko lista käydään
-  läpi.
-- **Painotuslogiikka on jo olemassa** — `srLogic.js`:n `weight`-pohjainen
-  järjestelmä (vaikeat/väärin menneet useammin, opitut harvemmin) kelpaa
-  sellaisenaan valinnan perustaksi.
-- **Puuttuu:** UI-toteutus — session-koon valinta ennen harjoittelun alkua ja
-  katkaisu N kortin jälkeen (nykyinen `pickNext`/session-kulku ei tunne
-  "lopeta N:n jälkeen" -käsitettä).
-- Ajoitus: nyt vapaa toteutettavaksi — Tailscale Funnel -julkaisu on jo
-  tapahtunut (ks. Vaihe 3 + approval-gate yllä "✅ Tehty"-osiossa), joka oli
-  aiemmin tämän kohdan ajoitusedellytys (ks. aiempi kirjaus "Myöhempää
-  harkintaa" -osiossa, konsolidoitu tähän).
+- **Sanakortit + Muodot: VALMIS (2026-09-23, haara `feat/session-size`).**
+  - Ennen jokaista sessiota näytetään valintanäyttö (`SessionSizePicker`): koko **5 / 10 / 15 / 20**
+    (Muodoissa **sanoja**, 1 sana = 2–4 askelta). Valinta ei käynnistä sessiota; "Aloita" käynnistää.
+  - Edellinen koko muistetaan esivalittuna, **erikseen kummallekin moduulille**
+    (`flashcard-session-size-v1`, `forms-session-size-v1`, laitekohtainen, `useSessionSize`).
+    Oletus ensimmäisellä kerralla: Sanakortit 20, Muodot 10.
+  - `buildSession(dataMap, items, { size })`: opitut ja uudet `max(1, floor(koko/10))` kumpikin,
+    loput harjoiteltuja → 5 = 3+1+1 · 10 = 8+1+1 · 15 = 13+1+1 · 20 = 16+2+2.
+  - Muodot kokoaa session samalla `buildSession`:lla sanatason tilasta (`wordStateMap`, vaikein
+    muoto ratkaisee). Uusi session tulosnäkymä: sanat kokonaan oikein / osittain / kokonaan
+    väärin + vastaukset yhteensä + sanalista. Muotokohtaiset SR-kortit (`<id>:<muoto>`) ja
+    tallennus ennallaan; testi todistaa, että aiempi edistyminen säilyy ja jatkuu.
+  - Molemmissa tulosnäytöissä "Uusi sessio" (takaisin valintaan) ja "Valikkoon".
+- **Jäljellä: Kirjoitus ja Quiz.** Quizissa on kiinteä `SESSION_SIZE = 10`, ja Kirjoitus käy
+  koko listan läpi. Samaa `SessionSizePicker`- ja `useSessionSize`-mallia voi käyttää niihin.
 
 ---
 
