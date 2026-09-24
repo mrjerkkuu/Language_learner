@@ -4,8 +4,14 @@
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "url": "https://spraakbanken.gu.se/en/resources/saldom",
-    "retrieved": "2026-09-23",
-    "modified": "Valikoidut taivutusmuodot poimittu; muotoja ei muutettu"
+    "retrieved": "2026-09-24",
+    "modified": "Valikoidut taivutusmuodot poimittu; muotoja ei muutettu",
+    "compoundCheck": {
+      "id": "kananoja-2026",
+      "name": "Susanna Kananoja: Vokabulär och fraser om studier — Opiskeluun liittyvää sanastoa ja fraaseja (PDF)",
+      "created": "2026-08-07",
+      "usedFor": "Yhdyssanat (rivit, joilla check = \"kananoja-2026\"): muodot SALDOsta yhdyssanan loppuosalle (head), hyväksytty vain kun PDF:n taivutusluokka tai muodot täsmäävät"
+    }
   },
   "verbs": [
     {
@@ -3877,6 +3883,24 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v015",
+      "vocabId": "v015",
+      "lemgram": "högskola..nn.1",
+      "head": "högskola",
+      "check": "kananoja-2026",
+      "fi": "ammattikorkeakoulu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "yrkeshögskola",
+        "sgDef": "yrkeshögskolan",
+        "plIndef": "yrkeshögskolor",
+        "plDef": "yrkeshögskolorna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v016",
       "vocabId": "v016",
       "lemgram": "tentamen..nn.1",
@@ -5317,6 +5341,42 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v138",
+      "vocabId": "v138",
+      "lemgram": "institut..nn.1",
+      "head": "institut",
+      "check": "kananoja-2026",
+      "fi": "ammattiopisto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "yrkesinstitut",
+        "sgDef": "yrkesinstitutet",
+        "plIndef": "yrkesinstitut",
+        "plDef": "yrkesinstituten"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v139",
+      "vocabId": "v139",
+      "lemgram": "examen..nn.1",
+      "head": "examen",
+      "check": "kananoja-2026",
+      "fi": "ammattitutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "yrkesexamen",
+        "sgDef": "yrkesexamen",
+        "plIndef": "yrkesexamina",
+        "plDef": "yrkesexamina"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v141",
       "vocabId": "v141",
       "lemgram": "bostadstillägg..nn.1",
@@ -5329,6 +5389,24 @@
         "sgDef": "bostadstillägget",
         "plIndef": "bostadstillägg",
         "plDef": "bostadstilläggen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v144",
+      "vocabId": "v144",
+      "lemgram": "examen..nn.1",
+      "head": "examen",
+      "check": "kananoja-2026",
+      "fi": "erikoisammattitutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "specialyrkesexamen",
+        "sgDef": "specialyrkesexamen",
+        "plIndef": "specialyrkesexamina",
+        "plDef": "specialyrkesexamina"
       },
       "askPlural": true
     },
@@ -5384,7 +5462,7 @@
       "id": "wf-nn-v154",
       "vocabId": "v154",
       "lemgram": "fortbildning..nn.1",
-      "fi": "jatkokoulutus",
+      "fi": "jatkokoulutus / täydennyskoulutus",
       "part": 4,
       "category": "opiskelu",
       "gender": "en",
@@ -5397,10 +5475,46 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v156",
+      "vocabId": "v156",
+      "lemgram": "examen..nn.1",
+      "head": "examen",
+      "check": "kananoja-2026",
+      "fi": "kaksoistutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dubbelexamen",
+        "sgDef": "dubbelexamen",
+        "plIndef": "dubbelexamina",
+        "plDef": "dubbelexamina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v157",
+      "vocabId": "v157",
+      "lemgram": "institut..nn.1",
+      "head": "institut",
+      "check": "kananoja-2026",
+      "fi": "kauppaopisto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "handelsinstitut",
+        "sgDef": "handelsinstitutet",
+        "plIndef": "handelsinstitut",
+        "plDef": "handelsinstituten"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v158",
       "vocabId": "v158",
       "lemgram": "uppsats..nn.1",
-      "fi": "kirjoitelma",
+      "fi": "kirjoitelma / aine",
       "part": 4,
       "category": "opiskelu",
       "gender": "en",
@@ -5573,6 +5687,60 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v170",
+      "vocabId": "v170",
+      "lemgram": "undervisning..nn.1",
+      "head": "undervisning",
+      "check": "kananoja-2026",
+      "fi": "lähiopetus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "närundervisning",
+        "sgDef": "närundervisningen",
+        "plIndef": "närundervisningar",
+        "plDef": "närundervisningarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v173",
+      "vocabId": "v173",
+      "lemgram": "student..nn.1",
+      "head": "student",
+      "check": "kananoja-2026",
+      "fi": "monimuoto-opiskelija",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "flerformsstudent",
+        "sgDef": "flerformsstudenten",
+        "plIndef": "flerformsstudenter",
+        "plDef": "flerformsstudenterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v175",
+      "vocabId": "v175",
+      "lemgram": "undervisning..nn.1",
+      "head": "undervisning",
+      "check": "kananoja-2026",
+      "fi": "monimuoto-opetus",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "flerformsundervisning",
+        "sgDef": "flerformsundervisningen",
+        "plIndef": "flerformsundervisningar",
+        "plDef": "flerformsundervisningarna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v176",
       "vocabId": "v176",
       "lemgram": "undervisning..nn.1",
@@ -5617,6 +5785,24 @@
         "sgDef": "studielånet",
         "plIndef": "studielån",
         "plDef": "studielånen"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v180",
+      "vocabId": "v180",
+      "lemgram": "poäng..nn.1",
+      "head": "poäng",
+      "check": "kananoja-2026",
+      "fi": "opintopiste",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "studiepoäng",
+        "sgDef": "studiepoänget",
+        "plIndef": "studiepoäng",
+        "plDef": "studiepoängen"
       },
       "askPlural": true
     },
@@ -5669,6 +5855,24 @@
       "askPlural": false
     },
     {
+      "id": "wf-nn-v184",
+      "vocabId": "v184",
+      "lemgram": "utbyte..nn.1",
+      "head": "utbyte",
+      "check": "kananoja-2026",
+      "fi": "opiskelijavaihto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "studentutbyte",
+        "sgDef": "studentutbytet",
+        "plIndef": "studentutbyten",
+        "plDef": "studentutbytena"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v186",
       "vocabId": "v186",
       "lemgram": "studietid..nn.1",
@@ -5681,6 +5885,24 @@
         "sgDef": "studietiden",
         "plIndef": "studietider",
         "plDef": "studietiderna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v187",
+      "vocabId": "v187",
+      "lemgram": "kompis..nn.1",
+      "head": "kompis",
+      "check": "kananoja-2026",
+      "fi": "opiskelukaveri",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "studiekompis",
+        "sgDef": "studiekompisen",
+        "plIndef": "studiekompisar",
+        "plDef": "studiekompisarna"
       },
       "askPlural": true
     },
@@ -5733,6 +5955,24 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v193",
+      "vocabId": "v193",
+      "lemgram": "examen..nn.1",
+      "head": "examen",
+      "check": "kananoja-2026",
+      "fi": "perustutkinto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "grundexamen",
+        "sgDef": "grundexamen",
+        "plIndef": "grundexamina",
+        "plDef": "grundexamina"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v194",
       "vocabId": "v194",
       "lemgram": "projekt..nn.1",
@@ -5777,6 +6017,24 @@
         "sgDef": "grupparbetet",
         "plIndef": "grupparbeten",
         "plDef": "grupparbetena"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v203",
+      "vocabId": "v203",
+      "lemgram": "alternativ..nn.1",
+      "head": "alternativ",
+      "check": "kananoja-2026",
+      "fi": "suuntautumisvaihtoehto",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "inriktningsalternativ",
+        "sgDef": "inriktningsalternativet",
+        "plIndef": "inriktningsalternativ",
+        "plDef": "inriktningsalternativen"
       },
       "askPlural": true
     },
@@ -5841,6 +6099,24 @@
         "sgDef": "examen",
         "plIndef": "examina",
         "plDef": "examina"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v208",
+      "vocabId": "v208",
+      "lemgram": "praktik..nn.1",
+      "head": "praktik",
+      "check": "kananoja-2026",
+      "fi": "työharjoittelu",
+      "part": 4,
+      "category": "opiskelu",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "arbetspraktik",
+        "sgDef": "arbetspraktiken",
+        "plIndef": "arbetspraktiker",
+        "plDef": "arbetspraktikerna"
       },
       "askPlural": true
     },
@@ -6069,6 +6345,22 @@
       "askPlural": false
     },
     {
+      "id": "wf-nn-v540",
+      "vocabId": "v540",
+      "lemgram": "entreprenörskap..nn.1",
+      "fi": "yrittäjyys",
+      "part": 3,
+      "category": "alat",
+      "gender": "ett",
+      "forms": {
+        "sgIndef": "entreprenörskap",
+        "sgDef": "entreprenörskapet",
+        "plIndef": "entreprenörskap",
+        "plDef": "entreprenörskapen"
+      },
+      "askPlural": false
+    },
+    {
       "id": "wf-nn-v251",
       "vocabId": "v251",
       "lemgram": "turism..nn.1",
@@ -6213,6 +6505,22 @@
       "askPlural": false
     },
     {
+      "id": "wf-nn-v541",
+      "vocabId": "v541",
+      "lemgram": "sjukgymnastik..nn.1",
+      "fi": "fysioterapia (Ruotsissa)",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sjukgymnastik",
+        "sgDef": "sjukgymnastiken",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
       "id": "wf-nn-v284",
       "vocabId": "v284",
       "lemgram": "rehabilitering..nn.1",
@@ -6261,6 +6569,22 @@
       "askPlural": false
     },
     {
+      "id": "wf-nn-v542",
+      "vocabId": "v542",
+      "lemgram": "arbetsterapi..nn.1",
+      "fi": "toimintaterapia (Ruotsissa)",
+      "part": 3,
+      "category": "alat",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "arbetsterapi",
+        "sgDef": "arbetsterapin",
+        "plIndef": null,
+        "plDef": null
+      },
+      "askPlural": false
+    },
+    {
       "id": "wf-nn-v291",
       "vocabId": "v291",
       "lemgram": "äldrevård..nn.1",
@@ -6277,6 +6601,42 @@
       "askPlural": false
     },
     {
+      "id": "wf-nn-v294",
+      "vocabId": "v294",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "automaatioinsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "automationsingenjör",
+        "sgDef": "automationsingenjören",
+        "plIndef": "automationsingenjörer",
+        "plDef": "automationsingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v295",
+      "vocabId": "v295",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "energiainsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "energiingenjör",
+        "sgDef": "energiingenjören",
+        "plIndef": "energiingenjörer",
+        "plDef": "energiingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v297",
       "vocabId": "v297",
       "lemgram": "fysioterapeut..nn.1",
@@ -6289,6 +6649,22 @@
         "sgDef": "fysioterapeuten",
         "plIndef": "fysioterapeuter",
         "plDef": "fysioterapeuterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v543",
+      "vocabId": "v543",
+      "lemgram": "sjukgymnast..nn.1",
+      "fi": "fysioterapeutti (Ruotsissa)",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sjukgymnast",
+        "sgDef": "sjukgymnasten",
+        "plIndef": "sjukgymnaster",
+        "plDef": "sjukgymnasterna"
       },
       "askPlural": true
     },
@@ -6309,6 +6685,60 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v299",
+      "vocabId": "v299",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "koneinsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "maskiningenjör",
+        "sgDef": "maskiningenjören",
+        "plIndef": "maskiningenjörer",
+        "plDef": "maskiningenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v300",
+      "vocabId": "v300",
+      "lemgram": "handledare..nn.1",
+      "head": "handledare",
+      "check": "kananoja-2026",
+      "fi": "kuntoutuksenohjaaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "rehabiliteringshandledare",
+        "sgDef": "rehabiliteringshandledaren",
+        "plIndef": "rehabiliteringshandledare",
+        "plDef": "rehabiliteringshandledarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v544",
+      "vocabId": "v544",
+      "lemgram": "instruktör..nn.1",
+      "head": "instruktör",
+      "check": "kananoja-2026",
+      "fi": "kuntoutuksenohjaaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "rehabiliteringsinstruktör",
+        "sgDef": "rehabiliteringsinstruktören",
+        "plIndef": "rehabiliteringsinstruktörer",
+        "plDef": "rehabiliteringsinstruktörerna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v301",
       "vocabId": "v301",
       "lemgram": "barnmorska..nn.1",
@@ -6321,6 +6751,42 @@
         "sgDef": "barnmorskan",
         "plIndef": "barnmorskor",
         "plDef": "barnmorskorna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v302",
+      "vocabId": "v302",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "logistiikan insinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "logistikingenjör",
+        "sgDef": "logistikingenjören",
+        "plIndef": "logistikingenjörer",
+        "plDef": "logistikingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v304",
+      "vocabId": "v304",
+      "lemgram": "pedagog..nn.1",
+      "head": "pedagog",
+      "check": "kananoja-2026",
+      "fi": "musiikkipedagogi",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "musikpedagog",
+        "sgDef": "musikpedagogen",
+        "plIndef": "musikpedagoger",
+        "plDef": "musikpedagogerna"
       },
       "askPlural": true
     },
@@ -6341,6 +6807,40 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v306",
+      "vocabId": "v306",
+      "lemgram": "lärare..nn.1",
+      "head": "lärare",
+      "check": "kananoja-2026",
+      "fi": "lastentarhanopettaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "barnträdgårdslärare",
+        "sgDef": "barnträdgårdsläraren",
+        "plIndef": "barnträdgårdslärare",
+        "plDef": "barnträdgårdslärarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v545",
+      "vocabId": "v545",
+      "lemgram": "förskolelärare..nn.1",
+      "fi": "esikoulunopettaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "förskolelärare",
+        "sgDef": "förskoleläraren",
+        "plIndef": "förskolelärare",
+        "plDef": "förskolelärarna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v307",
       "vocabId": "v307",
       "lemgram": "sångare..nn.1",
@@ -6353,6 +6853,42 @@
         "sgDef": "sångaren",
         "plIndef": "sångare",
         "plDef": "sångarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v308",
+      "vocabId": "v308",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "rakennusinsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "byggnadsingenjör",
+        "sgDef": "byggnadsingenjören",
+        "plIndef": "byggnadsingenjörer",
+        "plDef": "byggnadsingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v546",
+      "vocabId": "v546",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "rakennusinsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "byggingenjör",
+        "sgDef": "byggingenjören",
+        "plIndef": "byggingenjörer",
+        "plDef": "byggingenjörerna"
       },
       "askPlural": true
     },
@@ -6373,6 +6909,22 @@
       "askPlural": true
     },
     {
+      "id": "wf-nn-v547",
+      "vocabId": "v547",
+      "lemgram": "sjuksköterska..nn.1",
+      "fi": "sairaanhoitaja (Ruotsissa)",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "sjuksköterska",
+        "sgDef": "sjuksköterskan",
+        "plIndef": "sjuksköterskor",
+        "plDef": "sjuksköterskorna"
+      },
+      "askPlural": true
+    },
+    {
       "id": "wf-nn-v311",
       "vocabId": "v311",
       "lemgram": "socionom..nn.1",
@@ -6385,6 +6937,112 @@
         "sgDef": "socionomen",
         "plIndef": "socionomer",
         "plDef": "socionomerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v312",
+      "vocabId": "v312",
+      "lemgram": "hygienist..nn.1",
+      "head": "hygienist",
+      "check": "kananoja-2026",
+      "fi": "suuhygienisti",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "munhygienist",
+        "sgDef": "munhygienisten",
+        "plIndef": "munhygienister",
+        "plDef": "munhygienisterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v313",
+      "vocabId": "v313",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "sähköinsinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "elingenjör",
+        "sgDef": "elingenjören",
+        "plIndef": "elingenjörer",
+        "plDef": "elingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v314",
+      "vocabId": "v314",
+      "lemgram": "vårdare..nn.1",
+      "head": "vårdare",
+      "check": "kananoja-2026",
+      "fi": "terveydenhoitaja",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "hälsovårdare",
+        "sgDef": "hälsovårdaren",
+        "plIndef": "hälsovårdare",
+        "plDef": "hälsovårdarna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v548",
+      "vocabId": "v548",
+      "lemgram": "ingenjör..nn.1",
+      "head": "ingenjör",
+      "check": "kananoja-2026",
+      "fi": "tieto- ja viestintätekniikan insinööri",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "dataingenjör",
+        "sgDef": "dataingenjören",
+        "plIndef": "dataingenjörer",
+        "plDef": "dataingenjörerna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v317",
+      "vocabId": "v317",
+      "lemgram": "terapeut..nn.1",
+      "head": "terapeut",
+      "check": "kananoja-2026",
+      "fi": "toimintaterapeutti",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "ergoterapeut",
+        "sgDef": "ergoterapeuten",
+        "plIndef": "ergoterapeuter",
+        "plDef": "ergoterapeuterna"
+      },
+      "askPlural": true
+    },
+    {
+      "id": "wf-nn-v549",
+      "vocabId": "v549",
+      "lemgram": "arbetsterapeut..nn.1",
+      "fi": "toimintaterapeutti (Ruotsissa)",
+      "part": 3,
+      "category": "ammatit",
+      "gender": "en",
+      "forms": {
+        "sgIndef": "arbetsterapeut",
+        "sgDef": "arbetsterapeuten",
+        "plIndef": "arbetsterapeuter",
+        "plDef": "arbetsterapeuterna"
       },
       "askPlural": true
     }

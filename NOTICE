@@ -18,3 +18,15 @@ vocabulary; the forms themselves are unchanged. Each row keeps its SALDO
 lemgram identifier (e.g. "gå..vb.1") so it can be traced back to the source.
 
 The data is generated with scripts/fetch-saldo-forms.mjs (Karp v7 API).
+
+Compound nouns SALDO does not list (e.g. "yrkeshögskola") take the forms of
+their last part ("högskola") from SALDO, with the first part prefixed. Such a
+row is accepted only when a second, independent source agrees: the declension
+class (1-5), or the forms, given for the word in
+
+  Susanna Kananoja: "Vokabulär och fraser om studier — Opiskeluun liittyvää
+  sanastoa ja fraaseja" (PDF, 2026-08-07)
+
+stored in scripts/data/declensions-kananoja.json. These rows carry
+"check": "kananoja-2026", the head word in "head", and the head's SALDO
+lemgram, so they can be traced back to both sources.

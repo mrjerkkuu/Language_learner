@@ -5,6 +5,8 @@ import { distractorsFrom } from '../lib/quizLogic'
 import { categoriesForPart } from '../lib/categoryFilter'
 import { wordFormItems } from '../lib/wordFormItems'
 import { buildSteps } from '../lib/wordFormsLogic'
+import { COMPOUND_CHECK } from '../lib/saldoForms'
+import declensions from '../../scripts/data/declensions-kananoja.json'
 
 describe('contentService', () => {
   it('falls back to the default language for an unknown id', () => {
@@ -142,6 +144,47 @@ describe('word forms data: sv (SALDO)', () => {
         expect(n.forms.plDef, n.id).toBeTruthy()
       }
     }
+  })
+
+  // Compound rows: forms of the head word (SALDO) prefixed, confirmed by the
+  // Kananoja PDF. Both the head and its SALDO lemgram must stay traceable.
+  describe('compound rows (head + PDF check)', () => {
+    const compounds = wordForms.nouns.filter((n) => n.check === COMPOUND_CHECK)
+    const byId = new Map(vocabulary.map((v) => [v.id, v]))
+
+    it('exist and credit the checking source', () => {
+      expect(compounds.length).toBeGreaterThan(0)
+      expect(wordForms.source.compoundCheck.id).toBe(COMPOUND_CHECK)
+      expect(wordForms.source.compoundCheck.name).toBeTruthy()
+    })
+
+    it('keep both the head and the head\'s SALDO lemgram', () => {
+      for (const n of compounds) {
+        expect(typeof n.head, n.id).toBe('string')
+        expect(n.head.length, n.id).toBeGreaterThan(0)
+        expect(n.lemgram, n.id).toBe(`${n.head}..nn.${n.lemgram.split('.').pop()}`)
+        expect(n.lemgram, n.id).toMatch(/\.\.nn\.\d+$/)
+      }
+    })
+
+    it('are real compounds of the vocabulary word, named in the PDF source', () => {
+      for (const n of compounds) {
+        const term = byId.get(n.vocabId).term
+        const word = term.split(' ')[1]
+        expect(word.endsWith(n.head) && word.length > n.head.length, `${n.id}: ${word} / ${n.head}`).toBe(true)
+        expect(n.forms.sgIndef, n.id).toBe(word)
+        expect(declensions.words[term], `${n.id}: ${term} missing from the PDF source`).toBeTruthy()
+      }
+    })
+
+    it('are the only rows carrying a head', () => {
+      for (const n of wordForms.nouns) expect(Boolean(n.head), n.id).toBe(n.check === COMPOUND_CHECK)
+    })
+  })
+
+  it('PDF declension source only names existing vocabulary terms', () => {
+    const terms = new Set(vocabulary.map((v) => v.term))
+    for (const term of Object.keys(declensions.words)) expect(terms.has(term), term).toBe(true)
   })
 })
 

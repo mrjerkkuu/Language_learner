@@ -8,6 +8,12 @@ import {
   selectVerbEntry,
   selectNounEntry,
   shouldAskPlural,
+  COMPOUND_CHECK,
+  headCandidates,
+  saldoDeclension,
+  pdfAgrees,
+  prefixForms,
+  decideCompound,
 } from './saldoForms'
 
 // Minimal SALDO-shaped entries (trimmed from real Karp v7 "saldom" responses).
@@ -25,8 +31,9 @@ const verb = (lemgram, pos, [inf, pres, pret, sup], extra = []) => ({
   ],
 })
 
-const noun = (lemgram, gender, [sgIndef, sgDef, plIndef, plDef]) => ({
+const noun = (lemgram, gender, [sgIndef, sgDef, plIndef, plDef], paradigm = undefined) => ({
   lemgram,
+  paradigm,
   baseform: sgIndef,
   partOfSpeech: 'nn',
   inherent: [gender],
@@ -209,5 +216,132 @@ describe('shouldAskPlural', () => {
 
   it('does not ask it for uncountable nouns', () => {
     expect(shouldAskPlural({ ...withPlural, plIndef: null, plDef: null }, 'ict')).toBe(false)
+  })
+})
+
+describe('extractNounForms with an article (SALDO gender "v")', () => {
+  // Real SALDO poäng..nn.1: both definite singulars, the en-form first.
+  const poang = {
+    ...noun('poäng..nn.1', 'v', ['poäng', 'poängen', 'poäng', 'poängen'], 'nn_6v_borst'),
+  }
+  poang.inflectionTable.splice(2, 0, { msd: 'sg def nom', writtenForm: 'poänget' })
+
+  it('keeps the first variant without an article', () => {
+    expect(extractNounForms(poang).sgDef).toBe('poängen')
+  })
+
+  it('picks the definite singular matching the article', () => {
+    expect(extractNounForms(poang, 'ett').sgDef).toBe('poänget')
+    expect(extractNounForms(poang, 'en').sgDef).toBe('poängen')
+  })
+
+  it('does not touch single-gender entries', () => {
+    const helg = noun('helg..nn.1', 'u', ['helg', 'helgen', 'helger', 'helgerna'])
+    expect(extractNounForms(helg, 'ett').sgDef).toBe('helgen')
+  })
+
+  it('is used by selectNounEntry', () => {
+    const result = selectNounEntry([poang], { word: 'poäng', gender: 'ett' }, 'opiskelu')
+    expect(result.forms.sgDef).toBe('poänget')
+  })
+})
+
+describe('headCandidates', () => {
+  it('lists proper suffixes, longest first, at least 3 letters', () => {
+    expect(headCandidates('elingenjör').map((c) => c.head)).toEqual([
+      'lingenjör', 'ingenjör', 'ngenjör', 'genjör', 'enjör', 'njör', 'jör',
+    ])
+    expect(headCandidates('elingenjör')[1]).toEqual({ prefix: 'el', head: 'ingenjör' })
+  })
+
+  it('never returns the whole word', () => {
+    expect(headCandidates('kurs').map((c) => c.head)).toEqual(['urs'])
+  })
+})
+
+describe('saldoDeclension', () => {
+  it('maps SALDO paradigms to school declensions 1-5', () => {
+    expect(saldoDeclension('nn_1u_flicka')).toBe(1)
+    expect(saldoDeclension('nn_2u_stol')).toBe(2)
+    expect(saldoDeclension('nn_3u_karbid')).toBe(3)
+    expect(saldoDeclension('nn_5n_dike')).toBe(4)
+    expect(saldoDeclension('nn_6u_kikare')).toBe(5)
+  })
+
+  it('returns null for uncountable, irregular or missing paradigms', () => {
+    expect(saldoDeclension('nn_0u_månsing')).toBeNull()
+    expect(saldoDeclension('nn_ou_examen')).toBeNull()
+    expect(saldoDeclension(undefined)).toBeNull()
+  })
+})
+
+describe('pdfAgrees', () => {
+  const ingenjor = noun('ingenjör..nn.1', 'u', ['ingenjör', 'ingenjören', 'ingenjörer', 'ingenjörerna'], 'nn_3u_kavaljer')
+  const examen = noun('examen..nn.1', 'u', ['examen', 'examen', 'examina', 'examina'], 'nn_ou_examen')
+  const forms = (e) => extractNounForms(e)
+
+  it('compares the declension class', () => {
+    expect(pdfAgrees({ declension: 3 }, ingenjor, forms(ingenjor))).toBe(true)
+    expect(pdfAgrees({ declension: 2 }, ingenjor, forms(ingenjor))).toBe(false)
+  })
+
+  it('compares explicit head forms', () => {
+    expect(pdfAgrees({ headForms: ['examen', 'examen', 'examina', 'examina'] }, examen, forms(examen))).toBe(true)
+    expect(pdfAgrees({ headForms: ['examen', 'examen', 'examen', 'examen'] }, examen, forms(examen))).toBe(false)
+  })
+
+  it('compares the definite singular ending', () => {
+    expect(pdfAgrees({ sgDefEnding: 'en' }, ingenjor, forms(ingenjor))).toBe(true)
+    expect(pdfAgrees({ sgDefEnding: 'et' }, ingenjor, forms(ingenjor))).toBe(false)
+  })
+
+  it('never agrees without a PDF statement', () => {
+    expect(pdfAgrees(undefined, ingenjor, forms(ingenjor))).toBe(false)
+    expect(pdfAgrees({}, ingenjor, forms(ingenjor))).toBe(false)
+  })
+})
+
+describe('prefixForms', () => {
+  it('prefixes every form and keeps missing plurals null', () => {
+    expect(prefixForms('el', { sgIndef: 'teknik', sgDef: 'tekniken', plIndef: null, plDef: null })).toEqual({
+      sgIndef: 'elteknik', sgDef: 'eltekniken', plIndef: null, plDef: null,
+    })
+  })
+})
+
+describe('decideCompound', () => {
+  const ingenjor = noun('ingenjör..nn.1', 'u', ['ingenjör', 'ingenjören', 'ingenjörer', 'ingenjörerna'], 'nn_3u_kavaljer')
+  const ok = (entry) => ({ status: 'ok', entry, forms: extractNounForms(entry) })
+
+  it('accepts a head whose class matches the PDF, with prefixed forms', () => {
+    const result = decideCompound({ prefix: 'el', head: 'ingenjör' }, ok(ingenjor), { declension: 3 })
+    expect(result.status).toBe('ok')
+    expect(result.head).toBe('ingenjör')
+    expect(result.entry.lemgram).toBe('ingenjör..nn.1')
+    expect(result.forms).toEqual({
+      sgIndef: 'elingenjör', sgDef: 'elingenjören', plIndef: 'elingenjörer', plDef: 'elingenjörerna',
+    })
+  })
+
+  it('rejects a false head: robotik -> "tik" (a dog, class 2)', () => {
+    const tik = noun('tik..nn.1', 'u', ['tik', 'tiken', 'tikar', 'tikarna'], 'nn_2u_stol')
+    // No PDF statement for robotik at all -> never derived.
+    expect(decideCompound({ prefix: 'robo', head: 'tik' }, ok(tik), undefined).status).toBe('rejected')
+    // Even with a (hypothetical) PDF class, a mismatch is rejected.
+    expect(decideCompound({ prefix: 'robo', head: 'tik' }, ok(tik), { declension: 3 }).status).toBe('rejected')
+  })
+
+  it('rejects mc-touring -> "ring" without a PDF statement', () => {
+    const ring = noun('ring..nn.1', 'u', ['ring', 'ringen', 'ringar', 'ringarna'], 'nn_2u_sten')
+    expect(decideCompound({ prefix: 'mc-tou', head: 'ring' }, ok(ring), undefined).status).toBe('rejected')
+  })
+
+  it('rejects an ambiguous head', () => {
+    const ambiguous = { status: 'ambiguous', options: [] }
+    expect(decideCompound({ prefix: 'x', head: 'yz' }, ambiguous, { declension: 3 }).status).toBe('rejected')
+  })
+
+  it('names the checking source', () => {
+    expect(COMPOUND_CHECK).toBe('kananoja-2026')
   })
 })

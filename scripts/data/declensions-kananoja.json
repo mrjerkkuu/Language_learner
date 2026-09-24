@@ -1,0 +1,130 @@
+{
+  "source": {
+    "title": "Vokabulär och fraser om studier — Opiskeluun liittyvää sanastoa ja fraaseja (PDF)",
+    "author": "Susanna Kananoja",
+    "created": "2026-08-07",
+    "added": "2026-09-24",
+    "note": "Taivutusluokat 1–5 (koulukielioppi) sekä tutkinto-sanan muodot ja \"-en\"-määräinen muoto sellaisina kuin PDF ne antaa. Käytetään vain SALDO-yhdyssanajohdon riippumattomana tarkistuksena (scripts/fetch-saldo-forms.mjs)."
+  },
+  "words": {
+    "en yrkeshögskola": {
+      "declension": 1
+    },
+    "ett yrkesinstitut": {
+      "declension": 5
+    },
+    "ett handelsinstitut": {
+      "declension": 5
+    },
+    "en flerformsstudent": {
+      "declension": 3
+    },
+    "ett studiepoäng": {
+      "declension": 5
+    },
+    "ett studentutbyte": {
+      "declension": 4
+    },
+    "en studiekompis": {
+      "declension": 2
+    },
+    "ett inriktningsalternativ": {
+      "declension": 5
+    },
+    "en arbetspraktik": {
+      "declension": 3
+    },
+    "en automationsingenjör": {
+      "declension": 3
+    },
+    "en energiingenjör": {
+      "declension": 3
+    },
+    "en maskiningenjör": {
+      "declension": 3
+    },
+    "en rehabiliteringshandledare": {
+      "declension": 5
+    },
+    "en logistikingenjör": {
+      "declension": 3
+    },
+    "en musikpedagog": {
+      "declension": 3
+    },
+    "en barnträdgårdslärare": {
+      "declension": 5
+    },
+    "en byggnadsingenjör": {
+      "declension": 3
+    },
+    "en munhygienist": {
+      "declension": 3
+    },
+    "en elingenjör": {
+      "declension": 3
+    },
+    "en hälsovårdare": {
+      "declension": 5
+    },
+    "en ergoterapeut": {
+      "declension": 3
+    },
+    "en rehabiliteringsinstruktör": {
+      "declension": 3
+    },
+    "en förskolelärare": {
+      "declension": 5
+    },
+    "en byggingenjör": {
+      "declension": 3
+    },
+    "en sjuksköterska": {
+      "declension": 1
+    },
+    "en dataingenjör": {
+      "declension": 3
+    },
+    "en arbetsterapeut": {
+      "declension": 3
+    },
+    "en yrkesexamen": {
+      "headForms": [
+        "examen",
+        "examen",
+        "examina",
+        "examina"
+      ]
+    },
+    "en specialyrkesexamen": {
+      "headForms": [
+        "examen",
+        "examen",
+        "examina",
+        "examina"
+      ]
+    },
+    "en dubbelexamen": {
+      "headForms": [
+        "examen",
+        "examen",
+        "examina",
+        "examina"
+      ]
+    },
+    "en grundexamen": {
+      "headForms": [
+        "examen",
+        "examen",
+        "examina",
+        "examina"
+      ]
+    },
+    "en närundervisning": {
+      "sgDefEnding": "en"
+    },
+    "en flerformsundervisning": {
+      "sgDefEnding": "en"
+    }
+  }
+}
