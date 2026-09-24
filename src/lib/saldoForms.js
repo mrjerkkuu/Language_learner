@@ -74,9 +74,21 @@ export function extractVerbForms(entry) {
   return Object.values(forms).every(Boolean) ? forms : null
 }
 
+// Definite-singular ending per article: en -> -n (helgen), ett -> -t (vädret).
+const DEF_SG_ENDING = { en: 'n', ett: 't' }
+
 // Singular forms are required; plural forms may be null (uncountable nouns).
-export function extractNounForms(entry) {
+// SALDO gender "v" (either article) lists one definite singular per gender
+// (poängen / poänget); with `gender` given, the variant matching it is used.
+export function extractNounForms(entry, gender = null) {
   const forms = pickForms(entry, NOUN_MSD)
+  const ending = DEF_SG_ENDING[gender]
+  if (ending && (entry.inherent ?? []).includes('v') && !forms.sgDef?.endsWith(ending)) {
+    const match = (entry.inflectionTable ?? []).find(
+      (r) => r.msd === NOUN_MSD.sgDef && r.writtenForm.endsWith(ending),
+    )
+    if (match) forms.sgDef = match.writtenForm
+  }
   return forms.sgIndef && forms.sgDef ? forms : null
 }
 
@@ -151,7 +163,7 @@ export function selectNounEntry(entries, { word, gender }, category, override = 
       e.baseform === word &&
       (e.inherent ?? []).some((g) => g === wanted || g === 'v'),
   )
-  let groups = groupByForms(matching, extractNounForms)
+  let groups = groupByForms(matching, (e) => extractNounForms(e, gender))
   if (groups.length > 1 && !override) groups = preferByCountability(groups, category)
   return decide(groups, override)
 }
@@ -166,4 +178,61 @@ function preferByCountability(groups, category) {
 
 export function shouldAskPlural(forms, category) {
   return Boolean(forms.plIndef && forms.plDef) && !NO_PLURAL_CATEGORIES.includes(category)
+}
+
+// --- Compound nouns (second source: declension classes from a study PDF) -----
+// A Swedish compound inflects like its last part (yrkes|högskola -> yrkes|högskolor),
+// so a compound SALDO lacks takes the forms of its head word, prefixed. That is
+// only accepted when an independent source agrees: the declension class (or the
+// forms) the PDF gives for the word must match SALDO's paradigm for the head.
+// Words the PDF says nothing about are never derived (robotik -> "tik" is wrong).
+
+// Marks rows derived this way; the value names the checking source.
+export const COMPOUND_CHECK = 'kananoja-2026'
+
+// "yrkeshögskola" -> [{ prefix: 'y', head: 'rkeshögskola' }, ..., { prefix: 'yrkeshögs', head: 'kola' }]
+// Proper suffixes only, longest head first, heads at least `minLength` letters.
+export function headCandidates(word, minLength = 3) {
+  const out = []
+  for (let i = 1; i <= word.length - minLength; i++) out.push({ prefix: word.slice(0, i), head: word.slice(i) })
+  return out
+}
+
+// SALDO paradigm name -> school declension 1-5. SALDO numbers the last two
+// classes differently: nn_5n_dike (-n plural) is school class 4, nn_6u_kikare
+// (no plural ending) is class 5. Anything else (nn_0 uncountable, irregular) -> null.
+const SALDO_TO_SCHOOL = { 1: 1, 2: 2, 3: 3, 5: 4, 6: 5 }
+export function saldoDeclension(paradigm) {
+  const m = /^nn_(\d)/.exec(paradigm ?? '')
+  return m ? (SALDO_TO_SCHOOL[m[1]] ?? null) : null
+}
+
+// Does the PDF's statement about a word agree with the SALDO head entry?
+//   { declension: 3 }                                  -> paradigm class matches
+//   { headForms: ['examen','examen','examina','examina'] } -> head's four forms match
+//   { sgDefEnding: 'en' }                              -> head's definite singular ends so
+export function pdfAgrees(check, entry, headForms) {
+  if (!check || !entry || !headForms) return false
+  if (check.declension != null) return saldoDeclension(entry.paradigm) === check.declension
+  if (check.headForms) {
+    const { sgIndef, sgDef, plIndef, plDef } = headForms
+    return JSON.stringify([sgIndef, sgDef, plIndef, plDef]) === JSON.stringify(check.headForms)
+  }
+  if (check.sgDefEnding) return Boolean(headForms.sgDef?.endsWith(check.sgDefEnding))
+  return false
+}
+
+// Put the compound's first part in front of every existing form.
+export function prefixForms(prefix, forms) {
+  return Object.fromEntries(Object.entries(forms).map(([k, v]) => [k, v ? prefix + v : null]))
+}
+
+// Decide a compound from the FIRST head that SALDO knows (a selectNounEntry
+// result for that head). Anything but an unambiguous, PDF-confirmed match is
+// rejected; the caller then stops rather than trying a shorter head.
+export function decideCompound({ prefix, head }, headResult, check) {
+  if (headResult.status !== 'ok' || !pdfAgrees(check, headResult.entry, headResult.forms)) {
+    return { status: 'rejected', head }
+  }
+  return { status: 'ok', entry: headResult.entry, head, forms: prefixForms(prefix, headResult.forms) }
 }

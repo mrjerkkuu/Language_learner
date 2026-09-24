@@ -1226,7 +1226,7 @@
   {
     "id": "v154",
     "term": "en fortbildning",
-    "fi": "jatkokoulutus",
+    "fi": "jatkokoulutus / täydennyskoulutus",
     "part": 4,
     "category": "opiskelu",
     "example": "Företaget erbjuder fortbildning."
@@ -1258,7 +1258,7 @@
   {
     "id": "v158",
     "term": "en uppsats",
-    "fi": "kirjoitelma",
+    "fi": "kirjoitelma / aine",
     "part": 4,
     "category": "opiskelu",
     "example": "Jag skriver en uppsats om klimatet."
@@ -1928,6 +1928,14 @@
     "example": "Kursen handlar om företagsamhet."
   },
   {
+    "id": "v540",
+    "term": "ett entreprenörskap",
+    "fi": "yrittäjyys",
+    "part": 3,
+    "category": "alat",
+    "example": "Kursen handlar om entreprenörskap."
+  },
+  {
     "id": "v242",
     "term": "en naturresursbransch",
     "fi": "luonnonvara-ala",
@@ -2162,7 +2170,7 @@
   {
     "id": "v271",
     "term": "en lagerhantering",
-    "fi": "varastonhallinta",
+    "fi": "varastonhallinta / varastointi",
     "part": 3,
     "category": "alat",
     "example": "Hon ansvarar för lagerhanteringen."
@@ -2264,6 +2272,14 @@
     "example": "Han studerar fysioterapi."
   },
   {
+    "id": "v541",
+    "term": "en sjukgymnastik",
+    "fi": "fysioterapia (Ruotsissa)",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar sjukgymnastik."
+  },
+  {
     "id": "v284",
     "term": "en rehabilitering",
     "fi": "kuntoutus",
@@ -2318,6 +2334,14 @@
     "part": 3,
     "category": "alat",
     "example": "Han studerar ergoterapi."
+  },
+  {
+    "id": "v542",
+    "term": "en arbetsterapi",
+    "fi": "toimintaterapia (Ruotsissa)",
+    "part": 3,
+    "category": "alat",
+    "example": "Han studerar arbetsterapi."
   },
   {
     "id": "v291",
@@ -2376,6 +2400,14 @@
     "example": "Hon jobbar som fysioterapeut."
   },
   {
+    "id": "v543",
+    "term": "en sjukgymnast",
+    "fi": "fysioterapeutti (Ruotsissa)",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som sjukgymnast."
+  },
+  {
     "id": "v298",
     "term": "en ingenjör",
     "fi": "insinööri",
@@ -2398,6 +2430,14 @@
     "part": 3,
     "category": "ammatit",
     "example": "Han är rehabiliteringshandledare."
+  },
+  {
+    "id": "v544",
+    "term": "en rehabiliteringsinstruktör",
+    "fi": "kuntoutuksenohjaaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är rehabiliteringsinstruktör."
   },
   {
     "id": "v301",
@@ -2448,6 +2488,14 @@
     "example": "Han jobbar som barnträdgårdslärare."
   },
   {
+    "id": "v545",
+    "term": "en förskolelärare",
+    "fi": "esikoulunopettaja",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som förskolelärare."
+  },
+  {
     "id": "v307",
     "term": "en sångare",
     "fi": "laulaja",
@@ -2464,6 +2512,14 @@
     "example": "Han är byggnadsingenjör."
   },
   {
+    "id": "v546",
+    "term": "en byggingenjör",
+    "fi": "rakennusinsinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är byggingenjör."
+  },
+  {
     "id": "v309",
     "term": "en restonom",
     "fi": "restonomi",
@@ -2478,6 +2534,14 @@
     "part": 3,
     "category": "ammatit",
     "example": "Han är sjukskötare på sjukhuset."
+  },
+  {
+    "id": "v547",
+    "term": "en sjuksköterska",
+    "fi": "sairaanhoitaja (Ruotsissa)",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon är sjuksköterska på sjukhuset."
   },
   {
     "id": "v311",
@@ -2528,12 +2592,28 @@
     "example": "Han är ingenjör i informations- och kommunikationsteknik."
   },
   {
+    "id": "v548",
+    "term": "en dataingenjör",
+    "fi": "tieto- ja viestintätekniikan insinööri",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Han är dataingenjör."
+  },
+  {
     "id": "v317",
     "term": "en ergoterapeut",
     "fi": "toimintaterapeutti",
     "part": 3,
     "category": "ammatit",
     "example": "Hon jobbar som ergoterapeut."
+  },
+  {
+    "id": "v549",
+    "term": "en arbetsterapeut",
+    "fi": "toimintaterapeutti (Ruotsissa)",
+    "part": 3,
+    "category": "ammatit",
+    "example": "Hon jobbar som arbetsterapeut."
   },
   {
     "id": "v318",

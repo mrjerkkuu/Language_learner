@@ -71,6 +71,19 @@ määräinen muoto) korvattu kokonaan.
   ja jokaisella rivillä on SALDO-`lemgram`, jolla sen voi jäljittää lähteeseen.
   Tulos: 235 verbiketjua (245 sanaston riviä) ja 163 substantiivia; pois jäi
   2 verbiä ja 72 substantiivia (pääosin alojen nimiä, ammattinimikkeitä ja yhdyssanoja).
+  **Yhdyssanatäydennys (2026-09-24):** SALDOsta puuttuvat yhdyssanat saavat
+  loppuosansa muodot (yrkes|**högskola** → yrkeshögskolor), mutta vain jos toinen,
+  riippumaton lähde täsmää: Kananojan opiskelusanasto-PDF:n taivutusluokka 1–5 tai
+  muodot (`scripts/data/declensions-kananoja.json`). SALDOn paradigmanumerointi eroaa
+  koulukieliopista: SALDO 5 = koulun 4, SALDO 6 = koulun 5. Rivit on merkitty
+  `check: "kananoja-2026"` + `head`, ja `lemgram` on loppuosan. Sanat, joita PDF ei
+  mainitse, jätetään pois (esim. robotik → "tik" olisi väärä osuma). Lisäksi SALDOn
+  kaksisukuisille ("v") sanoille valitaan artikkeliin täsmäävä määräinen muoto
+  (ett studiepoäng → studiepoänget). Sanastoon lisättiin PDF:n ruotsinkieliset
+  vaihtoehdot (v540–v549, esim. sjuksköterska, förskolelärare). Tulos nyt:
+  **200 substantiivia** (30 yhdyssanajohdettua). Edelleen pois: 38 yksisanaista (alat
+  ilman PDF-luokkaa, suomalaiset nimikkeet kuten tradenom/restonom, harrastukset) ja
+  26 monisanaista.
   **Päivitys:** aja skripti uudelleen, kun sanasto muuttuu, ja pistokoe `--verify`-lipulla.
 - *Lähdemaininta:* `source`-kenttä datassa, `NOTICE`-tiedosto ja linkki Muodot-sivun
   alalaidassa.
